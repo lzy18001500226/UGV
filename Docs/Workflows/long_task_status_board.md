@@ -2,7 +2,7 @@
 
 > Short operational board for the UGV initial-race long task. Keep this file concise; detailed evidence belongs in `Results/`.
 
-Status: M6_mworks_activation_blocks_official_track_dependency_load; offline robust-navigation research added, 2026-07-09 CST.
+Status: M6_mworks_activation_blocks_official_track_dependency_load; offline deployable-avoidance research added, 2026-07-09 CST.
 
 ## Current Long Task
 
@@ -30,7 +30,7 @@ M9 submission candidate package, without final send
 | M5 One-track tuning | review_ready_candidate | Codex | `Results/metrics/one_track_tuning_20260708_231430.md`; best run `Results/simulations/controller_v5_front_dwell_2s_race1_120s_20260708_230305/` | Use v5 as current Race1 candidate; do not keep v6. |
 | M6 Four-track evaluation | blocked_on_mworks_activation_for_tadynamics | Codex | `Results/metrics/four_track_summary_20260708_231430.md`; `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md`; `Results/evidence/m6_mworks_activation_blocker_20260708_235918.md`; `Results/evidence/m6_mworks_activation_recheck_20260709_000731.md` | Restore MWORKS activation/license, then rerun the official-track dependency-load diagnostic before any four-track score claims. |
 | M7 Evidence automation | partial_completed | Codex | `Scripts/mworks/ugv_baseline_probe.py` | Helper now exports extra variables and captures `GetLastErrors()` / `MessageText()`. |
-| M8 Report draft | blocker_aware_draft_ready | Codex | `References/research/physical_ugv_obstacle_avoidance_20260708/`; `Docs/Design/final_race_migration_notes.md`; `References/research/robust_physical_ugv_navigation_20260709/`; `Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.md` | Draft can describe Race1 evidence, physical-transfer constraints, and official-track blocker; final report still needs M6 four-track metrics. |
+| M8 Report draft | blocker_aware_draft_ready | Codex | `References/research/physical_ugv_obstacle_avoidance_20260708/`; `Docs/Design/final_race_migration_notes.md`; `References/research/robust_physical_ugv_navigation_20260709/`; `References/research/deployable_ugv_avoidance_algorithms_20260709/`; `Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.md` | Draft can describe Race1 evidence, physical-transfer constraints, and official-track blocker; final report still needs M6 four-track metrics. |
 | M9 Submission candidate package | dry_run_gap_check_ready | Codex + user final approval | `Results/deliverables/submission_dry_runs/submission_candidate_gap_check_20260709.md`; `Results/deliverables/submission_dry_runs/submission_readiness_20260709_0038.md` | Static readiness checker reports not ready: four-track metrics blocked/unavailable and final approval missing. Do not build/send final submission until M6 metrics and user approval exist. |
 
 ## Blockers
@@ -61,11 +61,12 @@ M9 submission candidate package, without final send
 - Physical-transfer research has been added so controller tuning stays aligned
   with later real-car robustness instead of only one-track simulation scoring.
   Current reference packs:
-  `References/research/physical_ugv_obstacle_avoidance_20260708/` and
-  `References/research/robust_physical_ugv_navigation_20260709/`.
+  `References/research/physical_ugv_obstacle_avoidance_20260708/`,
+  `References/research/robust_physical_ugv_navigation_20260709/`, and
+  `References/research/deployable_ugv_avoidance_algorithms_20260709/`.
 - Email send evidence can prove SMTP accepted a notice, but it does not prove
   the user saw it; keep terminal notices in project evidence as well.
-  Latest notice evidence: `Results/evidence/notification_delivery_note_20260709_004637.md`.
+  Latest notice evidence: `Results/evidence/notification_delivery_note_20260709_010900.md`.
 - Do not use this board as a history ledger.
 - Update only when phase state changes or a review/blocker appears.
 - Long details, logs, screenshots, and metrics must stay under `Results/`.

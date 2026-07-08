@@ -2,7 +2,7 @@
 
 > Keep initial-race simulation decisions compatible with later generated-code and physical UGV deployment. This file is not a claim that physical testing has happened.
 
-Status: initial migration constraints plus robust-algorithm research, 2026-07-09 CST.
+Status: initial migration constraints plus deployable-algorithm research, 2026-07-09 CST.
 
 ## 1. Deployment Goal
 
@@ -41,6 +41,7 @@ Reference notes are stored at:
 ```text
 References/research/physical_ugv_obstacle_avoidance_20260708/
 References/research/robust_physical_ugv_navigation_20260709/
+References/research/deployable_ugv_avoidance_algorithms_20260709/
 ```
 
 Use them as patterns only:
@@ -52,6 +53,8 @@ Use them as patterns only:
 | Potential Field | bounded repulsion from obstacles | linear side/front repulsion with saturation |
 | Pure Pursuit | smooth recovery to path-following | release avoidance gradually back to official planner |
 | Regulated Pure Pursuit | reduce speed by curvature, proximity, and collision risk | lower speed cap under high steering demand or front risk |
+| DWA / dynamic window | enforce feasible speed/steer windows and short-horizon obstacle cost | preserve saturation, avoid abrupt sign flips, and penalize speed under risk |
+| Stanley / Pure Pursuit | smooth path tracking with steering saturation | smooth return-to-cruise after avoidance; do not replace official path authority |
 | TEB local planner | respect obstacle separation and kinodynamic constraints | keep avoidance commands within physical limits; do not direct-import the planner |
 
 The current controller boundary is too narrow for direct TEB/DWA/Nav2/F1TENTH
@@ -96,6 +99,9 @@ Resolve the M6 official-track simulation-entry blocker first. While blocked, saf
 1. blocker-aware report drafting;
 2. research notes and physical-transfer constraints;
 3. evidence automation that does not alter official no-edit zones;
-4. support/documentation lookup for the exact MWORKS parameter-evaluation API.
+4. support/documentation lookup for the exact MWORKS parameter-evaluation API;
 5. targeted online research that improves real-car transfer without importing
-   large external projects into the official model tree.
+   large external projects into the official model tree;
+6. apply the deployability filter before controller tuning: bounded commands,
+   speed reduction under risk, dwell/hysteresis, and parameter ranges that can
+   be retuned on the physical UGV.

@@ -144,6 +144,7 @@ Controller improvement after M6 resumes:
 1. Export first-collision windows with distance inputs and speed/steer outputs.
 2. Tune speed-turn coupling for physical plausibility, not only one-track score.
 3. Preserve explainable bounded state logic for later generated-code/physical UGV use.
+4. Apply the deployability filter from `References/research/deployable_ugv_avoidance_algorithms_20260709/source_notes.md` before accepting any simulation-score tuning.
 
 ## 8. 复现说明
 

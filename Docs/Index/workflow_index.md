@@ -10,6 +10,7 @@
 | Experiment evidence gate | `Docs/Workflows/experiment_gate.md` |
 | Evidence manifest template | `Docs/Workflows/evidence_manifest_template.md` |
 | Research manifest template | `Docs/Workflows/research_manifest_template.md` |
+| Deployable UGV avoidance algorithm research | `References/research/deployable_ugv_avoidance_algorithms_20260709/MANIFEST.md`; `References/research/deployable_ugv_avoidance_algorithms_20260709/source_notes.md` |
 | Report writing | `Docs/Workflows/report_workflow.md` |
 | Submission readiness dry run | `Scripts/quality/check_submission_readiness.py`; `Results/deliverables/submission_dry_runs/submission_readiness_20260709_0038.md` |
 | Model source lookup | `Docs/Index/model_index.md` |
@@ -27,7 +28,7 @@ the continuous M1-M9 long task, not a stop point. Update
 ```text
 M1-M5 completed or review-ready
 M6 blocked by official track simulation-entry compile error
-next safe work: validate the official parameter-evaluation setting, search MWORKS/Tongyuan support material, or draft a blocker-aware report
+next safe work: validate the official parameter-evaluation setting, keep deployable-algorithm research tied to controller changes, or draft/update blocker-aware report
 ```
 
 M1 source grounding is complete at `Results/evidence/static_model_grounding_20260708_210142.md`.

@@ -1,0 +1,55 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/f1tenth/f1tenth_lab4_template/master/README.md",
+    "file": "f1tenth_follow_the_gap_README.md",
+    "status": "saved"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/ros-navigation/navigation2/main/nav2_regulated_pure_pursuit_controller/README.md",
+    "file": "nav2_regulated_pure_pursuit_README.md",
+    "status": "saved"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/rst-tu-dortmund/teb_local_planner/noetic-devel/README.md",
+    "file": "teb_local_planner_README.md",
+    "status": "saved"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/ros-planning/navigation/noetic-devel/dwa_local_planner/README.md",
+    "file": "ros1_dwa_local_planner_README.md",
+    "status": "failed",
+    "error": "Response status code does not indicate success: 404 (Not Found)."
+  },
+  {
+    "url": "https://raw.githubusercontent.com/AtsushiSakai/PythonRobotics/master/PathPlanning/DynamicWindowApproach/dynamic_window_approach.py",
+    "file": "pythonrobotics_dynamic_window_approach.py",
+    "status": "saved"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/AtsushiSakai/PythonRobotics/master/PathTracking/pure_pursuit/pure_pursuit.py",
+    "file": "pythonrobotics_pure_pursuit.py",
+    "status": "saved"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/AtsushiSakai/PythonRobotics/master/PathTracking/stanley_controller/stanley_controller.py",
+    "file": "pythonrobotics_stanley_controller.py",
+    "status": "failed",
+    "error": "Response status code does not indicate success: 404 (Not Found)."
+  },
+  {
+    "url": "https://raw.githubusercontent.com/AtsushiSakai/PythonRobotics/master/LICENSE",
+    "file": "pythonrobotics_LICENSE",
+    "status": "saved"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/ros-planning/navigation/noetic-devel/LICENSE",
+    "file": "ros_navigation_LICENSE",
+    "status": "failed",
+    "error": "Response status code does not indicate success: 404 (Not Found)."
+  },
+  {
+    "url": "https://raw.githubusercontent.com/rst-tu-dortmund/teb_local_planner/noetic-devel/LICENSE",
+    "file": "teb_local_planner_LICENSE",
+    "status": "saved"
+  }
+]

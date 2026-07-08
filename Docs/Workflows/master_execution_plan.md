@@ -94,6 +94,12 @@ Rules:
 7. If a promising open-source repository is too large or license-sensitive,
    save source notes and exact links first. Ask the user to crawl the full
    repository only when the implementation genuinely needs it.
+8. For obstacle-avoidance work, treat physical deployability as a first-class
+   acceptance filter. Before tuning for simulation score, check whether the
+   idea keeps bounded commands, slows under risk, uses dwell/hysteresis, and
+   can be retuned on a physical UGV. If the answer is unclear, create a small
+   `References/research/<topic>_<date>/` research pack before changing the
+   controller.
 
 ## 5. Full Task Tree
 
@@ -384,6 +390,11 @@ Email notifications:
 6. Use a task-specific cooldown key and `--cooldown-minutes 0` for explicit
    terminal notices so separate completions/blockers are not suppressed by an
    earlier status email.
+7. If the user reports that no notice arrived, immediately send one concise
+   current-status notice again, record the gateway JSON path, and write the same
+   content into `Results/evidence/notification_delivery_note_<timestamp>.md`.
+   Treat delivery visibility as an operations risk, not as proof that project
+   work failed.
 
 Board updates:
 
