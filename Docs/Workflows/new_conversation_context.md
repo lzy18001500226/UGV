@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: ready for long-task execution, 2026-07-08 CST.
+Status: M2 baseline runtime gate completed, 2026-07-08 CST.
 
 ## 0. Startup Chain
 
@@ -51,6 +51,16 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase: `M1 static model grounding`.
+Current phase: `M3 controller design ready`.
+
+Latest runtime evidence:
+
+```text
+Results/simulations/baseline_20260708_213448/
+```
+
+This M2 gate confirms MWORKS Sysplorer load/check/simulate for
+`UGV.Example.Race1` with bounded `stopTime=12`; it does not claim full-track
+completion or final competition score.
 
 MWORKS/Sysplorer GUI or MCP operations are expected in execution phases. Handle login/license/activation recovery according to `master_execution_plan.md`; final competition submission email still requires explicit user approval.

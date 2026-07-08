@@ -1,0 +1,11 @@
+{
+  "all_variable_count": 31153,
+  "timevarying_variable_count": 30729,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": []
+}

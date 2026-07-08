@@ -393,6 +393,15 @@ When the plan reaches review-ready state, provide:
 
 ## 8. Current Next Step
 
-Next executable phase is M1 static model grounding. This is source-only and does not need MWORKS runtime.
+Next executable phase is M3 controller design. M1 source grounding and the M2
+bounded baseline runtime gate are complete:
 
-After M1, proceed to M2 baseline runtime autonomously unless the user explicitly pauses runtime work.
+```text
+M1: Results/evidence/static_model_grounding_20260708_210142.md
+M2: Results/simulations/baseline_20260708_213448/
+```
+
+M2 verified `UGV.Example.Race1` load/check/simulate and score-variable access
+with bounded `stopTime=12`. It is not a full-track completion or final
+competition score claim. Proceed to M3 unless the user explicitly pauses design
+work.

@@ -2,7 +2,7 @@
 
 > Short operational board for the UGV initial-race long task. Keep this file concise; detailed evidence belongs in `Results/`.
 
-Status: M1_completed_source_grounded, 2026-07-08 CST.
+Status: M2_baseline_runtime_gate_completed, 2026-07-08 CST.
 
 ## Current Long Task
 
@@ -21,8 +21,8 @@ M6 four-track evaluation
 | Phase | State | Owner | Evidence | Next Action |
 |---|---|---|---|---|
 | M1 Static model grounding | completed | Codex | `Results/evidence/static_model_grounding_20260708_210142.md` | Done; use source mapping for M2. |
-| M2 Baseline runtime | ready | Codex | pending | Load official model in MWORKS, verify entry names, run baseline gate. |
-| M3 Controller design | waiting_on_M2 | Codex | pending | Draft `Docs/Design/避障算法设计.md`. |
+| M2 Baseline runtime | completed_bounded_gate | Codex | `Results/simulations/baseline_20260708_213448/` | Done; load/check/simulate and score variables verified for bounded stopTime=12. |
+| M3 Controller design | ready | Codex | pending | Draft `Docs/Design/避障算法设计.md` using M1 interface and M2 runtime evidence. |
 | M4 Controller implementation | waiting_on_M3 | Codex | pending | Implement only controller boundary. |
 | M5 One-track tuning | waiting_on_M4 | Codex | pending | Tune one official track with evidence. |
 | M6 Four-track evaluation | waiting_on_M5 | Codex | pending | Run all official tracks and summarize metrics. |
@@ -35,6 +35,7 @@ None currently recorded.
 ## Review Notes
 
 - M1 is source/static only. It does not claim MWORKS load, translate, simulate, lap completion, score, or GUI health.
+- M2 confirms bounded runtime load/check/simulate for `UGV.Example.Race1`; it does not claim full-track completion or final competition score.
 - Do not use this board as a history ledger.
 - Update only when phase state changes or a review/blocker appears.
 - Long details, logs, screenshots, and metrics must stay under `Results/`.

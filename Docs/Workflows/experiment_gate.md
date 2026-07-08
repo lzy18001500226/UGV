@@ -67,6 +67,7 @@ produce readable metrics.
 | load_passed | Model/package loaded in MWORKS. |
 | translate_passed | Model translated/compiled. |
 | simulate_started | Simulation started but no final score yet. |
+| bounded_runtime_gate | Bounded finite-stop simulation completed and key variables are readable; not full-track completion. |
 | run_completed | One track completed with metrics. |
 | four_track_completed | All four official tracks completed with metrics. |
 | report_ready | Report draft references reproducible evidence. |

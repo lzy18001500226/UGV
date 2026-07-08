@@ -41,9 +41,26 @@ Required evidence:
 ```text
 MANIFEST.md
 stdout_or_log.txt
-screenshot_or_model_evidence.png
+API model evidence or screenshot_or_model_evidence.png
 metrics.json when available
 ```
+
+Project-local baseline helper:
+
+```powershell
+& 'D:\Program Files\MWORKS\Sysplorer 2026a\External\python64\python.exe' \
+  Scripts\mworks\ugv_baseline_probe.py \
+  --project-root C:\Users\HP\Desktop\UGV \
+  --out-dir Results\simulations\baseline_<timestamp> \
+  --model-name UGV.Example.Race1 \
+  --stop-time 12 \
+  --request-id M2-baseline-runtime-gate
+```
+
+The helper uses `import mworks.sysplorer as pyapi`, then
+`StartSysplorer`, `OpenModelFile`, `OpenModel`, `CheckModel`,
+`SimulateModel`, `GetResultVariables`, `GetVarsValueAt`, and `ExportResult`.
+Do not use the nonexistent `mworks.engine` API shape.
 
 ## 4. Algorithm Gate G2
 

@@ -18,12 +18,14 @@
 
 ## Current First Action
 
-Run M1 static model grounding from `Docs/Workflows/master_execution_plan.md`. Update `Docs/Workflows/long_task_status_board.md` only when phase state changes.
+Run M3 controller design from `Docs/Workflows/master_execution_plan.md`. Update `Docs/Workflows/long_task_status_board.md` only when phase state changes.
 
 ```text
-inspect Race1/Race2, official track files, controller interface,
-ControlAllocate, CountPoint, and distance sensors
-write Results/evidence/static_model_grounding_<timestamp>.md using experiment_gate.md
+read M1 source evidence and M2 baseline runtime evidence
+draft Docs/Design/避障算法设计.md
+write Results/evidence/controller_design_review_<timestamp>.md
 ```
 
-Then proceed to M2 baseline runtime autonomously unless the user explicitly pauses runtime work.
+M1 source grounding is complete at `Results/evidence/static_model_grounding_20260708_210142.md`.
+M2 bounded baseline runtime gate is complete at `Results/simulations/baseline_20260708_213448/`.
+Do not claim full-track completion or final score from the bounded M2 run.

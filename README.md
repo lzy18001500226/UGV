@@ -27,20 +27,19 @@ The project reuses MoSim's MWORKS/Sysplorer working habits only as reference. It
 | `Scripts/` | Future automation, metric extraction, and quality checks. |
 | `Results/` | Simulation evidence, metrics, figures, reports, and temp files. |
 
-## First Gate
+## Current Gate
 
-The first useful engineering action is M1 static model grounding. Do this before
-opening MWORKS runtime or editing the controller:
+M1 static model grounding and the M2 bounded baseline runtime gate are complete:
 
 ```text
-inspect Race1/Race2, tracks, controller, ControlAllocate, CountPoint, sensors
-update Docs/Index/model_index.md
-write Results/evidence/static_model_grounding_<timestamp>.md
+M1: Results/evidence/static_model_grounding_20260708_210142.md
+M2: Results/simulations/baseline_20260708_213448/
 ```
 
-After M1, follow `Docs/Workflows/master_execution_plan.md` for the M2 baseline
-MWORKS/Sysplorer runtime gate and save runtime evidence under
-`Results/simulations/`.
+The current next engineering action is M3 controller design. The M2 baseline
+evidence confirms bounded MWORKS load/check/simulate and score-variable access
+for `UGV.Example.Race1`; it does not claim full-track completion or final
+competition score.
 
 ## Main Implementation Target
 
