@@ -31,7 +31,7 @@ M9 submission candidate package, without final send
 | M6 Four-track evaluation | blocked_on_mworks_activation_for_tadynamics | Codex | `Results/metrics/four_track_summary_20260708_231430.md`; `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md`; `Results/evidence/m6_mworks_activation_blocker_20260708_235918.md`; `Results/evidence/m6_mworks_activation_recheck_20260709_000731.md` | Restore MWORKS activation/license, then rerun the official-track dependency-load diagnostic before any four-track score claims. |
 | M7 Evidence automation | partial_completed | Codex | `Scripts/mworks/ugv_baseline_probe.py` | Helper now exports extra variables and captures `GetLastErrors()` / `MessageText()`. |
 | M8 Report draft | blocker_aware_draft_ready | Codex | `References/research/physical_ugv_obstacle_avoidance_20260708/`; `Docs/Design/final_race_migration_notes.md`; `References/research/robust_physical_ugv_navigation_20260709/`; `Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.md` | Draft can describe Race1 evidence, physical-transfer constraints, and official-track blocker; final report still needs M6 four-track metrics. |
-| M9 Submission candidate package | dry_run_gap_check_ready | Codex + user final approval | `Results/deliverables/submission_dry_runs/submission_candidate_gap_check_20260709.md` | Dry-run gap check exists; do not build/send final submission until M6 metrics and user approval exist. |
+| M9 Submission candidate package | dry_run_gap_check_ready | Codex + user final approval | `Results/deliverables/submission_dry_runs/submission_candidate_gap_check_20260709.md`; `Results/deliverables/submission_dry_runs/submission_readiness_20260709_0038.md` | Static readiness checker reports not ready: four-track metrics blocked/unavailable and final approval missing. Do not build/send final submission until M6 metrics and user approval exist. |
 
 ## Blockers
 
@@ -65,7 +65,7 @@ M9 submission candidate package, without final send
   `References/research/robust_physical_ugv_navigation_20260709/`.
 - Email send evidence can prove SMTP accepted a notice, but it does not prove
   the user saw it; keep terminal notices in project evidence as well.
-  Latest notice evidence: `Results/evidence/notification_delivery_note_20260709_002456.md`.
+  Latest notice evidence: `Results/evidence/notification_delivery_note_20260709_004303.md`.
 - Do not use this board as a history ledger.
 - Update only when phase state changes or a review/blocker appears.
 - Long details, logs, screenshots, and metrics must stay under `Results/`.

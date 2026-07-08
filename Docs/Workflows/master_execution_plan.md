@@ -315,6 +315,7 @@ Actions:
 2. Include final report.
 3. Exclude `Results/tmp/`, extracted PDFs text, scratch logs, caches, and unrelated research.
 4. Write package manifest.
+5. Run `Scripts/quality/check_submission_readiness.py` and store JSON/Markdown dry-run output under `Results/deliverables/submission_dry_runs/`.
 
 Outputs:
 

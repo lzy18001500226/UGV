@@ -72,6 +72,32 @@ This happens before official-track `CheckModel` or `SimulateModelEx` can prove o
 5. Convert the blocker-aware report draft into a final report with real four-track tables.
 6. Build a local submission candidate package and stop for user final approval before sending.
 
+
+## Machine Readiness Check
+
+A static submission readiness checker was added so this dry run can be repeated without relying on manual inspection:
+
+```powershell
+python Scripts\quality\check_submission_readiness.py \
+  --json-out Results\deliverables\submission_dry_runs\submission_readiness_20260709_0038.json \
+  --md-out Results\deliverables\submission_dry_runs\submission_readiness_20260709_0038.md
+```
+
+Latest dry-run output:
+
+```text
+Results/deliverables/submission_dry_runs/submission_readiness_20260709_0038.json
+Results/deliverables/submission_dry_runs/submission_readiness_20260709_0038.md
+```
+
+Current machine result:
+
+```text
+ready: false
+blockers: four_track_metrics_blocked_or_unavailable, final_submission_approval_missing
+tracked_model_files: 67
+```
+
 ## Explicit Non-Claims
 
 - No four-track completion is claimed.

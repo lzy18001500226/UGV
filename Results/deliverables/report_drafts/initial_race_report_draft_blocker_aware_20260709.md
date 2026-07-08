@@ -60,6 +60,7 @@ Docs/Design/避障算法设计.md
 Results/evidence/controller_design_review_20260708_215659.md
 Docs/Design/final_race_migration_notes.md
 References/research/physical_ugv_obstacle_avoidance_20260708/
+References/research/robust_physical_ugv_navigation_20260709/
 ```
 
 ## 4. 参数设置与调参依据
@@ -153,3 +154,9 @@ Results/evidence/m6_mworks_activation_blocker_20260708_235918.md
 ```
 
 Then update this draft with real four-track metrics.
+
+Submission readiness dry run:
+
+```text
+Results/deliverables/submission_dry_runs/submission_readiness_20260709_0038.md
+```
