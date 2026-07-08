@@ -73,6 +73,19 @@ def write_run_manifest(out_dir: Path, manifest: dict) -> None:
     (out_dir / "MANIFEST.md").write_text("\n".join(lines), encoding="utf-8")
 
 
+def manifest_notes(run_label: str, metrics: dict) -> list[str]:
+    notes = [f"This run label is {run_label}."]
+    runtime_status = str(metrics.get("runtime_status", "unknown"))
+    if runtime_status == "simulate_returned_true":
+        notes.append("Simulation API returned true for the bounded stop time only.")
+        notes.append("Do not claim final official race score unless completion and score variables are confirmed from metrics/logs.")
+    else:
+        notes.append("This run did not prove the full load/check/simulation path.")
+        notes.append(f"Runtime stopped at status: {runtime_status}.")
+        notes.append("Do not treat this manifest as controller, track, score, or completion evidence.")
+    return notes
+
+
 def parse_option_value(raw: str):
     lowered = raw.strip().lower()
     if lowered == "true":
@@ -248,6 +261,7 @@ def main() -> int:
             dep_path = Path(dependency_path)
             if not dep_path.exists():
                 record_step(steps, "open_dependency_model_file", "missing", path=str(dep_path))
+                metrics["runtime_status"] = "dependency_model_file_missing"
                 return_code = 7
                 return return_code
             dependency_result = pyapi.OpenModelFile(str(dep_path), True)
@@ -259,6 +273,7 @@ def main() -> int:
                 result=repr(dependency_result),
             )
             if not dependency_result:
+                metrics["runtime_status"] = "dependency_model_file_load_failed"
                 metrics["pyapi_messages"] = collect_pyapi_messages(pyapi)
                 return_code = 7
                 return return_code
@@ -277,6 +292,7 @@ def main() -> int:
                 result=repr(load_library_result),
             )
             if not load_library_result:
+                metrics["runtime_status"] = "library_load_failed"
                 metrics["pyapi_messages"] = collect_pyapi_messages(pyapi)
                 return_code = 6
                 return return_code
@@ -284,6 +300,7 @@ def main() -> int:
         load_result = pyapi.OpenModelFile(str(package_mo), True)
         record_step(steps, "open_model_file", "ok" if load_result else "failed", result=repr(load_result))
         if not load_result:
+            metrics["runtime_status"] = "project_model_file_load_failed"
             return_code = 3
             return return_code
 
@@ -298,6 +315,7 @@ def main() -> int:
         check_result = pyapi.CheckModel(args.model_name)
         record_step(steps, "check_model", "ok" if check_result else "failed", result=repr(check_result))
         if not check_result:
+            metrics["runtime_status"] = "check_model_failed"
             metrics["pyapi_messages"] = collect_pyapi_messages(pyapi)
             record_step(steps, "check_model_messages", "captured", messages=metrics["pyapi_messages"])
             return_code = 4
@@ -506,11 +524,7 @@ def main() -> int:
                     "extra_timeseries.csv when requested variables are available",
                 ],
                 "blockers": blockers,
-                "notes": [
-                    f"This run label is {args.run_label}.",
-                    "SimulateModel=True proves load/check/simulation API path for the bounded stop time only.",
-                    "Do not claim final official race score unless completion and score variables are confirmed from metrics/logs.",
-                ],
+                "notes": manifest_notes(args.run_label, metrics),
             },
         )
 
