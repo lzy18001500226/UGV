@@ -28,7 +28,7 @@ M9 submission candidate package, without final send
 | M3 Controller design | completed | Codex | `Docs/Design/避障算法设计.md`; `Results/evidence/controller_design_review_20260708_215659.md` | Done; use conservative reactive increment design for M4. |
 | M4 Controller implementation | completed_bounded_gate | Codex | `Results/evidence/controller_v1_source_notes_20260708_220257.md`; `Results/simulations/controller_refsysblock_20260708_221000/` | Done; recovered from failed plain algorithm by using valid Sysblock reference structure. |
 | M5 One-track tuning | review_ready_candidate | Codex | `Results/metrics/one_track_tuning_20260708_231430.md`; best run `Results/simulations/controller_v5_front_dwell_2s_race1_120s_20260708_230305/` | Use v5 as current Race1 candidate; do not keep v6. |
-| M6 Four-track evaluation | blocked_on_mworks_activation_for_tadynamics | Codex | `Results/metrics/four_track_summary_20260708_231430.md`; `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md`; `Results/evidence/m6_mworks_activation_blocker_20260708_235918.md`; `Results/evidence/m6_mworks_activation_recheck_20260709_000731.md` | Restore MWORKS activation/license, then rerun the official-track dependency-load diagnostic before any four-track score claims. |
+| M6 Four-track evaluation | blocked_on_mworks_activation_for_tadynamics | Codex | `Results/metrics/four_track_summary_20260708_231430.md`; `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md`; `Results/evidence/m6_mworks_activation_blocker_20260708_235918.md`; `Results/evidence/m6_mworks_activation_recheck_20260709_023421.md` | Restore MWORKS activation/license, then rerun the official-track dependency-load diagnostic before any four-track score claims. |
 | M7 Evidence automation | partial_completed | Codex | `Scripts/mworks/ugv_baseline_probe.py`; `Scripts/quality/check_controller_deployability.py`; `Results/evidence/controller_deployability_static_check_20260709_0222.md`; `Results/evidence/notification_delivery_note_20260709_021010.md` | Helper exports extra variables and captures errors; deployability checker now passes the source-only high/medium risk gate after replacing reciprocal distance steering with bounded linear steering. |
 | M8 Report draft | blocker_aware_docx_render_qa_ready | Codex | `References/research/physical_ugv_obstacle_avoidance_20260708/`; `Docs/Design/final_race_migration_notes.md`; `References/research/robust_physical_ugv_navigation_20260709/`; `References/research/deployable_ugv_avoidance_algorithms_20260709/`; `Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.md`; `Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.docx`; `Results/deliverables/report_drafts/render_check_20260709_0118/QA_NOTE.md` | Draft can describe Race1 evidence, physical-transfer constraints, and official-track blocker; final report still needs M6 four-track metrics. |
 | M9 Submission candidate package | dry_run_gap_check_ready | Codex + user final approval | `Results/deliverables/submission_dry_runs/submission_readiness_20260709_0235.md`; `Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_0235.md` | Static readiness checker and package plan report not ready: four-track metrics blocked/unavailable and final approval missing. DOCX draft, render QA, latest deployability static check, and model tree are identified for a future package; do not build/send final submission until M6 metrics and user approval exist. |
@@ -40,11 +40,10 @@ M9 submission candidate package, without final send
   time with Real variables missing equations under vehicle wheel/force
   application components. Evidence:
   `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md`.
-- Current higher-priority MWORKS activation blocker: fresh API sessions cannot
-  open the installed `TADynamics.mol` dependency because MWORKS reports
-  `L5104-B0` software not activated. Evidence:
-  `Results/evidence/m6_mworks_activation_blocker_20260708_235918.md` and
-  `Results/evidence/m6_mworks_activation_recheck_20260709_000731.md`.
+- Current higher-priority MWORKS activation blocker: fresh API sessions still
+  cannot open the installed `TADynamics.mol` dependency because MWORKS reports
+  `L5104-B0` software not activated. Latest bounded recheck evidence:
+  `Results/evidence/m6_mworks_activation_recheck_20260709_023421.md`.
 
 ## Review Notes
 
@@ -55,7 +54,7 @@ M9 submission candidate package, without final send
   to 2 s and improves 120 s Race1 from `P=8.4` to `P=8.8`.
 - M6 does not claim official four-track failure of the controller; it records
   an official track simulation-entry blocker before score variables can be read.
-  The latest run shows the immediate blocker is MWORKS activation/license while
+  The latest bounded recheck shows the immediate blocker is MWORKS activation/license while
   loading `TADynamics.mol`; do not continue runtime diagnosis until that is
   recovered.
 - Physical-transfer research has been added so controller tuning stays aligned
@@ -80,7 +79,7 @@ M9 submission candidate package, without final send
   email recheck used the default recipient `1062771286@qq.com` with
   `recipient_explicit=false`, so mailbox visibility must be checked separately
   if the user still sees no mail. Latest notice evidence:
-  `Results/evidence/notification_delivery_note_20260709_023012.md`.
+  `Results/evidence/notification_delivery_note_20260709_023537.md`.
 - Do not use this board as a history ledger.
 - Update only when phase state changes or a review/blocker appears.
 - Long details, logs, screenshots, and metrics must stay under `Results/`.
