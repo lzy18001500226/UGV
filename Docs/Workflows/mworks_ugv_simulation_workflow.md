@@ -24,6 +24,18 @@ Before live work:
 Models/UGV/package.mo
 ```
 
+Official track models depend on the installed MWORKS vehicle dynamics library:
+
+```text
+D:\Program Files\MWORKS\Sysplorer 2026a\Library\TADynamics 1.3.2\TADynamics\TADynamics.mol
+```
+
+`Scripts/mworks/ugv_baseline_probe.py` opens this dependency before the UGV
+package by default. If loading it returns an activation or license error such
+as `L5104-B0`, stop the runtime phase and record a license/activation blocker.
+Do not continue controller tuning or official-track diagnosis until MWORKS can
+load the dependency library.
+
 ## 3. Baseline Gate G0
 
 1. Open `UGV.Example.Race1`.
@@ -58,9 +70,22 @@ Project-local baseline helper:
 ```
 
 The helper uses `import mworks.sysplorer as pyapi`, then
-`StartSysplorer`, `OpenModelFile`, `OpenModel`, `CheckModel`,
-`SimulateModel`, `GetResultVariables`, `GetVarsValueAt`, and `ExportResult`.
+`StartSysplorer`, dependency `OpenModelFile` for installed `.mol` libraries,
+project `OpenModelFile`, `OpenModel`, `CheckModel`, `SimulateModel`,
+`GetResultVariables`, `GetVarsValueAt`, and `ExportResult`.
 Do not use the nonexistent `mworks.engine` API shape.
+
+The helper also supports:
+
+```text
+--option key=value
+--load-library name[:version]
+--load-model-file path
+--no-default-dependency-model-files
+```
+
+Use these only for bounded diagnostics and keep each run's evidence under
+`Results/simulations/`.
 
 ## 4. Algorithm Gate G2
 

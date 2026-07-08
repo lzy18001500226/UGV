@@ -73,6 +73,56 @@ def write_run_manifest(out_dir: Path, manifest: dict) -> None:
     (out_dir / "MANIFEST.md").write_text("\n".join(lines), encoding="utf-8")
 
 
+def parse_option_value(raw: str):
+    lowered = raw.strip().lower()
+    if lowered == "true":
+        return True
+    if lowered == "false":
+        return False
+    if lowered == "null":
+        return None
+    try:
+        return int(raw)
+    except ValueError:
+        pass
+    try:
+        return float(raw)
+    except ValueError:
+        pass
+    if raw.startswith(("[", "{")):
+        try:
+            return json.loads(raw)
+        except json.JSONDecodeError:
+            pass
+    return raw
+
+
+def parse_simulate_ex_options(items: list[str]) -> dict:
+    options = {}
+    for item in items:
+        if "=" not in item:
+            raise ValueError(f"--option must use key=value format, got: {item}")
+        key, raw_value = item.split("=", 1)
+        key = key.strip()
+        if not key:
+            raise ValueError(f"--option key cannot be empty: {item}")
+        options[key] = parse_option_value(raw_value.strip())
+    return options
+
+
+def parse_library_spec(spec: str) -> tuple[str, str]:
+    if ":" in spec:
+        name, version = spec.split(":", 1)
+        return name.strip(), version.strip()
+    return spec.strip(), ""
+
+
+def default_dependency_model_files() -> list[str]:
+    return [
+        r"D:\Program Files\MWORKS\Sysplorer 2026a\Library\TADynamics 1.3.2\TADynamics\TADynamics.mol",
+    ]
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--project-root", required=True)
@@ -111,6 +161,29 @@ def main() -> int:
         "--relax-translation-checks",
         action="store_true",
         help="With SimulateModelEx, disable strict connection checks for diagnostics.",
+    )
+    parser.add_argument(
+        "--option",
+        action="append",
+        default=[],
+        help="Additional SimulateModelEx option as key=value; values parse as bool/int/float/json/string.",
+    )
+    parser.add_argument(
+        "--load-library",
+        action="append",
+        default=[],
+        help="MWORKS installed library to load before the project package; use name or name:version.",
+    )
+    parser.add_argument(
+        "--load-model-file",
+        action="append",
+        default=default_dependency_model_files(),
+        help="Modelica .mo/.mol dependency file to open before the project package.",
+    )
+    parser.add_argument(
+        "--no-default-dependency-model-files",
+        action="store_true",
+        help="Do not auto-open known installed dependency .mol files.",
     )
     args = parser.parse_args()
 
@@ -170,6 +243,44 @@ def main() -> int:
         sysplorer_started = True
         record_step(steps, "start_sysplorer", "ok", process_path=process_path)
 
+        dependency_model_files = [] if args.no_default_dependency_model_files else list(args.load_model_file)
+        for dependency_path in dependency_model_files:
+            dep_path = Path(dependency_path)
+            if not dep_path.exists():
+                record_step(steps, "open_dependency_model_file", "missing", path=str(dep_path))
+                return_code = 7
+                return return_code
+            dependency_result = pyapi.OpenModelFile(str(dep_path), True)
+            record_step(
+                steps,
+                "open_dependency_model_file",
+                "ok" if dependency_result else "failed",
+                path=str(dep_path),
+                result=repr(dependency_result),
+            )
+            if not dependency_result:
+                metrics["pyapi_messages"] = collect_pyapi_messages(pyapi)
+                return_code = 7
+                return return_code
+
+        for library_spec in args.load_library:
+            library_name, library_version = parse_library_spec(library_spec)
+            if not library_name:
+                continue
+            load_library_result = pyapi.LoadLibrary(library_name, library_version)
+            record_step(
+                steps,
+                "load_library",
+                "ok" if load_library_result else "failed",
+                library=library_name,
+                version=library_version,
+                result=repr(load_library_result),
+            )
+            if not load_library_result:
+                metrics["pyapi_messages"] = collect_pyapi_messages(pyapi)
+                return_code = 6
+                return return_code
+
         load_result = pyapi.OpenModelFile(str(package_mo), True)
         record_step(steps, "open_model_file", "ok" if load_result else "failed", result=repr(load_result))
         if not load_result:
@@ -193,6 +304,7 @@ def main() -> int:
             return return_code
 
         if args.use_simulate_ex:
+            cli_options = parse_simulate_ex_options(args.option)
             sim_kwargs = {
                 "modelName": args.model_name,
                 "options": {
@@ -206,6 +318,7 @@ def main() -> int:
                     "compileSolver64": 1,
                 },
             }
+            sim_kwargs["options"].update(cli_options)
             sim_result = pyapi.SimulateModelEx(**sim_kwargs)
         else:
             sim_kwargs = {

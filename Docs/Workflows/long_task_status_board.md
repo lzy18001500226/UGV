@@ -2,7 +2,7 @@
 
 > Short operational board for the UGV initial-race long task. Keep this file concise; detailed evidence belongs in `Results/`.
 
-Status: M6_official_track_api_simulation_blocked, 2026-07-08 CST.
+Status: M6_mworks_activation_blocks_official_track_dependency_load, 2026-07-08 CST.
 
 ## Current Long Task
 
@@ -28,7 +28,7 @@ M9 submission candidate package, without final send
 | M3 Controller design | completed | Codex | `Docs/Design/避障算法设计.md`; `Results/evidence/controller_design_review_20260708_215659.md` | Done; use conservative reactive increment design for M4. |
 | M4 Controller implementation | completed_bounded_gate | Codex | `Results/evidence/controller_v1_source_notes_20260708_220257.md`; `Results/simulations/controller_refsysblock_20260708_221000/` | Done; recovered from failed plain algorithm by using valid Sysblock reference structure. |
 | M5 One-track tuning | review_ready_candidate | Codex | `Results/metrics/one_track_tuning_20260708_231430.md`; best run `Results/simulations/controller_v5_front_dwell_2s_race1_120s_20260708_230305/` | Use v5 as current Race1 candidate; do not keep v6. |
-| M6 Four-track evaluation | blocked_on_official_track_api_simulation | Codex | `Results/metrics/four_track_summary_20260708_231430.md`; `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md` | Needs GUI/official-support validation of the official "parameter evaluation" simulation setting before four-track score claims. |
+| M6 Four-track evaluation | blocked_on_mworks_activation_for_tadynamics | Codex | `Results/metrics/four_track_summary_20260708_231430.md`; `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md`; `Results/evidence/m6_mworks_activation_blocker_20260708_235918.md` | Restore MWORKS activation/license, then rerun the official-track dependency-load diagnostic before any four-track score claims. |
 | M7 Evidence automation | partial_completed | Codex | `Scripts/mworks/ugv_baseline_probe.py` | Helper now exports extra variables and captures `GetLastErrors()` / `MessageText()`. |
 | M8 Report draft | waiting_on_M6_resolution_or_user_accepts_blocker_report | Codex | `References/research/physical_ugv_obstacle_avoidance_20260708/`; `Docs/Design/final_race_migration_notes.md` | Draft can describe Race1 evidence, physical-transfer constraints, and official-track blocker, but full competition report needs M6 resolution. |
 | M9 Submission candidate package | waiting_on_M8 | Codex + user final approval | pending | Build local candidate only; do not send final submission without user approval. |
@@ -40,6 +40,10 @@ M9 submission candidate package, without final send
   time with Real variables missing equations under vehicle wheel/force
   application components. Evidence:
   `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md`.
+- Current higher-priority MWORKS activation blocker: fresh API sessions cannot
+  open the installed `TADynamics.mol` dependency because MWORKS reports
+  `L5104-B0` software not activated. Evidence:
+  `Results/evidence/m6_mworks_activation_blocker_20260708_235918.md`.
 
 ## Review Notes
 
@@ -50,6 +54,9 @@ M9 submission candidate package, without final send
   to 2 s and improves 120 s Race1 from `P=8.4` to `P=8.8`.
 - M6 does not claim official four-track failure of the controller; it records
   an official track simulation-entry blocker before score variables can be read.
+  The latest run shows the immediate blocker is MWORKS activation/license while
+  loading `TADynamics.mol`; do not continue runtime diagnosis until that is
+  recovered.
 - Physical-transfer research has been added so controller tuning stays aligned
   with later real-car robustness instead of only one-track simulation scoring.
 - Email send evidence can prove SMTP accepted a notice, but it does not prove
