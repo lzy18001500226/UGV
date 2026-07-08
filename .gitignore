@@ -1,0 +1,6 @@
+Results/tmp/
+Results/simulations/*/raw/
+*.log
+*.bak
+*.tmp
+~$*
