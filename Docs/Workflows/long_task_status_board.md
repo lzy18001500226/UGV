@@ -31,7 +31,7 @@ M9 submission candidate package, without final send
 | M6 Four-track evaluation | blocked_on_mworks_activation_for_tadynamics | Codex | `Results/metrics/four_track_summary_20260708_231430.md`; `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md`; `Results/evidence/m6_mworks_activation_blocker_20260708_235918.md`; `Results/evidence/m6_mworks_activation_recheck_20260709_000731.md` | Restore MWORKS activation/license, then rerun the official-track dependency-load diagnostic before any four-track score claims. |
 | M7 Evidence automation | partial_completed | Codex | `Scripts/mworks/ugv_baseline_probe.py`; `Scripts/quality/check_controller_deployability.py`; `Results/evidence/controller_deployability_static_check_20260709_0222.md`; `Results/evidence/notification_delivery_note_20260709_021010.md` | Helper exports extra variables and captures errors; deployability checker now passes the source-only high/medium risk gate after replacing reciprocal distance steering with bounded linear steering. |
 | M8 Report draft | blocker_aware_docx_render_qa_ready | Codex | `References/research/physical_ugv_obstacle_avoidance_20260708/`; `Docs/Design/final_race_migration_notes.md`; `References/research/robust_physical_ugv_navigation_20260709/`; `References/research/deployable_ugv_avoidance_algorithms_20260709/`; `Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.md`; `Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.docx`; `Results/deliverables/report_drafts/render_check_20260709_0118/QA_NOTE.md` | Draft can describe Race1 evidence, physical-transfer constraints, and official-track blocker; final report still needs M6 four-track metrics. |
-| M9 Submission candidate package | dry_run_gap_check_ready | Codex + user final approval | `Results/deliverables/submission_dry_runs/submission_candidate_gap_check_20260709.md`; `Results/deliverables/submission_dry_runs/submission_readiness_20260709_0153.md` | Static readiness checker reports not ready: four-track metrics blocked/unavailable and final approval missing. DOCX draft, render QA, and deployability static check are now required static inputs; do not build/send final submission until M6 metrics and user approval exist. |
+| M9 Submission candidate package | dry_run_gap_check_ready | Codex + user final approval | `Results/deliverables/submission_dry_runs/submission_readiness_20260709_0235.md`; `Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_0235.md` | Static readiness checker and package plan report not ready: four-track metrics blocked/unavailable and final approval missing. DOCX draft, render QA, latest deployability static check, and model tree are identified for a future package; do not build/send final submission until M6 metrics and user approval exist. |
 
 ## Blockers
 
@@ -80,7 +80,7 @@ M9 submission candidate package, without final send
   email recheck used the default recipient `1062771286@qq.com` with
   `recipient_explicit=false`, so mailbox visibility must be checked separately
   if the user still sees no mail. Latest notice evidence:
-  `Results/evidence/notification_delivery_note_20260709_021010.md`.
+  `Results/evidence/notification_delivery_note_20260709_021914.md`.
 - Do not use this board as a history ledger.
 - Update only when phase state changes or a review/blocker appears.
 - Long details, logs, screenshots, and metrics must stay under `Results/`.

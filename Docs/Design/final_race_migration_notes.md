@@ -117,7 +117,7 @@ python Scripts\quality\check_controller_deployability.py
 Latest evidence:
 
 ```text
-Results/evidence/controller_deployability_static_check_20260709_0153.md
+Results/evidence/controller_deployability_static_check_20260709_0222.md
 ```
 
 Current result: `ready_for_physical_claim=false`.

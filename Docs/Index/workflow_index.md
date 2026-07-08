@@ -12,7 +12,7 @@
 | Research manifest template | `Docs/Workflows/research_manifest_template.md` |
 | Deployable UGV avoidance algorithm research | `References/research/deployable_ugv_avoidance_algorithms_20260709/MANIFEST.md`; `References/research/deployable_ugv_avoidance_algorithms_20260709/source_notes.md` |
 | Report writing | `Docs/Workflows/report_workflow.md` |
-| Submission readiness dry run | `Scripts/quality/check_submission_readiness.py`; `Results/deliverables/submission_dry_runs/submission_readiness_20260709_0153.md` |
+| Submission readiness dry run | `Scripts/quality/check_submission_readiness.py`; `Scripts/quality/plan_submission_candidate.py`; `Results/deliverables/submission_dry_runs/submission_readiness_20260709_0235.md`; `Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_0235.md` |
 | Controller physical-deployability static check | `Scripts/quality/check_controller_deployability.py`; `Results/evidence/controller_deployability_static_check_20260709_0222.md` |
 | Model source lookup | `Docs/Index/model_index.md` |
 | Competition task and scoring | `Docs/Design/赛题.md` |
