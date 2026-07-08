@@ -10,11 +10,22 @@ Default mode is autonomous execution with durable evidence and timely sparse ema
 
 Do not wait idly for the user when a bounded recovery path exists. Send email notices at meaningful terminal or review points so the user can check in asynchronously. Stop instead of improvising only when continuing would require guessing unavailable credentials, violating hard boundaries, changing contest scope, or making irreversible external actions.
 
-This project does not yet define a project-local email script. If an approved
-external notification script is available in the current environment, use it and
-record the command and result in the phase evidence. If no approved email route
-is available, write the notice text into the relevant `Results/evidence/` or
-run manifest and continue when safe; do not pretend that email was sent.
+Use the approved MoSim sparse email gateway for UGV terminal notices until this
+project grows its own local notifier:
+
+```powershell
+python C:\Users\HP\Desktop\MoSim\Scripts\agent\send_gateway_email_alert.py `
+  --subject "<short Chinese subject>" `
+  --body "<short Chinese body>" `
+  --cooldown-key "<task-specific-key>" `
+  --cooldown-minutes 0 `
+  --timeout 30
+```
+
+Record the generated MoSim email evidence JSON path in the relevant UGV phase
+evidence. If the command fails or no approved email route is available, write
+the same notice text into `Results/evidence/` or the run manifest and continue
+when safe; do not pretend that email was sent.
 
 ## 2. Human Intervention Policy
 
@@ -54,7 +65,12 @@ If a problem appears to require editing a hard no-edit zone, the correct respons
 
 ## 4. Research And Reference Policy
 
-The agent may perform targeted online research and local reference inspection without asking first when blocked by APIs, MWORKS behavior, Sysblock modeling details, or algorithm design uncertainty.
+The agent may perform targeted online research and local reference inspection
+without asking first when blocked by APIs, MWORKS behavior, Sysblock modeling
+details, real-car transfer risk, or algorithm design uncertainty. Research is
+part of execution, not a substitute for evidence: use it to choose safer,
+deployable controller patterns, then validate the actual MWORKS model when the
+runtime gate is available.
 
 Research outputs should be stored as:
 
@@ -70,6 +86,14 @@ Rules:
 3. Record URL, license if visible, what was learned, and what was not reused.
 4. Do not overwrite official material or model files with crawled content.
 5. If a reference project is large, save only manifest and notes unless the source itself is clearly needed.
+6. For obstacle-avoidance algorithms, reject simulation-only tricks that would
+   be unsafe or hard to tune on a physical UGV. Prefer bounded, explainable,
+   low-latency patterns: safety bubble / gap selection, speed reduction near
+   obstacles, curvature or steering-based speed scaling, command saturation,
+   hysteresis, dwell, and parameter tables with physical units.
+7. If a promising open-source repository is too large or license-sensitive,
+   save source notes and exact links first. Ask the user to crawl the full
+   repository only when the implementation genuinely needs it.
 
 ## 5. Full Task Tree
 
@@ -314,6 +338,9 @@ Actions:
 2. Avoid nonportable dependencies.
 3. Keep parameters explainable for physical tuning.
 4. Track what must be retested when final-race materials arrive.
+5. Maintain a lightweight mapping from external algorithms to the official
+   four-distance controller boundary, including what cannot be reused without a
+   different sensor/interface.
 
 Outputs:
 
@@ -353,6 +380,9 @@ Email notifications:
 3. Do not email every small observation.
 4. Do not send final competition submission email without explicit user approval.
 5. Treat SMTP `ok=true` as send evidence only, not proof that the user saw the message. If the user reports no email, record the email evidence JSON path and keep the same terminal notice in `Results/evidence/` or the relevant phase manifest so progress remains auditable.
+6. Use a task-specific cooldown key and `--cooldown-minutes 0` for explicit
+   terminal notices so separate completions/blockers are not suppressed by an
+   earlier status email.
 
 Board updates:
 
