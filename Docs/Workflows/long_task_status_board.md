@@ -80,7 +80,7 @@ M9 submission candidate package, without final send
   email recheck used the default recipient `1062771286@qq.com` with
   `recipient_explicit=false`, so mailbox visibility must be checked separately
   if the user still sees no mail. Latest notice evidence:
-  `Results/evidence/notification_delivery_note_20260709_021914.md`.
+  `Results/evidence/notification_delivery_note_20260709_023012.md`.
 - Do not use this board as a history ledger.
 - Update only when phase state changes or a review/blocker appears.
 - Long details, logs, screenshots, and metrics must stay under `Results/`.
