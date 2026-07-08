@@ -36,10 +36,10 @@ Default source-inspection targets:
 ```text
 Models/UGV/Example/Race1.mo
 Models/UGV/Example/Race2.mo
-Models/UGV/saidao/saidao5.mo
-Models/UGV/saidao/saidao7.mo
-Models/UGV/saidao/saidao8.mo
-Models/UGV/saidao/saidao9.mo
+Models/UGV/saidao/saidao1.mo
+Models/UGV/saidao/saidao2.mo
+Models/UGV/saidao/saidao3.mo
+Models/UGV/saidao/saidao4.mo
 Models/UGV/CountPoint/package.mo
 Models/UGV/Control/ControlAllocate/package.mo
 Models/UGV/Vehicle/Sensors/distanceSensor1.mo

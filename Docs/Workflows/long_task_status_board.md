@@ -2,7 +2,7 @@
 
 > Short operational board for the UGV initial-race long task. Keep this file concise; detailed evidence belongs in `Results/`.
 
-Status: M5_one_track_tuning_in_progress, 2026-07-08 CST.
+Status: M6_official_track_api_simulation_blocked, 2026-07-08 CST.
 
 ## Current Long Task
 
@@ -27,21 +27,29 @@ M9 submission candidate package, without final send
 | M2 Baseline runtime | completed_bounded_gate | Codex | `Results/simulations/baseline_20260708_213448/` | Done; load/check/simulate and score variables verified for bounded stopTime=12. |
 | M3 Controller design | completed | Codex | `Docs/Design/避障算法设计.md`; `Results/evidence/controller_design_review_20260708_215659.md` | Done; use conservative reactive increment design for M4. |
 | M4 Controller implementation | completed_bounded_gate | Codex | `Results/evidence/controller_v1_source_notes_20260708_220257.md`; `Results/simulations/controller_refsysblock_20260708_221000/` | Done; recovered from failed plain algorithm by using valid Sysblock reference structure. |
-| M5 One-track tuning | in_progress | Codex | pending | Run longer Race1/first official track, compare against bounded baseline, then tune controller logic if needed. |
-| M6 Four-track evaluation | waiting_on_M5 | Codex | pending | Run all official tracks and summarize metrics. |
-| M7 Evidence automation | waiting_on_repetition | Codex | pending | Add only scripts that reduce repeated run/metric/package work. |
-| M8 Report draft | waiting_on_M6 | Codex | pending | Draft after credible run evidence exists. |
+| M5 One-track tuning | review_ready_candidate | Codex | `Results/metrics/one_track_tuning_20260708_231430.md`; best run `Results/simulations/controller_v5_front_dwell_2s_race1_120s_20260708_230305/` | Use v5 as current Race1 candidate; do not keep v6. |
+| M6 Four-track evaluation | blocked_on_official_track_api_simulation | Codex | `Results/metrics/four_track_summary_20260708_231430.md`; `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md` | Needs GUI/official-support validation of the official "parameter evaluation" simulation setting before four-track score claims. |
+| M7 Evidence automation | partial_completed | Codex | `Scripts/mworks/ugv_baseline_probe.py` | Helper now exports extra variables and captures `GetLastErrors()` / `MessageText()`. |
+| M8 Report draft | waiting_on_M6_resolution_or_user_accepts_blocker_report | Codex | pending | Draft can describe Race1 evidence and official-track blocker, but full competition report needs M6 resolution. |
 | M9 Submission candidate package | waiting_on_M8 | Codex + user final approval | pending | Build local candidate only; do not send final submission without user approval. |
 
 ## Blockers
 
-None currently recorded.
+- Official four-track API simulation blocker: `UGV.saidao.saidao1` through
+  `UGV.saidao.saidao4` pass `CheckModel` but fail `SimulateModelEx` at compile
+  time with Real variables missing equations under vehicle wheel/force
+  application components. Evidence:
+  `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md`.
 
 ## Review Notes
 
 - M1 is source/static only. It does not claim MWORKS load, translate, simulate, lap completion, score, or GUI health.
 - M2 confirms bounded runtime load/check/simulate for `UGV.Example.Race1`; it does not claim full-track completion or final competition score.
 - M4 confirms a first runnable Sysblock controller structure with bounded `stopTime=12` metrics `T=12`, `cR=0`, `cO=0`, `P=10`; it does not claim full-track completion.
+- M5 Race1 candidate v5 changes only the front avoid-to-cruise dwell from 1 s
+  to 2 s and improves 120 s Race1 from `P=8.4` to `P=8.8`.
+- M6 does not claim official four-track failure of the controller; it records
+  an official track simulation-entry blocker before score variables can be read.
 - Do not use this board as a history ledger.
 - Update only when phase state changes or a review/blocker appears.
 - Long details, logs, screenshots, and metrics must stay under `Results/`.

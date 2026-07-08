@@ -399,19 +399,23 @@ review-ready state, commit/push the phase evidence and continue to the next
 safe phase unless the user explicitly pauses or final submission approval is
 required.
 
-Current cursor: M5 one-track tuning. M1 source grounding, M2 bounded baseline,
-M3 controller design, and M4 bounded controller implementation gate are
-complete:
+Current cursor: M6 official-track API simulation blocked. M1 source grounding,
+M2 bounded baseline, M3 controller design, M4 bounded controller implementation
+gate, and M5 one-track Race1 tuning review are complete:
 
 ```text
 M1: Results/evidence/static_model_grounding_20260708_210142.md
 M2: Results/simulations/baseline_20260708_213448/
 M3: Docs/Design/避障算法设计.md; Results/evidence/controller_design_review_20260708_215659.md
 M4: Results/simulations/controller_refsysblock_20260708_221000/
+M5: Results/metrics/one_track_tuning_20260708_231430.md
+M6 blocker: Results/evidence/official_track_api_simulation_blocker_20260708_231430.md
 ```
 
 M2 and M4 verified `UGV.Example.Race1` load/check/simulate and score-variable
-access with bounded `stopTime=12`. These are not full-track completion or final
-competition score claims. Proceed through M5-M9 as a continuous long task unless
-blocked by hard boundaries, runtime failures that cannot be safely recovered,
-or final submission approval.
+access with bounded `stopTime=12`. M5 identifies v5 as the current Race1
+candidate. M6 is blocked because `UGV.saidao.saidao1` through `saidao4` pass
+`CheckModel` but fail before simulation with missing Real-equation compiler
+errors. These are not four-track score claims. Next safe work is GUI/official
+support validation of the "parameter evaluation" simulation setting, or a
+blocker-aware report draft if the user accepts that limitation.

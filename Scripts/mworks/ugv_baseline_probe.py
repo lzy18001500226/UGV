@@ -27,6 +27,16 @@ def safe_json_value(value):
     return repr(value)
 
 
+def collect_pyapi_messages(pyapi) -> dict:
+    messages: dict = {}
+    for name in ("GetLastErrors", "MessageText"):
+        try:
+            messages[name] = safe_json_value(getattr(pyapi, name)())
+        except Exception as exc:  # noqa: BLE001
+            messages[name] = f"{type(exc).__name__}: {exc}"
+    return messages
+
+
 def write_run_manifest(out_dir: Path, manifest: dict) -> None:
     lines = [
         f"# UGV Runtime Manifest - {manifest['run_label']}",
@@ -75,6 +85,33 @@ def main() -> int:
         "--controller-version",
         default="official copied baseline; controller body not edited by this run",
     )
+    parser.add_argument(
+        "--extra-var",
+        action="append",
+        default=[],
+        help="Additional exact result variable name to export when available.",
+    )
+    parser.add_argument(
+        "--extra-var-substring",
+        action="append",
+        default=[],
+        help="Export result variables whose names contain this substring.",
+    )
+    parser.add_argument(
+        "--save-variable-names",
+        action="store_true",
+        help="Save the complete result-variable list for diagnostics.",
+    )
+    parser.add_argument(
+        "--use-simulate-ex",
+        action="store_true",
+        help="Use SimulateModelEx with explicit options, including parameter evaluation.",
+    )
+    parser.add_argument(
+        "--relax-translation-checks",
+        action="store_true",
+        help="With SimulateModelEx, disable strict connection checks for diagnostics.",
+    )
     args = parser.parse_args()
 
     project_root = Path(args.project_root).resolve()
@@ -101,6 +138,10 @@ def main() -> int:
         "simulation_state": None,
         "exported_csv": None,
         "exported_csv_ok": False,
+        "exported_extra_csv": None,
+        "exported_extra_csv_ok": False,
+        "extra_result_variables": [],
+        "pyapi_messages": {},
         "notes": [],
     }
     sysplorer_started = False
@@ -146,16 +187,34 @@ def main() -> int:
         check_result = pyapi.CheckModel(args.model_name)
         record_step(steps, "check_model", "ok" if check_result else "failed", result=repr(check_result))
         if not check_result:
+            metrics["pyapi_messages"] = collect_pyapi_messages(pyapi)
+            record_step(steps, "check_model_messages", "captured", messages=metrics["pyapi_messages"])
             return_code = 4
             return return_code
 
-        sim_kwargs = {
-            "modelName": args.model_name,
-            "startTime": 0,
-            "stopTime": args.stop_time,
-            "path": str(result_root),
-        }
-        sim_result = pyapi.SimulateModel(**sim_kwargs)
+        if args.use_simulate_ex:
+            sim_kwargs = {
+                "modelName": args.model_name,
+                "options": {
+                    "startTime": 0,
+                    "stopTime": args.stop_time,
+                    "path": str(result_root),
+                    "algorithm": "Dassl",
+                    "interval": 0.05,
+                    "translationEvaluateParametersToReduceModels": True,
+                    "translationCheckConnection_Strictly": not args.relax_translation_checks,
+                    "compileSolver64": 1,
+                },
+            }
+            sim_result = pyapi.SimulateModelEx(**sim_kwargs)
+        else:
+            sim_kwargs = {
+                "modelName": args.model_name,
+                "startTime": 0,
+                "stopTime": args.stop_time,
+                "path": str(result_root),
+            }
+            sim_result = pyapi.SimulateModel(**sim_kwargs)
         metrics["runtime_status"] = "simulate_returned_true" if sim_result else "simulate_failed"
         record_step(
             steps,
@@ -165,6 +224,8 @@ def main() -> int:
             kwargs=sim_kwargs,
         )
         if not sim_result:
+            metrics["pyapi_messages"] = collect_pyapi_messages(pyapi)
+            record_step(steps, "simulate_model_messages", "captured", messages=metrics["pyapi_messages"])
             return_code = 5
             return return_code
 
@@ -187,8 +248,18 @@ def main() -> int:
             time_vars = list(pyapi.GetResultVariables(2))
             available = [name for name in score_vars if name in all_vars]
             missing = [name for name in score_vars if name not in all_vars]
+            extra_available = [name for name in args.extra_var if name in all_vars]
+            for needle in args.extra_var_substring:
+                extra_available.extend([name for name in all_vars if needle in name])
+            extra_available = sorted(set(extra_available))
             metrics["available_score_variables"] = available
             metrics["missing_score_variables"] = missing
+            metrics["extra_result_variables"] = extra_available
+            if args.save_variable_names:
+                (out_dir / "result_variable_names.txt").write_text(
+                    "\n".join(all_vars) + "\n",
+                    encoding="utf-8",
+                )
             (out_dir / "result_variables_summary.json").write_text(
                 json.dumps(
                     {
@@ -196,6 +267,7 @@ def main() -> int:
                         "timevarying_variable_count": len(time_vars),
                         "available_score_variables": available,
                         "missing_score_variables": missing,
+                        "extra_result_variables": extra_available,
                     },
                     ensure_ascii=False,
                     indent=2,
@@ -210,11 +282,13 @@ def main() -> int:
                 timevarying=len(time_vars),
                 available_score_variables=available,
                 missing_score_variables=missing,
+                extra_result_variables=extra_available,
             )
         except Exception as exc:  # noqa: BLE001
             all_vars = []
             available = []
             missing = score_vars
+            extra_available = []
             metrics["missing_score_variables"] = missing
             record_step(steps, "result_variables", "exception", error=repr(exc))
 
@@ -240,6 +314,22 @@ def main() -> int:
                 record_step(steps, "export_score_timeseries", "ok" if export_ok else "failed", path=str(csv_path))
             except Exception as exc:  # noqa: BLE001
                 record_step(steps, "export_score_timeseries", "exception", error=repr(exc))
+
+        if extra_available:
+            try:
+                extra_csv_path = out_dir / "extra_timeseries.csv"
+                extra_export_ok = pyapi.ExportResult(str(extra_csv_path), "csv", extra_available, False)
+                metrics["exported_extra_csv"] = str(extra_csv_path)
+                metrics["exported_extra_csv_ok"] = bool(extra_export_ok)
+                record_step(
+                    steps,
+                    "export_extra_timeseries",
+                    "ok" if extra_export_ok else "failed",
+                    path=str(extra_csv_path),
+                    variables=extra_available,
+                )
+            except Exception as exc:  # noqa: BLE001
+                record_step(steps, "export_extra_timeseries", "exception", error=repr(exc))
 
         return_code = 0
         return return_code
@@ -300,6 +390,7 @@ def main() -> int:
                     "native_result/",
                     "result_variables_summary.json when available",
                     "score_timeseries.csv when export succeeds",
+                    "extra_timeseries.csv when requested variables are available",
                 ],
                 "blockers": blockers,
                 "notes": [

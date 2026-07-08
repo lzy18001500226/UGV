@@ -21,7 +21,7 @@ working model tree.
 | Ackermann PID | `Models/UGV/Control/Ackermann_control/PID_Ackermann.mo` |
 | Scoring | `Models/UGV/CountPoint/package.mo` |
 | Distance sensor | `Models/UGV/Vehicle/Sensors/distanceSensor1.mo` |
-| Official track models | `Models/UGV/saidao/saidao5.mo`, `saidao7.mo`, `saidao8.mo`, `saidao9.mo` |
+| Official track models | `Models/UGV/saidao/saidao1.mo`, `saidao2.mo`, `saidao3.mo`, `saidao4.mo` |
 
 ## 3. Entry Models
 
@@ -29,10 +29,10 @@ working model tree.
 |---|---|---|---|
 | Race example with obstacle controller | `Models/UGV/Example/Race1.mo` | `Race1` | Main editable-controller integration entry. |
 | Race example without obstacle controller | `Models/UGV/Example/Race2.mo` | `Race2` | Baseline/comparison entry; no `ObsAvoidController_Sysblock2` instance. |
-| Official track LOGO | `Models/UGV/saidao/saidao5.mo` | `saidao1` | Official scored track candidate. |
-| Official track comprehensive ring | `Models/UGV/saidao/saidao7.mo` | `saidao2` | Official scored track candidate. |
-| Official track triangle | `Models/UGV/saidao/saidao8.mo` | `saidao3` | Official scored track candidate. |
-| Official track cloud | `Models/UGV/saidao/saidao9.mo` | `saidao4` | Official scored track candidate. |
+| Official track LOGO | `Models/UGV/saidao/saidao1.mo` | `saidao1` | Official scored track candidate. |
+| Official track comprehensive ring | `Models/UGV/saidao/saidao2.mo` | `saidao2` | Official scored track candidate. |
+| Official track triangle | `Models/UGV/saidao/saidao3.mo` | `saidao3` | Official scored track candidate. |
+| Official track cloud | `Models/UGV/saidao/saidao4.mo` | `saidao4` | Official scored track candidate. |
 
 Note: the official track file names and internal Modelica model names do not
 match one-to-one. Runtime work must open the internal model name exposed by the

@@ -1,0 +1,16 @@
+{"name": "preflight_paths", "status": "ok", "package_mo": "C:\\Users\\HP\\Desktop\\UGV\\Models\\UGV\\package.mo", "result_root": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v4_zero_lateral_bias_race1_35s_20260708_225905\\native_result"}
+{"name": "import_mworks_sysplorer", "status": "ok", "module": "<module 'mworks.sysplorer' from 'D:\\\\Program Files\\\\MWORKS\\\\Sysplorer 2026a\\\\External\\\\python64\\\\Lib\\\\site-packages\\\\mworks\\\\sysplorer\\\\__init__.py'>"}
+��������...
+���ӳɹ�!
+{"name": "start_sysplorer", "status": "ok", "process_path": "D:\\Program Files\\MWORKS\\Sysplorer 2026a\\Bin64\\mworks.exe"}
+{"name": "open_model_file", "status": "ok", "result": "True"}
+{"name": "open_model", "status": "ok", "result": "True"}
+{"name": "check_model", "status": "ok", "result": "True"}
+{"name": "simulate_model", "status": "ok", "result": "True", "kwargs": {"modelName": "UGV.Example.Race1", "startTime": 0, "stopTime": 35.0, "path": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v4_zero_lateral_bias_race1_35s_20260708_225905\\native_result"}}
+{"name": "simulation_state", "status": "ok", "exit_state": 0, "simulation_state": "Idle"}
+{"name": "result_variables", "status": "ok", "total": 31176, "timevarying": 30749, "available_score_variables": ["T", "cR", "cO", "P"], "missing_score_variables": [], "extra_result_variables": ["body3DOF1_1.angles[3]", "body3DOF1_1.r[1]", "body3DOF1_1.r[2]", "ctrlAlloc.speed", "ctrlAlloc.speed_oa", "ctrlAlloc.steer", "ctrlAlloc.steer_oa", "distanceSensor1.DisObstacle", "distanceSensor1.DisRoad", "distanceSensor1.front_dist", "distanceSensor1.left_dist", "distanceSensor1.right_dist", "obsAvoidController_Sysblock.speed", "obsAvoidController_Sysblock.steer"]}
+{"name": "score_values_at_end", "status": "ok", "values": {"T": 35.0, "cR": 0.0, "cO": 3.0, "P": 8.8}}
+{"name": "export_score_timeseries", "status": "ok", "path": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v4_zero_lateral_bias_race1_35s_20260708_225905\\score_timeseries.csv"}
+{"name": "export_extra_timeseries", "status": "ok", "path": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v4_zero_lateral_bias_race1_35s_20260708_225905\\extra_timeseries.csv", "variables": ["body3DOF1_1.angles[3]", "body3DOF1_1.r[1]", "body3DOF1_1.r[2]", "ctrlAlloc.speed", "ctrlAlloc.speed_oa", "ctrlAlloc.steer", "ctrlAlloc.steer_oa", "distanceSensor1.DisObstacle", "distanceSensor1.DisRoad", "distanceSensor1.front_dist", "distanceSensor1.left_dist", "distanceSensor1.right_dist", "obsAvoidController_Sysblock.speed", "obsAvoidController_Sysblock.steer"]}
+The process has exited, and the return code is:  0
+{"name": "engine_exit", "status": "ok"}

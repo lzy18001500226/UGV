@@ -1,0 +1,41 @@
+{
+  "request_id": "M5-race1-v3-side-gap-gate-35s",
+  "model_name": "UGV.Example.Race1",
+  "stop_time_requested": 35.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "simulate_returned_true",
+  "completion": "bounded_stop_or_assertion; inspect exit_state/logs",
+  "time_s": 35.0,
+  "road_collisions": 8.0,
+  "obstacle_collisions": 0.0,
+  "avoidance_score": 6.8,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "simulation_exit_state": 0,
+  "simulation_state": "Idle",
+  "exported_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v3_race1_35s_20260708_224517\\score_timeseries.csv",
+  "exported_csv_ok": true,
+  "exported_extra_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v3_race1_35s_20260708_224517\\extra_timeseries.csv",
+  "exported_extra_csv_ok": true,
+  "extra_result_variables": [
+    "ctrlAlloc.steer",
+    "distanceSensor1.DisObstacle",
+    "distanceSensor1.DisRoad",
+    "distanceSensor1.front_dist",
+    "distanceSensor1.left_dist",
+    "distanceSensor1.right_dist",
+    "obsAvoidController_Sysblock.steer"
+  ],
+  "notes": [],
+  "score_values_at_end": {
+    "T": 35.0,
+    "cR": 8.0,
+    "cO": 0.0,
+    "P": 6.8
+  }
+}

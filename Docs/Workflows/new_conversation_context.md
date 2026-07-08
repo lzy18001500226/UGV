@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: M5 one-track tuning in progress, 2026-07-08 CST.
+Status: M6 official-track API simulation blocked, 2026-07-08 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `M5 one-track tuning in progress`.
+Current phase cursor: `M6 official-track API simulation blocked`.
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -62,6 +62,8 @@ Latest runtime evidence:
 ```text
 Results/simulations/baseline_20260708_213448/
 Results/simulations/controller_refsysblock_20260708_221000/
+Results/simulations/controller_v5_front_dwell_2s_race1_120s_20260708_230305/
+Results/evidence/official_track_api_simulation_blocker_20260708_231430.md
 ```
 
 The M2 gate confirms baseline MWORKS Sysplorer load/check/simulate for
@@ -70,3 +72,7 @@ Sysblock controller structure with bounded `stopTime=12`. Neither gate claims
 full-track completion or final competition score.
 
 MWORKS/Sysplorer GUI or MCP operations are expected in execution phases. Handle login/license/activation recovery according to `master_execution_plan.md`; final competition submission email still requires explicit user approval.
+
+Current controller candidate is v5: only the avoid-to-cruise dwell changed from
+1 s to 2 s. Do not re-apply rejected v2/v3/v4/v6 changes unless a new
+diagnostic reason exists.

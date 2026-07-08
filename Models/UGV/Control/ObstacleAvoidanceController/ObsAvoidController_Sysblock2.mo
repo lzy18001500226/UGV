@@ -343,7 +343,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
       textStyle={TextStyle.Bold},
       textColor={74,84,154},
       horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[df <= mindis]");
-      transition(avoid, cruise, after(1,sec), reset = false) 
+      transition(avoid, cruise, after(2,sec), reset = false)
       annotation(Line(origin={-202,13.07656},
       points={{26,0},{-26,0}},
       color={113,119,170},
