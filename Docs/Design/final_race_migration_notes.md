@@ -105,3 +105,26 @@ Resolve the M6 official-track simulation-entry blocker first. While blocked, saf
 6. apply the deployability filter before controller tuning: bounded commands,
    speed reduction under risk, dwell/hysteresis, and parameter ranges that can
    be retuned on the physical UGV.
+
+## 8. Current Static Deployability Gate
+
+The current controller has an automated source-only deployability check:
+
+```powershell
+python Scripts\quality\check_controller_deployability.py
+```
+
+Latest evidence:
+
+```text
+Results/evidence/controller_deployability_static_check_20260709_0153.md
+```
+
+Current result: `ready_for_physical_claim=false`.
+
+Reason: the controller source still contains reciprocal distance steering terms
+such as `1 / dl` and `1 / dr`. These may spike near zero sensor readings and
+must be replaced, saturated with proof, or otherwise validated before any
+physical-UGV-ready claim. This does not invalidate the current Race1 simulation
+candidate, but it blocks physical-readiness language and should guide the next
+controller revision after MWORKS runtime is available again.

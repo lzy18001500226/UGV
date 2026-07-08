@@ -21,6 +21,7 @@ REQUIRED_PATHS = {
     "report_draft": Path("Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.md"),
     "report_docx_draft": Path("Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.docx"),
     "report_render_qa_note": Path("Results/deliverables/report_drafts/render_check_20260709_0118/QA_NOTE.md"),
+    "controller_deployability_static_check": Path("Results/evidence/controller_deployability_static_check_20260709_0153.md"),
     "one_track_metrics": Path("Results/metrics/one_track_tuning_20260708_231430.md"),
     "four_track_summary": Path("Results/metrics/four_track_summary_20260708_231430.md"),
     "activation_blocker": Path("Results/evidence/m6_mworks_activation_blocker_20260708_235918.md"),
@@ -140,6 +141,7 @@ def build_report(repo: Path, final_approval: bool) -> dict[str, Any]:
             "Results/evidence/static_model_grounding_20260708_210142.md",
             "Results/evidence/controller_design_review_20260708_215659.md",
             "Results/evidence/controller_v1_source_notes_20260708_220257.md",
+            "Results/evidence/controller_deployability_static_check_20260709_0153.md",
         ],
         "exclude": [
             "Results/tmp/",
