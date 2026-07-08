@@ -28,11 +28,23 @@ def build_report(repo: Path, controller: Path) -> dict:
     steer = hits(lines, r"\bsteer\s*:=")
     speed = hits(lines, r"\bspeed\s*:=")
     dwell = hits(lines, r"after\s*\(\s*\d+(?:\.\d+)?\s*,\s*sec\s*\)")
-    dwell_values = []
+    release_dwell = []
+    init_dwell = []
+    other_dwell = []
     for row in dwell:
         m = re.search(r"after\s*\(\s*(\d+(?:\.\d+)?)\s*,\s*sec\s*\)", row["text"])
-        if m:
-            dwell_values.append(float(m.group(1)))
+        if not m:
+            continue
+        item = {**row, "value_s": float(m.group(1))}
+        if re.search(r"transition\s*\(\s*avoid\s*,\s*cruise\s*,", row["text"]):
+            release_dwell.append(item)
+        elif re.search(r"transition\s*\(\s*ini_state\s*,", row["text"]):
+            init_dwell.append(item)
+        elif "displayText" not in row["text"]:
+            other_dwell.append(item)
+
+    def unique_values(rows: list[dict]) -> list[float]:
+        return sorted({float(row["value_s"]) for row in rows})
 
     high = []
     medium = []
@@ -47,15 +59,32 @@ def build_report(repo: Path, controller: Path) -> dict:
         high.append({"code": "no_steer_assignments_found", "hits": []})
     if not speed:
         high.append({"code": "no_speed_assignments_found", "hits": []})
-    if len(set(dwell_values)) > 1:
+    release_values = unique_values(release_dwell)
+    if len(release_values) > 1:
         medium.append({
-            "code": "mixed_dwell_values",
-            "reason": "Multiple dwell durations exist; confirm active transitions before physical tuning.",
-            "values_s": sorted(set(dwell_values)),
-            "hits": dwell,
+            "code": "mixed_release_dwell_values",
+            "reason": "Multiple avoid-to-cruise dwell durations exist; confirm release timing before physical tuning.",
+            "values_s": release_values,
+            "hits": release_dwell,
         })
-    elif dwell_values:
-        low.append({"code": "dwell_or_hysteresis_present", "values_s": sorted(set(dwell_values)), "hits": dwell})
+    elif release_dwell:
+        low.append({
+            "code": "avoid_release_dwell_present",
+            "values_s": release_values,
+            "hits": release_dwell,
+        })
+    if init_dwell:
+        low.append({
+            "code": "initialization_dwell_observed",
+            "values_s": unique_values(init_dwell),
+            "hits": init_dwell,
+        })
+    if other_dwell:
+        low.append({
+            "code": "other_dwell_observed",
+            "values_s": unique_values(other_dwell),
+            "hits": other_dwell,
+        })
 
     return {
         "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"),

@@ -354,7 +354,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
       fontSize=10,
       textStyle={TextStyle.Bold},
       textColor={74,84,154},
-      horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[after(1,sec)]");
+      horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[after(2,sec)]");
     algorithm
     annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));
     end State;
@@ -555,7 +555,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
       color = {74, 84, 154},
       points={{-40,22},{40,22}}))}),Protection(access=Access.diagram));
         algorithm
-        annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));steer := -2 * (1 / dr + 0.1) * abs(dl - dr);
+        annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));steer := -min(0.8, 2 * abs(dl - dr));
         end State1;
         block State2 "状态"
           annotation (__MWORKS(BlockSystem(blockKind=BlockKind.state,SampleTime(auto = true),State),showDiagram = true,sourceModel=SysplorerEmbeddedCoder.StateMachine.State,independentInstance=true,hide=true), defaultComponentName = "state",
@@ -604,7 +604,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
       color = {74, 84, 154},
       points={{-40,22},{40,22}}))}),Protection(access=Access.diagram));
         algorithm
-        annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));steer:=2 * (1 / dl + 0.1) * abs(dl - dr);
+        annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));steer:=min(0.8, 2 * abs(dl - dr));
         end State2;
         block State3 "状态"
           annotation (__MWORKS(BlockSystem(blockKind=BlockKind.state,SampleTime(auto = true),State),showDiagram = true,sourceModel=SysplorerEmbeddedCoder.StateMachine.State,independentInstance=true,hide=true), defaultComponentName = "state",
@@ -909,7 +909,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
           color = {74, 84, 154},
           points={{-40,22},{40,22}}))}),Protection(access=Access.diagram));
         algorithm
-        annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));  steer := 2 * (1 / dl + 0.1) * abs(dl - dr);
+        annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));  steer := min(0.8, 2 * abs(dl - dr));
         end State4;
         block State1 "状态"
           annotation (__MWORKS(BlockSystem(blockKind=BlockKind.state,SampleTime(auto = true),State),showDiagram = true,sourceModel=SysplorerEmbeddedCoder.StateMachine.State,independentInstance=true,hide=true), defaultComponentName = "state",
@@ -958,7 +958,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
           color = {74, 84, 154},
           points={{-40,22},{40,22}}))}),Protection(access=Access.diagram));
         algorithm
-        annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));  steer := -2 * (1 / dr + 0.1) * abs(dl - dr);
+        annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));  steer := -min(0.8, 2 * abs(dl - dr));
         end State1;
         block State2 "状态"
           annotation (__MWORKS(BlockSystem(blockKind=BlockKind.state,SampleTime(auto = true),State),showDiagram = true,sourceModel=SysplorerEmbeddedCoder.StateMachine.State,independentInstance=true,hide=true), defaultComponentName = "state",
