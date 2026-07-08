@@ -1,0 +1,28 @@
+{
+  "request_id": "M6-saidao1-activation-recheck",
+  "model_name": "UGV.saidao.saidao1",
+  "stop_time_requested": 1.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "not_started",
+  "completion": "unknown",
+  "time_s": null,
+  "road_collisions": null,
+  "obstacle_collisions": null,
+  "avoidance_score": null,
+  "available_score_variables": [],
+  "missing_score_variables": [],
+  "simulation_exit_state": null,
+  "simulation_state": null,
+  "exported_csv": null,
+  "exported_csv_ok": false,
+  "exported_extra_csv": null,
+  "exported_extra_csv_ok": false,
+  "extra_result_variables": [],
+  "pyapi_messages": {
+    "GetLastErrors": [
+      "错误(9308): (v2.2.3.27)软件尚未激活，请前往菜单栏“帮助”>“使用许可”窗口激活软件后重试，错误码：L5104-B0。"
+    ],
+    "MessageText": "[上一条命令没有日志信息]"
+  },
+  "notes": []
+}
