@@ -1,45 +1,23 @@
 # UGV Initial Race Simulation Report Draft - Blocker Aware
 
-Status: draft scaffold, not final submission material.
+Status: 阻塞感知草稿 / blocker-aware draft scaffold, not final submission material.
 Date: 2026-07-09
 
 ## 1. 赛题目标与模型说明
 
 本项目面向 2026 智能无人应用挑战赛算法赛道的无人车避障任务。当前工作基于官方 UGV MWORKS/Sysplorer 模型，在不修改官方车辆、道路、传感器、计分或赛道模型的前提下，实现并验证避障控制器。
 
-当前工程目标：
-
-```text
-official UGV model
-  -> obstacle-avoidance controller
-  -> official-track simulation
-  -> time/collision/score evidence
-  -> report and submission candidate package
-```
+当前工程目标是从官方 UGV 模型出发，完成避障控制器、官方赛道仿真、时间/碰撞/得分证据、报告和提交候选包。
 
 ## 2. 无人车系统结构与控制接口
 
-正常实现边界：
+正常实现边界：`Models/UGV/Control/ObstacleAvoidanceController/ObsAvoidController_Sysblock2.mo`。
 
-```text
-Models/UGV/Control/ObstacleAvoidanceController/ObsAvoidController_Sysblock2.mo
-```
-
-控制器输入输出：
-
-```text
-inputs:  front_dist, rear_dist, left_dist, right_dist
-outputs: speed, steer
-```
+控制器输入为 `front_dist`、`rear_dist`、`left_dist`、`right_dist`，输出为 `speed` 和 `steer`。
 
 官方路径规划和控制分配仍是主线，避障控制器输出作为增量进入控制分配，不替代官方路径规划。
 
-Source grounding evidence:
-
-```text
-Results/evidence/static_model_grounding_20260708_210142.md
-Docs/Index/model_index.md
-```
+Source grounding evidence: `Results/evidence/static_model_grounding_20260708_210142.md` and `Docs/Index/model_index.md`.
 
 ## 3. 避障控制算法原理
 
@@ -53,23 +31,11 @@ Docs/Index/model_index.md
 4. 用 dwell/hysteresis 思路减少避障后过快释放导致的重复碰撞。
 5. 输出速度和转角增量保持饱和，避免为仿真分数引入不可部署的尖锐控制。
 
-Design evidence:
-
-```text
-Docs/Design/避障算法设计.md
-Results/evidence/controller_design_review_20260708_215659.md
-Docs/Design/final_race_migration_notes.md
-References/research/physical_ugv_obstacle_avoidance_20260708/
-References/research/robust_physical_ugv_navigation_20260709/
-```
+Design evidence: `Docs/Design/避障算法设计.md`, `Results/evidence/controller_design_review_20260708_215659.md`, `Docs/Design/final_race_migration_notes.md`, and the research packs under `References/research/`.
 
 ## 4. 参数设置与调参依据
 
-已完成一赛道候选调参：
-
-```text
-Results/metrics/one_track_tuning_20260708_231430.md
-```
+已完成一赛道候选调参，证据为 `Results/metrics/one_track_tuning_20260708_231430.md`。
 
 当前结论：
 
@@ -83,19 +49,9 @@ Results/metrics/one_track_tuning_20260708_231430.md
 
 Current status: blocked before official four-track scoring.
 
-Evidence:
+Evidence: `Results/metrics/four_track_summary_20260708_231430.md`, `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md`, and `Results/evidence/m6_mworks_activation_blocker_20260708_235918.md`.
 
-```text
-Results/metrics/four_track_summary_20260708_231430.md
-Results/evidence/official_track_api_simulation_blocker_20260708_231430.md
-Results/evidence/m6_mworks_activation_blocker_20260708_235918.md
-```
-
-Current blocker classification:
-
-```text
-MWORKS activation/license blocks loading installed TADynamics dependency.
-```
+Current blocker classification: MWORKS activation/license blocks loading installed TADynamics dependency.
 
 Latest observed error:
 
@@ -148,16 +104,4 @@ Controller improvement after M6 resumes:
 
 ## 8. 复现说明
 
-Known good bounded evidence and current blocker paths are listed above. After activation recovery, use the command in:
-
-```text
-Results/evidence/m6_mworks_activation_blocker_20260708_235918.md
-```
-
-Then update this draft with real four-track metrics.
-
-Submission readiness dry run:
-
-```text
-Results/deliverables/submission_dry_runs/submission_readiness_20260709_0038.md
-```
+Known good bounded evidence and current blocker paths are listed above. After activation recovery, use the command recorded in `Results/evidence/m6_mworks_activation_blocker_20260708_235918.md`, then update this draft with real four-track metrics. Submission readiness dry run is recorded at `Results/deliverables/submission_dry_runs/submission_readiness_20260709_0038.md`.

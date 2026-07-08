@@ -19,6 +19,8 @@ REQUIRED_PATHS = {
     "controller": Path("Models/UGV/Control/ObstacleAvoidanceController/ObsAvoidController_Sysblock2.mo"),
     "official_report_template": Path("References/official_materials/5-仿真报告模板（仅供参考）/仿真报告模板.docx"),
     "report_draft": Path("Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.md"),
+    "report_docx_draft": Path("Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.docx"),
+    "report_render_qa_note": Path("Results/deliverables/report_drafts/render_check_20260709_0118/QA_NOTE.md"),
     "one_track_metrics": Path("Results/metrics/one_track_tuning_20260708_231430.md"),
     "four_track_summary": Path("Results/metrics/four_track_summary_20260708_231430.md"),
     "activation_blocker": Path("Results/evidence/m6_mworks_activation_blocker_20260708_235918.md"),
@@ -132,6 +134,7 @@ def build_report(repo: Path, final_approval: bool) -> dict[str, Any]:
         "include": [
             "Models/UGV/",
             "Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.md",
+            "Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.docx",
             "Results/metrics/four_track_summary_<final_timestamp>.md once available",
             "Results/metrics/one_track_tuning_20260708_231430.md",
             "Results/evidence/static_model_grounding_20260708_210142.md",
