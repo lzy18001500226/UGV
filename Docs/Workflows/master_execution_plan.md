@@ -352,6 +352,7 @@ Email notifications:
 2. Send a short Chinese email when a long autonomous phase reaches completion, blocker, review-ready state, or is delayed by a non-trivial issue that the user may want to inspect asynchronously.
 3. Do not email every small observation.
 4. Do not send final competition submission email without explicit user approval.
+5. Treat SMTP `ok=true` as send evidence only, not proof that the user saw the message. If the user reports no email, record the email evidence JSON path and keep the same terminal notice in `Results/evidence/` or the relevant phase manifest so progress remains auditable.
 
 Board updates:
 

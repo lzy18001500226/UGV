@@ -15,24 +15,24 @@
 | Competition task and scoring | `Docs/Design/赛题.md` |
 | Requirements | `Docs/Design/需求.md` |
 | Architecture | `Docs/Design/架构.md` |
+| Final race / physical UGV migration | `Docs/Design/final_race_migration_notes.md` |
 
 ## Current Phase Cursor
 
-Run M5 one-track tuning from `Docs/Workflows/master_execution_plan.md`. This
-is a cursor for the continuous M1-M9 long task, not a stop point. Update
+Current cursor: M6 official-track API simulation blocked. This is a cursor for
+the continuous M1-M9 long task, not a stop point. Update
 `Docs/Workflows/long_task_status_board.md` only when phase state changes.
 
 ```text
-read M1/M2/M3/M4 evidence
-run longer first-track/Race1 controller evidence
-tune only the allowed obstacle-controller boundary when needed
-write Results/metrics/one_track_tuning_<timestamp>.md
+M1-M5 completed or review-ready
+M6 blocked by official track simulation-entry compile error
+next safe work: validate the official parameter-evaluation setting, search MWORKS/Tongyuan support material, or draft a blocker-aware report
 ```
 
 M1 source grounding is complete at `Results/evidence/static_model_grounding_20260708_210142.md`.
 M2 bounded baseline runtime gate is complete at `Results/simulations/baseline_20260708_213448/`.
 M3 design is complete at `Docs/Design/避障算法设计.md` and `Results/evidence/controller_design_review_20260708_215659.md`.
 M4 bounded controller gate is complete at `Results/simulations/controller_refsysblock_20260708_221000/`.
-Do not claim full-track completion or final score from bounded M2/M4 runs.
-After M5, continue to M6 four-track evaluation, M8 report draft, and M9
-submission candidate packaging unless a hard blocker appears.
+M5 Race1 tuning is review-ready at `Results/metrics/one_track_tuning_20260708_231430.md`.
+M6 blocker is recorded at `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md`.
+Do not claim full-track completion or final score from bounded M2/M4/M5 runs.

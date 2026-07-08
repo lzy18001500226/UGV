@@ -30,7 +30,7 @@ M9 submission candidate package, without final send
 | M5 One-track tuning | review_ready_candidate | Codex | `Results/metrics/one_track_tuning_20260708_231430.md`; best run `Results/simulations/controller_v5_front_dwell_2s_race1_120s_20260708_230305/` | Use v5 as current Race1 candidate; do not keep v6. |
 | M6 Four-track evaluation | blocked_on_official_track_api_simulation | Codex | `Results/metrics/four_track_summary_20260708_231430.md`; `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md` | Needs GUI/official-support validation of the official "parameter evaluation" simulation setting before four-track score claims. |
 | M7 Evidence automation | partial_completed | Codex | `Scripts/mworks/ugv_baseline_probe.py` | Helper now exports extra variables and captures `GetLastErrors()` / `MessageText()`. |
-| M8 Report draft | waiting_on_M6_resolution_or_user_accepts_blocker_report | Codex | pending | Draft can describe Race1 evidence and official-track blocker, but full competition report needs M6 resolution. |
+| M8 Report draft | waiting_on_M6_resolution_or_user_accepts_blocker_report | Codex | `References/research/physical_ugv_obstacle_avoidance_20260708/`; `Docs/Design/final_race_migration_notes.md` | Draft can describe Race1 evidence, physical-transfer constraints, and official-track blocker, but full competition report needs M6 resolution. |
 | M9 Submission candidate package | waiting_on_M8 | Codex + user final approval | pending | Build local candidate only; do not send final submission without user approval. |
 
 ## Blockers
@@ -50,6 +50,10 @@ M9 submission candidate package, without final send
   to 2 s and improves 120 s Race1 from `P=8.4` to `P=8.8`.
 - M6 does not claim official four-track failure of the controller; it records
   an official track simulation-entry blocker before score variables can be read.
+- Physical-transfer research has been added so controller tuning stays aligned
+  with later real-car robustness instead of only one-track simulation scoring.
+- Email send evidence can prove SMTP accepted a notice, but it does not prove
+  the user saw it; keep terminal notices in project evidence as well.
 - Do not use this board as a history ledger.
 - Update only when phase state changes or a review/blocker appears.
 - Long details, logs, screenshots, and metrics must stay under `Results/`.
