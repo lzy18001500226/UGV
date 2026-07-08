@@ -71,7 +71,7 @@ M9 submission candidate package, without final send
   `Results/deliverables/report_drafts/render_check_20260709_0118/QA_NOTE.md`.
 - Email send evidence can prove SMTP accepted a notice, but it does not prove
   the user saw it; keep terminal notices in project evidence as well.
-  Latest notice evidence: `Results/evidence/notification_delivery_note_20260709_011229.md`.
+  Latest notice evidence: `Results/evidence/notification_delivery_note_20260709_014829.md`.
 - Do not use this board as a history ledger.
 - Update only when phase state changes or a review/blocker appears.
 - Long details, logs, screenshots, and metrics must stay under `Results/`.
