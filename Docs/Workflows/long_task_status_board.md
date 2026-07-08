@@ -65,7 +65,7 @@ M9 submission candidate package, without final send
   `References/research/robust_physical_ugv_navigation_20260709/`.
 - Email send evidence can prove SMTP accepted a notice, but it does not prove
   the user saw it; keep terminal notices in project evidence as well.
-  Latest notice evidence: `Results/evidence/notification_delivery_note_20260709_004303.md`.
+  Latest notice evidence: `Results/evidence/notification_delivery_note_20260709_004637.md`.
 - Do not use this board as a history ledger.
 - Update only when phase state changes or a review/blocker appears.
 - Long details, logs, screenshots, and metrics must stay under `Results/`.
