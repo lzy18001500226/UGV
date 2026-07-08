@@ -391,17 +391,27 @@ When the plan reaches review-ready state, provide:
 7. Whether official hard no-edit zones were touched.
 8. Next autonomous phase.
 
-## 8. Current Next Step
+## 8. Current Phase Cursor
 
-Next executable phase is M3 controller design. M1 source grounding and the M2
-bounded baseline runtime gate are complete:
+The cursor points to the next phase in the long autonomous task. It is not a
+terminal stop condition. After a phase reaches completion, blocker, or
+review-ready state, commit/push the phase evidence and continue to the next
+safe phase unless the user explicitly pauses or final submission approval is
+required.
+
+Current cursor: M5 one-track tuning. M1 source grounding, M2 bounded baseline,
+M3 controller design, and M4 bounded controller implementation gate are
+complete:
 
 ```text
 M1: Results/evidence/static_model_grounding_20260708_210142.md
 M2: Results/simulations/baseline_20260708_213448/
+M3: Docs/Design/避障算法设计.md; Results/evidence/controller_design_review_20260708_215659.md
+M4: Results/simulations/controller_refsysblock_20260708_221000/
 ```
 
-M2 verified `UGV.Example.Race1` load/check/simulate and score-variable access
-with bounded `stopTime=12`. It is not a full-track completion or final
-competition score claim. Proceed to M3 unless the user explicitly pauses design
-work.
+M2 and M4 verified `UGV.Example.Race1` load/check/simulate and score-variable
+access with bounded `stopTime=12`. These are not full-track completion or final
+competition score claims. Proceed through M5-M9 as a continuous long task unless
+blocked by hard boundaries, runtime failures that cannot be safely recovered,
+or final submission approval.

@@ -1,0 +1,19 @@
+{
+  "request_id": "M4-controller-v1-bounded-runtime-gate",
+  "model_name": "UGV.Example.Race1",
+  "stop_time_requested": 12.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "not_started",
+  "completion": "unknown",
+  "time_s": null,
+  "road_collisions": null,
+  "obstacle_collisions": null,
+  "avoidance_score": null,
+  "available_score_variables": [],
+  "missing_score_variables": [],
+  "simulation_exit_state": null,
+  "simulation_state": null,
+  "exported_csv": null,
+  "exported_csv_ok": false,
+  "notes": []
+}

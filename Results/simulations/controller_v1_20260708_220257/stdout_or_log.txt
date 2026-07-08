@@ -1,0 +1,46 @@
+{"name": "preflight_paths", "status": "ok", "package_mo": "C:\\Users\\HP\\Desktop\\UGV\\Models\\UGV\\package.mo", "result_root": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v1_20260708_220257\\native_result"}
+{"name": "import_mworks_sysplorer", "status": "ok", "module": "<module 'mworks.sysplorer' from 'D:\\\\Program Files\\\\MWORKS\\\\Sysplorer 2026a\\\\External\\\\python64\\\\Lib\\\\site-packages\\\\mworks\\\\sysplorer\\\\__init__.py'>"}
+��������...
+���ӳɹ�!
+{"name": "start_sysplorer", "status": "ok", "process_path": "D:\\Program Files\\MWORKS\\Sysplorer 2026a\\Bin64\\mworks.exe"}
+{"name": "open_model_file", "status": "ok", "result": "True"}
+{"name": "open_model", "status": "ok", "result": "True"}
+[2026-07-08 22:03:59] ---- ���ģ��: UGV.Example.Race1 ----
+���ڽ���ģ��...
+����(3308): inner ���Ӧ������Ӧ outer ��� "road" ��������.
+��������ģ�"body3DOF1_1.fl.positionCal"
+����(3308): inner ���Ӧ������Ӧ outer ��� "road" ��������.
+��������ģ�"body3DOF1_1.rl.positionCal"
+����(3308): inner ���Ӧ������Ӧ outer ��� "road" ��������.
+��������ģ�"body3DOF1_1.fr.positionCal"
+����(3308): inner ���Ӧ������Ӧ outer ��� "road" ��������.
+��������ģ�"body3DOF1_1.rr.positionCal"
+
+---- ������,���ֿ�ͼģ�� ----
+---- �Ƶ�ģ��: UGV.Example.Race1 ----
+����(700): ����˿�front_distδ����.
+����(700): ����˿�rear_distδ����.
+����(700): ����˿�left_distδ����.
+����(700): ����˿�right_distδ����.
+����(700): ����˿�speedδ����.
+����(700): ����˿�steerδ����.
+ģ���Ƶ���ʱ: 00:00:00.039742.
+---- �Ƶ���� ----
+---- ���ģ��: UGV.Example.Race1 ----
+���ڽ���ģ��...
+����(3308): inner ���Ӧ������Ӧ outer ��� "road" ��������.
+��������ģ�"body3DOF1_1.fl.positionCal"
+����(3308): inner ���Ӧ������Ӧ outer ��� "road" ��������.
+��������ģ�"body3DOF1_1.rl.positionCal"
+����(3308): inner ���Ӧ������Ӧ outer ��� "road" ��������.
+��������ģ�"body3DOF1_1.fr.positionCal"
+����(3308): inner ���Ӧ������Ӧ outer ��� "road" ��������.
+��������ģ�"body3DOF1_1.rr.positionCal"
+����ʵ����ģ��...
+����(100): �ڲ�����. ������������� Windows ƽ̨��, ��������Դ������, �ڵ�ַ������ %Temp%\MWorks �󰴻س�, �ڴ򿪵��ļ�����, �����µ���չ��Ϊ .dmp ���ļ���������, �⽫�������Ǹ�׼ȷ�Ķ�λ����, ��л����֧��!
+
+�����б���
+����(2): ����������(100): �ڲ�����. ������������� Windows ƽ̨��, ��������Դ������, �ڵ�ַ������ %Temp%\MWorks �󰴻س�, �ڴ򿪵��ļ�����, �����µ���չ��Ϊ .dmp ���ļ���������, �⽫�������Ǹ�׼ȷ�Ķ�λ����, ��л����֧��!
+{"name": "check_model", "status": "failed", "result": "False"}
+The process has exited, and the return code is:  0
+{"name": "engine_exit", "status": "ok"}

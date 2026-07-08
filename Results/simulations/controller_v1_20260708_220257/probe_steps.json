@@ -1,0 +1,45 @@
+{
+  "project_root": "C:\\Users\\HP\\Desktop\\UGV",
+  "out_dir": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v1_20260708_220257",
+  "model_name": "UGV.Example.Race1",
+  "python_executable": "D:\\Program Files\\MWORKS\\Sysplorer 2026a\\External\\python64\\python.exe",
+  "cwd": "C:\\Users\\HP\\Desktop\\UGV",
+  "return_code": 4,
+  "steps": [
+    {
+      "name": "preflight_paths",
+      "status": "ok",
+      "package_mo": "C:\\Users\\HP\\Desktop\\UGV\\Models\\UGV\\package.mo",
+      "result_root": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v1_20260708_220257\\native_result"
+    },
+    {
+      "name": "import_mworks_sysplorer",
+      "status": "ok",
+      "module": "<module 'mworks.sysplorer' from 'D:\\\\Program Files\\\\MWORKS\\\\Sysplorer 2026a\\\\External\\\\python64\\\\Lib\\\\site-packages\\\\mworks\\\\sysplorer\\\\__init__.py'>"
+    },
+    {
+      "name": "start_sysplorer",
+      "status": "ok",
+      "process_path": "D:\\Program Files\\MWORKS\\Sysplorer 2026a\\Bin64\\mworks.exe"
+    },
+    {
+      "name": "open_model_file",
+      "status": "ok",
+      "result": "True"
+    },
+    {
+      "name": "open_model",
+      "status": "ok",
+      "result": "True"
+    },
+    {
+      "name": "check_model",
+      "status": "failed",
+      "result": "False"
+    },
+    {
+      "name": "engine_exit",
+      "status": "ok"
+    }
+  ]
+}

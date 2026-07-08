@@ -1,4 +1,4 @@
-"""Probe UGV baseline load/check/simulate through the MWORKS Python API."""
+"""Probe UGV load/check/simulate through the MWORKS Python API."""
 
 from __future__ import annotations
 
@@ -29,7 +29,7 @@ def safe_json_value(value):
 
 def write_run_manifest(out_dir: Path, manifest: dict) -> None:
     lines = [
-        "# UGV Baseline Runtime Manifest",
+        f"# UGV Runtime Manifest - {manifest['run_label']}",
         "",
         f"request_id: {manifest['request_id']}",
         f"timestamp: {manifest['timestamp']}",
@@ -70,6 +70,11 @@ def main() -> int:
     parser.add_argument("--model-name", default="UGV.Example.Race1")
     parser.add_argument("--stop-time", type=float, default=1.0)
     parser.add_argument("--request-id", default="M2-baseline-runtime-gate")
+    parser.add_argument("--run-label", default="baseline")
+    parser.add_argument(
+        "--controller-version",
+        default="official copied baseline; controller body not edited by this run",
+    )
     args = parser.parse_args()
 
     project_root = Path(args.project_root).resolve()
@@ -274,12 +279,13 @@ def main() -> int:
         write_run_manifest(
             out_dir,
             {
+                "run_label": args.run_label,
                 "request_id": args.request_id,
                 "timestamp": out_dir.name.replace("baseline_", ""),
                 "model_root": str(project_root / "Models" / "UGV"),
                 "example_or_track": args.model_name,
                 "controller_file": str(project_root / "Models" / "UGV" / "Control" / "ObstacleAvoidanceController" / "ObsAvoidController_Sysblock2.mo"),
-                "controller_version": "official copied baseline; controller body not edited by this run",
+                "controller_version": args.controller_version,
                 "runtime": "MWORKS Sysplorer 2026a Python API",
                 "status": status,
                 "completion": metrics["completion"],
@@ -297,7 +303,7 @@ def main() -> int:
                 ],
                 "blockers": blockers,
                 "notes": [
-                    "This run is an M2 baseline runtime gate, not controller tuning.",
+                    f"This run label is {args.run_label}.",
                     "SimulateModel=True proves load/check/simulation API path for the bounded stop time only.",
                     "Do not claim final official race score unless completion and score variables are confirmed from metrics/logs.",
                 ],
