@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v45 is superseded by v48 score evidence, v46-v52 and v54-v58 were rejected on Track3, v53/v59 were rejected on Track1, and v60 was rejected on Track1/Track3, 2026-07-10 CST.
+Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v45 is superseded by v48 score evidence, v46-v52, v54-v58, and v61 were rejected on Track3, v53/v59 were rejected on Track1, and v60 was rejected on Track1/Track3, 2026-07-10 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op, v46-v52 and v54-v58 rejected on Track3, v53/v59 rejected on Track1, and v60 rejected on Track1/Track3. Continue from v48 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence or a new obstacle-horizon/front-risk-state mechanism`.
+Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op, v46-v52/v54-v58/v61 rejected on Track3, v53/v59 rejected on Track1, and v60 rejected on Track1/Track3. Continue from v48 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence or a new obstacle-horizon/front-risk-state mechanism`.
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -583,6 +583,21 @@ control-attribution, or trajectory evidence, then run the target weak track
 first and only expand to regression when target evidence improves. Do not
 continue side-clearance initial-steer gain/cap scans or side-only decoupling
 without a new obstacle-horizon/path-authority mechanism.
+
+v61 early-risk allocation arbitration is rejected on Track3:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v61_plan_20260710.md
+Results/simulations/controller_v61_early_risk_arbitration_saidao3_120s_20260710/
+Results/metrics/track3_candidate_review_v61_early_risk_arbitration_20260710.md
+Results/evidence/controller_deployability_static_check_v48_restored_after_v61_20260710.md
+```
+
+It increased final steering at the 1.05 s obstacle event from about `0.162` to
+about `0.193`, but the obstacle collision still occurred and the road event
+moved earlier (`4.85 s` -> `4.25 s`). Continue from v48; do not retry this
+exact small-opposing-path boost without new mechanism evidence.
+
 Current M8/M9 review artifacts:
 
 ```text
