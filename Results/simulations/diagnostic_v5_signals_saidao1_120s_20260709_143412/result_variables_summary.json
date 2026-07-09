@@ -1,0 +1,35 @@
+{
+  "all_variable_count": 24474,
+  "timevarying_variable_count": 24471,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "extra_result_variables": [
+    "body3DOF1_1.P_vehicle[1]",
+    "body3DOF1_1.P_vehicle[2]",
+    "ctrlAlloc.speed",
+    "ctrlAlloc.speed_oa",
+    "ctrlAlloc.speed_pp",
+    "ctrlAlloc.steer",
+    "ctrlAlloc.steer_oa",
+    "ctrlAlloc.steer_pp",
+    "distanceSensor1.vehicle_position[1]",
+    "distanceSensor1.vehicle_position[2]",
+    "distanceSensor1.yaw",
+    "obsAvoidController_Sysblock.chart.df",
+    "obsAvoidController_Sysblock.chart.dl",
+    "obsAvoidController_Sysblock.chart.dr",
+    "obsAvoidController_Sysblock.chart.flag",
+    "obsAvoidController_Sysblock.front_dist",
+    "obsAvoidController_Sysblock.left_dist",
+    "obsAvoidController_Sysblock.rear_dist",
+    "obsAvoidController_Sysblock.right_dist",
+    "obsAvoidController_Sysblock.speed",
+    "obsAvoidController_Sysblock.steer",
+    "yaw"
+  ]
+}

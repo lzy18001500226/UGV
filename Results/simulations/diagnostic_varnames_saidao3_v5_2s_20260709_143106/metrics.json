@@ -1,0 +1,34 @@
+{
+  "request_id": "M7-diagnostic-varnames-track3-v5",
+  "model_name": "UGV.Test.Saidao3Eval",
+  "stop_time_requested": 2.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "simulate_returned_true",
+  "completion": "bounded_stop_or_assertion; inspect exit_state/logs",
+  "time_s": 2.0,
+  "road_collisions": 0.0,
+  "obstacle_collisions": 1.0,
+  "avoidance_score": 9.6,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "simulation_exit_state": 0,
+  "simulation_state": "Idle",
+  "exported_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\diagnostic_varnames_saidao3_v5_2s_20260709_143106\\score_timeseries.csv",
+  "exported_csv_ok": true,
+  "exported_extra_csv": null,
+  "exported_extra_csv_ok": false,
+  "extra_result_variables": [],
+  "pyapi_messages": {},
+  "notes": [],
+  "score_values_at_end": {
+    "T": 2.0,
+    "cR": 0.0,
+    "cO": 1.0,
+    "P": 9.6
+  }
+}

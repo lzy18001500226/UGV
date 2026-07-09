@@ -15,6 +15,7 @@
 | Historical submission readiness dry run and review candidate package | `Scripts/quality/check_submission_readiness.py`; `Scripts/quality/plan_submission_candidate.py`; `Scripts/quality/build_submission_candidate.py`; `Results/deliverables/submission_dry_runs/submission_readiness_20260709_124115.md`; `Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_124115.md` |
 | Controller physical-deployability static check | `Scripts/quality/check_controller_deployability.py`; `Results/evidence/controller_deployability_static_check_20260709_0222.md` |
 | Track1 / Track3 weak-track tuning pass | `Results/metrics/track1_track3_tuning_pass_20260709_1425.md` |
+| Current controller candidate v12 side trigger | `Results/metrics/four_track_summary_v12_side_trigger_20260709_144854.md`; `Results/evidence/controller_deployability_static_check_v12_side_trigger_postrun_20260709.md` |
 | Model source lookup | `Docs/Index/model_index.md` |
 | Competition task and scoring | `Docs/Design/赛题.md` |
 | Requirements | `Docs/Design/需求.md` |
@@ -32,7 +33,8 @@ M1-M5 completed or review-ready
 M6 wrapper-based four-track metric extraction completed
 M8 report draft refreshed with M6 metrics
 M9 readiness dry run and local review candidate package are historical audit artifacts; do not rebuild packages unless explicitly requested
-Active weak-track tuning focus: Track1 road/obstacle collisions and Track3 obstacle collisions
+Current controller candidate: v12 side trigger, total wrapper score 34.8
+Active weak-track focus after v12: Track1 residual collisions and Track4 slight regression
 ```
 
 M1 source grounding is complete at `Results/evidence/static_model_grounding_20260708_210142.md`.

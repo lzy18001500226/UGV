@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: active engineering resumed on Track 1 / Track 3 controller tuning after M6 four-track evidence, 2026-07-09 CST.
+Status: v12 side-trigger controller is current review-ready four-track candidate after targeted tuning, 2026-07-09 CST.
 
 ## 0. Startup Chain
 
@@ -85,9 +85,17 @@ probe:
 Results/simulations/license_gui_confirm_1s_20260709_after_real_login/
 ```
 
-Current controller candidate is v5: only the avoid-to-cruise dwell changed from
-1 s to 2 s. Do not re-apply rejected v2/v3/v4/v6 changes unless a new
-diagnostic reason exists.
+Current controller candidate is v12: keep the v5 avoid-to-cruise dwell and add
+side proximity to the longitudinal avoid trigger:
+
+```text
+df <= mindis or dl <= 0.30 or dr <= 0.30
+```
+
+Do not re-apply rejected v2-v11 scalar changes unless a new diagnostic reason
+exists. v12 was accepted because diagnostic exports showed obstacle-collision
+windows where side distances were already small while the front-distance-only
+trigger stayed inactive.
 
 Current M6 four-track wrapper metrics:
 
@@ -103,15 +111,17 @@ enhanced probe reads `T/cR/cO/P` and exports score timeseries after the model
 terminal state. Treat this as usable review evidence, not as an optimized final
 competition result.
 
-Latest weak-track tuning pass:
+Latest weak-track tuning and accepted candidate:
 
 ```text
 Results/metrics/track1_track3_tuning_pass_20260709_1425.md
+Results/metrics/four_track_summary_v12_side_trigger_20260709_144854.md
 ```
 
-No v7-v11 scalar tuning change is accepted. The project controller remains the
-v5 candidate. The next useful engineering step is diagnostic variable export or
-trajectory/collision-window analysis before another controller rewrite.
+No v7-v11 scalar tuning change is accepted. v12 side-trigger is the current
+review-ready controller candidate with total wrapper score `34.8` versus M6
+baseline `32.0`. The next useful engineering step is Track1/Track4
+collision-window or trajectory analysis before another controller rewrite.
 Current M8/M9 review artifacts:
 
 ```text
