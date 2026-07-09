@@ -1,0 +1,14 @@
+{
+  "docx_exists": true,
+  "markdown_exists": true,
+  "paragraph_count": 88,
+  "table_count": 4,
+  "contains_v48_current_best": true,
+  "contains_post_v67_attribution": true,
+  "contains_v67_rejection": true,
+  "contains_final_approval_boundary": true,
+  "contains_runtime_caveat": true,
+  "contains_v48_metrics_table_tracks": true,
+  "markdown_contains_post_v67_decision_path": true,
+  "passed": true
+}

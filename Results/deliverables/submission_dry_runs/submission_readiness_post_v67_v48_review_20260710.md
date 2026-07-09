@@ -1,14 +1,14 @@
 # UGV Submission Readiness Dry Run
 
-generated_at: 2026-07-10T07:10:38+08:00
+generated_at: 2026-07-10T07:19:40+08:00
 ready: false
 final_approval: false
 
 ## Summary
 
 - tracked_model_files: 72
-- tracked_metric_or_evidence_files: 345
-- tracked_report_or_workflow_files: 80
+- tracked_metric_or_evidence_files: 354
+- tracked_report_or_workflow_files: 82
 
 ## Blockers
 
@@ -22,6 +22,7 @@ final_approval: false
 - official_report_template: References/official_materials/5-仿真报告模板（仅供参考）/仿真报告模板.docx -> exists=true
 - report_draft: Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.md -> exists=true
 - report_docx_draft: Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.docx -> exists=true
+- report_render_qa_note: Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/QA_NOTE.md -> exists=true
 - controller_deployability_static_check: Results/evidence/controller_deployability_static_check_v48_reconfirmed_after_v67_20260710.md -> exists=true
 - one_track_metrics: Results/metrics/one_track_tuning_20260708_231430.md -> exists=true
 - four_track_summary: Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md -> exists=true
@@ -43,6 +44,7 @@ ready: true
 - `Models/UGV/`
 - `Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.md`
 - `Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.docx`
+- `Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/QA_NOTE.md`
 - `Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md`
 - `Results/metrics/post_v67_v68_attribution_decision_20260710.md`
 - `Results/metrics/one_track_tuning_20260708_231430.md`

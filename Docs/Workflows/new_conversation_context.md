@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v45 is superseded by v48 score evidence, v46-v52, v54-v58, v61-v67 were rejected on Track3, v53/v59 were rejected on Track1, and v60 was rejected on Track1/Track3, 2026-07-10 CST.
+Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v45 is superseded by v48 score evidence, v46-v52, v54-v58, v61-v67 were rejected on Track3, v53/v59 were rejected on Track1, and v60 was rejected on Track1/Track3. Post-v67/v68 attribution says do not patch another blind controller candidate yet; continue through report/readiness and physical-transfer deliverables while keeping targeted research open, 2026-07-10 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op, v46-v52/v54-v58/v61-v67 rejected on Track3, v53/v59 rejected on Track1, and v60 rejected on Track1/Track3. Continue from v48 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence, source-level attribution, four-direction-only research, or a new obstacle-horizon/front-risk-state mechanism`.
+Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op, v46-v52/v54-v58/v61-v67 rejected on Track3, v53/v59 rejected on Track1, and v60 rejected on Track1/Track3. Continue from v48 unless later review rejects it. Post-v67/v68 attribution found no justified new low-risk source patch: the direct allocation-speed route was already rejected by v51, and nearest-distance wrapper input was rejected by v67. Continue deliverable readiness, report QA, physical-transfer notes, and targeted research until a genuinely different deployable four-scalar mechanism appears.`
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -695,6 +695,18 @@ score-improvement route. Continue from v48 and research a deployable
 four-direction-only trajectory/reactive safety mechanism instead of repeating
 initial-steering or threshold scans.
 
+Post-v67/v68 attribution decision:
+
+```text
+Results/metrics/post_v67_v68_attribution_decision_20260710.md
+Results/metrics/signal_window_summary_v48_all_tracks_v67_track3_post_research_20260710.md
+Results/metrics/ctrlalloc_contribution_analysis_v48_all_tracks_v67_track3_post_research_20260710.md
+```
+
+Decision: do not patch v68 immediately. Continue the long task through report,
+readiness, and physical-transfer work unless new evidence identifies a
+materially different four-distance mechanism.
+
 Current M8/M9 review artifacts:
 
 ```text
@@ -704,12 +716,16 @@ Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_2026070
 Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.docx
 Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.md
 Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.docx
+Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/QA_NOTE.md
+Results/deliverables/submission_dry_runs/submission_readiness_post_v67_v48_review_20260710.md
 Results/deliverables/submission_dry_runs/submission_readiness_20260709_124115.md
 Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_124115.md
 ```
 
-The v48 report draft is the current review-ready report surface. The M6 and
-v13 report drafts remain historical audit artifacts.
+The v48/post-v67 report draft is the current review-ready report surface. The
+DOCX has a structure/content QA note, but no page-render QA because LibreOffice
+is not available on this machine. The M6 and v13 report drafts remain
+historical audit artifacts.
 
 `check_submission_readiness.py` currently blocks only on `final_submission_approval_missing` when run without final approval. A local review-only candidate archive may be built for user audit, but final competition email/package sending still requires explicit user approval.
 
