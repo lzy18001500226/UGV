@@ -11,7 +11,7 @@
 | Evidence manifest template | `Docs/Workflows/evidence_manifest_template.md` |
 | Research manifest template | `Docs/Workflows/research_manifest_template.md` |
 | Deployable UGV avoidance algorithm research | `References/research/deployable_ugv_avoidance_algorithms_20260709/MANIFEST.md`; `References/research/deployable_ugv_avoidance_algorithms_20260709/source_notes.md` |
-| High-score optimization strategy after rejected v14-v47 attempts and current v48 best | `Docs/Design/high_score_optimization_strategy_20260709.md`; latest accepted review `Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md`; previous accepted review `Results/metrics/four_track_candidate_review_v45_curvature_speed_regulation_scaled_20260710_0045.md`; latest rejected follow-ups `Results/metrics/track3_candidate_review_v46_speed_channel_120pct_20260710.md` and `Results/metrics/track3_candidate_review_v47_startup_speed_cap_20260710.md` |
+| High-score optimization strategy after rejected v14-v49 attempts and current v48 best | `Docs/Design/high_score_optimization_strategy_20260709.md`; latest accepted review `Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md`; previous accepted review `Results/metrics/four_track_candidate_review_v45_curvature_speed_regulation_scaled_20260710_0045.md`; latest rejected follow-up `Results/metrics/track3_candidate_review_v49_path_speed_attenuation_20260710.md` |
 | Unified four-track obstacle-avoidance v30 plan and rejection evidence | `Docs/Design/unified_obstacle_avoidance_v30_plan_20260709.md`; `Results/metrics/track1_track4_candidate_review_v30_side_danger_steering_floor_20260709_2116.md` |
 | Unified obstacle-avoidance v31 plan and rejection evidence | `Docs/Design/unified_obstacle_avoidance_v31_plan_20260709.md`; `Results/metrics/track1_candidate_review_v31_avoid_release3s_20260709_2200.md` |
 | Unified obstacle-avoidance v32-v35 front-open braking plan and rejection evidence | `Docs/Design/unified_obstacle_avoidance_v32_plan_20260709.md`; `Docs/Design/unified_obstacle_avoidance_v33_plan_20260709.md`; `Docs/Design/unified_obstacle_avoidance_v34_plan_20260709.md`; `Docs/Design/unified_obstacle_avoidance_v35_plan_20260709.md`; `Results/metrics/track3_candidate_review_v32_v35_front_open_brake_20260709_2230.md` |
@@ -21,6 +21,7 @@
 | Unified obstacle-avoidance v46 speed-channel follow-up rejection | `Docs/Design/unified_obstacle_avoidance_v46_plan_20260710.md`; `Results/metrics/track3_candidate_review_v46_speed_channel_120pct_20260710.md` |
 | Unified obstacle-avoidance v47 startup speed-cap follow-up rejection | `Docs/Design/unified_obstacle_avoidance_v47_plan_20260710.md`; `Results/metrics/track3_candidate_review_v47_startup_speed_cap_20260710.md` |
 | Unified obstacle-avoidance v48 opposing-steer guard | `Docs/Design/unified_obstacle_avoidance_v48_plan_20260710.md`; `Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md`; `Results/evidence/controller_deployability_static_check_v48_opposing_steer_guard_20260710.md` |
+| Unified obstacle-avoidance v49 path-speed attenuation rejection | `Docs/Design/unified_obstacle_avoidance_v49_plan_20260710.md`; `Results/metrics/track3_candidate_review_v49_path_speed_attenuation_20260710.md`; `Results/evidence/controller_deployability_static_check_v49_path_speed_attenuation_20260710.md`; restored gate `Results/evidence/controller_deployability_static_check_v48_restored_after_v49_20260710.md` |
 | Report writing | `Docs/Workflows/report_workflow.md` |
 | Current v13 submission readiness dry run, no package build | `Scripts/quality/check_submission_readiness.py`; `Scripts/quality/plan_submission_candidate.py`; `Results/deliverables/submission_dry_runs/submission_readiness_v13_20260709_1535.md`; `Results/deliverables/submission_dry_runs/submission_candidate_plan_v13_20260709_1535.md` |
 | Historical M6 review candidate package | `Scripts/quality/build_submission_candidate.py`; `Results/deliverables/submission_dry_runs/submission_readiness_20260709_124115.md`; `Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_124115.md` |
@@ -37,7 +38,7 @@
 
 ## Current Phase Cursor
 
-Current cursor: v48 opposing-steer guard is review-ready new best with runtime caveat; v14-v44 follow-up attempts rejected or no-op and v46-v47 rejected on Track3; next candidate must start from fresh failure-window or trajectory evidence and validate one track-agnostic controller mechanism across all four tracks instead of blind scalar tuning, speed-channel gain escalation, simple startup-speed caps, or per-track patches. This is a
+Current cursor: v48 opposing-steer guard is review-ready new best with runtime caveat; v14-v44 follow-up attempts rejected or no-op and v46-v49 rejected on Track3; next candidate must start from fresh failure-window or trajectory evidence and validate one track-agnostic controller mechanism across all four tracks instead of blind scalar tuning, speed-channel gain escalation, simple startup-speed caps, broad path-speed attenuation, or per-track patches. This is a
 cursor for the continuous M1-M9 long task, not a stop point. Update
 `Docs/Workflows/long_task_status_board.md` only when phase state changes.
 
@@ -47,7 +48,7 @@ M6 wrapper-based four-track metric extraction completed
 M8 report draft refreshed with v13 metrics
 M9 readiness dry run and local review candidate package are historical audit artifacts; do not rebuild packages unless explicitly requested
 Current controller candidate: v48 opposing-steer guard, total wrapper score 37.2, with Track2/3/4 terminal-state caveat
-Active weak-track focus after v48: continue only with a new evidence-backed unified-controller mechanism, and do not continue longer reverse/open-front braking, final-steer clipping, side-threshold scanning, planner suppression, side-only decoupling, avoid-release scanning, speed-channel gain escalation, or simple startup-speed caps
+Active weak-track focus after v48: continue only with a new evidence-backed unified-controller mechanism, and do not continue longer reverse/open-front braking, final-steer clipping, side-threshold scanning, planner suppression, side-only decoupling, avoid-release scanning, speed-channel gain escalation, simple startup-speed caps, or broad path-speed attenuation
 ```
 
 M1 source grounding is complete at `Results/evidence/static_model_grounding_20260708_210142.md`.

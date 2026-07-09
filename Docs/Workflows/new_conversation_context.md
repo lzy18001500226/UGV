@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v46-v47 were rejected on Track3, and v45 is superseded by v48 score evidence, 2026-07-10 CST.
+Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v46-v49 were rejected on Track3, and v45 is superseded by v48 score evidence, 2026-07-10 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op and v46-v47 rejected. Continue from v48 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence or a new obstacle-horizon/path-authority mechanism`.
+Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op and v46-v49 rejected. Continue from v48 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence or a new obstacle-horizon/path-authority mechanism`.
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -167,6 +167,19 @@ from `36.8` to `37.2`, mainly from Track1 road-collision reduction. Keep the
 runtime caveat visible: Track2, Track3, and Track4 are scored from exported
 result variables after `SimulateModel` returned false with `exit_state=2`, so
 this is not final competition or physical UGV proof.
+
+v49 path-speed attenuation follow-up:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v49_plan_20260710.md
+Results/simulations/controller_v49_path_speed_attenuation_saidao3_120s_20260710/
+Results/metrics/track3_candidate_review_v49_path_speed_attenuation_20260710.md
+Results/evidence/controller_deployability_static_check_v48_restored_after_v49_20260710.md
+```
+
+v49 is rejected: it produced a non-comparable early Track3 stop at `T=5.75`
+despite exported `P=9.6`. Do not continue broad path-speed attenuation.
+Continue from v48.
 
 v46 speed-channel 1.2x follow-up:
 
@@ -407,7 +420,7 @@ Track1/Track4; both target tracks again stayed at `P=8.8`, `cR=3`, `cO=0`, so
 it is rejected as no improvement and the source was restored to v13 semantics.
 v31 extended avoid release to 3 s, passed the static gate, but regressed Track1
 to `P=2.0`, `cR=17`, `cO=3`, so it is rejected and the source was restored to
-v13 semantics. v32-v35 front-open braking also failed to improve target-track evidence. v40 side-safety bubble produced identical Track4 evidence, v41 guarded release regressed Track4, v42 open-side steering regressed Track1, and v43 side-only longitudinal/lateral decoupling regressed Track1. v44 curvature-speed regulation used the wrong target-speed scale and was a no-op. v45 corrected the scale and improved total wrapper score to `36.8`; v48 later superseded it at `37.2` with a runtime caveat. The next attempt should start from fresh collision-window,
+v13 semantics. v32-v35 front-open braking also failed to improve target-track evidence. v40 side-safety bubble produced identical Track4 evidence, v41 guarded release regressed Track4, v42 open-side steering regressed Track1, and v43 side-only longitudinal/lateral decoupling regressed Track1. v44 curvature-speed regulation used the wrong target-speed scale and was a no-op. v45 corrected the scale and improved total wrapper score to `36.8`; v48 later superseded it at `37.2` with a runtime caveat; v49 broad path-speed attenuation is rejected because it early-stopped Track3 at `T=5.75`. The next attempt should start from fresh collision-window,
 control-attribution, or trajectory evidence, then run the target weak track
 first and only expand to regression when target evidence improves. Do not
 continue side-clearance initial-steer gain/cap scans or side-only decoupling

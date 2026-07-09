@@ -442,9 +442,10 @@ review-ready state, commit/push the phase evidence and continue to the next
 safe phase unless the user explicitly pauses or final submission approval is
 required.
 
-Current cursor: v45 curvature-speed regulation scaled is the review-ready best
-four-track wrapper candidate after v14-v44 follow-up attempts were rejected or
-proved no-op. M1 source grounding, M2 bounded
+Current cursor: v48 opposing-steer guard is the review-ready best four-track
+wrapper candidate with a runtime caveat after v14-v44 follow-up attempts were
+rejected or proved no-op, v45 was superseded, and v46-v49 were rejected on
+Track3. M1 source grounding, M2 bounded
 baseline, M3 controller design, M4 bounded controller implementation gate, M5
 one-track Race1 tuning review, M6 wrapper-based four-track metric extraction,
 M8 v13 report refresh, and M9 local review-only dry run are complete or
@@ -457,7 +458,10 @@ M3: Docs/Design/避障算法设计.md; Results/evidence/controller_design_review
 M4: Results/simulations/controller_refsysblock_20260708_221000/
 M5: Results/metrics/one_track_tuning_20260708_231430.md
 M6 baseline: Results/metrics/four_track_summary_20260709_120547.md
-v13 current: Results/metrics/four_track_summary_v13_side_trigger045_20260709_1535.md
+v13 historical accepted: Results/metrics/four_track_summary_v13_side_trigger045_20260709_1535.md
+v45 superseded accepted: Results/metrics/four_track_candidate_review_v45_curvature_speed_regulation_scaled_20260710_0045.md
+v48 current accepted: Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md
+v49 latest rejected: Results/metrics/track3_candidate_review_v49_path_speed_attenuation_20260710.md
 ```
 
 M2 and M4 verified `UGV.Example.Race1` load/check/simulate and score-variable
@@ -467,9 +471,12 @@ obstacle-controller wiring needed for current API controller evaluation. The
 latest 120 s wrapper runs may return `simulate_failed` with `exit_state=2`, but
 the enhanced probe reads `T/cR/cO/P` and exports score timeseries after the
 model terminal state. v45 corrected the v44 speed-scale no-op and improved the
-total wrapper score to `36.8` versus v13 `36.4`. Next safe controller work
-must start from fresh failure-window or trajectory evidence and a new unified
-mechanism hypothesis, not another blind scalar adjustment, final-steer
-clipping, simple planner suppression, side-trigger threshold scan,
-side-only decoupling, or avoid-release change. Final package approval remains
-a separate user gate.
+total wrapper score to `36.8` versus v13 `36.4`; v48 superseded v45 at `37.2`
+by reducing Track1 road collisions; v49 broad path-speed attenuation is
+rejected because Track3 stopped at `T=5.75` with a non-comparable early
+terminal result. Next safe controller work must start from fresh
+failure-window or trajectory evidence and a new unified mechanism hypothesis,
+not another blind scalar adjustment, final-steer clipping, simple planner
+suppression, side-trigger threshold scan, side-only decoupling, avoid-release
+change, speed-channel gain escalation, simple startup-speed cap, or broad
+path-speed attenuation. Final package approval remains a separate user gate.
