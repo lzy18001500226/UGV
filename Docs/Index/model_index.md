@@ -22,6 +22,7 @@ working model tree.
 | Scoring | `Models/UGV/CountPoint/package.mo` |
 | Distance sensor | `Models/UGV/Vehicle/Sensors/distanceSensor1.mo` |
 | Official track models | `Models/UGV/saidao/saidao1.mo`, `saidao2.mo`, `saidao3.mo`, `saidao4.mo` |
+| Generated M6 evaluation wrappers | `Models/UGV/Test/Saidao1Eval.mo`, `Saidao2Eval.mo`, `Saidao3Eval.mo`, `Saidao4Eval.mo` |
 
 ## 3. Entry Models
 
@@ -29,14 +30,23 @@ working model tree.
 |---|---|---|---|
 | Race example with obstacle controller | `Models/UGV/Example/Race1.mo` | `Race1` | Main editable-controller integration entry. |
 | Race example without obstacle controller | `Models/UGV/Example/Race2.mo` | `Race2` | Baseline/comparison entry; no `ObsAvoidController_Sysblock2` instance. |
-| Official track LOGO | `Models/UGV/saidao/saidao1.mo` | `saidao1` | Official scored track candidate. |
-| Official track comprehensive ring | `Models/UGV/saidao/saidao2.mo` | `saidao2` | Official scored track candidate. |
-| Official track triangle | `Models/UGV/saidao/saidao3.mo` | `saidao3` | Official scored track candidate. |
-| Official track cloud | `Models/UGV/saidao/saidao4.mo` | `saidao4` | Official scored track candidate. |
+| Official track LOGO source geometry | `Models/UGV/saidao/saidao1.mo` | `saidao1` | Official source track entry; not the current controller API evaluation entry because it omits `ObsAvoidController_Sysblock2` wiring. |
+| Official track comprehensive ring source geometry | `Models/UGV/saidao/saidao2.mo` | `saidao2` | Official source track entry; not the current controller API evaluation entry because it omits `ObsAvoidController_Sysblock2` wiring. |
+| Official track triangle source geometry | `Models/UGV/saidao/saidao3.mo` | `saidao3` | Official source track entry; not the current controller API evaluation entry because it omits `ObsAvoidController_Sysblock2` wiring. |
+| Official track cloud source geometry | `Models/UGV/saidao/saidao4.mo` | `saidao4` | Official source track entry; not the current controller API evaluation entry because it omits `ObsAvoidController_Sysblock2` wiring. |
+| M6 LOGO evaluation wrapper | `Models/UGV/Test/Saidao1Eval.mo` | `Saidao1Eval` | Current M6 controller evaluation entry with official track geometry plus obstacle-controller and control-allocation connections. |
+| M6 comprehensive-ring evaluation wrapper | `Models/UGV/Test/Saidao2Eval.mo` | `Saidao2Eval` | Current M6 controller evaluation entry with official track geometry plus obstacle-controller and control-allocation connections. |
+| M6 triangle evaluation wrapper | `Models/UGV/Test/Saidao3Eval.mo` | `Saidao3Eval` | Current M6 controller evaluation entry with official track geometry plus obstacle-controller and control-allocation connections. |
+| M6 cloud evaluation wrapper | `Models/UGV/Test/Saidao4Eval.mo` | `Saidao4Eval` | Current M6 controller evaluation entry with official track geometry plus obstacle-controller and control-allocation connections. |
 
 Note: the official track file names and internal Modelica model names do not
 match one-to-one. Runtime work must open the internal model name exposed by the
 loaded package, not infer it from the file name alone.
+
+For current M6 runtime evaluation, use `UGV.Test.Saidao1Eval` through
+`UGV.Test.Saidao4Eval`. The direct `UGV.saidao.saidao*` models are preserved as
+official source geometry/scoring references and should not be edited during
+normal development.
 
 ## 4. Controller Interface
 

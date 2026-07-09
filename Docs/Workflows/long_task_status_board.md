@@ -2,7 +2,7 @@
 
 > Short operational board for the UGV initial-race long task. Keep this file concise; detailed evidence belongs in `Results/`.
 
-Status: M6_mworks_activation_blocks_official_track_dependency_load; M8 blocker-aware DOCX draft render-QA ready; controller deployability source-only gate pass, 2026-07-09 CST.
+Status: M6_official_track_wrapper_evaluation_after_login_license_recovery; M8 blocker-aware DOCX draft render-QA ready; controller deployability source-only gate pass, 2026-07-09 CST.
 
 ## Current Long Task
 
@@ -28,7 +28,7 @@ M9 submission candidate package, without final send
 | M3 Controller design | completed | Codex | `Docs/Design/避障算法设计.md`; `Results/evidence/controller_design_review_20260708_215659.md` | Done; use conservative reactive increment design for M4. |
 | M4 Controller implementation | completed_bounded_gate | Codex | `Results/evidence/controller_v1_source_notes_20260708_220257.md`; `Results/simulations/controller_refsysblock_20260708_221000/` | Done; recovered from failed plain algorithm by using valid Sysblock reference structure. |
 | M5 One-track tuning | review_ready_candidate | Codex | `Results/metrics/one_track_tuning_20260708_231430.md`; best run `Results/simulations/controller_v5_front_dwell_2s_race1_120s_20260708_230305/` | Use v5 as current Race1 candidate; do not keep v6. |
-| M6 Four-track evaluation | blocked_on_mworks_activation_for_tadynamics | Codex | `Results/metrics/four_track_summary_20260708_231430.md`; `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md`; `Results/evidence/m6_mworks_activation_blocker_20260708_235918.md`; `Results/evidence/m6_mworks_activation_recheck_20260709_023421.md` | Restore MWORKS activation/license, then rerun the official-track dependency-load diagnostic before any four-track score claims. |
+| M6 Four-track evaluation | active_after_login_license_recovery | Codex | `Results/metrics/four_track_summary_20260708_231430.md`; `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md`; `Results/evidence/m6_mworks_activation_blocker_20260708_235918.md`; `Results/evidence/m6_mworks_activation_recheck_20260709_023421.md`; `Results/evidence/m6_mworks_activation_restored_20260709_110319.md`; `Results/simulations/diagnostic_saidao1_activation_after_login_1s_20260709_110319/`; `Results/simulations/license_gui_confirm_1s_20260709_after_real_login/` | Login/license recovery is GUI-confirmed and API-confirmed. Continue M6 with `UGV.Test.Saidao*Eval` wrapper runs and bounded long-run diagnosis; do not return to credential recovery unless `L5104-B0` reappears. |
 | M7 Evidence automation | partial_completed | Codex | `Scripts/mworks/ugv_baseline_probe.py`; `Scripts/quality/check_controller_deployability.py`; `Results/evidence/controller_deployability_static_check_20260709_0222.md`; `Results/evidence/ugv_baseline_probe_manifest_notes_check_20260709_0240.md` | Helper exports extra variables, captures errors, and now writes blocker-specific manifest notes instead of bounded-simulation wording when dependency load/check/simulate is not reached; deployability checker passes the source-only high/medium risk gate. |
 | M8 Report draft | blocker_aware_docx_render_qa_ready | Codex | `References/research/physical_ugv_obstacle_avoidance_20260708/`; `Docs/Design/final_race_migration_notes.md`; `References/research/robust_physical_ugv_navigation_20260709/`; `References/research/deployable_ugv_avoidance_algorithms_20260709/`; `Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.md`; `Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.docx`; `Results/deliverables/report_drafts/render_check_20260709_0118/QA_NOTE.md` | Draft can describe Race1 evidence, physical-transfer constraints, and official-track blocker; final report still needs M6 four-track metrics. |
 | M9 Submission candidate package | dry_run_gap_check_ready | Codex + user final approval | `Results/deliverables/submission_dry_runs/submission_readiness_20260709_0235.md`; `Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_0235.md` | Static readiness checker and package plan report not ready: four-track metrics blocked/unavailable and final approval missing. DOCX draft, render QA, latest deployability static check, and model tree are identified for a future package; do not build/send final submission until M6 metrics and user approval exist. |
@@ -40,10 +40,17 @@ M9 submission candidate package, without final send
   time with Real variables missing equations under vehicle wheel/force
   application components. Evidence:
   `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md`.
-- Current higher-priority MWORKS activation blocker: fresh API sessions still
-  cannot open the installed `TADynamics.mol` dependency because MWORKS reports
-  `L5104-B0` software not activated. Latest bounded recheck evidence:
-  `Results/evidence/m6_mworks_activation_recheck_20260709_023421.md`.
+- MWORKS login/license recovery is verified by the real Sysplorer login button,
+  `帮助 -> 使用许可` activation, and a successful 1 s API probe:
+  `Results/simulations/license_gui_confirm_1s_20260709_after_real_login/`.
+  If `L5104-B0` reappears, follow
+  `Docs/Workflows/mworks_ugv_simulation_workflow.md` and do not treat
+  `登录失败，请检查网络后重试` as a network blocker before retrying the real
+  login/activation flow.
+- Direct official `UGV.saidao.saidao1` through `saidao4` entries are source
+  geometry/scoring entries without the obstacle controller wiring needed for
+  current API evaluation. Use generated `UGV.Test.Saidao*Eval` wrappers for M6
+  controller evaluation unless a later source audit changes that route.
 
 ## Review Notes
 
@@ -52,11 +59,10 @@ M9 submission candidate package, without final send
 - M4 confirms a first runnable Sysblock controller structure with bounded `stopTime=12` metrics `T=12`, `cR=0`, `cO=0`, `P=10`; it does not claim full-track completion.
 - M5 Race1 candidate v5 changes only the front avoid-to-cruise dwell from 1 s
   to 2 s and improves 120 s Race1 from `P=8.4` to `P=8.8`.
-- M6 does not claim official four-track failure of the controller; it records
-  an official track simulation-entry blocker before score variables can be read.
-  The latest bounded recheck shows the immediate blocker is MWORKS activation/license while
-  loading `TADynamics.mol`; do not continue runtime diagnosis until that is
-  recovered.
+- M6 does not claim official four-track success or failure of the controller
+  yet. The current route is `UGV.Test.Saidao*Eval` wrapper evaluation after
+  login/license recovery. Continue with bounded wrapper long-run diagnosis and
+  score extraction before any final four-track claim.
 - Physical-transfer research has been added so controller tuning stays aligned
   with later real-car robustness instead of only one-track simulation scoring.
   Current reference packs:

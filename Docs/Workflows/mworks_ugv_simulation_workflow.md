@@ -12,10 +12,11 @@ Before live work:
 1. Confirm the current plan has not explicitly paused runtime work.
 2. Confirm MWORKS 2026a / Sysplorer 26.3 is available.
 3. If login/license/activation appears, recover autonomously only when the
-   current task/user/project document names an approved credential path. Capture
+   current task/user/project document names an approved credential path. Do not
+   store credentials in docs, logs, evidence, or command history. Capture
    redacted evidence, then send a short Chinese notice if an approved email
-   route exists; otherwise record the notice text in evidence. Unknown or
-   repeatedly failed credential states become blockers.
+   route exists; otherwise record the notice text in evidence. Unknown,
+   CAPTCHA/MFA, or repeatedly rejected credential states become blockers.
 4. Confirm M1 static model grounding has produced a source evidence note unless
    the user explicitly asks for a runtime-only diagnostic.
 5. Load the package from:
@@ -32,9 +33,64 @@ D:\Program Files\MWORKS\Sysplorer 2026a\Library\TADynamics 1.3.2\TADynamics\TADy
 
 `Scripts/mworks/ugv_baseline_probe.py` opens this dependency before the UGV
 package by default. If loading it returns an activation or license error such
-as `L5104-B0`, stop the runtime phase and record a license/activation blocker.
-Do not continue controller tuning or official-track diagnosis until MWORKS can
-load the dependency library.
+as `L5104-B0`, first run the bounded GUI recovery below before declaring a
+blocker. Do not treat the Chinese text "登录失败，请检查网络后重试" as a network
+blocker by default; first verify the real Sysplorer window, real login button,
+account/password fields, and license activation state.
+
+### Login / License Recovery For `L5104-B0`
+
+Use this exact sequence when the project has an approved credential path and
+MWORKS is blocking dependency loads:
+
+1. Bring the real `Sysplorer` window to an inspectable state. Do not operate a
+   hidden WebView or stale window handle when the visible top-right UI still
+   says `登录`.
+2. Open `帮助 -> 使用许可` if the license dialog is not already visible.
+3. If the license dialog says `账号：未登录`, click the real `登录` button.
+4. In the login window, use `账号密码登录`, fill `用户名/邮箱` and `密码` from the
+   approved in-memory credential source, keep the existing agreement checkbox
+   selected when it is already checked, then click the real `登 录` button.
+5. Wait for the Sysplorer title or account area to show `教育版` / the account
+   avatar. If the dialog exposes `激活`, click it once and wait for
+   `激活成功`.
+6. Close the license dialog or return to the main Sysplorer window.
+7. Immediately verify the recovery with a 1 s API probe. GUI success alone is
+   not enough.
+
+Minimal verification command:
+
+```powershell
+& 'D:\Program Files\MWORKS\Sysplorer 2026a\External\python64\python.exe' `
+  Scripts\mworks\ugv_baseline_probe.py `
+  --project-root C:\Users\HP\Desktop\UGV `
+  --out-dir Results\simulations\license_gui_confirm_1s_<timestamp> `
+  --model-name UGV.Test.Saidao2Eval `
+  --stop-time 1 `
+  --request-id license-gui-confirm `
+  --run-label license_gui_confirm `
+  --controller-version controller_v5_bounded_linear_deployability `
+  --use-simulate-ex `
+  --relax-translation-checks `
+  --option compileOptions=0
+```
+
+Recovery is complete only when the probe records:
+
+```text
+open_dependency_model_file: ok
+open_model_file: ok
+open_model: ok
+check_model: ok
+simulate_model: ok
+available_score_variables include T, cR, cO, P
+```
+
+If GUI shows `教育版` / `激活成功` but the API still reports `L5104-B0`, close
+the license dialog and retry the 1 s probe once. If it still fails, restart only
+the MWORKS/Sysplorer runtime and its Sysplorer API helper processes when safe;
+do not restart Codex or unrelated tools. After restart, repeat the real
+login-button flow above and re-run the same 1 s probe.
 
 ## 3. Baseline Gate G0
 
