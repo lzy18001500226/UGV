@@ -161,3 +161,78 @@ reciprocal-distance spike risk. This is not a physical UGV success claim and
 does not prove generated code, real-car tuning, or official final submission
 readiness. It only clears the current static source-level high/medium risk gate
 for the v48 controller candidate.
+
+## 9. Current v48 Parameter Table
+
+This table is the current transfer baseline. If final-race or physical-UGV
+materials arrive, start from these values and retune in the order below instead
+of restarting from rejected candidates.
+
+| Area | Parameter / rule | Current value | Source / evidence | Physical-transfer note |
+|---|---|---:|---|---|
+| Obstacle trigger | front distance trigger | `df <= mindis`, `mindis = 1.0` | `ObsAvoidController_Sysblock2.mo` | Retune only after checking sensor scale and stopping distance. |
+| Obstacle trigger | side distance trigger | `dl <= 0.45 or dr <= 0.45` | v13/v48 accepted chain | Useful for side grazing; do not scan blindly without collision-window evidence. |
+| Longitudinal command | cruise speed | `1.0` | controller cruise state | Keep as nominal low-speed baseline for simulation and physical safety. |
+| Longitudinal command | avoid speed | `-1.0` | controller avoid state | Reverse/brake command is bounded; stronger reverse was already risky in rejected routes. |
+| Longitudinal dwell | avoid release dwell | `2 s` | `transition(avoid, cruise, after(2,sec))` | Longer dwell regressed v31; do not increase without new evidence. |
+| Lateral command | initial avoid steer | `0.6` | controller avoid-lateral initial state | Magnitude scans were mostly rejected; treat as baseline, not a free tuning knob. |
+| Lateral command | side-distance steer | `min(0.8, 2 * abs(dl - dr))` | controller turn states | Bounded linear rule; avoids the earlier reciprocal-distance spike risk. |
+| Lateral dwell | avoid-lateral initialization | `2 s` | `transition(ini_state, state, after(2,sec))` | Shorter dwell regressed prior attempts; keep unless new timing evidence appears. |
+| Path tracking | path planner instance | `lookahead_base = 2`, `lookahead_gain = 0.1` in official/eval wrappers | wrapper/source inspection | Do not edit official wrappers for scoring; adapt only if final-race interface changes. |
+| Path speed | curvature speed trigger | `abs(steering_angle) > 0.35` | v45/v48 accepted chain | Accepted because it improved wrapper score; further threshold scans were exhausted. |
+| Path speed | curvature speed cap | `0.75` | v45/v48 accepted chain | Physical retune can lower only with runtime stability evidence. |
+| Allocation | obstacle influence factor | wrapper uses `factor_oa = 0.5` | wrapper/source inspection | Changing class default alone is a no-op because wrappers instantiate this value. |
+| Allocation | path influence factor | wrapper uses `factor_pp = 1.0` | wrapper/source inspection | Full path suppression regressed v53. |
+| Allocation | opposing-steer guard | `0.5 * path steer` only when reverse OA steer opposes path steer | v48 review | Current best unified mechanism; keep unless superseded by four-track evidence. |
+| Filtering | OA speed / steer first-order filters | `T = 1` | `ControlAllocate/package.mo` | Direct filter-time scans regressed or produced unstable evidence. |
+
+## 10. Exhausted Mechanism Families
+
+The following routes have enough local evidence to avoid repeating them under
+new names:
+
+| Mechanism family | Local evidence | Decision |
+|---|---|---|
+| Blind side-threshold, initial-steer, dwell, and reverse-speed scans | v14-v23, v31-v35 | Do not retry without a new collision-window reason. |
+| Steering filter and direct early steer feedforward | v24, v60, v63 | Not a justified next route; produced no comparable improvement. |
+| Path-speed attenuation, straight brake arbitration, and brake-turn coupling | v49, v51, v52 | Rejected due to early stops or unchanged Track3 score. |
+| Complete path-steer neutralization or path-authority scalar scans | v53, v54 | Regressed or shortened runs; v48 half attenuation is safer. |
+| Low-speed lookahead floor, speed-filter-only acceleration, simple front-threshold changes | v55-v57 | Did not improve Track3 score and shortened runs. |
+| Stronger initial side-gap bypass or close-side initial direction | v58, v59, v62, v66 | Produced obstacle collisions or non-comparable early stops. |
+| Front-clear side reentry and emergency-front reverse hold | v64, v65 | Did not remove current score-loss pattern. |
+| Nearest-distance wrapper input change | v67 | Cleaned runtime state but did not improve Track3 score; not an accepted score route. |
+| Lateral left/right hysteresis | v69 offline screening | Saved signals show zero `chart.steer` sign flips; no source edit justified. |
+
+If a future idea resembles one of these families, first write a short
+attribution note showing what is materially different before changing source.
+
+## 11. Final-Race / Physical Retuning Order
+
+When final-race material or physical UGV access becomes available, use this
+order:
+
+1. Confirm sensor units and saturation: front/rear/left/right distance scale,
+   sign, update rate, dropout behavior, and minimum reliable value.
+2. Confirm actuator units and limits: commanded speed unit, steer unit/range,
+   rate limit, and emergency stop behavior.
+3. Re-run the static deployability checker and record generated-code warnings
+   before physical tests.
+4. Start with v48 baseline parameters and reduce only speed-related risk first:
+   nominal speed, curvature speed cap, and avoid release timing.
+5. Tune distance thresholds only after a physical or final-race diagnostic
+   window shows which sensor boundary is late.
+6. Tune steering authority last; it is the most likely to create oscillation or
+   road-edge regressions under this four-distance interface.
+7. Preserve one unified controller across all tracks. Do not create per-track
+   constants or edit official vehicle, road, sensor, scoring, example, or
+   `saidao` files.
+
+Review checkpoint before claiming transfer readiness:
+
+```text
+generated-code artifact exists
+parameter table updated with physical units/ranges
+four official tracks or final-race equivalents have saved evidence
+known caveats are still visible
+final submission / physical success is explicitly approved or separately proven
+```

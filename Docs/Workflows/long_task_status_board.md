@@ -2,7 +2,7 @@
 
 > Short operational board for the UGV initial-race long task. Keep this file concise; detailed evidence belongs in `Results/`.
 
-Status: v48_opposing_steer_guard_review_ready_new_best_with_runtime_caveat; v14-v44 rejected or no-op, v46-v52/v54-v58/v61-v67 rejected on Track3, v53/v59 rejected on Track1, v60 rejected on Track1/Track3, and v69 lateral hysteresis rejected before source edit; post-v67/v68 attribution says do not patch another blind controller candidate yet, continue through report/readiness and physical-transfer deliverables while keeping targeted research open, 2026-07-10 CST.
+Status: v48_opposing_steer_guard_review_ready_new_best_with_runtime_caveat; v14-v44 rejected or no-op, v46-v52/v54-v58/v61-v67 rejected on Track3, v53/v59 rejected on Track1, v60 rejected on Track1/Track3, and v69 lateral hysteresis rejected before source edit; post-v67/v68 attribution says do not patch another blind controller candidate yet, continue through report/readiness and physical-transfer deliverables while keeping targeted research open; M10 physical-transfer notes now carry the v48 parameter table, exhausted mechanism families, and final-race retuning order, 2026-07-10 CST.
 
 ## Current Long Task
 
@@ -17,6 +17,7 @@ M6 four-track evaluation
 M7 evidence automation as needed
 M8 report draft
 M9 submission candidate package, without final send
+M10 final-race / physical-transfer readiness notes
 ```
 
 ## Phase Board
@@ -32,6 +33,7 @@ M9 submission candidate package, without final send
 | M7 Evidence automation | partial_completed_timeaxis_fix_done | Codex | `Scripts/mworks/ugv_baseline_probe.py`; `Scripts/quality/check_controller_deployability.py`; `Scripts/analysis/summarize_signal_windows.py`; `Scripts/analysis/analyze_ctrlalloc_contributions.py`; `Results/evidence/controller_deployability_static_check_20260709_0222.md`; `Results/evidence/ugv_baseline_probe_manifest_notes_check_20260709_0240.md`; `Results/metrics/signal_window_summary_v48_track3_timeaxis_fix_smoke_20260710.md`; `Results/metrics/ctrlalloc_contribution_analysis_v48_timeaxis_fix_smoke_20260710.md` | Helper exports extra variables, captures errors, and now writes blocker-specific manifest notes instead of bounded-simulation wording when dependency load/check/simulate is not reached; deployability checker passes the source-only high/medium risk gate. Offline MWORKS CSV analysis now binds each signal to its own left-side `Time` column, avoiding duplicate-`Time` misalignment during candidate diagnosis. |
 | M8 Report draft | post_v67_v48_metrics_refreshed_review_ready | Codex | historical M6 draft `Results/deliverables/report_drafts/initial_race_report_draft_m6_metrics_20260709_123905.docx`; historical v13 draft `Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.md`; current v48/post-v67 draft `Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.md`; v48/post-v67 DOCX `Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.docx`; DOCX QA `Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/QA_NOTE.md`; v48 review `Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md`; post-v67 decision `Results/metrics/post_v67_v68_attribution_decision_20260710.md` | v48 report/readiness refresh now includes v49-v67 rejections and post-v67 attribution. It keeps Track2/3/4 terminal-state caveats visible and is not final submission material until user approval. QA is structure/content only because LibreOffice/soffice is unavailable for page rendering. |
 | M9 Submission candidate package | current_plan_final_approval_blocked_no_zip_created | Codex + user final approval | historical package `Results/deliverables/submission_candidates/UGV_initial_race_review_candidate_20260709_124115.zip`; current readiness dry-run `Results/deliverables/submission_dry_runs/submission_readiness_post_v67_v48_review_20260710.md`; current package plan dry-run `Results/deliverables/submission_dry_runs/submission_candidate_plan_post_v67_v48_review_20260710.md` | Current readiness and package-plan dry runs use v48/post-v67 evidence and block on `final_submission_approval_missing`; this is expected. No zip was created and no final competition email was sent. |
+| M10 Final-race / physical transfer | review_ready_v48_transfer_baseline | Codex | `Docs/Design/final_race_migration_notes.md`; v48 review `Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md`; post-v67 attribution `Results/metrics/post_v67_v68_attribution_decision_20260710.md`; v69 screening `Results/metrics/lateral_hysteresis_screening_v48_20260710.md`; deployability gate `Results/evidence/controller_deployability_static_check_v48_reconfirmed_after_v67_20260710.md` | v48 now has a transfer baseline parameter table, exhausted-mechanism list, and final-race/physical retuning order. This is review-ready planning evidence only; it does not claim generated-code artifact, final-race proof, physical UGV success, or final submission approval. Continue long task through report QA, targeted research, or a genuinely new unified mechanism when evidence appears. |
 
 ## Blockers
 
@@ -69,12 +71,14 @@ M9 submission candidate package, without final send
   `Results/metrics/four_track_summary_20260709_120547.md` as the current
   four-track evidence. This is review-ready evidence, not a claim that the
   controller is optimal.
-- Physical-transfer research has been added so controller tuning stays aligned
+- Physical-transfer research and M10 transfer notes have been added so controller tuning stays aligned
   with later real-car robustness instead of only one-track simulation scoring.
   Current reference packs:
   `References/research/physical_ugv_obstacle_avoidance_20260708/`,
   `References/research/robust_physical_ugv_navigation_20260709/`, and
   `References/research/deployable_ugv_avoidance_algorithms_20260709/`.
+  Current executable transfer summary:
+  `Docs/Design/final_race_migration_notes.md`.
 - Controller deployability source-only check now reports
   `ready_for_physical_claim=true`, `high=0`, and `medium=0` after replacing
   reciprocal distance steering terms (`1 / dl`, `1 / dr`) with bounded linear
