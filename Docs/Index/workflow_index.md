@@ -11,6 +11,7 @@
 | Evidence manifest template | `Docs/Workflows/evidence_manifest_template.md` |
 | Research manifest template | `Docs/Workflows/research_manifest_template.md` |
 | Deployable UGV avoidance algorithm research | `References/research/deployable_ugv_avoidance_algorithms_20260709/MANIFEST.md`; `References/research/deployable_ugv_avoidance_algorithms_20260709/source_notes.md` |
+| High-score optimization strategy after rejected v14-v29 attempts | `Docs/Design/high_score_optimization_strategy_20260709.md`; latest review `Results/metrics/track1_track4_candidate_review_v29_side_danger_speed_20260709_2130.md` |
 | Report writing | `Docs/Workflows/report_workflow.md` |
 | Current v13 submission readiness dry run, no package build | `Scripts/quality/check_submission_readiness.py`; `Scripts/quality/plan_submission_candidate.py`; `Results/deliverables/submission_dry_runs/submission_readiness_v13_20260709_1535.md`; `Results/deliverables/submission_dry_runs/submission_candidate_plan_v13_20260709_1535.md` |
 | Historical M6 review candidate package | `Scripts/quality/build_submission_candidate.py`; `Results/deliverables/submission_dry_runs/submission_readiness_20260709_124115.md`; `Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_124115.md` |
@@ -27,7 +28,7 @@
 
 ## Current Phase Cursor
 
-Current cursor: v13 report/readiness refresh completed; next inspect Track4 road-boundary recovery. This is a
+Current cursor: v13 report/readiness refresh completed; v14-v29 follow-up attempts rejected; next use `Docs/Design/high_score_optimization_strategy_20260709.md` and validate mechanism candidates only after failure-window diagnosis instead of blind scalar tuning. This is a
 cursor for the continuous M1-M9 long task, not a stop point. Update
 `Docs/Workflows/long_task_status_board.md` only when phase state changes.
 
@@ -37,7 +38,7 @@ M6 wrapper-based four-track metric extraction completed
 M8 report draft refreshed with v13 metrics
 M9 readiness dry run and local review candidate package are historical audit artifacts; do not rebuild packages unless explicitly requested
 Current controller candidate: v13 side trigger 0.45, total wrapper score 36.4
-Active weak-track focus after v13: Track4 road-boundary recovery
+Active weak-track focus after v13: mechanism-based Track1/Track4 road-boundary recovery, then Track3 regression; v29 side-danger speed regulation was tested and rejected as no improvement
 ```
 
 M1 source grounding is complete at `Results/evidence/static_model_grounding_20260708_210142.md`.

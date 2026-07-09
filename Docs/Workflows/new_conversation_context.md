@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v13 side-trigger 0.45 controller remains the current review-ready four-track candidate; Track4 v14/v15, Track1/Track3 v16-v18, Track1 v19 recovery, v20/v21 follow-up, and v22 lateral-dwell candidates were tested and rejected, 2026-07-09 CST.
+Status: v13 side-trigger 0.45 controller remains the current review-ready four-track candidate; Track4 v14/v15, Track1/Track3 v16-v18, Track1 v19 recovery, v20/v21 follow-up, v22 lateral-dwell, v23 cruise-speed, v24 ControlAllocate filter, v25 PathPlanner max-steer, v26 CtrlAlloc steer-weight, v27 CtrlAlloc default obstacle-weight no-op, v28 CtrlAlloc speed-channel, and v29 side-danger speed-regulation candidates were tested and rejected, 2026-07-09 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v13 accepted and restored; Track4 v14/v15, Track1/Track3 v16-v18, Track1 v19 recovery, v20/v21 follow-up, and v22 lateral-dwell candidates rejected; next attempt should inspect ControlAllocate/path-planner interaction before another controller rewrite`.
+Current phase cursor: `v13 accepted and restored; Track4 v14/v15, Track1/Track3 v16-v18, Track1 v19 recovery, v20/v21 follow-up, v22 lateral-dwell, v23 cruise-speed, v24 ControlAllocate filter, v25 PathPlanner max-steer, v26 CtrlAlloc steer-weight, v27 CtrlAlloc default obstacle-weight no-op, v28 CtrlAlloc speed-channel, and v29 side-danger speed-regulation candidates rejected; next attempt should use v13 collision-window evidence before another controller rewrite`.
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -160,6 +160,65 @@ Results/metrics/track1_candidate_review_v22_lateral_init_dwell15_20260709_1815.m
 Results/evidence/controller_deployability_static_check_v13_restored_after_v22_20260709_1815.md
 ```
 
+Track1 / Track3 v23 cruise-speed follow-up:
+
+```text
+Results/metrics/ctrlalloc_contribution_analysis_v13_v20_20260709_1925.md
+Results/metrics/track1_track3_candidate_review_v23_20260709_2000.md
+Results/evidence/controller_deployability_static_check_v13_restored_after_v23_20260709_2000.md
+```
+
+Track1 / Track3 v24/v25 ControlAllocate and PathPlanner follow-up:
+
+```text
+Results/metrics/track1_track3_candidate_review_v24_v25_20260709_1915.md
+Results/metrics/ctrlalloc_contribution_analysis_v24_fast_oa_filter_20260709_1840.md
+Results/metrics/final_steer_extreme_scan_v13_v20_v24_20260709_1850.md
+Results/evidence/controller_deployability_static_check_v13_restored_after_v25_20260709_1915.md
+```
+
+Track4 v13 diagnostic and v26 CtrlAlloc steer-weight follow-up:
+
+```text
+Results/simulations/diagnostic_v13_signals_saidao4_120s_20260709_1910/
+Results/metrics/collision_window_analysis_v13_track4_20260709_1910.md
+Results/metrics/signal_window_summary_v13_track4_20260709_1910.md
+Results/metrics/ctrlalloc_contribution_analysis_v13_track1_track3_track4_20260709_1915.md
+Results/metrics/track4_candidate_review_v26_ctrlalloc_steerpp06_20260709_1930.md
+Results/evidence/controller_deployability_static_check_v13_restored_after_v26_20260709_1930.md
+```
+
+Track3 v27 CtrlAlloc default obstacle-weight no-op follow-up:
+
+```text
+Results/simulations/controller_v27_ctrlalloc_factoroa05_saidao3_120s_20260709_1940/
+Results/metrics/collision_window_analysis_v27_ctrlalloc_factoroa05_20260709_1945.md
+Results/metrics/ctrlalloc_contribution_analysis_v27_ctrlalloc_factoroa05_20260709_1945.md
+Results/metrics/track3_candidate_review_v27_ctrlalloc_factoroa05_20260709_1950.md
+Results/evidence/controller_deployability_static_check_v13_restored_after_v27_20260709_1950.md
+```
+
+Track3 v28 CtrlAlloc speed-channel follow-up:
+
+```text
+Results/simulations/controller_v28_ctrlalloc_speedoa2x_saidao3_120s_20260709_1930/
+Results/metrics/collision_window_analysis_v28_ctrlalloc_speedoa2x_20260709_1935.md
+Results/metrics/ctrlalloc_contribution_analysis_v28_ctrlalloc_speedoa2x_20260709_1935.md
+Results/metrics/track3_candidate_review_v28_ctrlalloc_speedoa2x_20260709_1940.md
+Results/evidence/controller_deployability_static_check_v13_restored_after_v28_20260709_1940.md
+```
+
+Track1 / Track4 v29 side-danger speed-regulation follow-up:
+
+```text
+Docs/Design/high_score_optimization_strategy_20260709.md
+Results/evidence/controller_deployability_static_check_v29_side_danger_speed_20260709_2105.md
+Results/simulations/controller_v29_side_danger_speed_saidao1_120s_20260709_2105/
+Results/simulations/controller_v29_side_danger_speed_saidao4_120s_20260709_2115/
+Results/metrics/track1_track4_candidate_review_v29_side_danger_speed_20260709_2130.md
+Results/evidence/controller_deployability_static_check_v13_restored_after_v29_20260709_2130.md
+```
+
 Rejected candidates:
 
 ```text
@@ -172,6 +231,13 @@ v19: directed side-clearance initial steering for road-edge recovery on Track1
 v20: front-gated side-clearance initial steering on Track1
 v21: avoid speed -1 -> -1.2 on Track1/Track3
 v22: avoid-lateral initialization dwell 2s -> 1.5s on Track1
+v23: cruise speed 1 -> 0.8 on Track1/Track3
+v24: ControlAllocate obstacle-avoidance filters T=1 -> T=0.5 on Track3
+v25: PathPlanner uses declared max_steer clamp on Track1
+v26: ControlAllocate path-planner steering weight factor 1.0 -> 0.6 on Track4
+v27: ControlAllocate default obstacle-avoidance weight factor_oa 0.3 -> 0.5 on Track3; no-op because generated wrappers instantiate ctrlAlloc(factor_oa = 0.5)
+v28: ControlAllocate speed-channel gain1 factor_oa -> 2 * factor_oa on Track3
+v29: avoid-mode side-danger speed regulation on Track1/Track4
 ```
 
 v14/v15 kept Track4 at `P=8.8` and worsened timing. v16 did not improve
@@ -183,9 +249,25 @@ changes is accepted. v20 removed Track1 road collisions but increased obstacle
 collisions to `cO=10`, `P=6.0`; v21 kept Track3 unchanged and caused Track1 to
 stop early with `simulate_false_with_result_variables`; v22 shortened lateral
 initialization dwell and badly regressed Track1 to `cR=15`, `cO=1`, `P=3.6`.
-The controller source was restored to v13 semantics. The next attempt should be
-justified by ControlAllocate/path-planner interaction evidence, then run the
-target weak track first and Track1/Track3/Track4 regression checks.
+v23 lowered cruise speed to `0.8`; Track3 score stayed `P=9.2`, while Track1
+stopped early with a non-comparable `T=4.95`, so it is also rejected. v24
+removed Track3 final-steer extremes but kept `P=9.2` and stopped much earlier
+at `T=29.85`; v25 clamped PathPlanner steering but kept Track1 at `P=8.8`.
+v26 reduced the path-planner steering contribution in `CtrlAlloc`, but Track4
+regressed to `P=4.8`, `cR=11`, `cO=2`, so that route is rejected. v27 changed
+the `ControlAllocate` class default for obstacle-avoidance weighting, but the
+generated `Saidao*Eval` wrappers already instantiate `ctrlAlloc(factor_oa =
+0.5)`, so exported v13/v27 evidence both show `ctrlAlloc.factor_oa=0.5`; v27 is
+rejected as a no-op rather than as a valid stronger-weight test. The source was
+restored to v13 semantics. v28 doubled only the obstacle-avoidance speed
+channel in `CtrlAlloc`, but Track3 stopped at `T=4.0` with
+`simulate_failed`/`exit_state=2`, so the readable `P=10.0` is non-comparable
+and the candidate is rejected. v29 side-danger speed regulation passed the
+static source gate and ran Track1/Track4, but both target tracks stayed at
+`P=8.8`, `cR=3`, `cO=0`, matching v13 instead of improving it; the candidate
+is rejected and the source was restored to v13 semantics. The next attempt should start from
+collision-window evidence, then run the target weak track first and
+Track1/Track3/Track4 regression checks.
 Current M8/M9 review artifacts:
 
 ```text
