@@ -444,7 +444,7 @@ required.
 
 Current cursor: v48 opposing-steer guard is the review-ready best four-track
 wrapper candidate with a runtime caveat after v14-v44 follow-up attempts were
-rejected or proved no-op, v45 was superseded, v46-v52/v54-v58/v61-v66 were
+rejected or proved no-op, v45 was superseded, v46-v52/v54-v58/v61-v67 were
 rejected on Track3, v53/v59 were rejected on Track1, and v60 was rejected on
 Track1/Track3. M1 source grounding, M2 bounded
 baseline, M3 controller design, M4 bounded controller implementation gate, M5
@@ -462,7 +462,8 @@ M6 baseline: Results/metrics/four_track_summary_20260709_120547.md
 v13 historical accepted: Results/metrics/four_track_summary_v13_side_trigger045_20260709_1535.md
 v45 superseded accepted: Results/metrics/four_track_candidate_review_v45_curvature_speed_regulation_scaled_20260710_0045.md
 v48 current accepted: Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md
-v66 latest rejected: Results/metrics/track3_candidate_review_v66_road_edge_initial_steer_boost_20260710.md
+v66 rejected: Results/metrics/track3_candidate_review_v66_road_edge_initial_steer_boost_20260710.md
+v67 latest rejected diagnostic: Results/metrics/track3_candidate_review_v67_nearest_distance_input_diagnostic_20260710.md
 ```
 
 M2 and M4 verified `UGV.Example.Race1` load/check/simulate and score-variable
@@ -475,14 +476,19 @@ model terminal state. v45 corrected the v44 speed-scale no-op and improved the
 total wrapper score to `36.8` versus v13 `36.4`; v48 superseded v45 at `37.2`
 by reducing Track1 road collisions. Later rejected candidates either did not
 improve collision/score evidence or produced earlier non-comparable terminal
-states. Next safe controller work must start from fresh failure-window,
-source-level, or trajectory evidence and a new unified mechanism hypothesis,
+states. v67 showed that changing the diagnostic wrapper to feed
+`distanceSensor1.DisObstacle` into `front_dist` cleans the runtime state but
+does not improve Track3 `cR/cO/P`, so nearest-distance wrapper input changes
+are not an accepted score route. Next safe controller work must start from
+fresh failure-window, source-level, trajectory evidence, or four-direction-only
+research and a new unified mechanism hypothesis,
 not another blind scalar adjustment, final-steer clipping, simple planner
 suppression, side-trigger threshold scan, side-only decoupling, avoid-release
 change, speed-channel gain escalation, simple startup-speed cap, broad
 path-speed attenuation, brake-arbitration, path-steer neutralization,
 path-authority scalar scan, stronger initial side-gap bypass scan,
 close-side initial-direction scan, direct early steer-feedforward,
-front-clear side-reentry steering, emergency-front reverse-hold scan, or
-road-edge initial-steering magnitude scan. Final package approval remains a
+front-clear side-reentry steering, emergency-front reverse-hold scan,
+road-edge initial-steering magnitude scan, or nearest-distance wrapper input
+change. Final package approval remains a
 separate user gate.

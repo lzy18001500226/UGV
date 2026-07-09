@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v45 is superseded by v48 score evidence, v46-v52, v54-v58, v61-v66 were rejected on Track3, v53/v59 were rejected on Track1, and v60 was rejected on Track1/Track3, 2026-07-10 CST.
+Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v45 is superseded by v48 score evidence, v46-v52, v54-v58, v61-v67 were rejected on Track3, v53/v59 were rejected on Track1, and v60 was rejected on Track1/Track3, 2026-07-10 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op, v46-v52/v54-v58/v61-v66 rejected on Track3, v53/v59 rejected on Track1, and v60 rejected on Track1/Track3. Continue from v48 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence, source-level attribution, or a new obstacle-horizon/front-risk-state mechanism`.
+Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op, v46-v52/v54-v58/v61-v67 rejected on Track3, v53/v59 rejected on Track1, and v60 rejected on Track1/Track3. Continue from v48 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence, source-level attribution, four-direction-only research, or a new obstacle-horizon/front-risk-state mechanism`.
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -675,6 +675,25 @@ distance was below `0.16`, but Track3 produced a non-comparable early stop at
 `T=2.65`, `cO=1`, `P=9.6`. The accepted source semantics were restored to v48
 and the restored static gate passed. Continue from v48; do not continue
 road-edge initial-steering magnitude scans without a different mechanism.
+
+v67 nearest-distance input diagnostic is rejected as a final route but useful:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v67_nearest_distance_input_diagnostic_plan_20260710.md
+Models/UGV/Test/Saidao3NearestObstacleDiag.mo
+Results/simulations/diagnostic_v67_nearest_obstacle_front_saidao3_120s_20260710/
+Results/metrics/track3_candidate_review_v67_nearest_distance_input_diagnostic_20260710.md
+Results/metrics/collision_window_analysis_v48_v67_track3_20260710.md
+Results/metrics/signal_window_summary_v48_v67_track3_20260710.md
+```
+
+It changed the diagnostic wrapper so `distanceSensor1.DisObstacle` feeds the
+controller `front_dist`. The run became clean (`simulate_returned_true`,
+`exit_state=0`) but Track3 stayed at `T=120.0`, `cR=1`, `cO=1`, `P=9.2`, with
+the first obstacle event still at `1.05 s`. Reject nearest-distance input as a
+score-improvement route. Continue from v48 and research a deployable
+four-direction-only trajectory/reactive safety mechanism instead of repeating
+initial-steering or threshold scans.
 
 Current M8/M9 review artifacts:
 
