@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v45 is superseded by v48 score evidence, v46-v52, v54-v58, and v61-v64 were rejected on Track3, v53/v59 were rejected on Track1, and v60 was rejected on Track1/Track3, 2026-07-10 CST.
+Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v45 is superseded by v48 score evidence, v46-v52, v54-v58, and v61-v65 were rejected on Track3, v53/v59 were rejected on Track1, and v60 was rejected on Track1/Track3, 2026-07-10 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op, v46-v52/v54-v58/v61-v64 rejected on Track3, v53/v59 rejected on Track1, and v60 rejected on Track1/Track3. Continue from v48 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence or a new obstacle-horizon/front-risk-state mechanism`.
+Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op, v46-v52/v54-v58/v61-v65 rejected on Track3, v53/v59 rejected on Track1, and v60 rejected on Track1/Track3. Continue from v48 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence, source-level attribution, or a new obstacle-horizon/front-risk-state mechanism`.
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -627,6 +627,37 @@ first obstacle-distance violation deeper (`~0.106` -> `~0.088`), and moved the
 road event earlier (`4.85 s` -> `4.65 s`). Continue from v48; do not continue
 direct early steering-feedforward scans without a different trajectory-level
 mechanism.
+
+v64 front-clear side-reentry steering is rejected on Track3:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v64_plan_20260710.md
+Results/simulations/controller_v64_front_clear_side_reentry_saidao3_120s_20260710/
+Results/metrics/track3_candidate_review_v64_front_clear_side_reentry_20260710.md
+Results/evidence/controller_deployability_static_check_v48_restored_after_v64_20260710.md
+```
+
+It early-stopped Track3 at `T=3.85`, `cO=1`, `P=9.6`, before a comparable
+road-event window. Continue from v48; do not continue front-clear side-reentry
+steering scans.
+
+v65 front emergency hold is rejected on Track3:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v65_plan_20260710.md
+References/research/post_v64_limited_sensor_behaviors_20260710/MANIFEST.md
+Results/simulations/controller_v65_front_emergency_hold_saidao3_120s_20260710/
+Results/metrics/track3_candidate_review_v65_front_emergency_hold_20260710.md
+Results/metrics/collision_window_analysis_v48_v65_track3_20260710.md
+Results/metrics/signal_window_summary_v48_v65_track3_20260710.md
+Results/evidence/controller_deployability_static_check_v48_restored_after_v65_20260710.md
+```
+
+It reduced allocated speed at the first Track3 obstacle event and delayed that
+event from `1.05 s` to `1.15 s`, but still kept `cR=1`, `cO=1`, `P=9.2` and
+shortened Track3 to `T=36.55`. Continue from v48; do not continue this route
+by increasing reverse speed, widening the emergency-front threshold, or
+scanning emergency-hold constants.
 
 Current M8/M9 review artifacts:
 
