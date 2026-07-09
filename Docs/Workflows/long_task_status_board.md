@@ -91,6 +91,7 @@ M9 submission candidate package, without final send
   `recipient_explicit=false`, so mailbox visibility must be checked separately
   if the user still sees no mail. Latest notice evidence:
   `Results/evidence/notification_delivery_note_20260709_024813.md`.
+- M9 local review-only candidate package is ready at `Results/deliverables/submission_candidates/UGV_initial_race_review_candidate_20260709_124115.zip`. Local commit is `407721a`. Push to GitHub failed with HTTPS connection reset; retry push later. Sparse email notice evidence: `C:\Users\HP\Desktop\MoSim\Results\coagent_gateway\email\email_alert_20260709_124542.json`. UGV note: `Results/evidence/notification_delivery_note_20260709_124542.md`.
 - Do not use this board as a history ledger.
 - Update only when phase state changes or a review/blocker appears.
 - Long details, logs, screenshots, and metrics must stay under `Results/`.
