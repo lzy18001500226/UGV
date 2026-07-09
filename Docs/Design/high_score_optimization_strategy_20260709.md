@@ -1,13 +1,13 @@
 # High-Score Optimization Strategy
 
 > Research-driven strategy for improving the UGV obstacle-avoidance score after
-> v14-v31 scalar/controller attempts were rejected.
+> v14-v41 scalar/controller/allocation/timing attempts were rejected.
 
-Status: active strategy, 2026-07-09 CST.
+Status: active strategy after v45 review-ready improvement, 2026-07-10 CST.
 
 ## 1. Current Baseline
 
-Current accepted controller:
+Previous accepted controller:
 
 ```text
 v13 side-trigger 0.45
@@ -29,14 +29,23 @@ Wrapper score evidence:
 | Saidao3Eval | 120.0 | 1 | 1 | 9.2 |
 | Saidao4Eval | 113.1 | 3 | 0 | 8.8 |
 
-v13 records `36.4` total wrapper score in the current four-track evaluation
-set. Treat this as local wrapper evidence, not a final official `80`-point
-competition claim. The official score formula must be confirmed from official
+v13 recorded `36.4` total wrapper score in the current four-track evaluation
+set. v45 is now the review-ready best candidate with `36.8` total wrapper
+score. Treat both as local wrapper evidence, not final official `80`-point
+competition claims. The official score formula must be confirmed from official
 materials before final reporting.
+
+Current review-ready best candidate:
+
+```text
+v45 curvature-speed regulation scaled
+PathPlanner cap: abs(steering_angle) > 0.35 -> target_v <= 0.75
+Results/metrics/four_track_candidate_review_v45_curvature_speed_regulation_scaled_20260710_0045.md
+```
 
 ## 2. Rejected Attempt Lessons
 
-Do not continue v14-v31 style blind scalar scanning.
+Do not continue v14-v41 style blind scalar/timing scanning.
 
 Rejected route summary:
 
@@ -188,3 +197,150 @@ Non-goals:
 - Do not edit official track, vehicle, road, sensor, scoring, or example code.
 - Do not claim physical UGV success from simulation score.
 - Do not accept a readable `P=10` when `T` is early/non-comparable.
+
+## 9. Completed v32-v35 Front-Open Braking Check
+
+Evidence:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v32_plan_20260709.md
+Docs/Design/unified_obstacle_avoidance_v33_plan_20260709.md
+Docs/Design/unified_obstacle_avoidance_v34_plan_20260709.md
+Docs/Design/unified_obstacle_avoidance_v35_plan_20260709.md
+Results/metrics/track3_candidate_review_v32_v35_front_open_brake_20260709_2230.md
+Results/evidence/controller_deployability_static_check_v13_restored_after_v35_20260709_2227.md
+```
+
+Result:
+
+```text
+v32: rejected, Sysblock state-machine action rejected inline if expression.
+v33: rejected, explicit front_open_brake state did not trigger.
+v34: rejected, added transition still did not trigger stronger braking.
+v35: rejected, normal algorithm if statement triggered speed=-1.6 but Track3
+     stopped earlier at T=106.35 with no score improvement.
+```
+
+Lesson:
+
+```text
+Do not keep increasing reverse braking, avoid dwell, or open-front braking
+without a new mechanism reason. The next candidate should address interaction
+between obstacle avoidance and path-planner steering, or use fresh failure
+window evidence to justify a different mechanism.
+```
+
+## 10. Completed v36-v39 Steering-Authority Checks
+
+Evidence:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v36_plan_20260709.md
+Docs/Design/unified_obstacle_avoidance_v37_plan_20260709.md
+Docs/Design/unified_obstacle_avoidance_v38_plan_20260709.md
+Docs/Design/unified_obstacle_avoidance_v39_plan_20260709.md
+Results/metrics/four_track_candidate_review_v36_final_steer_limiter_20260709_2300.md
+Results/metrics/track4_track3_candidate_review_v37_final_steer_limiter_wide_20260709_2330.md
+Results/metrics/track4_track3_candidate_review_v38_negative_steer_guard_20260709_2315.md
+Results/metrics/track4_candidate_review_v39_planner_steer_attenuation_20260709_2330.md
+Results/evidence/controller_deployability_static_check_v13_restored_after_v39_20260709_2330.md
+```
+
+Result:
+
+```text
+v36: rejected, symmetric final steering limiter improved Track4 but reduced total score.
+v37: rejected, wider symmetric limiter still regressed Track3.
+v38: rejected, one-sided negative guard improved Track4 to P=9.2 but regressed Track3 to P=7.2.
+v39: rejected, simple planner-steering attenuation regressed Track4 to P=7.6.
+```
+
+Lesson:
+
+```text
+Do not continue final-steer clipping or simple planner-steering suppression as
+next routes. The failure pattern is not simply excessive final steering; v39
+shows that removing path authority during side risk can create earlier road and
+obstacle contacts. The next candidate should stay inside the obstacle
+controller boundary and change risk timing or lateral-mode behavior using a
+fresh failure-window hypothesis.
+```
+## 11. Long-Task Continuation Rule
+
+Rejected candidates do not end the long task. The repeatable loop is:
+
+```text
+failure evidence
+  -> mechanism hypothesis
+  -> design note and source-boundary decision
+  -> static gate
+  -> target-track runtime evidence
+  -> accept, reject, or restore v13
+  -> sparse email notice
+  -> continue with the next evidence-backed mechanism or targeted research
+```
+
+## 12. Completed v40-v41 Timing Checks
+
+Evidence:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v40_plan_20260709.md
+Docs/Design/unified_obstacle_avoidance_v41_plan_20260709.md
+Results/metrics/track4_candidate_review_v40_side_safety_bubble_20260709_2350.md
+Results/metrics/track4_candidate_review_v41_guarded_release_20260710_0007.md
+Results/evidence/controller_deployability_static_check_v13_restored_after_v41_20260710_0007.md
+```
+
+Result:
+
+```text
+v40: rejected, side-trigger 0.45 -> 0.55 produced identical Track4 P=8.8.
+v41: rejected, guarded avoid release regressed Track4 to P=8.0 with cO=2.
+```
+
+Lesson:
+
+```text
+Do not continue side-trigger threshold scanning or longer/guarded avoid-release
+routes as the next mechanism. v40 shows earlier side activation has no effect
+on the saved Track4 failure trajectory; v41 shows keeping avoid active while
+risk remains can add obstacle collisions. The next route should use a different
+mechanism, preferably trajectory/path behavior or a more informed algorithmic
+reference, before editing the controller again.
+```
+
+## 13. Completed v42-v45 Path-Authority / Speed Checks
+
+Evidence:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v42_plan_20260710.md
+Docs/Design/unified_obstacle_avoidance_v43_plan_20260710.md
+Docs/Design/unified_obstacle_avoidance_v44_plan_20260710.md
+Docs/Design/unified_obstacle_avoidance_v45_plan_20260710.md
+References/research/curvature_speed_regulation_20260710/MANIFEST.md
+Results/metrics/track1_candidate_review_v42_conservative_open_side_20260710_0018.md
+Results/metrics/track1_candidate_review_v43_decoupled_side_guard_20260710_0022.md
+Results/metrics/collision_window_analysis_v13_v44_track4_20260710_0032.md
+Results/metrics/four_track_candidate_review_v45_curvature_speed_regulation_scaled_20260710_0045.md
+```
+
+Result:
+
+```text
+v42: rejected, open-side steering regressed Track1.
+v43: rejected, side-only longitudinal/lateral decoupling regressed Track1.
+v44: rejected as no-op, speed cap used the wrong scale.
+v45: accepted as current review-ready best, total wrapper score 36.8 vs v13 36.4.
+```
+
+Lesson:
+
+```text
+Path-authority interaction is useful only when it preserves steering authority
+and uses the actual runtime scale. Simple steering suppression regresses, but a
+bounded high-curvature speed cap improves Track4 without reducing Track1/2/3.
+Continue from v45 and evaluate future mechanisms with one unified algorithm
+across all four tracks.
+```

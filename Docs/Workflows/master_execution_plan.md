@@ -442,8 +442,9 @@ review-ready state, commit/push the phase evidence and continue to the next
 safe phase unless the user explicitly pauses or final submission approval is
 required.
 
-Current cursor: v13 remains the accepted four-track wrapper baseline after
-v14-v30 follow-up attempts were rejected. M1 source grounding, M2 bounded
+Current cursor: v45 curvature-speed regulation scaled is the review-ready best
+four-track wrapper candidate after v14-v44 follow-up attempts were rejected or
+proved no-op. M1 source grounding, M2 bounded
 baseline, M3 controller design, M4 bounded controller implementation gate, M5
 one-track Race1 tuning review, M6 wrapper-based four-track metric extraction,
 M8 v13 report refresh, and M9 local review-only dry run are complete or
@@ -465,9 +466,10 @@ wrappers because direct `UGV.saidao.saidao*` source entries omit the
 obstacle-controller wiring needed for current API controller evaluation. The
 latest 120 s wrapper runs may return `simulate_failed` with `exit_state=2`, but
 the enhanced probe reads `T/cR/cO/P` and exports score timeseries after the
-model terminal state. v30 side-danger steering-floor was the latest rejected
-candidate: Track1 and Track4 both stayed at `P=8.8`, `cR=3`, `cO=0`, so the
-source was restored to v13 semantics. Next safe controller work must start from
-fresh failure-window or trajectory evidence and a new unified mechanism
-hypothesis, not another blind scalar adjustment. Final package approval remains
+model terminal state. v45 corrected the v44 speed-scale no-op and improved the
+total wrapper score to `36.8` versus v13 `36.4`. Next safe controller work
+must start from fresh failure-window or trajectory evidence and a new unified
+mechanism hypothesis, not another blind scalar adjustment, final-steer
+clipping, simple planner suppression, side-trigger threshold scan,
+side-only decoupling, or avoid-release change. Final package approval remains
 a separate user gate.
