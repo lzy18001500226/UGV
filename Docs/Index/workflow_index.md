@@ -12,8 +12,9 @@
 | Research manifest template | `Docs/Workflows/research_manifest_template.md` |
 | Deployable UGV avoidance algorithm research | `References/research/deployable_ugv_avoidance_algorithms_20260709/MANIFEST.md`; `References/research/deployable_ugv_avoidance_algorithms_20260709/source_notes.md` |
 | Report writing | `Docs/Workflows/report_workflow.md` |
-| Submission readiness dry run and review candidate package | `Scripts/quality/check_submission_readiness.py`; `Scripts/quality/plan_submission_candidate.py`; `Scripts/quality/build_submission_candidate.py`; `Results/deliverables/submission_dry_runs/submission_readiness_20260709_124115.md`; `Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_124115.md` |
+| Historical submission readiness dry run and review candidate package | `Scripts/quality/check_submission_readiness.py`; `Scripts/quality/plan_submission_candidate.py`; `Scripts/quality/build_submission_candidate.py`; `Results/deliverables/submission_dry_runs/submission_readiness_20260709_124115.md`; `Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_124115.md` |
 | Controller physical-deployability static check | `Scripts/quality/check_controller_deployability.py`; `Results/evidence/controller_deployability_static_check_20260709_0222.md` |
+| Track1 / Track3 weak-track tuning pass | `Results/metrics/track1_track3_tuning_pass_20260709_1425.md` |
 | Model source lookup | `Docs/Index/model_index.md` |
 | Competition task and scoring | `Docs/Design/赛题.md` |
 | Requirements | `Docs/Design/需求.md` |
@@ -22,7 +23,7 @@
 
 ## Current Phase Cursor
 
-Current cursor: M9 review candidate package after M6/M8 refresh. This is a
+Current cursor: targeted Track 1 / Track 3 controller tuning after M6 wrapper metrics. This is a
 cursor for the continuous M1-M9 long task, not a stop point. Update
 `Docs/Workflows/long_task_status_board.md` only when phase state changes.
 
@@ -30,7 +31,8 @@ cursor for the continuous M1-M9 long task, not a stop point. Update
 M1-M5 completed or review-ready
 M6 wrapper-based four-track metric extraction completed
 M8 report draft refreshed with M6 metrics
-M9 readiness dry run refreshed; local review candidate package may be built, but final submission still needs user approval
+M9 readiness dry run and local review candidate package are historical audit artifacts; do not rebuild packages unless explicitly requested
+Active weak-track tuning focus: Track1 road/obstacle collisions and Track3 obstacle collisions
 ```
 
 M1 source grounding is complete at `Results/evidence/static_model_grounding_20260708_210142.md`.

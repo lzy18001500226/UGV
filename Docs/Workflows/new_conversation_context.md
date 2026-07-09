@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: M9 review candidate zip ready; final approval still required, 2026-07-09 CST.
+Status: active engineering resumed on Track 1 / Track 3 controller tuning after M6 four-track evidence, 2026-07-09 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `final approval or optional Track 1/3 tuning after M9 review candidate zip`.
+Current phase cursor: `targeted Track 1/3 tuning after M6 four-track wrapper metrics`.
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -102,6 +102,16 @@ The final 120 s runs return `simulate_failed` with `exit_state=2`, but the
 enhanced probe reads `T/cR/cO/P` and exports score timeseries after the model
 terminal state. Treat this as usable review evidence, not as an optimized final
 competition result.
+
+Latest weak-track tuning pass:
+
+```text
+Results/metrics/track1_track3_tuning_pass_20260709_1425.md
+```
+
+No v7-v11 scalar tuning change is accepted. The project controller remains the
+v5 candidate. The next useful engineering step is diagnostic variable export or
+trajectory/collision-window analysis before another controller rewrite.
 Current M8/M9 review artifacts:
 
 ```text
@@ -112,11 +122,15 @@ Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_1241
 ```
 
 `check_submission_readiness.py` currently blocks only on `final_submission_approval_missing` when run without final approval. A local review-only candidate archive may be built for user audit, but final competition email/package sending still requires explicit user approval.
-Latest local review-only package:
 
-`	ext
+Historical local review-only package:
+
+```text
 Results/deliverables/submission_candidates/UGV_initial_race_review_candidate_20260709_124115.zip
 Results/deliverables/submission_candidates/UGV_initial_race_review_candidate_20260709_124115_manifest.md
-`
+```
 
 This package is for user audit only. It does not imply final submission approval and was not sent to the competition address.
+Do not create more submission zip packages unless the user explicitly asks for
+another packaging dry run. Push/network failures are operational follow-up
+items, not a reason to stop controller tuning.
