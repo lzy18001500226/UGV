@@ -1,0 +1,430 @@
+{
+  "radius_s": 0.2,
+  "signals": [
+    "df",
+    "dl",
+    "dr",
+    "flag",
+    "ctrlAlloc.speed",
+    "ctrlAlloc.steer",
+    "ctrlAlloc.speed_pp",
+    "ctrlAlloc.speed_oa",
+    "ctrlAlloc.steer_pp",
+    "ctrlAlloc.steer_oa",
+    "ctrlAlloc.gain3.u",
+    "pathPlanner.target_v",
+    "pathPlanner.steering_angle"
+  ],
+  "runs": [
+    {
+      "label": "v48_track3",
+      "run_dir": "Results\\simulations\\controller_v48_opposing_steer_guard_saidao3_120s_20260710",
+      "radius_s": 0.2,
+      "events": [
+        {
+          "time": 1.05,
+          "changes": {
+            "cO": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 10.0,
+              "to": 9.6,
+              "delta": -0.40000000000000036
+            }
+          },
+          "window": {
+            "nearest_time": 1.05,
+            "row_count": 8,
+            "signals": {
+              "df": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "dl": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "dr": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "flag": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "ctrlAlloc.speed": {
+                "nearest": 0.719587970373885,
+                "min": 0.679783428420869,
+                "max": 0.755124803424769,
+                "mean": 0.7155744959835493
+              },
+              "ctrlAlloc.steer": {
+                "nearest": 0.162348329427052,
+                "min": 0.156921573524437,
+                "max": 0.165949274398593,
+                "mean": 0.16234145985064014
+              },
+              "ctrlAlloc.speed_pp": {
+                "nearest": 1.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0
+              },
+              "ctrlAlloc.speed_oa": {
+                "nearest": -1.0,
+                "min": -1.0,
+                "max": -1.0,
+                "mean": -1.0
+              },
+              "ctrlAlloc.steer_pp": {
+                "nearest": -0.0385677603070534,
+                "min": -0.074278746434674,
+                "max": -0.0111093700570409,
+                "mean": -0.042908385806885586
+              },
+              "ctrlAlloc.steer_oa": {
+                "nearest": 0.6,
+                "min": 0.6,
+                "max": 0.6,
+                "mean": 0.6
+              },
+              "ctrlAlloc.gain3.u": {
+                "nearest": -0.0192838801535267,
+                "min": -0.037139373217337,
+                "max": -0.00555468502852043,
+                "mean": -0.021454192903442793
+              },
+              "pathPlanner.target_v": {
+                "nearest": 1.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0
+              },
+              "pathPlanner.steering_angle": {
+                "nearest": -0.0385677603070534,
+                "min": -0.074278746434674,
+                "max": -0.0111093700570409,
+                "mean": -0.042908385806885586
+              }
+            }
+          }
+        },
+        {
+          "time": 4.85,
+          "changes": {
+            "cR": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.6,
+              "to": 9.2,
+              "delta": -0.40000000000000036
+            }
+          },
+          "window": {
+            "nearest_time": 4.85,
+            "row_count": 8,
+            "signals": {
+              "df": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "dl": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "dr": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "flag": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "ctrlAlloc.speed": {
+                "nearest": 0.510460982526457,
+                "min": 0.509003851181044,
+                "max": 0.512777072787634,
+                "mean": 0.5107963273915076
+              },
+              "ctrlAlloc.steer": {
+                "nearest": 0.18494133465968,
+                "min": 0.175833708016246,
+                "max": 0.197074379567735,
+                "mean": 0.18649835020844924
+              },
+              "ctrlAlloc.speed_pp": {
+                "nearest": 1.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0
+              },
+              "ctrlAlloc.speed_oa": {
+                "nearest": -1.0,
+                "min": -1.0,
+                "max": -1.0,
+                "mean": -1.0
+              },
+              "ctrlAlloc.steer_pp": {
+                "nearest": -0.221491675424479,
+                "min": -0.240908413621265,
+                "max": -0.195315841845335,
+                "mean": -0.21810113404785725
+              },
+              "ctrlAlloc.steer_oa": {
+                "nearest": 0.6,
+                "min": 0.6,
+                "max": 0.6,
+                "mean": 0.6
+              },
+              "ctrlAlloc.gain3.u": {
+                "nearest": -0.110745837712239,
+                "min": -0.120454206810632,
+                "max": -0.0976579209226673,
+                "mean": -0.10905056702392867
+              },
+              "pathPlanner.target_v": {
+                "nearest": 1.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0
+              },
+              "pathPlanner.steering_angle": {
+                "nearest": -0.221491675424479,
+                "min": -0.240908413621265,
+                "max": -0.195315841845335,
+                "mean": -0.21810113404785725
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "v54_track3",
+      "run_dir": "Results\\simulations\\controller_v54_path_authority_035_saidao3_120s_20260710",
+      "radius_s": 0.2,
+      "events": [
+        {
+          "time": 1.05,
+          "changes": {
+            "cO": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 10.0,
+              "to": 9.6,
+              "delta": -0.40000000000000036
+            }
+          },
+          "window": {
+            "nearest_time": 1.05,
+            "row_count": 8,
+            "signals": {
+              "df": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "dl": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "dr": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "flag": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "ctrlAlloc.speed": {
+                "nearest": 0.719587998952153,
+                "min": 0.679783443832429,
+                "max": 0.755124849965956,
+                "mean": 0.7155745271135785
+              },
+              "ctrlAlloc.steer": {
+                "nearest": 0.168136318518422,
+                "min": 0.158588112818089,
+                "max": 0.177103034678333,
+                "mean": 0.16878237938501575
+              },
+              "ctrlAlloc.speed_pp": {
+                "nearest": 1.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0
+              },
+              "ctrlAlloc.speed_oa": {
+                "nearest": -1.0,
+                "min": -1.0,
+                "max": -1.0,
+                "mean": -1.0
+              },
+              "ctrlAlloc.steer_pp": {
+                "nearest": -0.0385596447348141,
+                "min": -0.0742445846573495,
+                "max": -0.0111089161345004,
+                "mean": -0.0428950188245177
+              },
+              "ctrlAlloc.steer_oa": {
+                "nearest": 0.6,
+                "min": 0.6,
+                "max": 0.6,
+                "mean": 0.6
+              },
+              "ctrlAlloc.gain3.u": {
+                "nearest": -0.0134958756571849,
+                "min": -0.0259856046300723,
+                "max": -0.00388812064707514,
+                "mean": -0.015013256588581197
+              },
+              "pathPlanner.target_v": {
+                "nearest": 1.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0
+              },
+              "pathPlanner.steering_angle": {
+                "nearest": -0.0385596447348141,
+                "min": -0.0742445846573495,
+                "max": -0.0111089161345004,
+                "mean": -0.0428950188245177
+              }
+            }
+          }
+        },
+        {
+          "time": 5.1,
+          "changes": {
+            "cR": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.6,
+              "to": 9.2,
+              "delta": -0.40000000000000036
+            }
+          },
+          "window": {
+            "nearest_time": 5.1,
+            "row_count": 8,
+            "signals": {
+              "df": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "dl": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "dr": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "flag": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "ctrlAlloc.speed": {
+                "nearest": 0.508147604329607,
+                "min": 0.50701271446722,
+                "max": 0.509951490808795,
+                "mean": 0.5084087866919579
+              },
+              "ctrlAlloc.steer": {
+                "nearest": 0.218039825435972,
+                "min": 0.210904660640858,
+                "max": 0.228309589758234,
+                "mean": 0.21941593579261312
+              },
+              "ctrlAlloc.speed_pp": {
+                "nearest": 1.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0
+              },
+              "ctrlAlloc.speed_oa": {
+                "nearest": -1.0,
+                "min": -1.0,
+                "max": -1.0,
+                "mean": -1.0
+              },
+              "ctrlAlloc.steer_pp": {
+                "nearest": -0.224574486431071,
+                "min": -0.246297510946817,
+                "max": -0.193107421134095,
+                "mean": -0.22033508374090188
+              },
+              "ctrlAlloc.steer_oa": {
+                "nearest": 0.6,
+                "min": 0.6,
+                "max": 0.6,
+                "mean": 0.6
+              },
+              "ctrlAlloc.gain3.u": {
+                "nearest": -0.0786010702508749,
+                "min": -0.0862041288313861,
+                "max": -0.0675875973969334,
+                "mean": -0.07711727930931565
+              },
+              "pathPlanner.target_v": {
+                "nearest": 1.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0
+              },
+              "pathPlanner.steering_angle": {
+                "nearest": -0.224574486431071,
+                "min": -0.246297510946817,
+                "max": -0.193107421134095,
+                "mean": -0.22033508374090188
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

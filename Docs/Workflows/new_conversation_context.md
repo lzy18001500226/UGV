@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v45 is superseded by v48 score evidence, v46-v52 were rejected on Track3, and v53 was rejected on Track1, 2026-07-10 CST.
+Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v45 is superseded by v48 score evidence, v46-v52 and v54 were rejected on Track3, and v53 was rejected on Track1, 2026-07-10 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op, v46-v52 rejected on Track3, and v53 rejected on Track1. Continue from v48 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence or a new obstacle-horizon/path-authority mechanism`.
+Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op, v46-v52 and v54 rejected on Track3, and v53 rejected on Track1. Continue from v48 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence or a new obstacle-horizon/front-risk-state mechanism`.
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -229,6 +229,25 @@ v53 is rejected: complete path-steer neutralization regressed Track1 from v48
 `T=120.0`, `cR=2`, `cO=0`, `P=9.2` to `T=50.55`, `cR=4`, `cO=0`, `P=8.4`
 with `simulate_failed`/`exit_state=2`. Do not continue full path-steer
 neutralization; v48's half attenuation is safer. Continue from v48.
+
+v54 path-authority 0.35 follow-up:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v54_plan_20260710.md
+Results/simulations/controller_v54_path_authority_035_saidao3_120s_20260710/
+Results/metrics/track3_candidate_review_v54_path_authority_035_20260710.md
+Results/metrics/collision_window_analysis_v48_v54_track3_20260710.md
+Results/metrics/signal_window_summary_v48_v54_track3_20260710.md
+Results/metrics/ctrlalloc_contribution_analysis_v48_v54_track3_20260710.md
+Results/evidence/controller_deployability_static_check_v48_restored_after_v54_20260710.md
+```
+
+v54 is rejected: reducing v48's opposing path-steer contribution from `0.5` to
+`0.35` did not improve Track3 collision count or score and shortened Track3
+from v48 `T=112.45`, `cR=1`, `cO=1`, `P=9.2` to `T=7.3`, `cR=1`, `cO=1`,
+`P=9.2`. Do not continue scanning the path-authority scalar between `0.5` and
+`0`. Continue from v48 and inspect obstacle-controller initial/front-risk
+structure or a new mechanism.
 
 v49 path-speed attenuation follow-up:
 
