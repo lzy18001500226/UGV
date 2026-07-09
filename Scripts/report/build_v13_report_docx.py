@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Build the v13 initial-race report DOCX from the Markdown draft."""
+"""Build an initial-race report DOCX from a Markdown draft."""
 from __future__ import annotations
 
+import argparse
 import re
 import sys
 from pathlib import Path
@@ -17,6 +18,13 @@ from docx.shared import Inches, Pt, RGBColor
 REPO = Path(__file__).resolve().parents[2]
 SRC = REPO / "Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.md"
 OUT = REPO / "Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.docx"
+
+
+def parse_args(argv: list[str]) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--src", type=Path, default=SRC, help="Markdown report draft path")
+    parser.add_argument("--out", type=Path, default=OUT, help="Output DOCX path")
+    return parser.parse_args(argv)
 
 
 def set_cell_shading(cell, fill: str) -> None:
@@ -205,15 +213,18 @@ def render_markdown(doc: Document, text: str) -> None:
         i += 1
 
 
-def main() -> int:
-    if not SRC.exists():
-        raise SystemExit(f"missing source: {SRC}")
+def main(argv: list[str] | None = None) -> int:
+    args = parse_args(sys.argv[1:] if argv is None else argv)
+    src = args.src if args.src.is_absolute() else REPO / args.src
+    out = args.out if args.out.is_absolute() else REPO / args.out
+    if not src.exists():
+        raise SystemExit(f"missing source: {src}")
     doc = Document()
     setup_styles(doc)
-    render_markdown(doc, SRC.read_text(encoding="utf-8"))
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    doc.save(OUT)
-    print(OUT)
+    render_markdown(doc, src.read_text(encoding="utf-8"))
+    out.parent.mkdir(parents=True, exist_ok=True)
+    doc.save(out)
+    print(out)
     return 0
 
 

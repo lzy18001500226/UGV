@@ -460,9 +460,14 @@ Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260
 Results/deliverables/report_drafts/initial_race_report_draft_m6_metrics_20260709_123905.docx
 Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.md
 Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.docx
+Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.md
+Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.docx
 Results/deliverables/submission_dry_runs/submission_readiness_20260709_124115.md
 Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_124115.md
 ```
+
+The v48 report draft is the current review-ready report surface. The M6 and
+v13 report drafts remain historical audit artifacts.
 
 `check_submission_readiness.py` currently blocks only on `final_submission_approval_missing` when run without final approval. A local review-only candidate archive may be built for user audit, but final competition email/package sending still requires explicit user approval.
 
