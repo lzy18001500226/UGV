@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v13 side-trigger 0.45 controller is current review-ready four-track candidate after targeted tuning, 2026-07-09 CST.
+Status: v13 side-trigger 0.45 controller remains the current review-ready four-track candidate; Track4 v14/v15, Track1/Track3 v16-v18, Track1 v19 recovery, v20/v21 follow-up, and v22 lateral-dwell candidates were tested and rejected, 2026-07-09 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v13 report/readiness refresh and Track4 road-boundary recovery planning`.
+Current phase cursor: `v13 accepted and restored; Track4 v14/v15, Track1/Track3 v16-v18, Track1 v19 recovery, v20/v21 follow-up, and v22 lateral-dwell candidates rejected; next attempt should inspect ControlAllocate/path-planner interaction before another controller rewrite`.
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -121,8 +121,71 @@ Results/metrics/four_track_summary_v13_side_trigger045_20260709_1535.md
 
 No v7-v11 scalar tuning change is accepted. v13 side-trigger 0.45 is the
 current review-ready controller candidate with total wrapper score `36.4`
-versus v12 `34.8` and M6 baseline `32.0`. The next useful engineering step is
-Track4 road-boundary recovery analysis before another controller rewrite.
+versus v12 `34.8` and M6 baseline `32.0`. Later Track4, Track1/Track3, and
+Track1 road-edge recovery attempts were rejected, so do not replace v13 without
+new target-track evidence and regression checks.
+
+Track4 recovery follow-up:
+
+```text
+Results/metrics/track4_recovery_candidate_review_20260709_1715.md
+```
+
+Track1/Track3 follow-up:
+
+```text
+Results/metrics/collision_window_analysis_v13_track1_track3_20260709_1705.md
+Results/metrics/signal_window_summary_v13_track1_track3_20260709_1705.md
+Results/metrics/track1_track3_candidate_review_v16_v18_20260709_1755.md
+```
+
+Track1 road-edge recovery follow-up:
+
+```text
+Results/metrics/track1_v19_road_edge_recovery_review_20260709_1835.md
+Results/evidence/controller_deployability_static_check_v13_restored_after_v19_20260709_1835.md
+```
+
+Track1 / Track3 v20/v21 follow-up:
+
+```text
+Results/metrics/track1_track3_candidate_review_v20_v21_20260709_1855.md
+Results/evidence/controller_deployability_static_check_v13_restored_after_v20_v21_20260709_1855.md
+```
+
+Track1 v22 lateral-dwell follow-up:
+
+```text
+Results/metrics/track1_candidate_review_v22_lateral_init_dwell15_20260709_1815.md
+Results/evidence/controller_deployability_static_check_v13_restored_after_v22_20260709_1815.md
+```
+
+Rejected candidates:
+
+```text
+v14: avoid-lateral initial fixed steer 0.6 -> 0.45
+v15: side-trigger/front-clear branch uses low-speed forward instead of reverse
+v16: front avoid trigger df <= mindis -> df <= safeF
+v17: avoid-lateral initial fixed steer 0.6 -> 0.8
+v18: avoid-lateral initial fixed steer 0.6 -> 0.45 on Track1
+v19: directed side-clearance initial steering for road-edge recovery on Track1
+v20: front-gated side-clearance initial steering on Track1
+v21: avoid speed -1 -> -1.2 on Track1/Track3
+v22: avoid-lateral initialization dwell 2s -> 1.5s on Track1
+```
+
+v14/v15 kept Track4 at `P=8.8` and worsened timing. v16 did not improve
+Track3, v17 regressed Track3, and v18 regressed Track1. v19 first failed
+`CheckModel` because the Sysblock state machine does not support the attempted
+inline `if` expression; the arithmetic fallback removed Track1 road collisions
+but increased obstacle collisions to `cO=13`, `P=4.8`. None of these source
+changes is accepted. v20 removed Track1 road collisions but increased obstacle
+collisions to `cO=10`, `P=6.0`; v21 kept Track3 unchanged and caused Track1 to
+stop early with `simulate_false_with_result_variables`; v22 shortened lateral
+initialization dwell and badly regressed Track1 to `cR=15`, `cO=1`, `P=3.6`.
+The controller source was restored to v13 semantics. The next attempt should be
+justified by ControlAllocate/path-planner interaction evidence, then run the
+target weak track first and Track1/Track3/Track4 regression checks.
 Current M8/M9 review artifacts:
 
 ```text
