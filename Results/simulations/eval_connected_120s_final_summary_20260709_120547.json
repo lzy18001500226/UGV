@@ -1,0 +1,26 @@
+[
+  {
+    "Track": 1,
+    "ExitCode": 5,
+    "OutDir": "Results\\simulations\\eval_saidao1_connected_120s_final_20260709_120547",
+    "Console": "Results\\simulations\\eval_saidao1_connected_120s_final_20260709_120547.console.txt"
+  },
+  {
+    "Track": 2,
+    "ExitCode": 5,
+    "OutDir": "Results\\simulations\\eval_saidao2_connected_120s_final_20260709_120547",
+    "Console": "Results\\simulations\\eval_saidao2_connected_120s_final_20260709_120547.console.txt"
+  },
+  {
+    "Track": 3,
+    "ExitCode": 5,
+    "OutDir": "Results\\simulations\\eval_saidao3_connected_120s_final_20260709_120547",
+    "Console": "Results\\simulations\\eval_saidao3_connected_120s_final_20260709_120547.console.txt"
+  },
+  {
+    "Track": 4,
+    "ExitCode": 5,
+    "OutDir": "Results\\simulations\\eval_saidao4_connected_120s_final_20260709_120547",
+    "Console": "Results\\simulations\\eval_saidao4_connected_120s_final_20260709_120547.console.txt"
+  }
+]

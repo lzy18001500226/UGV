@@ -8,7 +8,7 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 
-DEFAULT_READINESS = Path("Results/deliverables/submission_dry_runs/submission_readiness_20260709_0153.json")
+DEFAULT_READINESS = Path("Results/deliverables/submission_dry_runs/submission_readiness_20260709_124115.json")
 
 
 def git_count(repo: Path, path: str) -> int:
@@ -26,11 +26,11 @@ def build_plan(repo: Path, readiness: Path) -> dict:
     data = json.loads(ready_path.read_text(encoding="utf-8"))
     blockers = [item["code"] for item in data.get("blockers", [])]
     include = [
-        "Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.docx",
+        "Results/deliverables/report_drafts/initial_race_report_draft_m6_metrics_20260709_123905.docx",
         "Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.md",
         "Results/deliverables/report_drafts/render_check_20260709_0118/QA_NOTE.md",
         "Results/metrics/one_track_tuning_20260708_231430.md",
-        "Results/metrics/four_track_summary_20260708_231430.md",
+        "Results/metrics/four_track_summary_20260709_120547.md",
         "Results/evidence/static_model_grounding_20260708_210142.md",
         "Results/evidence/controller_design_review_20260708_215659.md",
         "Results/evidence/controller_v1_source_notes_20260708_220257.md",
@@ -51,7 +51,7 @@ def build_plan(repo: Path, readiness: Path) -> dict:
             "References/research/ large upstream snapshots unless cited in final appendix",
             "final competition email/send action until user approval",
         ],
-        "non_claims": ["Does not create a zip.", "Does not send final submission email.", "Does not run MWORKS or produce four-track metrics."],
+        "non_claims": ["Does not create a zip.", "Does not send final submission email.", "Does not run MWORKS during this dry run."],
     }
 
 

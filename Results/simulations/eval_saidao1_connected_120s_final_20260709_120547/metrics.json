@@ -1,0 +1,39 @@
+{
+  "request_id": "M6-wrapper-120s-final-track-1-20260709_120547",
+  "model_name": "UGV.Test.Saidao1Eval",
+  "stop_time_requested": 120.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "simulate_failed",
+  "completion": "simulate_false_with_result_variables; inspect messages/assertions",
+  "time_s": 86.9,
+  "road_collisions": 4.0,
+  "obstacle_collisions": 3.0,
+  "avoidance_score": 7.199999999999999,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "simulation_exit_state": 2,
+  "simulation_state": "Idle",
+  "exported_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\eval_saidao1_connected_120s_final_20260709_120547\\score_timeseries.csv",
+  "exported_csv_ok": true,
+  "exported_extra_csv": null,
+  "exported_extra_csv_ok": false,
+  "extra_result_variables": [],
+  "pyapi_messages": {
+    "GetLastErrors": [
+      ""
+    ],
+    "MessageText": "[上一条命令没有日志信息]"
+  },
+  "notes": [],
+  "score_values_at_end": {
+    "T": 86.9,
+    "cR": 4.0,
+    "cO": 3.0,
+    "P": 7.199999999999999
+  }
+}

@@ -357,8 +357,12 @@ def main() -> int:
         if not sim_result:
             metrics["pyapi_messages"] = collect_pyapi_messages(pyapi)
             record_step(steps, "simulate_model_messages", "captured", messages=metrics["pyapi_messages"])
-            return_code = 5
-            return return_code
+            record_step(
+                steps,
+                "post_failed_simulation_result_probe",
+                "attempting",
+                note="SimulateModel returned false; attempting state/result extraction before exiting.",
+            )
 
         try:
             metrics["simulation_exit_state"] = safe_json_value(pyapi.GetSimulationExitState())
@@ -432,7 +436,11 @@ def main() -> int:
                 metrics["road_collisions"] = score_map.get("cR")
                 metrics["obstacle_collisions"] = score_map.get("cO")
                 metrics["avoidance_score"] = score_map.get("P")
-                metrics["completion"] = "bounded_stop_or_assertion; inspect exit_state/logs"
+                metrics["completion"] = (
+                    "bounded_stop_or_assertion; inspect exit_state/logs"
+                    if sim_result
+                    else "simulate_false_with_result_variables; inspect messages/assertions"
+                )
                 record_step(steps, "score_values_at_end", "ok", values=score_map)
             except Exception as exc:  # noqa: BLE001
                 record_step(steps, "score_values_at_end", "exception", error=repr(exc))
@@ -462,7 +470,7 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001
                 record_step(steps, "export_extra_timeseries", "exception", error=repr(exc))
 
-        return_code = 0
+        return_code = 0 if sim_result else 5
         return return_code
     except Exception as exc:  # noqa: BLE001
         record_step(steps, "exception", "failed", error=repr(exc), traceback=traceback.format_exc())

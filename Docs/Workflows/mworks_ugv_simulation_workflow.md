@@ -162,6 +162,19 @@ For each controller version:
    docs, and targeted community notes when safe; record bounded recovery attempts
    in the manifest.
 
+`Scripts/mworks/ugv_baseline_probe.py` intentionally attempts result-variable
+extraction even when `SimulateModel` / `SimulateModelEx` returns `False`. Some
+MWORKS model terminal states return `False` while still leaving readable
+`T/cR/cO/P` variables and exportable score timeseries. Treat those runs as:
+
+```text
+runtime_status = simulate_failed
+completion = simulate_false_with_result_variables; inspect messages/assertions
+```
+
+This is usable review evidence when `T/cR/cO/P` are present, but it must not be
+reported as an ordinary clean simulation return.
+
 ## 5. Four-Track Gate G3
 
 When one-track behavior is acceptable:

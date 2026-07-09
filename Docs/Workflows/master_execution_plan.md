@@ -31,7 +31,7 @@ when safe; do not pretend that email was sent.
 
 | Situation | Default Action |
 |---|---|
-| MWORKS login, license, or activation dialog appears | Use the approved credential path if the current task/user/project document names one. Do not scan personal folders for credentials. Capture redacted evidence, complete recovery, then send or record a short Chinese notice. |
+| MWORKS login, license, or activation dialog appears | Use the approved credential path if the current task/user/project document names one. Do not scan personal folders for credentials. Do not treat `L5104-B0` or `登录失败，请检查网络后重试` as a network blocker by default. First operate the real Sysplorer `登录` button, enter the approved in-memory credentials, activate through `帮助 -> 使用许可`, verify with a 1 s API probe, capture redacted evidence, then send or record a short Chinese notice. |
 | Unknown modal or GUI error appears | Inspect, screenshot, send an email if it affects progress, search local/official/community docs, try bounded recovery if low risk, then record evidence. Stop only if continued action would be destructive, credential-guessing, or scope-changing. |
 | Model load/translate/simulate bug | Inspect local model source and logs first, send an email if the phase is delayed or blocked, then search official docs, MoHub, blogs, and reference projects. Record what was tried before declaring a blocker. |
 | Need an open-source reference | Search and ingest it under `References/research/` with a manifest; do not mix it into the official model tree. |
@@ -442,9 +442,10 @@ review-ready state, commit/push the phase evidence and continue to the next
 safe phase unless the user explicitly pauses or final submission approval is
 required.
 
-Current cursor: M6 official-track API simulation blocked. M1 source grounding,
-M2 bounded baseline, M3 controller design, M4 bounded controller implementation
-gate, and M5 one-track Race1 tuning review are complete:
+Current cursor: M8/M9 refresh after M6 four-track wrapper metrics. M1 source
+grounding, M2 bounded baseline, M3 controller design, M4 bounded controller
+implementation gate, M5 one-track Race1 tuning review, and M6 wrapper-based
+four-track metric extraction are complete:
 
 ```text
 M1: Results/evidence/static_model_grounding_20260708_210142.md
@@ -452,13 +453,16 @@ M2: Results/simulations/baseline_20260708_213448/
 M3: Docs/Design/避障算法设计.md; Results/evidence/controller_design_review_20260708_215659.md
 M4: Results/simulations/controller_refsysblock_20260708_221000/
 M5: Results/metrics/one_track_tuning_20260708_231430.md
-M6 blocker: Results/evidence/official_track_api_simulation_blocker_20260708_231430.md
+M6: Results/metrics/four_track_summary_20260709_120547.md
 ```
 
 M2 and M4 verified `UGV.Example.Race1` load/check/simulate and score-variable
 access with bounded `stopTime=12`. M5 identifies v5 as the current Race1
-candidate. M6 is blocked because `UGV.saidao.saidao1` through `saidao4` pass
-`CheckModel` but fail before simulation with missing Real-equation compiler
-errors. These are not four-track score claims. Next safe work is GUI/official
-support validation of the "parameter evaluation" simulation setting, or a
-blocker-aware report draft if the user accepts that limitation.
+candidate. M6 uses generated `UGV.Test.Saidao*Eval` wrappers because direct
+`UGV.saidao.saidao*` source entries omit the obstacle-controller wiring needed
+for current API controller evaluation. The latest 120 s wrapper runs return
+`simulate_failed` with `exit_state=2`, but the enhanced probe reads
+`T/cR/cO/P` and exports score timeseries after the model terminal state. Next
+safe work is refreshing the report draft and submission dry run with the M6
+metrics, then considering targeted Track 1/3 tuning before final package
+approval.

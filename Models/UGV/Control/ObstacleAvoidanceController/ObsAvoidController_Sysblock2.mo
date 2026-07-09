@@ -40,70 +40,70 @@ textString="前轮转角",
 textStyle={TextStyle.None},
 textColor={0,0,0},
 horizontalAlignment=LinePattern.None)}),Protection(access=Access.diagram));
-  SysplorerEmbeddedCoder.Port.Inport front_dist 
+  SysplorerEmbeddedCoder.Port.Inport front_dist
     annotation (Placement(transformation(origin={-136,58},
 extent={{-10,-10},{10,10}}),
 iconTransformation(origin={-101.8,75},
 extent={{-1.8,-1.8},{1.8,1.8}})),__MWORKS(BlockSystem(Type(inherit=InheritType.none ,ref="double") ,Dimension(dimensionType=DimensionType.none)=1 ,SampleTime(group="D1")=0.01)));
-  SysplorerEmbeddedCoder.Port.Inport rear_dist 
+  SysplorerEmbeddedCoder.Port.Inport rear_dist
     annotation (Placement(transformation(origin={-136,16},
 extent={{-10,-10},{10,10}}),
 iconTransformation(origin={-101.8,25},
 extent={{-1.8,-1.8},{1.8,1.8}})),__MWORKS(BlockSystem(Type(inherit=InheritType.none ,ref="double") ,Dimension(dimensionType=DimensionType.none)=1 ,SampleTime(group="D1")=0.01)));
-  SysplorerEmbeddedCoder.Port.Inport left_dist 
+  SysplorerEmbeddedCoder.Port.Inport left_dist
     annotation (Placement(transformation(origin={-136,-26},
 extent={{-10,-10},{10,10}}),
 iconTransformation(origin={-101.8,-25},
 extent={{-1.8,-1.8},{1.8,1.8}})),__MWORKS(BlockSystem(Type(inherit=InheritType.none ,ref="double") ,Dimension(dimensionType=DimensionType.none)=1 ,SampleTime(group="D1")=0.01)));
-  SysplorerEmbeddedCoder.Port.Inport right_dist 
+  SysplorerEmbeddedCoder.Port.Inport right_dist
     annotation (Placement(transformation(origin={-136,-68},
 extent={{-10,-10},{10,10}}),
 iconTransformation(origin={-101.8,-75},
 extent={{-1.8,-1.8},{1.8,1.8}})),__MWORKS(BlockSystem(Type(inherit=InheritType.none ,ref="double") ,Dimension(dimensionType=DimensionType.none)=1 ,SampleTime(group="D1")=0.01)));
-  SysplorerEmbeddedCoder.Port.Outport speed 
+  SysplorerEmbeddedCoder.Port.Outport speed
     annotation (Placement(transformation(origin={178,58},
 extent={{-10,-10},{10,10}}),
 iconTransformation(origin={101.8,50},
 extent={{-1.8,-1.8},{1.8,1.8}})),__MWORKS(BlockSystem(Type(inherit=InheritType.none ,ref="double") ,Dimension(dimensionType=DimensionType.none)=1 ,SampleTime(group="D1")=0.01)));
-  SysplorerEmbeddedCoder.Port.Outport steer 
+  SysplorerEmbeddedCoder.Port.Outport steer
     annotation (Placement(transformation(origin={178,-58},
 extent={{-10,-10},{10,10}}),
 iconTransformation(origin={101.8,-50},
 extent={{-1.8,-1.8},{1.8,1.8}})),__MWORKS(BlockSystem(Type(inherit=InheritType.none ,ref="double") ,Dimension(dimensionType=DimensionType.none)=1 ,SampleTime(group="D1")=0.01)));
-  Chart chart 
+  Chart chart
     annotation (Placement(transformation(origin={-18,-7},
 extent={{-29,-29},{29,29}})),__MWORKS(ComponentNamePlacement(BOTTOM),BlockSystem(SampleTime(group="D1")=0.01)));
-  SysplorerEmbeddedCoder.MathOperation.Sum sum1(isSaturate=false,inputs="+-") 
+  SysplorerEmbeddedCoder.MathOperation.Sum sum1(isSaturate=false,inputs="+-")
     annotation (Placement(transformation(origin={140,28},
 extent={{-10,-10},{10,10}})),__MWORKS(BlockSystem(Instance(u(u1(Type(ref="double") ,Dimension=1) ,u2(Type(ref="double") ,Dimension=1)) ,y(Type(ref="double") ,Dimension=1)),Type(overflowKind=SysplorerEmbeddedCoder.Types.OverflowKind.wrap) ,SampleTime(group="D1")=0.01),PortLabels(labelType="CustomType",labels(label(text="+",instance="u1"),label(text="-",instance="u2")))));
-  SysplorerEmbeddedCoder.MathOperation.Sum sum2(isSaturate=false,inputs="++") 
+  SysplorerEmbeddedCoder.MathOperation.Sum sum2(isSaturate=false,inputs="++")
     annotation (Placement(transformation(origin={52,-26.5},
 extent={{-10,-10},{10,10}})),__MWORKS(BlockSystem(Instance(u(u1(Type(ref="double") ,Dimension=1) ,u2(Type(ref="double") ,Dimension=1)) ,y(Type(ref="double") ,Dimension=1)),Type(overflowKind=SysplorerEmbeddedCoder.Types.OverflowKind.wrap) ,SampleTime(group="D1")=0.01),PortLabels(labelType="CustomType",labels(label(text="+",instance="u1"),label(text="+",instance="u2")))));
-  SysplorerEmbeddedCoder.Sources.Constant constant1(k=pi) 
+  SysplorerEmbeddedCoder.Sources.Constant constant1(k=pi)
     annotation (Placement(transformation(origin={1,-58},
 extent={{-10,-10},{10,10}})),__MWORKS(BlockSystem(SampleTime(auto=true,group="D1")=0.01,Instance(y(Type(ref="double") ,Dimension=1) ,k(Type(ref="double") ,Dimension=1)))));
-  SysplorerEmbeddedCoder.MathOperation.RoundingFunction roundingFunction 
+  SysplorerEmbeddedCoder.MathOperation.RoundingFunction roundingFunction
     annotation (Placement(transformation(origin={62,16},
 extent={{-10,-10},{10,10}})),__MWORKS(BlockSystem(Instance(u(Type(ref="double") ,Dimension=1) ,y(Type(ref="double") ,Dimension=1)),SampleTime(group="D1")=0.01)));
-  SysplorerEmbeddedCoder.MathOperation.Product product1(isSaturate=false,inputs="*/") 
+  SysplorerEmbeddedCoder.MathOperation.Product product1(isSaturate=false,inputs="*/")
     annotation (Placement(transformation(origin={94,-31.5},
 extent={{-10,-10},{10,10}})),__MWORKS(BlockSystem(Instance(u(u1(Type(ref="double") ,Dimension=1) ,u2(Type(ref="double") ,Dimension=1)) ,y(Type(ref="double") ,Dimension=1)),Type(overflowKind=SysplorerEmbeddedCoder.Types.OverflowKind.wrap) ,SampleTime(group="D1")=0.01),PortLabels(labelType="CustomType",labels(label(text="*",instance="u1"),label(text="/",instance="u2")))));
-  SysplorerEmbeddedCoder.Sources.Constant constant2(k=2*pi) 
+  SysplorerEmbeddedCoder.Sources.Constant constant2(k=2*pi)
     annotation (Placement(transformation(origin={52,-58},
 extent={{-10,-10},{10,10}})),__MWORKS(BlockSystem(SampleTime(auto=true,group="D1")=0.01,Instance(y(Type(ref="double") ,Dimension=1) ,k(Type(ref="double") ,Dimension=1)))));
-  SysplorerEmbeddedCoder.MathOperation.Gain gain(k=2*pi) 
+  SysplorerEmbeddedCoder.MathOperation.Gain gain(k=2*pi)
     annotation (Placement(transformation(origin={94,16},
 extent={{-10,-10},{10,10}})),__MWORKS(BlockSystem(Instance(u(Type(ref="double") ,Dimension=1) ,y(Type(ref="double") ,Dimension=1) ,k(Type(ref="double") ,Dimension=1)),SampleTime(group="D1")=0.01)));
-  SysplorerEmbeddedCoder.MathOperation.Abs abs1 
+  SysplorerEmbeddedCoder.MathOperation.Abs abs1
     annotation (Placement(transformation(origin={-98,58},
 extent={{-10,-10},{10,10}})),__MWORKS(BlockSystem(Instance(u(Type(ref="double") ,Dimension=1) ,y(Type(ref="double") ,Dimension=1)),SampleTime(group="D1")=0.01)));
-  SysplorerEmbeddedCoder.MathOperation.Abs abs2 
+  SysplorerEmbeddedCoder.MathOperation.Abs abs2
     annotation (Placement(transformation(origin={-98,16},
 extent={{-10,-10},{10,10}})),__MWORKS(BlockSystem(Instance(u(Type(ref="double") ,Dimension=1) ,y(Type(ref="double") ,Dimension=1)),SampleTime(group="D1")=0.01)));
-  SysplorerEmbeddedCoder.MathOperation.Abs abs3 
+  SysplorerEmbeddedCoder.MathOperation.Abs abs3
     annotation (Placement(transformation(origin={-98,-26},
 extent={{-10,-10},{10,10}})),__MWORKS(BlockSystem(Instance(u(Type(ref="double") ,Dimension=1) ,y(Type(ref="double") ,Dimension=1)),SampleTime(group="D1")=0.01)));
-  SysplorerEmbeddedCoder.MathOperation.Abs abs4 
+  SysplorerEmbeddedCoder.MathOperation.Abs abs4
     annotation (Placement(transformation(origin={-98,-68},
 extent={{-10,-10},{10,10}})),__MWORKS(BlockSystem(Instance(u(Type(ref="double") ,Dimension=1) ,y(Type(ref="double") ,Dimension=1)),SampleTime(group="D1")=0.01)));
   block Chart "状态机"
@@ -165,11 +165,11 @@ extent={{-10,-10},{10,10}})),__MWORKS(BlockSystem(Instance(u(Type(ref="double") 
     SysplorerEmbeddedCoder.Port.Outport steer(start=0) annotation (__MWORKS(internalShare = true,BlockSystem(Type(inherit=InheritType.none,ref="double"),Dimension(dimensionType=DimensionType.none)=1)),Placement(iconTransformation(extent={{-1.8, -1.8}, {1.8, 1.8}})));
     SysplorerEmbeddedCoder.Types.Auto mindis(start=1) annotation (__MWORKS(internalShare = true,BlockSystem(Type(inherit=InheritType.none,ref="double"),Dimension(dimensionType=DimensionType.none)=1)));
     SysplorerEmbeddedCoder.Types.Auto safeF(start=1.5) annotation (__MWORKS(internalShare = true,BlockSystem(Type(inherit=InheritType.none,ref="double"),Dimension(dimensionType=DimensionType.none)=1)));
-    State longitudinal 
+    State longitudinal
       annotation (Placement(transformation(origin={-202,-7.5},
 extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=1))));
     SysplorerEmbeddedCoder.Types.Auto flag(start=false) annotation (__MWORKS(internalShare = true,BlockSystem(Type(inherit=InheritType.none,ref="boolean"),Dimension(dimensionType=DimensionType.none)=1)));
-    State2 lateral 
+    State2 lateral
       annotation (Placement(transformation(origin={-202,-276},
   extent={{-380,-160},{380,160}})),__MWORKS(BlockSystem(StateMachine(priority=2))));
     block State "状态"
@@ -264,10 +264,10 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
       annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));  speed := 1;
         flag := false;
       end State2;
-      State2 cruise 
+      State2 cruise
       annotation(Placement(transformation(origin={-66,27.5},
   extent={{-40,-30},{40,30}})),__MWORKS(BlockSystem(StateMachine)));
-      State avoid 
+      State avoid
         annotation (Placement(transformation(origin={66,27.5},
   extent={{-40,-30},{40,30}})),__MWORKS(BlockSystem(StateMachine)));
       block State "状态"
@@ -320,7 +320,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         flag := true;
       end State;
       equation
-      initialState(cruise, true, 1) 
+      initialState(cruise, true, 1)
       annotation(Line(origin={-284,60},
       points={{0,10},{0,-10}},
       color={113,119,170},
@@ -331,7 +331,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
       fontSize=10,
       textStyle={TextStyle.Bold},
       textColor={74,84,154}), displayText = "[true]");
-      transition(cruise, avoid, df <= mindis, reset = false) 
+      transition(cruise, avoid, df <= mindis, reset = false)
       annotation(Line(origin={-202,33.8644},
       points={{-26,0},{26,0}},
       color={113,119,170},
@@ -496,16 +496,16 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         algorithm
         annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));  steer := 0;
         end State;
-        State ini_state 
+        State ini_state
           annotation (Placement(transformation(origin={-84,50},
       extent={{-24,-19.5},{24,19.5}})),__MWORKS(BlockSystem(StateMachine)));
-        State1 turn_right 
+        State1 turn_right
           annotation (Placement(transformation(origin={97,-44},
       extent={{-53,-20},{53,20}})),__MWORKS(BlockSystem(StateMachine)));
-        State2 turn_left 
+        State2 turn_left
           annotation (Placement(transformation(origin={-81,-46},
       extent={{-51,-20},{51,20}})),__MWORKS(BlockSystem(StateMachine)));
-        State3 state 
+        State3 state
           annotation (Placement(transformation(origin={90,52},
       extent={{-27,-20},{27,20}})),__MWORKS(BlockSystem(StateMachine)));
         block State1 "状态"
@@ -656,7 +656,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));  steer := 0;
         end State3;
       equation
-        initialState(ini_state, true, 1) 
+        initialState(ini_state, true, 1)
         annotation(Line(origin={-463.974,-233.67302},
         points={{0,4.82698},{0,-4.82698}},
         color={113,119,170},
@@ -667,7 +667,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         fontSize=10,
         textStyle={TextStyle.Bold},
         textColor={74,84,154}), displayText = "[true]");
-        transition(state, turn_left, dl > dr, reset = false, priority = 2) 
+        transition(state, turn_left, dl > dr, reset = false, priority = 2)
         annotation(Line(origin={-381.116,-305},
         points={{69.2926,29},{-69.2926,-29}},
         color={113,119,170},
@@ -679,7 +679,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         textStyle={TextStyle.Bold},
         textColor={74,84,154},
         horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[dl > dr]");
-        transition(turn_left, state, dl == dr, reset = false) 
+        transition(turn_left, state, dl == dr, reset = false)
         annotation(Line(origin={-419.705,-278.019},
         points={{-49.8096,-55.981},{102.705,3.08569}},
         color={113,119,170},
@@ -691,7 +691,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         textStyle={TextStyle.Bold},
         textColor={74,84,154},
         horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[dl == dr]");
-        transition(turn_left, turn_right, dl < dr, reset = false, priority = 2) 
+        transition(turn_left, turn_right, dl < dr, reset = false, priority = 2)
         annotation(Line(origin={-373,-344.509},
         points={{-37,0},{37,0}},
         color={113,119,170},
@@ -703,7 +703,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         textStyle={TextStyle.Bold},
         textColor={74,84,154},
         horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[dl < dr]");
-        transition(state, turn_right, dr > dl, reset = false) 
+        transition(state, turn_right, dr > dl, reset = false)
         annotation(Line(origin={-302.1284,-304},
         points={{0,28},{0,-28}},
         color={113,119,170},
@@ -715,7 +715,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         textStyle={TextStyle.Bold},
         textColor={74,84,154},
         horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[dr > dl]");
-        transition(turn_right, state, dr == dl, reset = false, priority = 2) 
+        transition(turn_right, state, dr == dl, reset = false, priority = 2)
         annotation(Line(origin={-315.246,-304},
         points={{-8.55464,-28},{8.55464,28}},
         color={113,119,170},
@@ -727,7 +727,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         textStyle={TextStyle.Bold},
         textColor={74,84,154},
         horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[dr == dl]");
-        transition(turn_right, turn_left, dr < dl, reset = false) 
+        transition(turn_right, turn_left, dr < dl, reset = false)
         annotation(Line(origin={-373,-359.194},
         points={{37,0},{-37,0}},
         color={113,119,170},
@@ -739,7 +739,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         textStyle={TextStyle.Bold},
         textColor={74,84,154},
         horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[dr < dl]");
-        transition(ini_state, state, after(1,sec), reset = false) 
+        transition(ini_state, state, after(1,sec), reset = false)
         annotation(Line(origin={-378.5,-253.214},
         points={{-61.5,0},{61.5,0}},
         color={113,119,170},
@@ -752,10 +752,10 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         textColor={74,84,154},
         horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[after(1,sec)]");
       end State1;
-      State1 curise_lateral 
+      State1 curise_lateral
       annotation(Placement(transformation(origin={-178,-32},
   extent={{-166,-92},{166,92}})),__MWORKS(BlockSystem(StateMachine)));
-      State2 avoid_lateral 
+      State2 avoid_lateral
         annotation (Placement(transformation(origin={178,-30},
   extent={{-168,-92},{168,92}})),__MWORKS(BlockSystem(StateMachine)));
       block State2 "状态"
@@ -850,16 +850,16 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         algorithm
         annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));    steer := 0.6;
         end State;
-        State ini_state 
+        State ini_state
           annotation (Placement(transformation(origin={-117,27},
   extent={{-35,-27},{35,27}})),__MWORKS(BlockSystem(StateMachine)));
-        State4 turn_left 
+        State4 turn_left
         annotation(Placement(transformation(origin={-98,-46},
   extent={{-51,-20},{51,20}})),__MWORKS(BlockSystem(StateMachine)));
-        State1 turn_right 
+        State1 turn_right
         annotation(Placement(transformation(origin={69,-46},
   extent={{-53,-20},{53,20}})),__MWORKS(BlockSystem(StateMachine)));
-        State2 state 
+        State2 state
           annotation (Placement(transformation(origin={42,36},
   extent={{-30,-18},{30,18}})),__MWORKS(BlockSystem(StateMachine)));
         block State4 "状态"
@@ -1010,7 +1010,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));steer := 0;
         end State2;
       equation
-        initialState(ini_state, true, 1) 
+        initialState(ini_state, true, 1)
         annotation(Line(origin={-140,-242},
         points={{0,10},{0,-10}},
         color={113,119,170},
@@ -1021,7 +1021,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         fontSize=10,
         textStyle={TextStyle.Bold},
         textColor={74,84,154}), displayText = "[true]");
-        transition(state, turn_left, dl > dr, reset = false, priority = 2) 
+        transition(state, turn_left, dl > dr, reset = false, priority = 2)
         annotation(Line(origin={-55.9657,-310},
         points={{50.0714,22},{-50.0714,-22}},
         color={113,119,170},
@@ -1033,7 +1033,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         textStyle={TextStyle.Bold},
         textColor={74,84,154},
         horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[dl > dr]");
-        transition(state, turn_right, dr > dl, reset = false) 
+        transition(state, turn_right, dr > dl, reset = false)
         annotation(Line(origin={24.9,-310},
         points={{14.2431,22},{-14.2431,-22}},
         color={113,119,170},
@@ -1045,7 +1045,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         textStyle={TextStyle.Bold},
         textColor={74,84,154},
         horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[dr > dl]");
-        transition(turn_left, turn_right, dr > dl, reset = false) 
+        transition(turn_left, turn_right, dr > dl, reset = false)
         annotation(Line(origin={-39.5,-346.57},
         points={{-31.5,0},{31.5,0}},
         color={113,119,170},
@@ -1057,7 +1057,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         textStyle={TextStyle.Bold},
         textColor={74,84,154},
         horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[dr > dl]");
-        transition(turn_right, turn_left, dl > dr, reset = false) 
+        transition(turn_right, turn_left, dl > dr, reset = false)
         annotation(Line(origin={-39.5,-361.574},
         points={{31.5,0},{-31.5,0}},
         color={113,119,170},
@@ -1069,7 +1069,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         textStyle={TextStyle.Bold},
         textColor={74,84,154},
         horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[dl > dr]");
-        transition(ini_state, state, after(2,sec), reset = false) 
+        transition(ini_state, state, after(2,sec), reset = false)
         annotation(Line(origin={-59,-268.492},
         points={{-47,0},{47,0}},
         color={113,119,170},
@@ -1083,7 +1083,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
         horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[after(2,sec)]");
       end State2;
     equation
-      transition(avoid_lateral, curise_lateral, not flag, reset = false) 
+      transition(avoid_lateral, curise_lateral, not flag, reset = false)
       annotation(Line(origin={-204.363,-181.749},
       points={{69.2947,-32.251},{-1.28162,-0.021717},{-68.5683,-34.251}},
       color={113,119,170},
@@ -1095,7 +1095,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
       textStyle={TextStyle.Bold},
       textColor={74,84,154},
       horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[not flag]");
-      transition(curise_lateral, avoid_lateral, flag, reset = false) 
+      transition(curise_lateral, avoid_lateral, flag, reset = false)
       annotation(Line(origin={-204,-199.0168},
       points={{-30.9664,-16.9832},{30.9664,-14.9832}},
       color={113,119,170},
@@ -1107,7 +1107,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
       textStyle={TextStyle.Bold},
       textColor={74,84,154},
       horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[flag]");
-      initialState(curise_lateral, true, 1) 
+      initialState(curise_lateral, true, 1)
       annotation(Line(origin={-415.907,-204.981},
       points={{0.0362665,14.1629},{-7.7894e-5,1.08245},{0.0362665,-11.0189}},
       color={113,119,170},
@@ -1125,75 +1125,75 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
     annotation(__MWORKS(hide = true,BlockSystem(blockKind=BlockKind.modelWorkspace)),Protection(access=Access.diagram));
   end ModelWorkspace;
 equation
-  connect(front_dist, abs1.u) 
+  connect(front_dist, abs1.u)
   annotation(Line(origin={-71,36},
 points={{-53,22},{-38.8,22}},
 color={0,0,0}));
-  connect(chart.speed, speed) 
+  connect(chart.speed, speed)
   annotation(Line(origin={85,26},
 points={{-72.2,-18.5},{-59,-18.5},{-59,32},{81,32}},
 color={0,0,0}));
-  connect(steer, sum1.y) 
+  connect(steer, sum1.y)
   annotation(Line(origin={105,-58},
 points={{61,0},{51,0},{51,86},{46.8,86}},
 color={0,0,0}));
-  connect(chart.steer, sum1.u1) 
+  connect(chart.steer, sum1.u1)
   annotation(Line(origin={45,-37},
 points={{-32.2,15.5},{-13,15.5},{-13,70},{83.2,70}},
 color={0,0,0}));
-  connect(constant1.y, sum2.u2) 
+  connect(constant1.y, sum2.u2)
   annotation(Line(origin={9,-98},
 points={{3.8,40},{21,40},{21,66.5},{31.2,66.5}},
 color={0,0,0}));
-  connect(chart.steer, sum2.u1) 
+  connect(chart.steer, sum2.u1)
   annotation(Line(origin={16,-49},
 points={{-3.2,27.5},{24.2,27.5}},
 color={0,0,0}),__MWORKS(BlockSystem(NamedSignal)));
-  connect(constant2.y, product1.u2) 
+  connect(constant2.y, product1.u2)
   annotation(Line(origin={41,-81},
 points={{22.8,23},{33,23},{33,44.5},{41.2,44.5}},
 color={0,0,0}));
-  connect(sum2.y, product1.u1) 
+  connect(sum2.y, product1.u1)
   annotation(Line(origin={59,-45},
 points={{4.8,18.5},{23.2,18.5}},
 color={0,0,0}),__MWORKS(BlockSystem(NamedSignal)));
-  connect(product1.y, roundingFunction.u) 
+  connect(product1.y, roundingFunction.u)
   annotation(Line(origin={77,-8},
 points={{28.8,-23.5},{35,-23.5},{35,0},{-35,0},{-35,24},{-26.8,24}},
 color={0,0,0}));
-  connect(roundingFunction.y, gain.u) 
+  connect(roundingFunction.y, gain.u)
   annotation(Line(origin={78,16},
   points={{-4.2,0},{4.2,0}},
   color={0,0,0}));
-  connect(gain.y, sum1.u2) 
+  connect(gain.y, sum1.u2)
   annotation(Line(origin={117,20},
 points={{-11.2,-4},{-4.1,-4},{-4.1,3},{11.2,3}},
 color={0,0,0}));
-  connect(abs1.y, chart.df) 
+  connect(abs1.y, chart.df)
   annotation(Line(origin={-49,42},
 points={{-37.2,16},{-11,16},{-11,-27.25},{0.2,-27.25}},
 color={0,0,0}));
-  connect(rear_dist, abs2.u) 
+  connect(rear_dist, abs2.u)
   annotation(Line(origin={-117,16},
   points={{-7,0},{7.2,0}},
   color={0,0,0}));
-  connect(abs2.y, chart.db) 
+  connect(abs2.y, chart.db)
   annotation(Line(origin={-67,8},
   points={{-19.2,8},{-11,8},{-11,-7.75},{18.2,-7.75}},
   color={0,0,0}));
-  connect(left_dist, abs3.u) 
+  connect(left_dist, abs3.u)
   annotation(Line(origin={-117,-26},
   points={{-7,0},{7.2,0}},
   color={0,0,0}));
-  connect(abs3.y, chart.dl) 
+  connect(abs3.y, chart.dl)
   annotation(Line(origin={-67,-20},
   points={{-19.2,-6},{-11,-6},{-11,5.75},{18.2,5.75}},
   color={0,0,0}));
-  connect(right_dist, abs4.u) 
+  connect(right_dist, abs4.u)
   annotation(Line(origin={-117,-68},
   points={{-7,0},{7.2,0}},
   color={0,0,0}));
-  connect(abs4.y, chart.dr) 
+  connect(abs4.y, chart.dr)
   annotation(Line(origin={-67,-48},
   points={{-19.2,-20},{-1,-20},{-1,19.25},{18.2,19.25}},
   color={0,0,0}));

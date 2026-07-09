@@ -12,7 +12,7 @@
 | Research manifest template | `Docs/Workflows/research_manifest_template.md` |
 | Deployable UGV avoidance algorithm research | `References/research/deployable_ugv_avoidance_algorithms_20260709/MANIFEST.md`; `References/research/deployable_ugv_avoidance_algorithms_20260709/source_notes.md` |
 | Report writing | `Docs/Workflows/report_workflow.md` |
-| Submission readiness dry run | `Scripts/quality/check_submission_readiness.py`; `Scripts/quality/plan_submission_candidate.py`; `Results/deliverables/submission_dry_runs/submission_readiness_20260709_0235.md`; `Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_0235.md` |
+| Submission readiness dry run and review candidate package | `Scripts/quality/check_submission_readiness.py`; `Scripts/quality/plan_submission_candidate.py`; `Scripts/quality/build_submission_candidate.py`; `Results/deliverables/submission_dry_runs/submission_readiness_20260709_124115.md`; `Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_124115.md` |
 | Controller physical-deployability static check | `Scripts/quality/check_controller_deployability.py`; `Results/evidence/controller_deployability_static_check_20260709_0222.md` |
 | Model source lookup | `Docs/Index/model_index.md` |
 | Competition task and scoring | `Docs/Design/赛题.md` |
@@ -22,14 +22,15 @@
 
 ## Current Phase Cursor
 
-Current cursor: M6 official-track API simulation blocked. This is a cursor for
-the continuous M1-M9 long task, not a stop point. Update
+Current cursor: M9 review candidate package after M6/M8 refresh. This is a
+cursor for the continuous M1-M9 long task, not a stop point. Update
 `Docs/Workflows/long_task_status_board.md` only when phase state changes.
 
 ```text
 M1-M5 completed or review-ready
-M6 blocked by official track simulation-entry compile error
-next safe work: validate the official parameter-evaluation setting, keep deployable-algorithm research tied to controller changes, or draft/update blocker-aware report
+M6 wrapper-based four-track metric extraction completed
+M8 report draft refreshed with M6 metrics
+M9 readiness dry run refreshed; local review candidate package may be built, but final submission still needs user approval
 ```
 
 M1 source grounding is complete at `Results/evidence/static_model_grounding_20260708_210142.md`.
@@ -37,5 +38,6 @@ M2 bounded baseline runtime gate is complete at `Results/simulations/baseline_20
 M3 design is complete at `Docs/Design/避障算法设计.md` and `Results/evidence/controller_design_review_20260708_215659.md`.
 M4 bounded controller gate is complete at `Results/simulations/controller_refsysblock_20260708_221000/`.
 M5 Race1 tuning is review-ready at `Results/metrics/one_track_tuning_20260708_231430.md`.
-M6 blocker is recorded at `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md`.
-Do not claim full-track completion or final score from bounded M2/M4/M5 runs.
+M6 wrapper metrics are recorded at `Results/metrics/four_track_summary_20260709_120547.md`.
+The earlier direct-official-track API blocker remains historical evidence at `Results/evidence/official_track_api_simulation_blocker_20260708_231430.md`; current repeatable evaluation uses `UGV.Test.Saidao*Eval` wrappers.
+Do not claim optimized final score, physical UGV success, or final submission approval from these review artifacts.

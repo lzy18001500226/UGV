@@ -19,12 +19,12 @@ REQUIRED_PATHS = {
     "controller": Path("Models/UGV/Control/ObstacleAvoidanceController/ObsAvoidController_Sysblock2.mo"),
     "official_report_template": Path("References/official_materials/5-仿真报告模板（仅供参考）/仿真报告模板.docx"),
     "report_draft": Path("Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.md"),
-    "report_docx_draft": Path("Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.docx"),
+    "report_docx_draft": Path("Results/deliverables/report_drafts/initial_race_report_draft_m6_metrics_20260709_123905.docx"),
     "report_render_qa_note": Path("Results/deliverables/report_drafts/render_check_20260709_0118/QA_NOTE.md"),
     "controller_deployability_static_check": Path("Results/evidence/controller_deployability_static_check_20260709_0222.md"),
     "one_track_metrics": Path("Results/metrics/one_track_tuning_20260708_231430.md"),
-    "four_track_summary": Path("Results/metrics/four_track_summary_20260708_231430.md"),
-    "activation_blocker": Path("Results/evidence/m6_mworks_activation_blocker_20260708_235918.md"),
+    "four_track_summary": Path("Results/metrics/four_track_summary_20260709_120547.md"),
+    "login_license_recovery_evidence": Path("Results/evidence/mworks_login_license_recovery_gui_api_confirmed_20260709.md"),
 }
 
 NO_EDIT_ZONES = [
@@ -37,10 +37,10 @@ NO_EDIT_ZONES = [
 ]
 
 TRACK_NAMES = [
-    "UGV.saidao.saidao1",
-    "UGV.saidao.saidao2",
-    "UGV.saidao.saidao3",
-    "UGV.saidao.saidao4",
+    "UGV.Test.Saidao1Eval",
+    "UGV.Test.Saidao2Eval",
+    "UGV.Test.Saidao3Eval",
+    "UGV.Test.Saidao4Eval",
 ]
 
 
@@ -95,8 +95,8 @@ def four_track_gate(repo: Path, summary_path: Path) -> dict[str, Any]:
         if present:
             idx = text.find(name)
             window = text[idx: idx + 500].lower()
-            blocked = "blocked" in window
-            unavailable = "n/a" in window
+            blocked = "blocked_before_run" in window or "blocked_or_unavailable=true" in window
+            unavailable = "n/a" in window or "unavailable" in window
         if (not present) or blocked or unavailable:
             ready = False
         rows.append({
@@ -135,8 +135,8 @@ def build_report(repo: Path, final_approval: bool) -> dict[str, Any]:
         "include": [
             "Models/UGV/",
             "Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.md",
-            "Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.docx",
-            "Results/metrics/four_track_summary_<final_timestamp>.md once available",
+            "Results/deliverables/report_drafts/initial_race_report_draft_m6_metrics_20260709_123905.docx",
+            "Results/metrics/four_track_summary_20260709_120547.md",
             "Results/metrics/one_track_tuning_20260708_231430.md",
             "Results/evidence/static_model_grounding_20260708_210142.md",
             "Results/evidence/controller_design_review_20260708_215659.md",
@@ -171,7 +171,7 @@ def build_report(repo: Path, final_approval: bool) -> dict[str, Any]:
             "Does not run MWORKS.",
             "Does not create final zip.",
             "Does not send final competition submission email.",
-            "Does not convert blocked four-track evidence into score claims.",
+            "Does not treat final submission as approved by the user.",
         ],
     }
 

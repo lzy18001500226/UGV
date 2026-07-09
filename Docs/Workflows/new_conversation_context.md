@@ -2,8 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: M6 official-track wrapper evaluation resumed after MWORKS login/license
-recovery, 2026-07-09 CST.
+Status: M9 review candidate zip ready; final approval still required, 2026-07-09 CST.
 
 ## 0. Startup Chain
 
@@ -52,8 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `M6 official-track wrapper evaluation after activation
-recovery`.
+Current phase cursor: `final approval or optional Track 1/3 tuning after M9 review candidate zip`.
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -67,6 +65,7 @@ Results/simulations/controller_refsysblock_20260708_221000/
 Results/simulations/controller_v5_front_dwell_2s_race1_120s_20260708_230305/
 Results/evidence/official_track_api_simulation_blocker_20260708_231430.md
 Results/simulations/license_gui_confirm_1s_20260709_after_real_login/
+Results/metrics/four_track_summary_20260709_120547.md
 ```
 
 The M2 gate confirms baseline MWORKS Sysplorer load/check/simulate for
@@ -89,3 +88,35 @@ Results/simulations/license_gui_confirm_1s_20260709_after_real_login/
 Current controller candidate is v5: only the avoid-to-cruise dwell changed from
 1 s to 2 s. Do not re-apply rejected v2/v3/v4/v6 changes unless a new
 diagnostic reason exists.
+
+Current M6 four-track wrapper metrics:
+
+```text
+Track1 Saidao1Eval: T=86.9, cR=4, cO=3, P=7.2
+Track2 Saidao2Eval: T=101.8, cR=3, cO=1, P=8.4
+Track3 Saidao3Eval: T=50.4, cR=2, cO=5, P=7.2
+Track4 Saidao4Eval: T=47.2, cR=2, cO=0, P=9.2
+```
+
+The final 120 s runs return `simulate_failed` with `exit_state=2`, but the
+enhanced probe reads `T/cR/cO/P` and exports score timeseries after the model
+terminal state. Treat this as usable review evidence, not as an optimized final
+competition result.
+Current M8/M9 review artifacts:
+
+```text
+Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.md
+Results/deliverables/report_drafts/initial_race_report_draft_m6_metrics_20260709_123905.docx
+Results/deliverables/submission_dry_runs/submission_readiness_20260709_124115.md
+Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_124115.md
+```
+
+`check_submission_readiness.py` currently blocks only on `final_submission_approval_missing` when run without final approval. A local review-only candidate archive may be built for user audit, but final competition email/package sending still requires explicit user approval.
+Latest local review-only package:
+
+`	ext
+Results/deliverables/submission_candidates/UGV_initial_race_review_candidate_20260709_124115.zip
+Results/deliverables/submission_candidates/UGV_initial_race_review_candidate_20260709_124115_manifest.md
+`
+
+This package is for user audit only. It does not imply final submission approval and was not sent to the competition address.
