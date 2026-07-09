@@ -106,10 +106,7 @@ package ControlAllocate "控制分配"
     annotation(Line(origin={20,35},
     points={{-20.6249,13.4086},{5.1135,13.4086},{5.1135,-13.4092},{20.1362,-13.4092}},
     color={0,0,127}));
-    connect(unitDelay1.y, gain3.u) 
-    annotation(Line(origin={-23,-17},
-    points={{-10.51135,0.0454},{11.1362,0.0454}},
-    color={0,0,127}));
+    gain3.u = if speed_oa < 0 and steer_oa * unitDelay1.y < 0 then 0.5 * unitDelay1.y else unitDelay1.y;
     connect(gain3.y, add1.u1) 
     annotation(Line(origin={20,-17},
     points={{-20.6249,0.0454},{20.1362,0.0454}},

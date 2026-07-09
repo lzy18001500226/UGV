@@ -332,7 +332,8 @@ Result:
 v42: rejected, open-side steering regressed Track1.
 v43: rejected, side-only longitudinal/lateral decoupling regressed Track1.
 v44: rejected as no-op, speed cap used the wrong scale.
-v45: accepted as current review-ready best, total wrapper score 36.8 vs v13 36.4.
+v45: accepted as a superseded review-ready best, total wrapper score 36.8 vs v13 36.4.
+v48: accepted as current review-ready best with runtime caveat, total wrapper score 37.2 vs v45 36.8.
 ```
 
 Lesson:
@@ -341,6 +342,6 @@ Lesson:
 Path-authority interaction is useful only when it preserves steering authority
 and uses the actual runtime scale. Simple steering suppression regresses, but a
 bounded high-curvature speed cap improves Track4 without reducing Track1/2/3.
-Continue from v45 and evaluate future mechanisms with one unified algorithm
+Continue from v48 and evaluate future mechanisms with one unified algorithm
 across all four tracks.
 ```

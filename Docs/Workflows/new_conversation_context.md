@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v45 curvature-speed regulation scaled is the current review-ready best four-track candidate; v14-v44 candidates were rejected or no-op and v46-v47 were rejected on Track3, 2026-07-10 CST.
+Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v46-v47 were rejected on Track3, and v45 is superseded by v48 score evidence, 2026-07-10 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v45 review-ready new best; v14-v43 rejected, v44 rejected as speed-scale no-op, v46 rejected as speed-channel gain escalation, and v47 rejected as startup-speed no-improvement. Continue from v45 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence or a new obstacle-horizon/path-authority mechanism`.
+Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op and v46-v47 rejected. Continue from v48 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence or a new obstacle-horizon/path-authority mechanism`.
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -134,6 +134,39 @@ Results/metrics/four_track_candidate_review_v45_curvature_speed_regulation_scale
 The historical M6 wrapper baseline is `Results/metrics/four_track_summary_20260709_120547.md`.
 Treat v45 as usable review evidence, not as an optimized final competition
 result or physical UGV proof.
+
+Current review-ready best candidate is v48: keep v45 path-speed regulation and
+add an opposing-steer guard in `ControlAllocate`:
+
+```text
+gain3.u = if speed_oa < 0 and steer_oa * unitDelay1.y < 0
+  then 0.5 * unitDelay1.y
+  else unitDelay1.y
+```
+
+Current v48 four-track wrapper metrics:
+
+```text
+Track1 Saidao1Eval: T=120.0, cR=2, cO=0, P=9.2
+Track2 Saidao2Eval: T=60.15, cR=1, cO=0, P=9.6
+Track3 Saidao3Eval: T=112.45, cR=1, cO=1, P=9.2
+Track4 Saidao4Eval: T=112.4, cR=2, cO=0, P=9.2
+Total: 37.2
+```
+
+v48 evidence:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v48_plan_20260710.md
+Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md
+Results/evidence/controller_deployability_static_check_v48_opposing_steer_guard_20260710.md
+```
+
+v48 supersedes v45 as the review-ready best by improving total wrapper score
+from `36.8` to `37.2`, mainly from Track1 road-collision reduction. Keep the
+runtime caveat visible: Track2, Track3, and Track4 are scored from exported
+result variables after `SimulateModel` returned false with `exit_state=2`, so
+this is not final competition or physical UGV proof.
 
 v46 speed-channel 1.2x follow-up:
 
@@ -374,7 +407,7 @@ Track1/Track4; both target tracks again stayed at `P=8.8`, `cR=3`, `cO=0`, so
 it is rejected as no improvement and the source was restored to v13 semantics.
 v31 extended avoid release to 3 s, passed the static gate, but regressed Track1
 to `P=2.0`, `cR=17`, `cO=3`, so it is rejected and the source was restored to
-v13 semantics. v32-v35 front-open braking also failed to improve target-track evidence. v40 side-safety bubble produced identical Track4 evidence, v41 guarded release regressed Track4, v42 open-side steering regressed Track1, and v43 side-only longitudinal/lateral decoupling regressed Track1. v44 curvature-speed regulation used the wrong target-speed scale and was a no-op. v45 corrected the scale, improved total wrapper score to `36.8`, and is now the current review-ready best. The next attempt should start from fresh collision-window,
+v13 semantics. v32-v35 front-open braking also failed to improve target-track evidence. v40 side-safety bubble produced identical Track4 evidence, v41 guarded release regressed Track4, v42 open-side steering regressed Track1, and v43 side-only longitudinal/lateral decoupling regressed Track1. v44 curvature-speed regulation used the wrong target-speed scale and was a no-op. v45 corrected the scale and improved total wrapper score to `36.8`; v48 later superseded it at `37.2` with a runtime caveat. The next attempt should start from fresh collision-window,
 control-attribution, or trajectory evidence, then run the target weak track
 first and only expand to regression when target evidence improves. Do not
 continue side-clearance initial-steer gain/cap scans or side-only decoupling
