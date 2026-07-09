@@ -442,10 +442,12 @@ review-ready state, commit/push the phase evidence and continue to the next
 safe phase unless the user explicitly pauses or final submission approval is
 required.
 
-Current cursor: M8/M9 refresh after v13 four-track wrapper metrics. M1 source
-grounding, M2 bounded baseline, M3 controller design, M4 bounded controller
-implementation gate, M5 one-track Race1 tuning review, and M6 wrapper-based
-four-track metric extraction are complete:
+Current cursor: v13 remains the accepted four-track wrapper baseline after
+v14-v30 follow-up attempts were rejected. M1 source grounding, M2 bounded
+baseline, M3 controller design, M4 bounded controller implementation gate, M5
+one-track Race1 tuning review, M6 wrapper-based four-track metric extraction,
+M8 v13 report refresh, and M9 local review-only dry run are complete or
+review-ready:
 
 ```text
 M1: Results/evidence/static_model_grounding_20260708_210142.md
@@ -458,12 +460,14 @@ v13 current: Results/metrics/four_track_summary_v13_side_trigger045_20260709_153
 ```
 
 M2 and M4 verified `UGV.Example.Race1` load/check/simulate and score-variable
-access with bounded `stopTime=12`. M5 identifies v5 as the current Race1
-candidate. M6 uses generated `UGV.Test.Saidao*Eval` wrappers because direct
-`UGV.saidao.saidao*` source entries omit the obstacle-controller wiring needed
-for current API controller evaluation. The latest 120 s wrapper runs return
-`simulate_failed` with `exit_state=2`, but the enhanced probe reads
-`T/cR/cO/P` and exports score timeseries after the model terminal state. Next
-safe work is refreshing the report draft and submission dry run with the v13
-metrics, then inspecting Track4 road-boundary recovery before another
-controller rewrite. Final package approval remains a separate user gate.
+access with bounded `stopTime=12`. M6 uses generated `UGV.Test.Saidao*Eval`
+wrappers because direct `UGV.saidao.saidao*` source entries omit the
+obstacle-controller wiring needed for current API controller evaluation. The
+latest 120 s wrapper runs may return `simulate_failed` with `exit_state=2`, but
+the enhanced probe reads `T/cR/cO/P` and exports score timeseries after the
+model terminal state. v30 side-danger steering-floor was the latest rejected
+candidate: Track1 and Track4 both stayed at `P=8.8`, `cR=3`, `cO=0`, so the
+source was restored to v13 semantics. Next safe controller work must start from
+fresh failure-window or trajectory evidence and a new unified mechanism
+hypothesis, not another blind scalar adjustment. Final package approval remains
+a separate user gate.
