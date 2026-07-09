@@ -1,0 +1,665 @@
+{
+  "radius_s": 0.5,
+  "signals": [
+    "ctrlAlloc.speed_pp",
+    "ctrlAlloc.speed_oa",
+    "ctrlAlloc.firstOrder1.y",
+    "ctrlAlloc.speed",
+    "ctrlAlloc.steer_pp",
+    "ctrlAlloc.steer_oa",
+    "ctrlAlloc.firstOrder.y",
+    "ctrlAlloc.steer",
+    "obsAvoidController_Sysblock.chart.df",
+    "obsAvoidController_Sysblock.chart.dl",
+    "obsAvoidController_Sysblock.chart.dr",
+    "obsAvoidController_Sysblock.chart.flag",
+    "obsAvoidController_Sysblock.speed",
+    "obsAvoidController_Sysblock.steer"
+  ],
+  "runs": [
+    {
+      "label": "v48_track1",
+      "run_dir": "Results\\simulations\\controller_v48_opposing_steer_guard_saidao1_120s_20260710",
+      "radius_s": 0.5,
+      "events": [
+        {
+          "time": 6.55,
+          "changes": {
+            "cR": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 10.0,
+              "to": 9.6,
+              "delta": -0.40000000000000036
+            }
+          },
+          "window": {
+            "nearest_time": 6.55,
+            "row_count": 21,
+            "signals": {
+              "ctrlAlloc.speed_pp": {
+                "nearest": 1.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0
+              },
+              "ctrlAlloc.speed_oa": {
+                "nearest": -1.0,
+                "min": -1.0,
+                "max": -1.0,
+                "mean": -1.0
+              },
+              "ctrlAlloc.firstOrder1.y": {
+                "nearest": -0.494317800546393,
+                "min": -0.496376834580393,
+                "max": -0.486702373804609,
+                "mean": -0.49358466700964515
+              },
+              "ctrlAlloc.speed": {
+                "nearest": 0.505682199453607,
+                "min": 0.503623165419607,
+                "max": 0.513297626195391,
+                "mean": 0.5064153329903549
+              },
+              "ctrlAlloc.steer_pp": {
+                "nearest": 0.300602512184243,
+                "min": 0.263943324911684,
+                "max": 0.34827150244273,
+                "mean": 0.3037653297373509
+              },
+              "ctrlAlloc.steer_oa": {
+                "nearest": 0.6,
+                "min": 0.6,
+                "max": 0.6,
+                "mean": 0.6
+              },
+              "ctrlAlloc.firstOrder.y": {
+                "nearest": 0.2980806425663,
+                "min": 0.295880490046278,
+                "max": 0.298776151816137,
+                "mean": 0.29785072630705206
+              },
+              "ctrlAlloc.steer": {
+                "nearest": 0.598683154750543,
+                "min": 0.559823814957963,
+                "max": 0.645107026616858,
+                "mean": 0.6016160560444029
+              },
+              "obsAvoidController_Sysblock.chart.df": {
+                "nearest": 2.08433197019962,
+                "min": 2.07863219472234,
+                "max": 2.09065930352303,
+                "mean": 2.0844469793583165
+              },
+              "obsAvoidController_Sysblock.chart.dl": {
+                "nearest": 0.391364926731948,
+                "min": 0.377511578728496,
+                "max": 0.408610082178815,
+                "mean": 0.39207150445666855
+              },
+              "obsAvoidController_Sysblock.chart.dr": {
+                "nearest": 0.549998128889221,
+                "min": 0.534303580240009,
+                "max": 0.565701259415298,
+                "mean": 0.5498527173817392
+              },
+              "obsAvoidController_Sysblock.chart.flag": {
+                "nearest": 1.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0
+              },
+              "obsAvoidController_Sysblock.speed": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "obsAvoidController_Sysblock.steer": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              }
+            }
+          }
+        },
+        {
+          "time": 30.35,
+          "changes": {
+            "cR": {
+              "from": 1.0,
+              "to": 2.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.6,
+              "to": 9.2,
+              "delta": -0.40000000000000036
+            }
+          },
+          "window": {
+            "nearest_time": 30.35,
+            "row_count": 124,
+            "signals": {
+              "ctrlAlloc.speed_pp": {
+                "nearest": 0.75,
+                "min": 0.75,
+                "max": 0.75,
+                "mean": 0.75
+              },
+              "ctrlAlloc.speed_oa": {
+                "nearest": -1.0,
+                "min": -1.0,
+                "max": -1.0,
+                "mean": -1.0
+              },
+              "ctrlAlloc.firstOrder1.y": {
+                "nearest": -0.496539286759689,
+                "min": -0.497900964643129,
+                "max": -0.494294274973035,
+                "mean": -0.4963784855366108
+              },
+              "ctrlAlloc.speed": {
+                "nearest": 0.253460713240311,
+                "min": 0.252099035356871,
+                "max": 0.255705725026965,
+                "mean": 0.2536215144633892
+              },
+              "ctrlAlloc.steer_pp": {
+                "nearest": -0.690560025990099,
+                "min": -0.718624046231226,
+                "max": -0.664213055324716,
+                "mean": -0.691520282127271
+              },
+              "ctrlAlloc.steer_oa": {
+                "nearest": 0.6,
+                "min": 0.6,
+                "max": 0.6,
+                "mean": 0.6
+              },
+              "ctrlAlloc.firstOrder.y": {
+                "nearest": 0.298961786027896,
+                "min": 0.298288282491895,
+                "max": 0.299370289392932,
+                "mean": 0.29891354566097245
+              },
+              "ctrlAlloc.steer": {
+                "nearest": -0.0463182269671532,
+                "min": -0.0599417337226809,
+                "max": -0.0338182451704636,
+                "mean": -0.04684659540266314
+              },
+              "obsAvoidController_Sysblock.chart.df": {
+                "nearest": 2.04129626429874,
+                "min": 2.02277487071067,
+                "max": 2.05027627080641,
+                "mean": 2.035456367518465
+              },
+              "obsAvoidController_Sysblock.chart.dl": {
+                "nearest": 0.20546438226575,
+                "min": 0.190334751956221,
+                "max": 0.621760238397429,
+                "mean": 0.5381482181738193
+              },
+              "obsAvoidController_Sysblock.chart.dr": {
+                "nearest": 0.370422338435458,
+                "min": 0.355291883748497,
+                "max": 0.461386943543267,
+                "mean": 0.4343835634853788
+              },
+              "obsAvoidController_Sysblock.chart.flag": {
+                "nearest": 1.0,
+                "min": 0.0,
+                "max": 1.0,
+                "mean": 0.8225806451612904
+              },
+              "obsAvoidController_Sysblock.speed": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "obsAvoidController_Sysblock.steer": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "v53_track1",
+      "run_dir": "Results\\simulations\\controller_v53_path_conflict_neutralization_saidao1_120s_20260710",
+      "radius_s": 0.5,
+      "events": [
+        {
+          "time": 6.55,
+          "changes": {
+            "cR": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 10.0,
+              "to": 9.6,
+              "delta": -0.40000000000000036
+            }
+          },
+          "window": {
+            "nearest_time": 6.55,
+            "row_count": 52,
+            "signals": {
+              "ctrlAlloc.speed_pp": {
+                "nearest": 1.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0
+              },
+              "ctrlAlloc.speed_oa": {
+                "nearest": -1.0,
+                "min": -1.0,
+                "max": -1.0,
+                "mean": -1.0
+              },
+              "ctrlAlloc.firstOrder1.y": {
+                "nearest": -0.494317800546393,
+                "min": -0.496376834580393,
+                "max": -0.486702373804609,
+                "mean": -0.49358466700964515
+              },
+              "ctrlAlloc.speed": {
+                "nearest": 0.505682199453607,
+                "min": 0.503623165419607,
+                "max": 0.513297626195391,
+                "mean": 0.5064153329903549
+              },
+              "ctrlAlloc.steer_pp": {
+                "nearest": 0.300602512184243,
+                "min": 0.263943324911684,
+                "max": 0.34827150244273,
+                "mean": 0.3037653297373509
+              },
+              "ctrlAlloc.steer_oa": {
+                "nearest": 0.6,
+                "min": 0.6,
+                "max": 0.6,
+                "mean": 0.6
+              },
+              "ctrlAlloc.firstOrder.y": {
+                "nearest": 0.2980806425663,
+                "min": 0.295880490046278,
+                "max": 0.298776151816137,
+                "mean": 0.29785072630705206
+              },
+              "ctrlAlloc.steer": {
+                "nearest": 0.598683154750543,
+                "min": 0.559823814957963,
+                "max": 0.645107026616858,
+                "mean": 0.6016160560444029
+              },
+              "obsAvoidController_Sysblock.chart.df": {
+                "nearest": 2.08433197019962,
+                "min": 2.05023731891231,
+                "max": 2.09065930352303,
+                "mean": 2.064119243825241
+              },
+              "obsAvoidController_Sysblock.chart.dl": {
+                "nearest": 0.391364926731948,
+                "min": 0.0198460658218369,
+                "max": 0.408610082178815,
+                "mean": 0.1741851172641481
+              },
+              "obsAvoidController_Sysblock.chart.dr": {
+                "nearest": 0.549998128889221,
+                "min": 0.184772428464259,
+                "max": 0.565701259415298,
+                "mean": 0.3362307849791764
+              },
+              "obsAvoidController_Sysblock.chart.flag": {
+                "nearest": 1.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0
+              },
+              "obsAvoidController_Sysblock.speed": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "obsAvoidController_Sysblock.steer": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              }
+            }
+          }
+        },
+        {
+          "time": 25.2,
+          "changes": {
+            "cR": {
+              "from": 1.0,
+              "to": 2.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.6,
+              "to": 9.2,
+              "delta": -0.40000000000000036
+            }
+          },
+          "window": {
+            "nearest_time": 25.2,
+            "row_count": 224,
+            "signals": {
+              "ctrlAlloc.speed_pp": {
+                "nearest": 0.75,
+                "min": 0.75,
+                "max": 0.75,
+                "mean": 0.75
+              },
+              "ctrlAlloc.speed_oa": {
+                "nearest": -1.0,
+                "min": -1.0,
+                "max": -1.0,
+                "mean": -1.0
+              },
+              "ctrlAlloc.firstOrder1.y": {
+                "nearest": -0.489286935208907,
+                "min": -0.498413455449758,
+                "max": -0.48873769251817,
+                "mean": -0.49420111997026106
+              },
+              "ctrlAlloc.speed": {
+                "nearest": 0.260713064791093,
+                "min": 0.251586544550242,
+                "max": 0.26126230748183,
+                "mean": 0.25579888002973894
+              },
+              "ctrlAlloc.steer_pp": {
+                "nearest": -0.400605973348659,
+                "min": -0.443727415425661,
+                "max": -0.354407488183323,
+                "mean": -0.4005195190479512
+              },
+              "ctrlAlloc.steer_oa": {
+                "nearest": 0.6,
+                "min": 0.6,
+                "max": 0.6,
+                "mean": 0.6
+              },
+              "ctrlAlloc.firstOrder.y": {
+                "nearest": 0.29678608056096,
+                "min": 0.296621307753652,
+                "max": 0.299524036633036,
+                "mean": 0.298260335989288
+              },
+              "ctrlAlloc.steer": {
+                "nearest": 0.29678608056096,
+                "min": 0.296621307753652,
+                "max": 0.299524036633036,
+                "mean": 0.298260335989288
+              },
+              "obsAvoidController_Sysblock.chart.df": {
+                "nearest": 2.02634756009118,
+                "min": 2.02541699442572,
+                "max": 2.12105440713907,
+                "mean": 2.1029798745845434
+              },
+              "obsAvoidController_Sysblock.chart.dl": {
+                "nearest": 0.227379339391092,
+                "min": 0.223678775529792,
+                "max": 1.30980461577275,
+                "mean": 1.1097952871078134
+              },
+              "obsAvoidController_Sysblock.chart.dr": {
+                "nearest": 0.374293982152341,
+                "min": 0.372984221446308,
+                "max": 1.1610606196951,
+                "mean": 0.9895944130770958
+              },
+              "obsAvoidController_Sysblock.chart.flag": {
+                "nearest": 1.0,
+                "min": 0.0,
+                "max": 1.0,
+                "mean": 0.08928571428571429
+              },
+              "obsAvoidController_Sysblock.speed": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "obsAvoidController_Sysblock.steer": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              }
+            }
+          }
+        },
+        {
+          "time": 40.5,
+          "changes": {
+            "cR": {
+              "from": 2.0,
+              "to": 3.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.2,
+              "to": 8.8,
+              "delta": -0.3999999999999986
+            }
+          },
+          "window": {
+            "nearest_time": 40.5,
+            "row_count": 155,
+            "signals": {
+              "ctrlAlloc.speed_pp": {
+                "nearest": 1.0,
+                "min": 0.75,
+                "max": 1.0,
+                "mean": 0.9285714285714286
+              },
+              "ctrlAlloc.speed_oa": {
+                "nearest": -1.0,
+                "min": -1.0,
+                "max": -1.0,
+                "mean": -1.0
+              },
+              "ctrlAlloc.firstOrder1.y": {
+                "nearest": -0.185001912267873,
+                "min": -0.308929439746915,
+                "max": 0.0193348326979082,
+                "mean": -0.17036283600411767
+              },
+              "ctrlAlloc.speed": {
+                "nearest": 0.814998087732127,
+                "min": 0.654463166213797,
+                "max": 0.884737262236895,
+                "mean": 0.7582085925673109
+              },
+              "ctrlAlloc.steer_pp": {
+                "nearest": -0.268383611168215,
+                "min": -0.437858052723401,
+                "max": -0.109044910708707,
+                "mean": -0.26977696916120175
+              },
+              "ctrlAlloc.steer_oa": {
+                "nearest": 0.6,
+                "min": 0.6,
+                "max": 0.6,
+                "mean": 0.6
+              },
+              "ctrlAlloc.firstOrder.y": {
+                "nearest": 0.211689441123912,
+                "min": 0.154403086540725,
+                "max": 0.246432855887473,
+                "mean": 0.20758533682413852
+              },
+              "ctrlAlloc.steer": {
+                "nearest": 0.211689441123912,
+                "min": 0.154403086540725,
+                "max": 0.246432855887473,
+                "mean": 0.20758533682413852
+              },
+              "obsAvoidController_Sysblock.chart.df": {
+                "nearest": 2.04996673155541,
+                "min": 2.04991075743807,
+                "max": 2.05004076141225,
+                "mean": 2.0499699644240352
+              },
+              "obsAvoidController_Sysblock.chart.dl": {
+                "nearest": 0.106476899973345,
+                "min": 0.0908705369045001,
+                "max": 0.123200055686112,
+                "mean": 0.1066817495996733
+              },
+              "obsAvoidController_Sysblock.chart.dr": {
+                "nearest": 0.056533532810039,
+                "min": 0.0404804423045161,
+                "max": 0.0714428003202323,
+                "mean": 0.056323778350901944
+              },
+              "obsAvoidController_Sysblock.chart.flag": {
+                "nearest": 1.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0
+              },
+              "obsAvoidController_Sysblock.speed": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "obsAvoidController_Sysblock.steer": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              }
+            }
+          }
+        },
+        {
+          "time": 45.05,
+          "changes": {
+            "cR": {
+              "from": 3.0,
+              "to": 4.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 8.8,
+              "to": 8.4,
+              "delta": -0.40000000000000036
+            }
+          },
+          "window": {
+            "nearest_time": 45.05,
+            "row_count": 207,
+            "signals": {
+              "ctrlAlloc.speed_pp": {
+                "nearest": 1.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0
+              },
+              "ctrlAlloc.speed_oa": {
+                "nearest": -1.0,
+                "min": -1.0,
+                "max": -1.0,
+                "mean": -1.0
+              },
+              "ctrlAlloc.firstOrder1.y": {
+                "nearest": -0.492641469947195,
+                "min": -0.495536825349306,
+                "max": -0.487867902594923,
+                "mean": -0.49229955562265126
+              },
+              "ctrlAlloc.speed": {
+                "nearest": 0.507358530052805,
+                "min": 0.504463174650694,
+                "max": 0.512132097405077,
+                "mean": 0.5077004443773487
+              },
+              "ctrlAlloc.steer_pp": {
+                "nearest": 0.0853867393510903,
+                "min": -0.00141314068760838,
+                "max": 0.151038803810739,
+                "mean": 0.08042431519727622
+              },
+              "ctrlAlloc.steer_oa": {
+                "nearest": 0.6,
+                "min": 0.6,
+                "max": 0.6,
+                "mean": 0.6
+              },
+              "ctrlAlloc.firstOrder.y": {
+                "nearest": 0.297857867350879,
+                "min": 0.29646824001978,
+                "max": 0.298700730707169,
+                "mean": 0.29775833309165106
+              },
+              "ctrlAlloc.steer": {
+                "nearest": 0.383244606701969,
+                "min": 0.298700730707169,
+                "max": 0.447507043830519,
+                "mean": 0.378249940702623
+              },
+              "obsAvoidController_Sysblock.chart.df": {
+                "nearest": 2.04982445529476,
+                "min": 2.04981671985637,
+                "max": 2.05139806304852,
+                "mean": 2.0503176728003476
+              },
+              "obsAvoidController_Sysblock.chart.dl": {
+                "nearest": 0.045668915973734,
+                "min": 0.0286655120340592,
+                "max": 0.0673966332030963,
+                "mean": 0.04623390234020024
+              },
+              "obsAvoidController_Sysblock.chart.dr": {
+                "nearest": 0.118463763709433,
+                "min": 0.0969649124965019,
+                "max": 0.135273576614649,
+                "mean": 0.11790661277025563
+              },
+              "obsAvoidController_Sysblock.chart.flag": {
+                "nearest": 1.0,
+                "min": 0.0,
+                "max": 1.0,
+                "mean": 0.9523809523809523
+              },
+              "obsAvoidController_Sysblock.speed": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "obsAvoidController_Sysblock.steer": {
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

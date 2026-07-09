@@ -1,0 +1,138 @@
+{
+  "runs": [
+    {
+      "label": "v48_track1",
+      "run_dir": "Results\\simulations\\controller_v48_opposing_steer_guard_saidao1_120s_20260710",
+      "score_path": "Results\\simulations\\controller_v48_opposing_steer_guard_saidao1_120s_20260710\\score_timeseries.csv",
+      "runtime_status": "simulate_returned_true",
+      "simulation_exit_state": 0,
+      "final": {
+        "time_s": 120.0,
+        "road_collisions": 2.0,
+        "obstacle_collisions": 0.0,
+        "avoidance_score": 9.2
+      },
+      "score_values_at_end": {
+        "T": 120.0,
+        "cR": 2.0,
+        "cO": 0.0,
+        "P": 9.2
+      },
+      "event_count": 2,
+      "events": [
+        {
+          "time": 6.55,
+          "changes": {
+            "cR": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 10.0,
+              "to": 9.6,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 30.35,
+          "changes": {
+            "cR": {
+              "from": 1.0,
+              "to": 2.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.6,
+              "to": 9.2,
+              "delta": -0.40000000000000036
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "v53_track1",
+      "run_dir": "Results\\simulations\\controller_v53_path_conflict_neutralization_saidao1_120s_20260710",
+      "score_path": "Results\\simulations\\controller_v53_path_conflict_neutralization_saidao1_120s_20260710\\score_timeseries.csv",
+      "runtime_status": "simulate_failed",
+      "simulation_exit_state": 2,
+      "final": {
+        "time_s": 50.550000000000004,
+        "road_collisions": 4.0,
+        "obstacle_collisions": 0.0,
+        "avoidance_score": 8.4
+      },
+      "score_values_at_end": {
+        "T": 50.550000000000004,
+        "cR": 4.0,
+        "cO": 0.0,
+        "P": 8.4
+      },
+      "event_count": 4,
+      "events": [
+        {
+          "time": 6.55,
+          "changes": {
+            "cR": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 10.0,
+              "to": 9.6,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 25.2,
+          "changes": {
+            "cR": {
+              "from": 1.0,
+              "to": 2.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.6,
+              "to": 9.2,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 40.5,
+          "changes": {
+            "cR": {
+              "from": 2.0,
+              "to": 3.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.2,
+              "to": 8.8,
+              "delta": -0.3999999999999986
+            }
+          }
+        },
+        {
+          "time": 45.05,
+          "changes": {
+            "cR": {
+              "from": 3.0,
+              "to": 4.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 8.8,
+              "to": 8.4,
+              "delta": -0.40000000000000036
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

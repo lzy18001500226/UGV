@@ -444,8 +444,8 @@ required.
 
 Current cursor: v48 opposing-steer guard is the review-ready best four-track
 wrapper candidate with a runtime caveat after v14-v44 follow-up attempts were
-rejected or proved no-op, v45 was superseded, and v46-v52 were rejected on
-Track3. M1 source grounding, M2 bounded
+rejected or proved no-op, v45 was superseded, v46-v52 were rejected on
+Track3, and v53 was rejected on Track1. M1 source grounding, M2 bounded
 baseline, M3 controller design, M4 bounded controller implementation gate, M5
 one-track Race1 tuning review, M6 wrapper-based four-track metric extraction,
 M8 v13 report refresh, and M9 local review-only dry run are complete or
@@ -461,7 +461,7 @@ M6 baseline: Results/metrics/four_track_summary_20260709_120547.md
 v13 historical accepted: Results/metrics/four_track_summary_v13_side_trigger045_20260709_1535.md
 v45 superseded accepted: Results/metrics/four_track_candidate_review_v45_curvature_speed_regulation_scaled_20260710_0045.md
 v48 current accepted: Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md
-v52 latest rejected: Results/metrics/track3_candidate_review_v52_brake_turn_coupling_20260710.md
+v53 latest rejected: Results/metrics/track1_candidate_review_v53_path_conflict_neutralization_20260710.md
 ```
 
 M2 and M4 verified `UGV.Example.Race1` load/check/simulate and score-variable
@@ -472,12 +472,13 @@ latest 120 s wrapper runs may return `simulate_failed` with `exit_state=2`, but
 the enhanced probe reads `T/cR/cO/P` and exports score timeseries after the
 model terminal state. v45 corrected the v44 speed-scale no-op and improved the
 total wrapper score to `36.8` versus v13 `36.4`; v48 superseded v45 at `37.2`
-by reducing Track1 road collisions; v49-v52 Track3 follow-ups are rejected
+by reducing Track1 road collisions; v49-v52 Track3 follow-ups and v53 Track1
+follow-up are rejected
 because they either did not improve collision/score evidence or produced
 earlier non-comparable terminal states. Next safe controller work must start from fresh
 failure-window or trajectory evidence and a new unified mechanism hypothesis,
 not another blind scalar adjustment, final-steer clipping, simple planner
 suppression, side-trigger threshold scan, side-only decoupling, avoid-release
 change, speed-channel gain escalation, simple startup-speed cap, or broad
-path-speed attenuation / brake-arbitration scan. Final package approval remains
+path-speed attenuation / brake-arbitration / path-steer neutralization scan. Final package approval remains
 a separate user gate.
