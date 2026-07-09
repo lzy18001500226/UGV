@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v46-v49 were rejected on Track3, and v45 is superseded by v48 score evidence, 2026-07-10 CST.
+Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v46-v50 were rejected on Track3, and v45 is superseded by v48 score evidence, 2026-07-10 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op and v46-v49 rejected. Continue from v48 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence or a new obstacle-horizon/path-authority mechanism`.
+Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op and v46-v50 rejected. Continue from v48 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence or a new obstacle-horizon/path-authority mechanism`.
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -167,6 +167,20 @@ from `36.8` to `37.2`, mainly from Track1 road-collision reduction. Keep the
 runtime caveat visible: Track2, Track3, and Track4 are scored from exported
 result variables after `SimulateModel` returned false with `exit_state=2`, so
 this is not final competition or physical UGV proof.
+
+v50 moderate curve-speed follow-up:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v50_plan_20260710.md
+Results/simulations/controller_v50_moderate_curve_speed_saidao3_120s_20260710/
+Results/metrics/track3_candidate_review_v50_moderate_curve_speed_20260710.md
+Results/evidence/controller_deployability_static_check_v48_restored_after_v50_20260710.md
+```
+
+v50 is rejected: it improved Track3 runtime comparability to
+`simulate_returned_true`, but did not improve Track3 score or collisions
+(`T=120.0`, `cR=1`, `cO=1`, `P=9.2`). Do not continue lowering the curvature
+speed-regulation threshold as a scalar scan. Continue from v48.
 
 v49 path-speed attenuation follow-up:
 

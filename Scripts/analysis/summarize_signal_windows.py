@@ -133,34 +133,30 @@ def fmt(value: Any) -> str:
 
 
 def write_markdown(result: dict[str, Any], path: Path) -> None:
+    def nearest(signals: dict[str, Any], name: str) -> Any:
+        payload = signals.get(name) or {}
+        return payload.get("nearest")
+
     lines = ["# Signal Window Summary", ""]
+    selected_signals = result.get("signals") or list(DEFAULT_SIGNALS)
     for run in result["runs"]:
         lines.extend([f"## {run['label']}", "", f"Evidence: `{run['run_dir']}`", ""])
         if not run["events"]:
             lines.extend(["- no score/collision jump events detected", ""])
             continue
-        lines.append("| Time/s | Changes | df | dl | dr | flag | ctrl speed | ctrl steer | sensor x | sensor y |")
-        lines.append("|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|")
+        columns = ["Time/s", "Changes", *selected_signals]
+        align = ["---:", "---", *(["---:"] * len(selected_signals))]
+        lines.append("| " + " | ".join(columns) + " |")
+        lines.append("|" + "|".join(align) + "|")
         for event in run["events"]:
             signals = event["window"]["signals"]
             changes = "; ".join(
                 f"{column}: {payload['from']}->{payload['to']}"
                 for column, payload in event["changes"].items()
             )
-            lines.append(
-                "| {time} | {changes} | {df} | {dl} | {dr} | {flag} | {speed} | {steer} | {x} | {y} |".format(
-                    time=fmt(event["time"]),
-                    changes=changes,
-                    df=fmt(signals["obsAvoidController_Sysblock.chart.df"]["nearest"]),
-                    dl=fmt(signals["obsAvoidController_Sysblock.chart.dl"]["nearest"]),
-                    dr=fmt(signals["obsAvoidController_Sysblock.chart.dr"]["nearest"]),
-                    flag=fmt(signals["obsAvoidController_Sysblock.chart.flag"]["nearest"]),
-                    speed=fmt(signals["ctrlAlloc.speed"]["nearest"]),
-                    steer=fmt(signals["ctrlAlloc.steer"]["nearest"]),
-                    x=fmt(signals["distanceSensor1.vehicle_position[1]"]["nearest"]),
-                    y=fmt(signals["distanceSensor1.vehicle_position[2]"]["nearest"]),
-                )
-            )
+            row = [fmt(event["time"]), changes]
+            row.extend(fmt(nearest(signals, signal)) for signal in selected_signals)
+            lines.append("| " + " | ".join(row) + " |")
         lines.append("")
     lines.extend(
         [
