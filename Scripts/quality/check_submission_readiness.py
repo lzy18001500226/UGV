@@ -18,12 +18,12 @@ REQUIRED_PATHS = {
     "model_package": Path("Models/UGV/package.mo"),
     "controller": Path("Models/UGV/Control/ObstacleAvoidanceController/ObsAvoidController_Sysblock2.mo"),
     "official_report_template": Path("References/official_materials/5-仿真报告模板（仅供参考）/仿真报告模板.docx"),
-    "report_draft": Path("Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.md"),
-    "report_docx_draft": Path("Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.docx"),
-    "report_render_qa_note": Path("Results/deliverables/report_drafts/render_check_v13_20260709_1535/QA_NOTE.md"),
-    "controller_deployability_static_check": Path("Results/evidence/controller_deployability_static_check_v13_side_trigger_045_closeout_20260709.md"),
+    "report_draft": Path("Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.md"),
+    "report_docx_draft": Path("Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.docx"),
+    "controller_deployability_static_check": Path("Results/evidence/controller_deployability_static_check_v48_reconfirmed_after_v67_20260710.md"),
     "one_track_metrics": Path("Results/metrics/one_track_tuning_20260708_231430.md"),
-    "four_track_summary": Path("Results/metrics/four_track_summary_v13_side_trigger045_20260709_1535.md"),
+    "four_track_summary": Path("Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md"),
+    "post_v67_attribution_decision": Path("Results/metrics/post_v67_v68_attribution_decision_20260710.md"),
     "login_license_recovery_evidence": Path("Results/evidence/mworks_login_license_recovery_gui_api_confirmed_20260709.md"),
 }
 
@@ -37,10 +37,10 @@ NO_EDIT_ZONES = [
 ]
 
 TRACK_NAMES = [
-    "UGV.Test.Saidao1Eval",
-    "UGV.Test.Saidao2Eval",
-    "UGV.Test.Saidao3Eval",
-    "UGV.Test.Saidao4Eval",
+    ("UGV.Test.Saidao1Eval", "Saidao1Eval"),
+    ("UGV.Test.Saidao2Eval", "Saidao2Eval"),
+    ("UGV.Test.Saidao3Eval", "Saidao3Eval"),
+    ("UGV.Test.Saidao4Eval", "Saidao4Eval"),
 ]
 
 
@@ -88,19 +88,21 @@ def four_track_gate(repo: Path, summary_path: Path) -> dict[str, Any]:
     text = full.read_text(encoding="utf-8", errors="replace")
     rows = []
     ready = True
-    for name in TRACK_NAMES:
-        present = name in text
+    for full_name, short_name in TRACK_NAMES:
+        present_token = full_name if full_name in text else short_name
+        present = full_name in text or short_name in text
         blocked = False
         unavailable = False
         if present:
-            idx = text.find(name)
+            idx = text.find(present_token)
             window = text[idx: idx + 500].lower()
             blocked = "blocked_before_run" in window or "blocked_or_unavailable=true" in window
             unavailable = "n/a" in window or "unavailable" in window
         if (not present) or blocked or unavailable:
             ready = False
         rows.append({
-            "track": name,
+            "track": full_name,
+            "matched_token": present_token if present else None,
             "present": present,
             "blocked_or_unavailable": blocked or unavailable,
         })
@@ -134,14 +136,15 @@ def build_report(repo: Path, final_approval: bool) -> dict[str, Any]:
     package_plan = {
         "include": [
             "Models/UGV/",
-            "Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.md",
-            "Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.docx",
-            "Results/metrics/four_track_summary_v13_side_trigger045_20260709_1535.md",
+            "Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.md",
+            "Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.docx",
+            "Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md",
+            "Results/metrics/post_v67_v68_attribution_decision_20260710.md",
             "Results/metrics/one_track_tuning_20260708_231430.md",
             "Results/evidence/static_model_grounding_20260708_210142.md",
             "Results/evidence/controller_design_review_20260708_215659.md",
             "Results/evidence/controller_v1_source_notes_20260708_220257.md",
-            "Results/evidence/controller_deployability_static_check_v13_side_trigger_045_closeout_20260709.md",
+            "Results/evidence/controller_deployability_static_check_v48_reconfirmed_after_v67_20260710.md",
         ],
         "exclude": [
             "Results/tmp/",

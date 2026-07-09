@@ -1,6 +1,6 @@
 # UGV Initial Race Simulation Report Draft - v48 Metrics Refresh
 
-Status: v48 opposing-steer guard review draft, not final submission material.
+Status: v48 opposing-steer guard review draft with post-v67 attribution, not final submission material.
 Date: 2026-07-10
 
 ## 1. 赛题目标与模型说明
@@ -53,8 +53,10 @@ Design and diagnostic evidence:
 ```text
 Docs/Design/避障算法设计.md
 Docs/Design/unified_obstacle_avoidance_v48_plan_20260710.md
+Docs/Design/unified_obstacle_avoidance_v68_planning_note_20260710.md
 Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md
 Results/metrics/signal_window_summary_v48_path_ctrl_20260710.md
+Results/metrics/post_v67_v68_attribution_decision_20260710.md
 ```
 
 ## 4. 参数设置与调参依据
@@ -67,13 +69,17 @@ Results/metrics/signal_window_summary_v48_path_ctrl_20260710.md
 | v45 | path curvature speed cap, `abs(steering_angle) > 0.35 -> target_v <= 0.75` | `Results/metrics/four_track_candidate_review_v45_curvature_speed_regulation_scaled_20260710_0045.md` | total wrapper score 36.8 |
 | v48 | opposing-steer guard in `ControlAllocate` | `Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md` | total wrapper score 37.2 |
 
-Rejected follow-ups v49-v51 show why v48 remains current best:
+Rejected follow-ups v49-v67 show why v48 remains current best and why the next
+step is not blind controller tuning:
 
 | Candidate | Key change | Decision |
 |---|---|---|
 | v49 | broad path-speed attenuation during reverse avoidance | rejected: Track3 early stop at `T=5.75` |
 | v50 | lower curvature-speed threshold from `0.35` to `0.20` | rejected: Track3 stayed `P=9.2`, `cR=1`, `cO=1` |
 | v51 | narrow straight-line path-speed attenuation | rejected: Track3 early stop at `T=2.25` |
+| v52-v57 | brake-turn coupling, path-authority, low-speed lookahead, filter/front-threshold variants | rejected: Track3 score stayed `P=9.2` or runs shortened |
+| v58-v66 | reactive gap, close-side direction, steering/filter/feedforward/emergency/road-edge variants | rejected: no comparable score improvement or early-stop artifacts |
+| v67 | nearest-obstacle distance diagnostic input | rejected as a score route: clean Track3 runtime but unchanged `P=9.2`, `cR=1`, `cO=1` |
 
 ## 5. 四条赛道仿真结果
 
@@ -136,6 +142,26 @@ Current result quality:
 3. Track3 remains the most important weak track because it still has both one road collision and one obstacle collision.
 4. Track2/3/4 terminal-state caveats must be addressed before final competition claims.
 
+Post-v67 attribution:
+
+```text
+Results/metrics/signal_window_summary_v48_all_tracks_v67_track3_post_research_20260710.md
+Results/metrics/ctrlalloc_contribution_analysis_v48_all_tracks_v67_track3_post_research_20260710.md
+Results/metrics/post_v67_v68_attribution_decision_20260710.md
+```
+
+The new offline attribution shows that the remaining score-loss windows are
+not simple trigger-missing failures. At v48 score-loss events, avoidance is
+already active and requests reverse/braking plus obstacle steering. Track3's
+first obstacle event still has high final forward speed (`~0.72`) because the
+path forward-speed contribution dominates early in the filtered allocation
+window. However, the direct straight-line arbitration mechanism was already
+tested as v51 and rejected due to non-comparable early stop. Therefore the
+current engineering decision is to avoid another blind source patch and move
+the long task forward through report/readiness and physical-transfer
+consolidation until a genuinely different deployable four-scalar mechanism is
+identified.
+
 ## 7. 不足与改进方向
 
 Controller improvement:
@@ -145,6 +171,9 @@ Controller improvement:
 3. Track3 early obstacle contact needs a better obstacle-horizon or path-authority interaction design; v49/v51 show that simply suppressing forward path speed is too disruptive.
 4. Preserve explainable bounded logic for later generated-code/physical UGV tuning.
 5. Apply the deployability filter from `References/research/deployable_ugv_avoidance_algorithms_20260709/source_notes.md` before accepting any simulation-score tuning.
+6. Treat post-v67 analysis as the current stop line for blind controller churn:
+   no v68 source edit should be made until it has a materially different
+   mechanism from v49-v67.
 
 Evidence/package improvement:
 
@@ -152,6 +181,9 @@ Evidence/package improvement:
 2. Keep direct `UGV.saidao.saidao*` entries as official source geometry references, not editable controller-integration targets.
 3. Keep old M6/v13 report and old local review package as historical audit evidence only.
 4. Do not build or send a new final competition package without explicit user approval.
+5. Continue current long task by improving the report, final-race migration
+   notes, readiness checks, and reproducibility evidence instead of stopping
+   after rejected candidates.
 
 ## 8. 复现说明
 

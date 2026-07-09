@@ -1,0 +1,67 @@
+# UGV Submission Readiness Dry Run
+
+generated_at: 2026-07-10T07:10:38+08:00
+ready: false
+final_approval: false
+
+## Summary
+
+- tracked_model_files: 72
+- tracked_metric_or_evidence_files: 345
+- tracked_report_or_workflow_files: 80
+
+## Blockers
+
+- final_submission_approval_missing
+
+## Required Paths
+
+- model_root: Models/UGV -> exists=true
+- model_package: Models/UGV/package.mo -> exists=true
+- controller: Models/UGV/Control/ObstacleAvoidanceController/ObsAvoidController_Sysblock2.mo -> exists=true
+- official_report_template: References/official_materials/5-仿真报告模板（仅供参考）/仿真报告模板.docx -> exists=true
+- report_draft: Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.md -> exists=true
+- report_docx_draft: Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.docx -> exists=true
+- controller_deployability_static_check: Results/evidence/controller_deployability_static_check_v48_reconfirmed_after_v67_20260710.md -> exists=true
+- one_track_metrics: Results/metrics/one_track_tuning_20260708_231430.md -> exists=true
+- four_track_summary: Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md -> exists=true
+- post_v67_attribution_decision: Results/metrics/post_v67_v68_attribution_decision_20260710.md -> exists=true
+- login_license_recovery_evidence: Results/evidence/mworks_login_license_recovery_gui_api_confirmed_20260709.md -> exists=true
+
+## Four Track Gate
+
+ready: true
+- UGV.Test.Saidao1Eval: present=true, blocked_or_unavailable=false
+- UGV.Test.Saidao2Eval: present=true, blocked_or_unavailable=false
+- UGV.Test.Saidao3Eval: present=true, blocked_or_unavailable=false
+- UGV.Test.Saidao4Eval: present=true, blocked_or_unavailable=false
+
+## Package Plan
+
+### Include
+
+- `Models/UGV/`
+- `Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.md`
+- `Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.docx`
+- `Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md`
+- `Results/metrics/post_v67_v68_attribution_decision_20260710.md`
+- `Results/metrics/one_track_tuning_20260708_231430.md`
+- `Results/evidence/static_model_grounding_20260708_210142.md`
+- `Results/evidence/controller_design_review_20260708_215659.md`
+- `Results/evidence/controller_v1_source_notes_20260708_220257.md`
+- `Results/evidence/controller_deployability_static_check_v48_reconfirmed_after_v67_20260710.md`
+
+### Exclude
+
+- `Results/tmp/`
+- `Scripts/mworks/__pycache__/`
+- `untracked scratch simulation folders unless promoted by manifest`
+- `References/research/ large upstream sources unless cited in report appendix`
+- `final competition email/send action until user approval`
+
+## Non-Claims
+
+- Does not run MWORKS.
+- Does not create final zip.
+- Does not send final competition submission email.
+- Does not treat final submission as approved by the user.

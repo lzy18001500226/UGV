@@ -2,7 +2,7 @@
 
 > Keep initial-race simulation decisions compatible with later generated-code and physical UGV deployment. This file is not a claim that physical testing has happened.
 
-Status: initial migration constraints plus deployable-algorithm research, 2026-07-09 CST.
+Status: initial migration constraints plus deployable-algorithm research and v48/post-v67 attribution, 2026-07-10 CST.
 
 ## 1. Deployment Goal
 
@@ -102,19 +102,41 @@ controller wiring needed by the API evaluation route.
 Current controller candidate:
 
 ```text
-controller_v13_side_trigger_0p45
-Results/metrics/four_track_summary_v13_side_trigger045_20260709_1535.md
+controller_v48_opposing_steer_guard
+Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md
 ```
 
-Next safe work:
+Important caveat:
 
-1. inspect Track4 road-boundary recovery windows before another rewrite;
-2. keep v13 as the review-ready controller candidate unless stronger evidence supersedes it;
+```text
+Track2/3/4 v48 metrics have readable score variables after simulate_failed /
+exit_state=2. They are review evidence, not final clean runtime proof.
+```
+
+Post-v67 decision:
+
+```text
+Results/metrics/post_v67_v68_attribution_decision_20260710.md
+```
+
+The current four-distance interface has shown diminishing returns for blind
+controller tuning. v67 made Track3 runtime clean by changing a diagnostic input
+route, but did not improve Track3 score. The direct allocation-speed
+arbitration route was already tested as v51 and rejected due to early-stop
+artifact. Therefore the next safe work is:
+
+1. keep v48 as the current review-ready controller candidate unless stronger
+   evidence supersedes it;
+2. refresh report/readiness artifacts so the deliverable is honest about
+   v48 strengths, v67 limitations, and terminal-state caveats;
 3. preserve the no-edit boundary for official vehicle, road, sensor, scoring,
    example, and `saidao` source files;
 4. apply the deployability filter before accepting any new tuning: bounded
    commands, speed reduction under risk, dwell/hysteresis, and parameter ranges
-   that can be retuned on the physical UGV.
+   that can be retuned on the physical UGV;
+5. only reopen source changes when research or source attribution identifies a
+   genuinely different four-scalar reactive mechanism, not another
+   threshold/gain/dwell scan.
 
 ## 8. Current Static Deployability Gate
 
@@ -127,13 +149,15 @@ python Scripts\quality\check_controller_deployability.py
 Latest evidence:
 
 ```text
-Results/evidence/controller_deployability_static_check_v13_side_trigger_045_final_20260709.md
+Results/evidence/controller_deployability_static_check_v48_opposing_steer_guard_20260710.md
+Results/evidence/controller_deployability_static_check_v48_reconfirmed_after_v67_20260710.md
 ```
 
-Current result: `ready_for_physical_claim=true`, `high=0`, `medium=0`.
+Current result: v48 and the post-v67 reconfirmed source pass the static
+deployability checker.
 
 Meaning: the source-only deployability gate no longer detects the earlier
 reciprocal-distance spike risk. This is not a physical UGV success claim and
 does not prove generated code, real-car tuning, or official final submission
 readiness. It only clears the current static source-level high/medium risk gate
-for the v13 controller candidate.
+for the v48 controller candidate.

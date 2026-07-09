@@ -1,0 +1,1 @@
+{"ready_for_physical_claim": true, "high": 0, "medium": 0}

@@ -1,6 +1,6 @@
 # Unified Obstacle Avoidance v68 Planning Note
 
-Status: planning note only, no source edit yet
+Status: planning / decision note, no source edit yet
 baseline: v48 opposing-steer guard
 
 ## Why v68 Is Not A Direct Controller Patch Yet
@@ -88,3 +88,21 @@ Run a source/static allocation attribution over saved v48/v67 timeseries before
 any v68 source edit. If that attribution does not identify a narrow source
 mechanism, switch to report/readiness/physical-transfer work rather than
 pretending another blind controller attempt is justified.
+
+## Post-v67 Attribution Result
+
+The attribution step was completed with saved CSV exports only:
+
+```text
+Results/metrics/signal_window_summary_v48_all_tracks_v67_track3_post_research_20260710.md
+Results/metrics/ctrlalloc_contribution_analysis_v48_all_tracks_v67_track3_post_research_20260710.md
+Results/metrics/post_v67_v68_attribution_decision_20260710.md
+```
+
+Decision: do not patch v68 immediately. The apparent next source mechanism,
+straight-line risk speed arbitration in `ControlAllocate`, was already covered
+by rejected v51 and produced a non-comparable early stop. v67 also showed that
+nearest-distance wrapper input changes clean the runtime state but do not
+improve Track3 score. Continue through report/readiness and physical-transfer
+deliverables until a genuinely different deployable four-scalar mechanism is
+identified.
