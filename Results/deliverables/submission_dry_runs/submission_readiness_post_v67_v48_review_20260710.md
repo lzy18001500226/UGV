@@ -1,14 +1,14 @@
 # UGV Submission Readiness Dry Run
 
-generated_at: 2026-07-10T07:19:40+08:00
+generated_at: 2026-07-10T07:29:16+08:00
 ready: false
 final_approval: false
 
 ## Summary
 
 - tracked_model_files: 72
-- tracked_metric_or_evidence_files: 354
-- tracked_report_or_workflow_files: 82
+- tracked_metric_or_evidence_files: 355
+- tracked_report_or_workflow_files: 84
 
 ## Blockers
 
