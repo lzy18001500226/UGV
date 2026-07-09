@@ -11,8 +11,9 @@
 | Evidence manifest template | `Docs/Workflows/evidence_manifest_template.md` |
 | Research manifest template | `Docs/Workflows/research_manifest_template.md` |
 | Deployable UGV avoidance algorithm research | `References/research/deployable_ugv_avoidance_algorithms_20260709/MANIFEST.md`; `References/research/deployable_ugv_avoidance_algorithms_20260709/source_notes.md` |
-| High-score optimization strategy after rejected v14-v29 attempts | `Docs/Design/high_score_optimization_strategy_20260709.md`; latest review `Results/metrics/track1_track4_candidate_review_v29_side_danger_speed_20260709_2130.md` |
+| High-score optimization strategy after rejected v14-v31 attempts | `Docs/Design/high_score_optimization_strategy_20260709.md`; latest review `Results/metrics/track1_candidate_review_v31_avoid_release3s_20260709_2200.md` |
 | Unified four-track obstacle-avoidance v30 plan and rejection evidence | `Docs/Design/unified_obstacle_avoidance_v30_plan_20260709.md`; `Results/metrics/track1_track4_candidate_review_v30_side_danger_steering_floor_20260709_2116.md` |
+| Unified obstacle-avoidance v31 plan and rejection evidence | `Docs/Design/unified_obstacle_avoidance_v31_plan_20260709.md`; `Results/metrics/track1_candidate_review_v31_avoid_release3s_20260709_2200.md` |
 | Report writing | `Docs/Workflows/report_workflow.md` |
 | Current v13 submission readiness dry run, no package build | `Scripts/quality/check_submission_readiness.py`; `Scripts/quality/plan_submission_candidate.py`; `Results/deliverables/submission_dry_runs/submission_readiness_v13_20260709_1535.md`; `Results/deliverables/submission_dry_runs/submission_candidate_plan_v13_20260709_1535.md` |
 | Historical M6 review candidate package | `Scripts/quality/build_submission_candidate.py`; `Results/deliverables/submission_dry_runs/submission_readiness_20260709_124115.md`; `Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_124115.md` |
@@ -29,7 +30,7 @@
 
 ## Current Phase Cursor
 
-Current cursor: v13 report/readiness refresh completed; v14-v30 follow-up attempts rejected; next candidate must start from fresh failure-window or trajectory evidence and validate one track-agnostic controller mechanism across all four tracks instead of blind scalar tuning or per-track patches. This is a
+Current cursor: v13 report/readiness refresh completed; v14-v31 follow-up attempts rejected; next candidate must start from fresh failure-window or trajectory evidence and validate one track-agnostic controller mechanism across all four tracks instead of blind scalar tuning or per-track patches. This is a
 cursor for the continuous M1-M9 long task, not a stop point. Update
 `Docs/Workflows/long_task_status_board.md` only when phase state changes.
 
@@ -39,7 +40,7 @@ M6 wrapper-based four-track metric extraction completed
 M8 report draft refreshed with v13 metrics
 M9 readiness dry run and local review candidate package are historical audit artifacts; do not rebuild packages unless explicitly requested
 Current controller candidate: v13 side trigger 0.45, total wrapper score 36.4
-Active weak-track focus after v13: v30 side-danger steering-floor was rejected after Track1/Track4 target evidence showed no improvement; continue only with a new evidence-backed unified-controller mechanism
+Active weak-track focus after v13: v31 avoid-release 3s was rejected after Track1 target evidence severely regressed; continue only with a new evidence-backed unified-controller mechanism, and do not continue longer reverse/avoid dwell scanning
 ```
 
 M1 source grounding is complete at `Results/evidence/static_model_grounding_20260708_210142.md`.

@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v13 side-trigger 0.45 remains the accepted four-track baseline; Track4 v14/v15, Track1/Track3 v16-v18, Track1 v19 recovery, v20/v21 follow-up, v22 lateral-dwell, v23 cruise-speed, v24 ControlAllocate filter, v25 PathPlanner max-steer, v26 CtrlAlloc steer-weight, v27 CtrlAlloc default obstacle-weight no-op, v28 CtrlAlloc speed-channel, v29 side-danger speed-regulation, and v30 side-danger steering-floor candidates were tested and rejected, 2026-07-09 CST.
+Status: v13 side-trigger 0.45 remains the accepted four-track baseline; Track4 v14/v15, Track1/Track3 v16-v18, Track1 v19 recovery, v20/v21 follow-up, v22 lateral-dwell, v23 cruise-speed, v24 ControlAllocate filter, v25 PathPlanner max-steer, v26 CtrlAlloc steer-weight, v27 CtrlAlloc default obstacle-weight no-op, v28 CtrlAlloc speed-channel, v29 side-danger speed-regulation, v30 side-danger steering-floor, and v31 avoid-release 3s candidates were tested and rejected, 2026-07-09 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v13 accepted and restored; Track4 v14/v15, Track1/Track3 v16-v18, Track1 v19 recovery, v20/v21 follow-up, v22 lateral-dwell, v23 cruise-speed, v24 ControlAllocate filter, v25 PathPlanner max-steer, v26 CtrlAlloc steer-weight, v27 CtrlAlloc default obstacle-weight no-op, v28 CtrlAlloc speed-channel, v29 side-danger speed-regulation, and v30 side-danger steering-floor candidates rejected; next attempt should not be blind scalar tuning and should start from fresh failure evidence or a new mechanism hypothesis`.
+Current phase cursor: `v13 accepted and restored; Track4 v14/v15, Track1/Track3 v16-v18, Track1 v19 recovery, v20/v21 follow-up, v22 lateral-dwell, v23 cruise-speed, v24 ControlAllocate filter, v25 PathPlanner max-steer, v26 CtrlAlloc steer-weight, v27 CtrlAlloc default obstacle-weight no-op, v28 CtrlAlloc speed-channel, v29 side-danger speed-regulation, v30 side-danger steering-floor, and v31 avoid-release 3s candidates rejected; next attempt should not be blind scalar tuning and should start from fresh failure evidence or a new mechanism hypothesis`.
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -235,6 +235,24 @@ Track4 both stayed at `P=8.8`, `cR=3`, `cO=0`, so the candidate is rejected as
 no improvement and the source was restored to v13 semantics. Do not continue to
 Track2/Track3 regression for v30 because the target evidence did not improve.
 
+v31 avoid-release 3s follow-up:
+
+```text
+Results/metrics/v13_pre_collision_control_attribution_20260709_2140.md
+Docs/Design/unified_obstacle_avoidance_v31_plan_20260709.md
+Results/evidence/controller_deployability_static_check_v31_avoid_release3s_20260709_2153.md
+Results/simulations/controller_v31_avoid_release3s_saidao1_120s_20260709_2155/
+Results/metrics/track1_candidate_review_v31_avoid_release3s_20260709_2200.md
+Results/evidence/controller_deployability_static_check_v13_restored_after_v31_20260709_2200.md
+```
+
+v31 extended the avoid-to-cruise release dwell from 2 seconds to 3 seconds. It
+passed the static source gate but badly regressed Track1 to `P=2.0`, `cR=17`,
+`cO=3`, versus accepted v13 `P=8.8`, `cR=3`, `cO=0`. The source was restored
+to v13 semantics. Do not continue v31 to Track4/Track2/Track3 regression and
+do not continue the longer reverse/avoid dwell route without a new mechanism
+reason.
+
 Rejected candidates:
 
 ```text
@@ -255,6 +273,7 @@ v27: ControlAllocate default obstacle-avoidance weight factor_oa 0.3 -> 0.5 on T
 v28: ControlAllocate speed-channel gain1 factor_oa -> 2 * factor_oa on Track3
 v29: avoid-mode side-danger speed regulation on Track1/Track4
 v30: avoid-lateral bounded steering floor on Track1/Track4
+v31: avoid-to-cruise release dwell 2s -> 3s on Track1
 ```
 
 v14/v15 kept Track4 at `P=8.8` and worsened timing. v16 did not improve
@@ -286,9 +305,11 @@ is rejected and the source was restored to v13 semantics. v30 added a bounded
 avoid-lateral steering floor, also passed the static source gate, and ran
 Track1/Track4; both target tracks again stayed at `P=8.8`, `cR=3`, `cO=0`, so
 it is rejected as no improvement and the source was restored to v13 semantics.
-The next attempt should start from fresh collision-window or trajectory
-evidence, then run the target weak track first and only expand to regression
-when target evidence improves.
+v31 extended avoid release to 3 s, passed the static gate, but regressed Track1
+to `P=2.0`, `cR=17`, `cO=3`, so it is rejected and the source was restored to
+v13 semantics. The next attempt should start from fresh collision-window,
+control-attribution, or trajectory evidence, then run the target weak track
+first and only expand to regression when target evidence improves.
 Current M8/M9 review artifacts:
 
 ```text

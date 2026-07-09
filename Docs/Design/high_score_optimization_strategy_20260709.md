@@ -1,7 +1,7 @@
 # High-Score Optimization Strategy
 
 > Research-driven strategy for improving the UGV obstacle-avoidance score after
-> v14-v29 scalar/controller attempts were rejected.
+> v14-v31 scalar/controller attempts were rejected.
 
 Status: active strategy, 2026-07-09 CST.
 
@@ -36,7 +36,7 @@ materials before final reporting.
 
 ## 2. Rejected Attempt Lessons
 
-Do not continue v14-v29 style blind scalar scanning.
+Do not continue v14-v31 style blind scalar scanning.
 
 Rejected route summary:
 
@@ -49,6 +49,7 @@ Rejected route summary:
 | ControlAllocate defaults | Can be a no-op because generated wrappers instantiate `ctrlAlloc(factor_oa=0.5)`. |
 | Speed-channel gain changes | Can produce high-looking but non-comparable early-stop scores. |
 | Side-danger speed regulation | Passed the static gate but did not improve Track1/Track4 against v13. |
+| Steering floor / longer avoid dwell | Steering floor did not improve Track1/Track4; longer avoid release regressed Track1 badly. |
 
 Accepted operating rule:
 
@@ -104,15 +105,16 @@ a full local planner unless the official interface changes.
 
 ## 5. Candidate Mechanism Routes
 
-Route A was tested as v29 and rejected because it did not improve Track1 or
-Track4 against v13. The remaining routes are hypotheses only; do not implement
-one until a fresh failure-window diagnosis explains why it should help.
+Routes A, B, and the long-release variant of C were tested and rejected. The
+remaining routes are hypotheses only; do not implement one until a fresh
+failure-window diagnosis explains why it should help.
 
 | Route | Mechanism | Edit scope | First gate |
 |---|---|---|---|
 | A | Side-danger speed regulation: when either side clearance is extremely low, reduce avoid-mode speed further while keeping v13 trigger semantics. | `ObsAvoidController_Sysblock2.mo` only. | Tested as v29 and rejected. |
-| B | Side-danger steering floor: near a wall, require a minimum steer-away magnitude instead of only proportional `2 * abs(dl - dr)`. | `ObsAvoidController_Sysblock2.mo` only. | Track1/Track4, but higher risk of planner fighting. |
-| C | Two-bin gap state with release hysteresis: keep avoid lateral behavior until side clearances recover above a release threshold. | `ObsAvoidController_Sysblock2.mo` only. | Higher Sysblock state-machine risk; defer until A/B evidence. |
+| B | Side-danger steering floor: near a wall, require a minimum steer-away magnitude instead of only proportional `2 * abs(dl - dr)`. | `ObsAvoidController_Sysblock2.mo` only. | Tested as v30 and rejected. |
+| C | Longer avoid release hysteresis: keep avoid mode active longer after trigger. | `ObsAvoidController_Sysblock2.mo` only. | Tested as v31 and rejected; avoid longer reverse dwell. |
+| D | Planner-fighting mitigation: inspect whether path-planner steer dominates near road contacts and find a bounded safety overlay that does not edit official path/road/scoring files. | Prefer `ObsAvoidController_Sysblock2.mo`; touch allocation/planner only with explicit design reason and source gate. | Needs a fresh source-boundary decision before implementation. |
 
 Candidate acceptance:
 
@@ -153,6 +155,32 @@ Before another controller edit:
 3. Run the source deployability checker before runtime.
 4. Run the target weak track first.
 5. Run regression on Track1/Track3/Track4 only if the target track improves.
+
+## 8. Completed v30 / v31 Checks
+
+v30 side-danger steering floor:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v30_plan_20260709.md
+Results/metrics/track1_track4_candidate_review_v30_side_danger_steering_floor_20260709_2116.md
+```
+
+v30 passed the static source gate and ran Track1/Track4, but both target
+tracks stayed at `P=8.8`, `cR=3`, `cO=0`, matching v13 instead of improving it.
+It is rejected.
+
+v31 avoid-release 3s:
+
+```text
+Results/metrics/v13_pre_collision_control_attribution_20260709_2140.md
+Docs/Design/unified_obstacle_avoidance_v31_plan_20260709.md
+Results/metrics/track1_candidate_review_v31_avoid_release3s_20260709_2200.md
+```
+
+v31 extended avoid release from 2 seconds to 3 seconds. It passed the static
+gate but regressed Track1 to `P=2.0`, `cR=17`, `cO=3`, so it is rejected and
+the longer reverse/avoid dwell route should not be continued without a new
+mechanism reason.
 
 Non-goals:
 
