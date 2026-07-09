@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v45 is superseded by v48 score evidence, v46-v52, v54-v58, v61-v67 were rejected on Track3, v53/v59 were rejected on Track1, and v60 was rejected on Track1/Track3. Post-v67/v68 attribution says do not patch another blind controller candidate yet; continue through report/readiness and physical-transfer deliverables while keeping targeted research open, 2026-07-10 CST.
+Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v45 is superseded by v48 score evidence, v46-v52, v54-v58, v61-v67 were rejected on Track3, v53/v59 were rejected on Track1, v60 was rejected on Track1/Track3, and v69 lateral hysteresis was rejected before source edit by saved-signal screening. Post-v67/v68 attribution says do not patch another blind controller candidate yet; continue through report/readiness and physical-transfer deliverables while keeping targeted research open, 2026-07-10 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op, v46-v52/v54-v58/v61-v67 rejected on Track3, v53/v59 rejected on Track1, and v60 rejected on Track1/Track3. Continue from v48 unless later review rejects it. Post-v67/v68 attribution found no justified new low-risk source patch: the direct allocation-speed route was already rejected by v51, and nearest-distance wrapper input was rejected by v67. Continue deliverable readiness, report QA, physical-transfer notes, and targeted research until a genuinely different deployable four-scalar mechanism appears.`
+Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op, v46-v52/v54-v58/v61-v67 rejected on Track3, v53/v59 rejected on Track1, v60 rejected on Track1/Track3, and v69 lateral hysteresis rejected before source edit. Continue from v48 unless later review rejects it. Post-v67/v68 attribution found no justified new low-risk source patch: the direct allocation-speed route was already rejected by v51, nearest-distance wrapper input was rejected by v67, and lateral left/right hysteresis lacks saved-signal support. Continue deliverable readiness, report QA, physical-transfer notes, and targeted research until a genuinely different deployable four-scalar mechanism appears.`
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -706,6 +706,17 @@ Results/metrics/ctrlalloc_contribution_analysis_v48_all_tracks_v67_track3_post_r
 Decision: do not patch v68 immediately. Continue the long task through report,
 readiness, and physical-transfer work unless new evidence identifies a
 materially different four-distance mechanism.
+
+v69 lateral hysteresis screening:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v69_lateral_hysteresis_screening_20260710.md
+Results/metrics/lateral_hysteresis_screening_v48_20260710.md
+```
+
+Decision: do not patch lateral left/right hysteresis. Saved v48 signals show
+zero `chart.steer` sign flips on all four tracks, so remaining Track3 events
+are not caused by lateral switching chatter.
 
 Current M8/M9 review artifacts:
 
