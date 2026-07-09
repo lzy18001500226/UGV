@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v45 is superseded by v48 score evidence, v46-v52 and v54-v58 were rejected on Track3, and v53 was rejected on Track1, 2026-07-10 CST.
+Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v45 is superseded by v48 score evidence, v46-v52 and v54-v58 were rejected on Track3, and v53/v59 were rejected on Track1, 2026-07-10 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op, v46-v52 and v54-v58 rejected on Track3, and v53 rejected on Track1. Continue from v48 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence or a new obstacle-horizon/front-risk-state mechanism`.
+Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op, v46-v52 and v54-v58 rejected on Track3, and v53/v59 rejected on Track1. Continue from v48 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence or a new obstacle-horizon/front-risk-state mechanism`.
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -286,6 +286,24 @@ v58 is rejected. It removed the v48 Track3 road-collision event in exported
 score variables, but added obstacle collisions and regressed Track3 to
 `T=38.80`, `cR=0`, `cO=3`, `P=8.8`. Do not continue stronger initial
 side-gap bypass scans without a new mechanism reason. Continue from v48.
+
+v59 close-side initial-direction follow-up:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v59_plan_20260710.md
+Results/simulations/controller_v59_close_side_initial_direction_saidao1_120s_20260710/
+Results/metrics/track1_candidate_review_v59_close_side_initial_direction_20260710.md
+Results/metrics/collision_window_analysis_v48_v59_track1_20260710.md
+Results/metrics/signal_window_summary_v48_v59_track1_20260710.md
+Results/metrics/ctrlalloc_contribution_analysis_v48_v59_track1_20260710.md
+Results/evidence/controller_deployability_static_check_v48_restored_after_v59_20260710.md
+```
+
+v59 is rejected. Track1 exported `P=10.0`, but only after
+`simulate_failed`/`exit_state=2` at `T=3.85`, so it is a non-comparable
+early-stop artifact rather than a full-track improvement over v48 Track1
+`T=120.0`, `cR=2`, `cO=0`, `P=9.2`. Do not continue close-side
+initial-direction scans without a new mechanism reason. Continue from v48.
 
 v49 path-speed attenuation follow-up:
 
