@@ -1,0 +1,80 @@
+{
+  "runs": [
+    {
+      "label": "v48_track1",
+      "run_dir": "Results\\simulations\\controller_v48_trajectory_export_saidao1_120s_20260710",
+      "image": "Results\\figures\\trajectory_event_review_v48_20260710\\v48_track1_trajectory_events.png",
+      "position_columns": [
+        "distanceSensor1.vehicle_position[1]",
+        "distanceSensor1.vehicle_position[2]"
+      ],
+      "time_column": "Time",
+      "score_end": {
+        "T": 120.0,
+        "cR": 2.0,
+        "cO": 0.0,
+        "P": 9.2
+      },
+      "events": [
+        {
+          "event": 1,
+          "time_s": 6.65,
+          "changes": [
+            "cR: 0->1",
+            "P: 10->9.6"
+          ],
+          "x": 3.26116721403561,
+          "y": 1.95297673315015
+        },
+        {
+          "event": 2,
+          "time_s": 29.9,
+          "changes": [
+            "cR: 1->2",
+            "P: 9.6->9.2"
+          ],
+          "x": 12.6314370265326,
+          "y": 6.12586266945578
+        }
+      ]
+    },
+    {
+      "label": "v48_track3",
+      "run_dir": "Results\\simulations\\controller_v48_trajectory_export_saidao3_120s_20260710",
+      "image": "Results\\figures\\trajectory_event_review_v48_20260710\\v48_track3_trajectory_events.png",
+      "position_columns": [
+        "distanceSensor1.vehicle_position[1]",
+        "distanceSensor1.vehicle_position[2]"
+      ],
+      "time_column": "Time",
+      "score_end": {
+        "T": 6.75,
+        "cR": 1.0,
+        "cO": 1.0,
+        "P": 9.2
+      },
+      "events": [
+        {
+          "event": 1,
+          "time_s": 1.05,
+          "changes": [
+            "cO: 0->1",
+            "P: 10->9.6"
+          ],
+          "x": 1.20002805812345,
+          "y": 0.0799006841074048
+        },
+        {
+          "event": 2,
+          "time_s": 4.85,
+          "changes": [
+            "cR: 0->1",
+            "P: 9.6->9.2"
+          ],
+          "x": 3.36390282210322,
+          "y": 0.459294641257918
+        }
+      ]
+    }
+  ]
+}

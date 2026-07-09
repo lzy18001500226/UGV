@@ -1,0 +1,19 @@
+{
+  "all_variable_count": 24476,
+  "timevarying_variable_count": 24473,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "extra_result_variables": [
+    "body3DOF1_1.P_vehicle[1]",
+    "body3DOF1_1.P_vehicle[2]",
+    "body3DOF1_1.body.frame_a.r_0[1]",
+    "body3DOF1_1.body.frame_a.r_0[2]",
+    "distanceSensor1.vehicle_position[1]",
+    "distanceSensor1.vehicle_position[2]"
+  ]
+}

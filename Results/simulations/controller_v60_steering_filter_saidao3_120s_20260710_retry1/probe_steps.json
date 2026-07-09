@@ -1,0 +1,93 @@
+{
+  "project_root": "C:\\Users\\HP\\Desktop\\UGV",
+  "out_dir": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v60_steering_filter_saidao3_120s_20260710_retry1",
+  "model_name": "UGV.Test.Saidao3Eval",
+  "python_executable": "D:\\Program Files\\MWORKS\\Sysplorer 2026a\\External\\python64\\python.exe",
+  "cwd": "C:\\Users\\HP\\Desktop\\UGV",
+  "return_code": 5,
+  "steps": [
+    {
+      "name": "preflight_paths",
+      "status": "ok",
+      "package_mo": "C:\\Users\\HP\\Desktop\\UGV\\Models\\UGV\\package.mo",
+      "result_root": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v60_steering_filter_saidao3_120s_20260710_retry1\\native_result"
+    },
+    {
+      "name": "import_mworks_sysplorer",
+      "status": "ok",
+      "module": "<module 'mworks.sysplorer' from 'D:\\\\Program Files\\\\MWORKS\\\\Sysplorer 2026a\\\\External\\\\python64\\\\Lib\\\\site-packages\\\\mworks\\\\sysplorer\\\\__init__.py'>"
+    },
+    {
+      "name": "start_sysplorer",
+      "status": "ok",
+      "process_path": "D:\\Program Files\\MWORKS\\Sysplorer 2026a\\Bin64\\mworks.exe"
+    },
+    {
+      "name": "open_dependency_model_file",
+      "status": "ok",
+      "path": "D:\\Program Files\\MWORKS\\Sysplorer 2026a\\Library\\TADynamics 1.3.2\\TADynamics\\TADynamics.mol",
+      "result": "True"
+    },
+    {
+      "name": "open_model_file",
+      "status": "ok",
+      "result": "True"
+    },
+    {
+      "name": "open_model",
+      "status": "ok",
+      "result": "True"
+    },
+    {
+      "name": "check_model",
+      "status": "ok",
+      "result": "True"
+    },
+    {
+      "name": "simulate_model",
+      "status": "failed",
+      "result": "False",
+      "kwargs": {
+        "modelName": "UGV.Test.Saidao3Eval",
+        "options": {
+          "startTime": 0,
+          "stopTime": 120.0,
+          "path": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v60_steering_filter_saidao3_120s_20260710_retry1\\native_result",
+          "algorithm": "Dassl",
+          "interval": 0.05,
+          "translationEvaluateParametersToReduceModels": true,
+          "translationCheckConnection_Strictly": false,
+          "compileSolver64": 1
+        }
+      }
+    },
+    {
+      "name": "simulate_model_messages",
+      "status": "captured",
+      "messages": {
+        "GetLastErrors": false,
+        "MessageText": "[2026-07-10 04:23:33] \u001b[32mMessage\u001b[39m(0):---- 检查模型: UGV.Test.Saidao3Eval ----\n正在解析模型...\n\u001b[33m警告\u001b[39m(3308): inner 组件应当是相应 outer 组件 \"road\" 的子类型.\n组件上下文：\"body3DOF1_1.fl.positionCal\"\n\u001b[33m警告\u001b[39m(3308): inner 组件应当是相应 outer 组件 \"road\" 的子类型.\n组件上下文：\"body3DOF1_1.rl.positionCal\"\n\u001b[33m警告\u001b[39m(3308): inner 组件应当是相应 outer 组件 \"road\" 的子类型.\n组件上下文：\"body3DOF1_1.fr.positionCal\"\n\u001b[33m警告\u001b[39m(3308): inner 组件应当是相应 outer 组件 \"road\" 的子类型.\n组件上下文：\"body3DOF1_1.rr.positionCal\"\n\n---- 检查结束,发现框图模型 ----\n---- 推导模型: UGV.Test.Saidao3Eval ----\n\u001b[33m警告\u001b[39m(523): 二元表达式 dl == dr 非法, 在函数外关系操作符 \"==\", \"<>\" 不能应用于实型子类型.\n\u001b[33m警告\u001b[39m(523): 二元表达式 dr == dl 非法, 在函数外关系操作符 \"==\", \"<>\" 不能应用于实型子类型.\n模型推导用时: 00:00:00.034067.\n---- 推导完毕 ----\n---- 检查模型: UGV.Test.Saidao3Eval ----\n正在解析模型...\n\u001b[33m警告\u001b[39m(3308): inner 组件应当是相应 outer 组件 \"road\" 的子类型.\n组件上下文：\"body3DOF1_1.fl.positionCal\"\n\u001b[33m警告\u001b[39m(3308): inner 组件应当是相应 outer 组件 \"road\" 的子类型.\n组件上下文：\"body3DOF1_1.rl.positionCal\"\n\u001b[33m警告\u001b[39m(3308): inner 组件应当是相应 outer 组件 \"road\" 的子类型.\n组件上下文：\"body3DOF1_1.fr.positionCal\"\n\u001b[33m警告\u001b[39m(3308): inner 组件应当是相应 outer 组件 \"road\" 的子类型.\n组件上下文：\"body3DOF1_1.rr.positionCal\"\n正在实例化模型...\n\u001b[33m警告\u001b[39m(523): 二元表达式 dl == dr 非法, 在函数外关系操作符 \"==\", \"<>\" 不能应用于实型子类型.\n组件上下文：\"obsAvoidController_Sysblock\"\n\u001b[33m警告\u001b[39m(523): 二元表达式 dr == dl 非法, 在函数外关系操作符 \"==\", \"<>\" 不能应用于实型子类型.\n组件上下文：\"obsAvoidController_Sysblock\"\n以下连接器变量未被使用, 被移除: \nsignalBus.driverBus.accPedal\nsignalBus.driverBus.brakePedal\nsignalBus.driverBus.SWAngle\nsignalBus.vehicleStatus.w_beta\nsignalBus.vehicleStatus.beta\nsignalBus.vehicleStatus.r_vehicle\nsignalBus.driverBus.SWRelease\nsignalBus.driverBus.EPB_on\nsignalBus.vehicleStatus.w_vehicle\nsignalBus.vehicleStatus.vehicle_drive_power\nsignalBus.vehicleStatus.BrakeDistance\nsignalBus.vehicleStatus.DriveDistance\nsignalBus.vehicleStatus.v_vehicle\nsignalBus.vehicleStatus.phi_vehicle\nsignalBus.vehicleStatus.a_vehicle\nsignalBus.brakeBus.abs_active\nsignalBus.brakeBus.esc_active\nsignalBus.brakeBus.brakePedal_travel\nsignalBus.brakeBus.brakePedal_force\nsignalBus.steeringBus.tau_SW\nsignalBus.steeringBus.s\nsignalBus.brakeBus.brakeBus.tau_brake\nsignalBus.vehicleStatus.vy_ref\nsignalBus.vehicleStatus.wz_ref\nsignalBus.brakeBus.brakeBus.esc_factor\nsignalBus.brakeBus.brakeBus.abs_factor\nsignalBus.steeringBus.phi_SW\nsignalBus.powertrainBus.emotorBus.P_drive\nsignalBus.drivelineBus.tau_wheelnum\nsignalBus.drivelineBus.rear_k\nsignalBus.drivelineBus.front_k\nsignalBus.powertrainBus.emotorBus.tau_drive\nsignalBus.powertrainBus.emotorBus.tau_desired\nsignalBus.powertrainBus.emotorBus.w_drive\nsignalBus.powertrainBus.emotorBus.i\nsignalBus.powertrainBus.emotorBus.v\nsignalBus.powertrainBus.emotorBus.T_motor.\n\n模型有 0 个\u001b[31m错误\u001b[39m和 6 个\u001b[33m警告\u001b[39m.\n模型有 12477 个变量和 12477 个方程.\n\n检查模型用时: 00:00:00.662353.\n\n---- 检查完毕 ----"
+      }
+    },
+    {
+      "name": "post_failed_simulation_result_probe",
+      "status": "attempting",
+      "note": "SimulateModel returned false; attempting state/result extraction before exiting."
+    },
+    {
+      "name": "simulation_state",
+      "status": "ok",
+      "exit_state": false,
+      "simulation_state": false
+    },
+    {
+      "name": "result_variables",
+      "status": "exception",
+      "error": "TypeError(\"'bool' object is not iterable\")"
+    },
+    {
+      "name": "engine_exit",
+      "status": "ok"
+    }
+  ]
+}

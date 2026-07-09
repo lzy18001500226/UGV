@@ -1,0 +1,102 @@
+{
+  "runs": [
+    {
+      "label": "v48_track1",
+      "run_dir": "Results\\simulations\\controller_v48_trajectory_export_saidao1_120s_20260710",
+      "image": "Results\\figures\\trajectory_geometry_review_v48_20260710\\v48_track1_trajectory_events.png",
+      "position_columns": [
+        "distanceSensor1.vehicle_position[1]",
+        "distanceSensor1.vehicle_position[2]"
+      ],
+      "time_column": "Time",
+      "score_end": {
+        "T": 120.0,
+        "cR": 2.0,
+        "cO": 0.0,
+        "P": 9.2
+      },
+      "track_geometry": {
+        "track_path": "Models\\UGV\\saidao\\saidao1.mo",
+        "road_points": 182,
+        "obstacle_points": 24,
+        "road_width": null,
+        "obstacle_size": 0.1
+      },
+      "events": [
+        {
+          "event": 1,
+          "time_s": 6.65,
+          "changes": [
+            "cR: 0->1",
+            "P: 10->9.6"
+          ],
+          "x": 3.26116721403561,
+          "y": 1.95297673315015,
+          "distance_to_road_center": 0.4626540127493575,
+          "distance_to_nearest_obstacle": 3.4932799681372626
+        },
+        {
+          "event": 2,
+          "time_s": 29.9,
+          "changes": [
+            "cR: 1->2",
+            "P: 9.6->9.2"
+          ],
+          "x": 12.6314370265326,
+          "y": 6.12586266945578,
+          "distance_to_road_center": 0.46121548489137976,
+          "distance_to_nearest_obstacle": 0.8638008079008853
+        }
+      ]
+    },
+    {
+      "label": "v48_track3",
+      "run_dir": "Results\\simulations\\controller_v48_trajectory_export_saidao3_120s_20260710",
+      "image": "Results\\figures\\trajectory_geometry_review_v48_20260710\\v48_track3_trajectory_events.png",
+      "position_columns": [
+        "distanceSensor1.vehicle_position[1]",
+        "distanceSensor1.vehicle_position[2]"
+      ],
+      "time_column": "Time",
+      "score_end": {
+        "T": 6.75,
+        "cR": 1.0,
+        "cO": 1.0,
+        "P": 9.2
+      },
+      "track_geometry": {
+        "track_path": "Models\\UGV\\saidao\\saidao3.mo",
+        "road_points": 106,
+        "obstacle_points": 20,
+        "road_width": null,
+        "obstacle_size": 0.1
+      },
+      "events": [
+        {
+          "event": 1,
+          "time_s": 1.05,
+          "changes": [
+            "cO: 0->1",
+            "P: 10->9.6"
+          ],
+          "x": 1.20002805812345,
+          "y": 0.0799006841074048,
+          "distance_to_road_center": 0.0799006841074048,
+          "distance_to_nearest_obstacle": 0.1060765911690981
+        },
+        {
+          "event": 2,
+          "time_s": 4.85,
+          "changes": [
+            "cR: 0->1",
+            "P: 9.6->9.2"
+          ],
+          "x": 3.36390282210322,
+          "y": 0.459294641257918,
+          "distance_to_road_center": 0.459294641257918,
+          "distance_to_nearest_obstacle": 1.3962987091040342
+        }
+      ]
+    }
+  ]
+}

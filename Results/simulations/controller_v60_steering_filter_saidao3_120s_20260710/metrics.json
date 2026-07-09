@@ -1,0 +1,31 @@
+{
+  "request_id": "v60_track3_steering_filter",
+  "model_name": "UGV.Test.Saidao3Eval",
+  "stop_time_requested": 120.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "simulate_failed",
+  "completion": "unknown",
+  "time_s": null,
+  "road_collisions": null,
+  "obstacle_collisions": null,
+  "avoidance_score": null,
+  "available_score_variables": [],
+  "missing_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "simulation_exit_state": false,
+  "simulation_state": false,
+  "exported_csv": null,
+  "exported_csv_ok": false,
+  "exported_extra_csv": null,
+  "exported_extra_csv_ok": false,
+  "extra_result_variables": [],
+  "pyapi_messages": {
+    "GetLastErrors": false,
+    "MessageText": "[2026-07-10 04:22:14] \u001b[32mMessage\u001b[39m(0):---- 检查模型: UGV.Test.Saidao3Eval ----\n正在解析模型...\n\u001b[33m警告\u001b[39m(3308): inner 组件应当是相应 outer 组件 \"road\" 的子类型.\n组件上下文：\"body3DOF1_1.fl.positionCal\"\n\u001b[33m警告\u001b[39m(3308): inner 组件应当是相应 outer 组件 \"road\" 的子类型.\n组件上下文：\"body3DOF1_1.rl.positionCal\"\n\u001b[33m警告\u001b[39m(3308): inner 组件应当是相应 outer 组件 \"road\" 的子类型.\n组件上下文：\"body3DOF1_1.fr.positionCal\"\n\u001b[33m警告\u001b[39m(3308): inner 组件应当是相应 outer 组件 \"road\" 的子类型.\n组件上下文：\"body3DOF1_1.rr.positionCal\"\n\n---- 检查结束,发现框图模型 ----\n---- 推导模型: UGV.Test.Saidao3Eval ----\n\u001b[33m警告\u001b[39m(523): 二元表达式 dl == dr 非法, 在函数外关系操作符 \"==\", \"<>\" 不能应用于实型子类型.\n\u001b[33m警告\u001b[39m(523): 二元表达式 dr == dl 非法, 在函数外关系操作符 \"==\", \"<>\" 不能应用于实型子类型.\n模型推导用时: 00:00:00.040334.\n---- 推导完毕 ----\n---- 检查模型: UGV.Test.Saidao3Eval ----\n正在解析模型...\n\u001b[33m警告\u001b[39m(3308): inner 组件应当是相应 outer 组件 \"road\" 的子类型.\n组件上下文：\"body3DOF1_1.fl.positionCal\"\n\u001b[33m警告\u001b[39m(3308): inner 组件应当是相应 outer 组件 \"road\" 的子类型.\n组件上下文：\"body3DOF1_1.rl.positionCal\"\n\u001b[33m警告\u001b[39m(3308): inner 组件应当是相应 outer 组件 \"road\" 的子类型.\n组件上下文：\"body3DOF1_1.fr.positionCal\"\n\u001b[33m警告\u001b[39m(3308): inner 组件应当是相应 outer 组件 \"road\" 的子类型.\n组件上下文：\"body3DOF1_1.rr.positionCal\"\n正在实例化模型...\n\u001b[33m警告\u001b[39m(523): 二元表达式 dl == dr 非法, 在函数外关系操作符 \"==\", \"<>\" 不能应用于实型子类型.\n组件上下文：\"obsAvoidController_Sysblock\"\n\u001b[33m警告\u001b[39m(523): 二元表达式 dr == dl 非法, 在函数外关系操作符 \"==\", \"<>\" 不能应用于实型子类型.\n组件上下文：\"obsAvoidController_Sysblock\"\n以下连接器变量未被使用, 被移除: \nsignalBus.driverBus.accPedal\nsignalBus.driverBus.brakePedal\nsignalBus.driverBus.SWAngle\nsignalBus.vehicleStatus.w_beta\nsignalBus.vehicleStatus.beta\nsignalBus.vehicleStatus.r_vehicle\nsignalBus.driverBus.SWRelease\nsignalBus.driverBus.EPB_on\nsignalBus.vehicleStatus.w_vehicle\nsignalBus.vehicleStatus.vehicle_drive_power\nsignalBus.vehicleStatus.BrakeDistance\nsignalBus.vehicleStatus.DriveDistance\nsignalBus.vehicleStatus.v_vehicle\nsignalBus.vehicleStatus.phi_vehicle\nsignalBus.vehicleStatus.a_vehicle\nsignalBus.brakeBus.abs_active\nsignalBus.brakeBus.esc_active\nsignalBus.brakeBus.brakePedal_travel\nsignalBus.brakeBus.brakePedal_force\nsignalBus.steeringBus.tau_SW\nsignalBus.steeringBus.s\nsignalBus.brakeBus.brakeBus.tau_brake\nsignalBus.vehicleStatus.vy_ref\nsignalBus.vehicleStatus.wz_ref\nsignalBus.brakeBus.brakeBus.esc_factor\nsignalBus.brakeBus.brakeBus.abs_factor\nsignalBus.steeringBus.phi_SW\nsignalBus.powertrainBus.emotorBus.P_drive\nsignalBus.drivelineBus.tau_wheelnum\nsignalBus.drivelineBus.rear_k\nsignalBus.drivelineBus.front_k\nsignalBus.powertrainBus.emotorBus.tau_drive\nsignalBus.powertrainBus.emotorBus.tau_desired\nsignalBus.powertrainBus.emotorBus.w_drive\nsignalBus.powertrainBus.emotorBus.i\nsignalBus.powertrainBus.emotorBus.v\nsignalBus.powertrainBus.emotorBus.T_motor.\n\n模型有 0 个\u001b[31m错误\u001b[39m和 6 个\u001b[33m警告\u001b[39m.\n模型有 12477 个变量和 12477 个方程.\n\n检查模型用时: 00:00:00.833910.\n\n---- 检查完毕 ----"
+  },
+  "notes": []
+}
