@@ -444,7 +444,7 @@ required.
 
 Current cursor: v48 opposing-steer guard is the review-ready best four-track
 wrapper candidate with a runtime caveat after v14-v44 follow-up attempts were
-rejected or proved no-op, v45 was superseded, v46-v52/v54-v58/v61-v65 were
+rejected or proved no-op, v45 was superseded, v46-v52/v54-v58/v61-v66 were
 rejected on Track3, v53/v59 were rejected on Track1, and v60 was rejected on
 Track1/Track3. M1 source grounding, M2 bounded
 baseline, M3 controller design, M4 bounded controller implementation gate, M5
@@ -462,7 +462,7 @@ M6 baseline: Results/metrics/four_track_summary_20260709_120547.md
 v13 historical accepted: Results/metrics/four_track_summary_v13_side_trigger045_20260709_1535.md
 v45 superseded accepted: Results/metrics/four_track_candidate_review_v45_curvature_speed_regulation_scaled_20260710_0045.md
 v48 current accepted: Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md
-v65 latest rejected: Results/metrics/track3_candidate_review_v65_front_emergency_hold_20260710.md
+v66 latest rejected: Results/metrics/track3_candidate_review_v66_road_edge_initial_steer_boost_20260710.md
 ```
 
 M2 and M4 verified `UGV.Example.Race1` load/check/simulate and score-variable
@@ -483,5 +483,6 @@ change, speed-channel gain escalation, simple startup-speed cap, broad
 path-speed attenuation, brake-arbitration, path-steer neutralization,
 path-authority scalar scan, stronger initial side-gap bypass scan,
 close-side initial-direction scan, direct early steer-feedforward,
-front-clear side-reentry steering, or emergency-front reverse-hold scan. Final
-package approval remains a separate user gate.
+front-clear side-reentry steering, emergency-front reverse-hold scan, or
+road-edge initial-steering magnitude scan. Final package approval remains a
+separate user gate.
