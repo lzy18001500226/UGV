@@ -1,0 +1,362 @@
+{
+  "runs": [
+    {
+      "label": "v5_track1",
+      "run_dir": "Results\\simulations\\eval_saidao1_connected_120s_final_20260709_120547",
+      "score_path": "Results\\simulations\\eval_saidao1_connected_120s_final_20260709_120547\\score_timeseries.csv",
+      "runtime_status": "simulate_failed",
+      "simulation_exit_state": 2,
+      "final": {
+        "time_s": 86.9,
+        "road_collisions": 4.0,
+        "obstacle_collisions": 3.0,
+        "avoidance_score": 7.199999999999999
+      },
+      "score_values_at_end": {
+        "T": 86.9,
+        "cR": 4.0,
+        "cO": 3.0,
+        "P": 7.199999999999999
+      },
+      "event_count": 7,
+      "events": [
+        {
+          "time": 24.0,
+          "changes": {
+            "cR": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 10.0,
+              "to": 9.6,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 47.9,
+          "changes": {
+            "cO": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.6,
+              "to": 9.2,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 50.3,
+          "changes": {
+            "cO": {
+              "from": 1.0,
+              "to": 2.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.2,
+              "to": 8.8,
+              "delta": -0.3999999999999986
+            }
+          }
+        },
+        {
+          "time": 61.2,
+          "changes": {
+            "cR": {
+              "from": 1.0,
+              "to": 2.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 8.8,
+              "to": 8.4,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 68.9,
+          "changes": {
+            "cR": {
+              "from": 2.0,
+              "to": 3.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 8.4,
+              "to": 8.0,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 72.05,
+          "changes": {
+            "cO": {
+              "from": 2.0,
+              "to": 3.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 8.0,
+              "to": 7.6,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 80.9,
+          "changes": {
+            "cR": {
+              "from": 3.0,
+              "to": 4.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 7.6,
+              "to": 7.2,
+              "delta": -0.39999999999999947
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "v12_track1",
+      "run_dir": "Results\\simulations\\controller_v12_side_trigger_saidao1_120s_20260709_144006",
+      "score_path": "Results\\simulations\\controller_v12_side_trigger_saidao1_120s_20260709_144006\\score_timeseries.csv",
+      "runtime_status": "simulate_returned_true",
+      "simulation_exit_state": 0,
+      "final": {
+        "time_s": 120.0,
+        "road_collisions": 3.0,
+        "obstacle_collisions": 3.0,
+        "avoidance_score": 7.6
+      },
+      "score_values_at_end": {
+        "T": 120.0,
+        "cR": 3.0,
+        "cO": 3.0,
+        "P": 7.6
+      },
+      "event_count": 6,
+      "events": [
+        {
+          "time": 21.75,
+          "changes": {
+            "cO": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 10.0,
+              "to": 9.6,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 22.3,
+          "changes": {
+            "cO": {
+              "from": 1.0,
+              "to": 2.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.6,
+              "to": 9.2,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 25.95,
+          "changes": {
+            "cR": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.2,
+              "to": 8.8,
+              "delta": -0.3999999999999986
+            }
+          }
+        },
+        {
+          "time": 29.3,
+          "changes": {
+            "cR": {
+              "from": 1.0,
+              "to": 2.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 8.8,
+              "to": 8.4,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 99.95,
+          "changes": {
+            "cO": {
+              "from": 2.0,
+              "to": 3.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 8.4,
+              "to": 8.0,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 106.45,
+          "changes": {
+            "cR": {
+              "from": 2.0,
+              "to": 3.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 8.0,
+              "to": 7.6,
+              "delta": -0.40000000000000036
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "v5_track4",
+      "run_dir": "Results\\simulations\\eval_saidao4_connected_120s_final_20260709_120547",
+      "score_path": "Results\\simulations\\eval_saidao4_connected_120s_final_20260709_120547\\score_timeseries.csv",
+      "runtime_status": "simulate_failed",
+      "simulation_exit_state": 2,
+      "final": {
+        "time_s": 47.2,
+        "road_collisions": 2.0,
+        "obstacle_collisions": 0.0,
+        "avoidance_score": 9.2
+      },
+      "score_values_at_end": {
+        "T": 47.2,
+        "cR": 2.0,
+        "cO": 0.0,
+        "P": 9.2
+      },
+      "event_count": 2,
+      "events": [
+        {
+          "time": 41.85,
+          "changes": {
+            "cR": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 10.0,
+              "to": 9.6,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 44.25,
+          "changes": {
+            "cR": {
+              "from": 1.0,
+              "to": 2.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.6,
+              "to": 9.2,
+              "delta": -0.40000000000000036
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "v12_track4",
+      "run_dir": "Results\\simulations\\controller_v12_side_trigger_saidao4_120s_20260709_144434",
+      "score_path": "Results\\simulations\\controller_v12_side_trigger_saidao4_120s_20260709_144434\\score_timeseries.csv",
+      "runtime_status": "simulate_failed",
+      "simulation_exit_state": 2,
+      "final": {
+        "time_s": 94.95,
+        "road_collisions": 3.0,
+        "obstacle_collisions": 0.0,
+        "avoidance_score": 8.8
+      },
+      "score_values_at_end": {
+        "T": 94.95,
+        "cR": 3.0,
+        "cO": 0.0,
+        "P": 8.8
+      },
+      "event_count": 3,
+      "events": [
+        {
+          "time": 5.1,
+          "changes": {
+            "cR": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 10.0,
+              "to": 9.6,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 55.25,
+          "changes": {
+            "cR": {
+              "from": 1.0,
+              "to": 2.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.6,
+              "to": 9.2,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 78.1,
+          "changes": {
+            "cR": {
+              "from": 2.0,
+              "to": 3.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.2,
+              "to": 8.8,
+              "delta": -0.3999999999999986
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -94,17 +94,27 @@ If generated-code or real-car deployment material is unavailable, say so. Do not
 
 ## 7. Current Practical Next Step
 
-Resolve the M6 official-track simulation-entry blocker first. While blocked, safe progress is limited to:
+The earlier M6 direct-official-track API blocker is historical evidence. Current
+repeatable controller evaluation uses generated `UGV.Test.Saidao*Eval`
+wrappers, which preserve the official track geometry while adding the
+controller wiring needed by the API evaluation route.
 
-1. blocker-aware report drafting;
-2. research notes and physical-transfer constraints;
-3. evidence automation that does not alter official no-edit zones;
-4. support/documentation lookup for the exact MWORKS parameter-evaluation API;
-5. targeted online research that improves real-car transfer without importing
-   large external projects into the official model tree;
-6. apply the deployability filter before controller tuning: bounded commands,
-   speed reduction under risk, dwell/hysteresis, and parameter ranges that can
-   be retuned on the physical UGV.
+Current controller candidate:
+
+```text
+controller_v13_side_trigger_0p45
+Results/metrics/four_track_summary_v13_side_trigger045_20260709_1535.md
+```
+
+Next safe work:
+
+1. inspect Track4 road-boundary recovery windows before another rewrite;
+2. keep v13 as the review-ready controller candidate unless stronger evidence supersedes it;
+3. preserve the no-edit boundary for official vehicle, road, sensor, scoring,
+   example, and `saidao` source files;
+4. apply the deployability filter before accepting any new tuning: bounded
+   commands, speed reduction under risk, dwell/hysteresis, and parameter ranges
+   that can be retuned on the physical UGV.
 
 ## 8. Current Static Deployability Gate
 
@@ -117,14 +127,13 @@ python Scripts\quality\check_controller_deployability.py
 Latest evidence:
 
 ```text
-Results/evidence/controller_deployability_static_check_20260709_0222.md
+Results/evidence/controller_deployability_static_check_v13_side_trigger_045_final_20260709.md
 ```
 
-Current result: `ready_for_physical_claim=false`.
+Current result: `ready_for_physical_claim=true`, `high=0`, `medium=0`.
 
-Reason: the controller source still contains reciprocal distance steering terms
-such as `1 / dl` and `1 / dr`. These may spike near zero sensor readings and
-must be replaced, saturated with proof, or otherwise validated before any
-physical-UGV-ready claim. This does not invalidate the current Race1 simulation
-candidate, but it blocks physical-readiness language and should guide the next
-controller revision after MWORKS runtime is available again.
+Meaning: the source-only deployability gate no longer detects the earlier
+reciprocal-distance spike risk. This is not a physical UGV success claim and
+does not prove generated code, real-car tuning, or official final submission
+readiness. It only clears the current static source-level high/medium risk gate
+for the v13 controller candidate.

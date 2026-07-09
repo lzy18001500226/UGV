@@ -442,7 +442,7 @@ review-ready state, commit/push the phase evidence and continue to the next
 safe phase unless the user explicitly pauses or final submission approval is
 required.
 
-Current cursor: M8/M9 refresh after M6 four-track wrapper metrics. M1 source
+Current cursor: M8/M9 refresh after v13 four-track wrapper metrics. M1 source
 grounding, M2 bounded baseline, M3 controller design, M4 bounded controller
 implementation gate, M5 one-track Race1 tuning review, and M6 wrapper-based
 four-track metric extraction are complete:
@@ -453,7 +453,8 @@ M2: Results/simulations/baseline_20260708_213448/
 M3: Docs/Design/避障算法设计.md; Results/evidence/controller_design_review_20260708_215659.md
 M4: Results/simulations/controller_refsysblock_20260708_221000/
 M5: Results/metrics/one_track_tuning_20260708_231430.md
-M6: Results/metrics/four_track_summary_20260709_120547.md
+M6 baseline: Results/metrics/four_track_summary_20260709_120547.md
+v13 current: Results/metrics/four_track_summary_v13_side_trigger045_20260709_1535.md
 ```
 
 M2 and M4 verified `UGV.Example.Race1` load/check/simulate and score-variable
@@ -463,6 +464,6 @@ candidate. M6 uses generated `UGV.Test.Saidao*Eval` wrappers because direct
 for current API controller evaluation. The latest 120 s wrapper runs return
 `simulate_failed` with `exit_state=2`, but the enhanced probe reads
 `T/cR/cO/P` and exports score timeseries after the model terminal state. Next
-safe work is refreshing the report draft and submission dry run with the M6
-metrics, then considering targeted Track 1/3 tuning before final package
-approval.
+safe work is refreshing the report draft and submission dry run with the v13
+metrics, then inspecting Track4 road-boundary recovery before another
+controller rewrite. Final package approval remains a separate user gate.

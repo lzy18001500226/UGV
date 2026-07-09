@@ -18,12 +18,12 @@ REQUIRED_PATHS = {
     "model_package": Path("Models/UGV/package.mo"),
     "controller": Path("Models/UGV/Control/ObstacleAvoidanceController/ObsAvoidController_Sysblock2.mo"),
     "official_report_template": Path("References/official_materials/5-仿真报告模板（仅供参考）/仿真报告模板.docx"),
-    "report_draft": Path("Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.md"),
-    "report_docx_draft": Path("Results/deliverables/report_drafts/initial_race_report_draft_m6_metrics_20260709_123905.docx"),
-    "report_render_qa_note": Path("Results/deliverables/report_drafts/render_check_20260709_0118/QA_NOTE.md"),
-    "controller_deployability_static_check": Path("Results/evidence/controller_deployability_static_check_20260709_0222.md"),
+    "report_draft": Path("Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.md"),
+    "report_docx_draft": Path("Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.docx"),
+    "report_render_qa_note": Path("Results/deliverables/report_drafts/render_check_v13_20260709_1535/QA_NOTE.md"),
+    "controller_deployability_static_check": Path("Results/evidence/controller_deployability_static_check_v13_side_trigger_045_closeout_20260709.md"),
     "one_track_metrics": Path("Results/metrics/one_track_tuning_20260708_231430.md"),
-    "four_track_summary": Path("Results/metrics/four_track_summary_20260709_120547.md"),
+    "four_track_summary": Path("Results/metrics/four_track_summary_v13_side_trigger045_20260709_1535.md"),
     "login_license_recovery_evidence": Path("Results/evidence/mworks_login_license_recovery_gui_api_confirmed_20260709.md"),
 }
 
@@ -134,14 +134,14 @@ def build_report(repo: Path, final_approval: bool) -> dict[str, Any]:
     package_plan = {
         "include": [
             "Models/UGV/",
-            "Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.md",
-            "Results/deliverables/report_drafts/initial_race_report_draft_m6_metrics_20260709_123905.docx",
-            "Results/metrics/four_track_summary_20260709_120547.md",
+            "Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.md",
+            "Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.docx",
+            "Results/metrics/four_track_summary_v13_side_trigger045_20260709_1535.md",
             "Results/metrics/one_track_tuning_20260708_231430.md",
             "Results/evidence/static_model_grounding_20260708_210142.md",
             "Results/evidence/controller_design_review_20260708_215659.md",
             "Results/evidence/controller_v1_source_notes_20260708_220257.md",
-            "Results/evidence/controller_deployability_static_check_20260709_0222.md",
+            "Results/evidence/controller_deployability_static_check_v13_side_trigger_045_closeout_20260709.md",
         ],
         "exclude": [
             "Results/tmp/",

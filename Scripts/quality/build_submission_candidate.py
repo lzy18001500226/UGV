@@ -14,21 +14,21 @@ from datetime import datetime
 from pathlib import Path
 from typing import Iterable
 
-DEFAULT_READINESS = Path("Results/deliverables/submission_dry_runs/submission_readiness_20260709_124115.json")
-DEFAULT_PLAN = Path("Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_124115.json")
+DEFAULT_READINESS = Path("Results/deliverables/submission_dry_runs/submission_readiness_v13_20260709_1535.json")
+DEFAULT_PLAN = Path("Results/deliverables/submission_dry_runs/submission_candidate_plan_v13_20260709_1535.json")
 DEFAULT_OUT_DIR = Path("Results/deliverables/submission_candidates")
 ALLOWED_REVIEW_BLOCKERS = {"final_submission_approval_missing"}
 
 INCLUDE_FILES = [
-    Path("Results/deliverables/report_drafts/initial_race_report_draft_m6_metrics_20260709_123905.docx"),
-    Path("Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.md"),
-    Path("Results/deliverables/report_drafts/render_check_20260709_0118/QA_NOTE.md"),
+    Path("Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.docx"),
+    Path("Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.md"),
+    Path("Results/deliverables/report_drafts/render_check_v13_20260709_1535/QA_NOTE.md"),
     Path("Results/metrics/one_track_tuning_20260708_231430.md"),
-    Path("Results/metrics/four_track_summary_20260709_120547.md"),
+    Path("Results/metrics/four_track_summary_v13_side_trigger045_20260709_1535.md"),
     Path("Results/evidence/static_model_grounding_20260708_210142.md"),
     Path("Results/evidence/controller_design_review_20260708_215659.md"),
     Path("Results/evidence/controller_v1_source_notes_20260708_220257.md"),
-    Path("Results/evidence/controller_deployability_static_check_20260709_0222.md"),
+    Path("Results/evidence/controller_deployability_static_check_v13_side_trigger_045_closeout_20260709.md"),
     Path("Results/evidence/mworks_login_license_recovery_gui_api_confirmed_20260709.md"),
 ]
 

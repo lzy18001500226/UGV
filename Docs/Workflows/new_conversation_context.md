@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v12 side-trigger controller is current review-ready four-track candidate after targeted tuning, 2026-07-09 CST.
+Status: v13 side-trigger 0.45 controller is current review-ready four-track candidate after targeted tuning, 2026-07-09 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `targeted Track 1/3 tuning after M6 four-track wrapper metrics`.
+Current phase cursor: `v13 report/readiness refresh and Track4 road-boundary recovery planning`.
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -85,17 +85,17 @@ probe:
 Results/simulations/license_gui_confirm_1s_20260709_after_real_login/
 ```
 
-Current controller candidate is v12: keep the v5 avoid-to-cruise dwell and add
+Current controller candidate is v13: keep the v5 avoid-to-cruise dwell and add
 side proximity to the longitudinal avoid trigger:
 
 ```text
-df <= mindis or dl <= 0.30 or dr <= 0.30
+df <= mindis or dl <= 0.45 or dr <= 0.45
 ```
 
 Do not re-apply rejected v2-v11 scalar changes unless a new diagnostic reason
-exists. v12 was accepted because diagnostic exports showed obstacle-collision
-windows where side distances were already small while the front-distance-only
-trigger stayed inactive.
+exists. v13 was accepted because v12 collision-window analysis showed Track1
+obstacle collisions at side distance around `0.46` while `flag=0`, and v13
+improved total wrapper score without worsening v12 Track4 score.
 
 Current M6 four-track wrapper metrics:
 
@@ -116,17 +116,20 @@ Latest weak-track tuning and accepted candidate:
 ```text
 Results/metrics/track1_track3_tuning_pass_20260709_1425.md
 Results/metrics/four_track_summary_v12_side_trigger_20260709_144854.md
+Results/metrics/four_track_summary_v13_side_trigger045_20260709_1535.md
 ```
 
-No v7-v11 scalar tuning change is accepted. v12 side-trigger is the current
-review-ready controller candidate with total wrapper score `34.8` versus M6
-baseline `32.0`. The next useful engineering step is Track1/Track4
-collision-window or trajectory analysis before another controller rewrite.
+No v7-v11 scalar tuning change is accepted. v13 side-trigger 0.45 is the
+current review-ready controller candidate with total wrapper score `36.4`
+versus v12 `34.8` and M6 baseline `32.0`. The next useful engineering step is
+Track4 road-boundary recovery analysis before another controller rewrite.
 Current M8/M9 review artifacts:
 
 ```text
 Results/deliverables/report_drafts/initial_race_report_draft_blocker_aware_20260709.md
 Results/deliverables/report_drafts/initial_race_report_draft_m6_metrics_20260709_123905.docx
+Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.md
+Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.docx
 Results/deliverables/submission_dry_runs/submission_readiness_20260709_124115.md
 Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_124115.md
 ```

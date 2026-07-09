@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-07-09T16:21:47+08:00",
+  "readiness_report": "Results/deliverables/submission_dry_runs/submission_readiness_v13_20260709_1535.json",
+  "ready_to_create_final_zip": false,
+  "blockers": [
+    "final_submission_approval_missing"
+  ],
+  "model_tracked_files": 71,
+  "would_include": [
+    {
+      "path": "Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.docx",
+      "exists": true,
+      "kind": "file"
+    },
+    {
+      "path": "Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_20260709_1535.md",
+      "exists": true,
+      "kind": "file"
+    },
+    {
+      "path": "Results/deliverables/report_drafts/render_check_v13_20260709_1535/QA_NOTE.md",
+      "exists": true,
+      "kind": "file"
+    },
+    {
+      "path": "Results/metrics/one_track_tuning_20260708_231430.md",
+      "exists": true,
+      "kind": "file"
+    },
+    {
+      "path": "Results/metrics/four_track_summary_v13_side_trigger045_20260709_1535.md",
+      "exists": true,
+      "kind": "file"
+    },
+    {
+      "path": "Results/evidence/static_model_grounding_20260708_210142.md",
+      "exists": true,
+      "kind": "file"
+    },
+    {
+      "path": "Results/evidence/controller_design_review_20260708_215659.md",
+      "exists": true,
+      "kind": "file"
+    },
+    {
+      "path": "Results/evidence/controller_v1_source_notes_20260708_220257.md",
+      "exists": true,
+      "kind": "file"
+    },
+    {
+      "path": "Results/evidence/controller_deployability_static_check_v13_side_trigger_045_closeout_20260709.md",
+      "exists": true,
+      "kind": "file"
+    },
+    {
+      "path": "Results/deliverables/submission_dry_runs/submission_readiness_v13_20260709_1535.json",
+      "exists": true,
+      "kind": "file"
+    }
+  ],
+  "would_exclude": [
+    "Results/tmp/",
+    "Results/simulations/* scratch folders unless promoted by manifest",
+    "Scripts/**/__pycache__/",
+    "References/research/ large upstream snapshots unless cited in final appendix",
+    "final competition email/send action until user approval"
+  ],
+  "non_claims": [
+    "Does not create a zip.",
+    "Does not send final submission email.",
+    "Does not run MWORKS during this dry run."
+  ]
+}

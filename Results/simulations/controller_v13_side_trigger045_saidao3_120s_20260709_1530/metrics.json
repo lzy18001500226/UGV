@@ -1,0 +1,34 @@
+{
+  "request_id": "M7-v13-track3-side-trigger045",
+  "model_name": "UGV.Test.Saidao3Eval",
+  "stop_time_requested": 120.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "simulate_returned_true",
+  "completion": "bounded_stop_or_assertion; inspect exit_state/logs",
+  "time_s": 120.0,
+  "road_collisions": 1.0,
+  "obstacle_collisions": 1.0,
+  "avoidance_score": 9.2,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "simulation_exit_state": 0,
+  "simulation_state": "Idle",
+  "exported_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v13_side_trigger045_saidao3_120s_20260709_1530\\score_timeseries.csv",
+  "exported_csv_ok": true,
+  "exported_extra_csv": null,
+  "exported_extra_csv_ok": false,
+  "extra_result_variables": [],
+  "pyapi_messages": {},
+  "notes": [],
+  "score_values_at_end": {
+    "T": 120.0,
+    "cR": 1.0,
+    "cO": 1.0,
+    "P": 9.2
+  }
+}

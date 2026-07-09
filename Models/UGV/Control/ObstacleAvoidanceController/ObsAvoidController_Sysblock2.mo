@@ -331,7 +331,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
       fontSize=10,
       textStyle={TextStyle.Bold},
       textColor={74,84,154}), displayText = "[true]");
-      transition(cruise, avoid, df <= mindis or dl <= 0.30 or dr <= 0.30, reset = false)
+      transition(cruise, avoid, df <= mindis or dl <= 0.45 or dr <= 0.45, reset = false)
       annotation(Line(origin={-202,33.8644},
       points={{-26,0},{26,0}},
       color={113,119,170},
@@ -342,7 +342,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
       fontSize=10,
       textStyle={TextStyle.Bold},
       textColor={74,84,154},
-      horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[df <= mindis or dl <= 0.30 or dr <= 0.30]");
+      horizontalAlignment=TextAlignment.Left), __MWORKS(BlockSystem(StateMachine(outerTransition = true))), displayText = "[df <= mindis or dl <= 0.45 or dr <= 0.45]");
       transition(avoid, cruise, after(2,sec), reset = false)
       annotation(Line(origin={-202,13.07656},
       points={{26,0},{-26,0}},
