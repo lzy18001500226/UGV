@@ -1,0 +1,54 @@
+{
+  "request_id": "v64-front-clear-side-reentry-track3-20260710",
+  "model_name": "UGV.Test.Saidao3Eval",
+  "stop_time_requested": 120.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "simulate_failed",
+  "completion": "simulate_false_with_result_variables; inspect messages/assertions",
+  "time_s": 3.85,
+  "road_collisions": 0.0,
+  "obstacle_collisions": 1.0,
+  "avoidance_score": 9.6,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "simulation_exit_state": 2,
+  "simulation_state": "Idle",
+  "exported_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v64_front_clear_side_reentry_saidao3_120s_20260710\\score_timeseries.csv",
+  "exported_csv_ok": true,
+  "exported_extra_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v64_front_clear_side_reentry_saidao3_120s_20260710\\extra_timeseries.csv",
+  "exported_extra_csv_ok": true,
+  "extra_result_variables": [
+    "ctrlAlloc.firstOrder.y",
+    "ctrlAlloc.speed",
+    "ctrlAlloc.speed_oa",
+    "ctrlAlloc.speed_pp",
+    "ctrlAlloc.steer",
+    "ctrlAlloc.steer_oa",
+    "ctrlAlloc.steer_pp",
+    "obsAvoidController_Sysblock.chart.df",
+    "obsAvoidController_Sysblock.chart.dl",
+    "obsAvoidController_Sysblock.chart.dr",
+    "obsAvoidController_Sysblock.chart.flag",
+    "obsAvoidController_Sysblock.chart.steer",
+    "pathPlanner.steering_angle",
+    "pathPlanner.target_v"
+  ],
+  "pyapi_messages": {
+    "GetLastErrors": [
+      ""
+    ],
+    "MessageText": "[上一条命令没有日志信息]"
+  },
+  "notes": [],
+  "score_values_at_end": {
+    "T": 3.85,
+    "cR": 0.0,
+    "cO": 1.0,
+    "P": 9.6
+  }
+}

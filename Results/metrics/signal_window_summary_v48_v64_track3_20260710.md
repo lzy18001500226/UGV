@@ -1,0 +1,24 @@
+# Signal Window Summary
+
+## v48_t3
+
+Evidence: `Results\simulations\controller_v48_opposing_steer_guard_saidao3_120s_20260710`
+
+| Time/s | Changes | ctrlAlloc.speed | ctrlAlloc.steer | ctrlAlloc.steer_pp | ctrlAlloc.steer_oa | ctrlAlloc.firstOrder.y | obsAvoidController_Sysblock.chart.df | obsAvoidController_Sysblock.chart.dl | obsAvoidController_Sysblock.chart.dr | obsAvoidController_Sysblock.chart.flag | obsAvoidController_Sysblock.chart.steer | pathPlanner.steering_angle | pathPlanner.target_v |
+|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 1.05 | cO: 0.0->1.0; P: 10.0->9.6 | 0.7196 | 0.1623 | -0.03857 | 0.6 | 0.1816 | 0.01324 | 0.4876 | 0.6474 | 1 | 0.6 | -0.03857 | 1 |
+| 4.85 | cR: 0.0->1.0; P: 9.6->9.2 | 0.5105 | 0.1849 | -0.2215 | 0.6 | 0.2957 | 2.05 | 0.106 | 0.2708 | 1 | 0.6 | -0.2215 | 1 |
+
+## v64_t3
+
+Evidence: `Results\simulations\controller_v64_front_clear_side_reentry_saidao3_120s_20260710`
+
+| Time/s | Changes | ctrlAlloc.speed | ctrlAlloc.steer | ctrlAlloc.steer_pp | ctrlAlloc.steer_oa | ctrlAlloc.firstOrder.y | obsAvoidController_Sysblock.chart.df | obsAvoidController_Sysblock.chart.dl | obsAvoidController_Sysblock.chart.dr | obsAvoidController_Sysblock.chart.flag | obsAvoidController_Sysblock.chart.steer | pathPlanner.steering_angle | pathPlanner.target_v |
+|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 1.05 | cO: 0.0->1.0; P: 10.0->9.6 | 0.7196 | 0.1623 | -0.03857 | 0.6 | 0.1816 | 0.01324 | 0.4876 | 0.6474 | 1 | 0.6 | -0.03857 | 1 |
+
+## Notes
+
+- Values are nearest exported samples at the collision/score jump time.
+- Use the JSON output for min/max/mean over the configured window radius.
+- This is post-run evidence analysis only; it does not rerun MWORKS.

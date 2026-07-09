@@ -1,0 +1,131 @@
+{
+  "radius_s": 0.5,
+  "signals": [
+    "countPoint.DisObstacle",
+    "countPoint.DisRoad",
+    "obsAvoidController_Sysblock.chart.df",
+    "obsAvoidController_Sysblock.chart.dl",
+    "obsAvoidController_Sysblock.chart.dr"
+  ],
+  "runs": [
+    {
+      "label": "v48_track3",
+      "run_dir": "Results\\simulations\\diagnostic_v48_track3_countpoint_6s_20260710",
+      "radius_s": 0.5,
+      "events": [
+        {
+          "time": 1.05,
+          "changes": {
+            "cO": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 10.0,
+              "to": 9.6,
+              "delta": -0.40000000000000036
+            }
+          },
+          "window": {
+            "nearest_time": 1.05,
+            "row_count": 101,
+            "signals": {
+              "countPoint.DisObstacle": {
+                "nearest_time": 1.05,
+                "nearest": 0.106076591184303,
+                "min": 0.10456351837583,
+                "max": 0.45564029162805,
+                "mean": 0.2430491250700529
+              },
+              "countPoint.DisRoad": {
+                "nearest_time": 1.05,
+                "nearest": 0.48761431933502,
+                "min": 0.302586173717746,
+                "max": 0.563793652741812,
+                "mean": 0.4642504700818601
+              },
+              "obsAvoidController_Sysblock.chart.df": {
+                "nearest_time": 1.05,
+                "nearest": 0.0132355005093959,
+                "min": 0.00107643404519572,
+                "max": 2.06984340507473,
+                "mean": 1.0630942092755846
+              },
+              "obsAvoidController_Sysblock.chart.dl": {
+                "nearest_time": 1.05,
+                "nearest": 0.48761431933502,
+                "min": 0.171042542937225,
+                "max": 0.600406353924633,
+                "mean": 0.4390848627735748
+              },
+              "obsAvoidController_Sysblock.chart.dr": {
+                "nearest_time": 1.05,
+                "nearest": 0.647415687582634,
+                "min": 0.00604254293722506,
+                "max": 0.648852792258455,
+                "mean": 0.4720081787897643
+              }
+            }
+          }
+        },
+        {
+          "time": 4.85,
+          "changes": {
+            "cR": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.6,
+              "to": 9.2,
+              "delta": -0.40000000000000036
+            }
+          },
+          "window": {
+            "nearest_time": 4.85,
+            "row_count": 101,
+            "signals": {
+              "countPoint.DisObstacle": {
+                "nearest_time": 4.85,
+                "nearest": 1.39684357278682,
+                "min": 1.22893825508678,
+                "max": 1.593028649292,
+                "mean": 1.4020105133850658
+              },
+              "countPoint.DisRoad": {
+                "nearest_time": 4.85,
+                "nearest": 0.104908408982039,
+                "min": -0.0305035565356604,
+                "max": 0.246142040636865,
+                "mean": 0.10582486721461867
+              },
+              "obsAvoidController_Sysblock.chart.df": {
+                "nearest_time": 4.85,
+                "nearest": 2.04976805433019,
+                "min": 2.04946051161998,
+                "max": 2.05208608625577,
+                "mean": 2.0500553373395047
+              },
+              "obsAvoidController_Sysblock.chart.dl": {
+                "nearest_time": 4.85,
+                "nearest": 0.104908408982039,
+                "min": 0.00121703314737853,
+                "max": 0.246142040636865,
+                "mean": 0.10954488726966
+              },
+              "obsAvoidController_Sysblock.chart.dr": {
+                "nearest_time": 4.85,
+                "nearest": 0.269770073159763,
+                "min": 0.134441976694457,
+                "max": 0.409743984232081,
+                "mean": 0.27040960223147104
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

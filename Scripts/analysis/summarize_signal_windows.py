@@ -8,7 +8,7 @@ import csv
 import json
 from pathlib import Path
 from statistics import mean
-from typing import Any
+from typing import Any, Iterable
 
 
 EVENT_COLUMNS = ("cR", "cO", "P")
@@ -56,6 +56,45 @@ def read_csv(path: Path) -> list[dict[str, float | None]]:
         return rows
 
 
+def read_signal_series(path: Path, signals: Iterable[str]) -> dict[str, list[tuple[float, float | None]]]:
+    """Read MWORKS CSV exports while preserving each signal's nearest left Time column.
+
+    MWORKS `extra_timeseries.csv` can be exported as several time/value groups:
+    `Time, signal_a, ..., Time, signal_b, ...`.  A normal dict keyed by `Time`
+    silently attaches every signal to the first time axis, which can shift
+    diagnostics for later groups.  For each requested signal, bind values to the
+    closest preceding `Time` column in the header.
+    """
+
+    wanted = set(signals)
+    series: dict[str, list[tuple[float, float | None]]] = {signal: [] for signal in signals}
+    with path.open("r", encoding="utf-8-sig", newline="") as handle:
+        reader = csv.reader(handle)
+        header = next(reader)
+        time_for_column: list[int | None] = []
+        current_time_index: int | None = None
+        for index, key in enumerate(header):
+            if key == "Time":
+                current_time_index = index
+            time_for_column.append(current_time_index)
+
+        signal_columns = [
+            (index, key, time_for_column[index])
+            for index, key in enumerate(header)
+            if key in wanted and time_for_column[index] is not None
+        ]
+
+        for raw in reader:
+            for value_index, key, time_index in signal_columns:
+                if time_index is None or time_index >= len(raw) or value_index >= len(raw):
+                    continue
+                timestamp = as_float(raw[time_index])
+                if timestamp is None:
+                    continue
+                series[key].append((timestamp, as_float(raw[value_index])))
+    return series
+
+
 def detect_events(score_rows: list[dict[str, float | None]]) -> list[dict[str, Any]]:
     events: list[dict[str, Any]] = []
     previous: dict[str, float | None] | None = None
@@ -76,38 +115,49 @@ def detect_events(score_rows: list[dict[str, float | None]]) -> list[dict[str, A
 
 
 def summarize_window(
-    extra_rows: list[dict[str, float | None]],
+    extra_series: dict[str, list[tuple[float, float | None]]],
     event_time: float,
     radius: float,
     signals: list[str],
 ) -> dict[str, Any]:
-    window_rows = [
-        row for row in extra_rows
-        if row.get("Time") is not None and abs(float(row["Time"]) - event_time) <= radius
-    ]
-    nearest = min(
-        extra_rows,
-        key=lambda row: abs(float(row.get("Time") or 0.0) - event_time),
+    row_count = max(
+        (
+            sum(1 for timestamp, _ in extra_series.get(signal, []) if abs(timestamp - event_time) <= radius)
+            for signal in signals
+        ),
+        default=0,
     )
-    summary: dict[str, Any] = {"nearest_time": nearest.get("Time"), "row_count": len(window_rows), "signals": {}}
+    summary: dict[str, Any] = {"nearest_time": None, "row_count": row_count, "signals": {}}
     for signal in signals:
-        values = [row.get(signal) for row in window_rows if row.get(signal) is not None]
-        nearest_value = nearest.get(signal)
+        samples = extra_series.get(signal, [])
+        nearest_sample = min(samples, key=lambda item: abs(item[0] - event_time)) if samples else None
+        if nearest_sample is not None and summary["nearest_time"] is None:
+            summary["nearest_time"] = nearest_sample[0]
+        nearest_time = nearest_sample[0] if nearest_sample is not None else None
+        nearest_value = nearest_sample[1] if nearest_sample is not None else None
+        values = [value for timestamp, value in samples if abs(timestamp - event_time) <= radius and value is not None]
         if values:
             summary["signals"][signal] = {
+                "nearest_time": nearest_time,
                 "nearest": nearest_value,
                 "min": min(values),
                 "max": max(values),
                 "mean": mean(values),
             }
         else:
-            summary["signals"][signal] = {"nearest": nearest_value, "min": None, "max": None, "mean": None}
+            summary["signals"][signal] = {
+                "nearest_time": nearest_time,
+                "nearest": nearest_value,
+                "min": None,
+                "max": None,
+                "mean": None,
+            }
     return summary
 
 
 def analyze_run(run_dir: Path, label: str, radius: float, signals: list[str]) -> dict[str, Any]:
     score_rows = read_csv(run_dir / "score_timeseries.csv")
-    extra_rows = read_csv(run_dir / "extra_timeseries.csv")
+    extra_series = read_signal_series(run_dir / "extra_timeseries.csv", signals)
     events = detect_events(score_rows)
     return {
         "label": label,
@@ -116,7 +166,7 @@ def analyze_run(run_dir: Path, label: str, radius: float, signals: list[str]) ->
         "events": [
             {
                 **event,
-                "window": summarize_window(extra_rows, float(event["time"]), radius, signals),
+                "window": summarize_window(extra_series, float(event["time"]), radius, signals),
             }
             for event in events
             if event.get("time") is not None

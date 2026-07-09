@@ -120,6 +120,26 @@ Observed static behavior:
 where `counterR` is road collision count and `counterO` is obstacle collision
 count.
 
+Count thresholds:
+
+```text
+road event: DisRoad < 0.11
+obstacle event: DisObstacle < 0.11
+release: distance > 0.13
+```
+
 `Race1`, `Race2`, and the inspected official track entries expose display
 variables `cR`, `cO`, `P`, and `T` sourced from `countPoint.counterR`,
 `countPoint.counterO`, `countPoint.finalPoints`, and `time` respectively.
+
+MWORKS CSV export caveat: exported `extra_timeseries.csv` files can contain
+duplicate `Time` columns when variables are sampled from different result
+groups. Do not parse those files with plain duplicate-key `DictReader` and then
+align all signals by row. Preserve duplicate column indexes or use a script
+that explicitly handles multiple time axes. Current scripts
+`Scripts/analysis/summarize_signal_windows.py` and
+`Scripts/analysis/analyze_ctrlalloc_contributions.py` bind each requested signal
+to the nearest `Time` column on its left; smoke evidence:
+`Results/metrics/signal_window_summary_v48_track3_timeaxis_fix_smoke_20260710.md`
+and
+`Results/metrics/ctrlalloc_contribution_analysis_v48_timeaxis_fix_smoke_20260710.md`.
