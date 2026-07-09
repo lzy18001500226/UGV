@@ -1,0 +1,56 @@
+{
+  "runs": [
+    {
+      "label": "v46_track3",
+      "run_dir": "Results\\simulations\\controller_v46_speed_channel_120pct_saidao3_120s_20260710",
+      "score_path": "Results\\simulations\\controller_v46_speed_channel_120pct_saidao3_120s_20260710\\score_timeseries.csv",
+      "runtime_status": "simulate_failed",
+      "simulation_exit_state": 2,
+      "final": {
+        "time_s": 45.2,
+        "road_collisions": 1.0,
+        "obstacle_collisions": 1.0,
+        "avoidance_score": 9.2
+      },
+      "score_values_at_end": {
+        "T": 45.2,
+        "cR": 1.0,
+        "cO": 1.0,
+        "P": 9.2
+      },
+      "event_count": 2,
+      "events": [
+        {
+          "time": 1.1,
+          "changes": {
+            "cO": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 10.0,
+              "to": 9.6,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 8.3,
+          "changes": {
+            "cR": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.6,
+              "to": 9.2,
+              "delta": -0.40000000000000036
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

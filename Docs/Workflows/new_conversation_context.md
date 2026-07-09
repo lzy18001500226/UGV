@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v45 curvature-speed regulation scaled is the current review-ready best four-track candidate; v14-v44 candidates were rejected or no-op, 2026-07-10 CST.
+Status: v45 curvature-speed regulation scaled is the current review-ready best four-track candidate; v14-v44 candidates were rejected or no-op and v46 was rejected on Track3, 2026-07-10 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v45 review-ready new best; v14-v43 rejected and v44 rejected as speed-scale no-op; continue from v45 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh failure evidence or a new obstacle-horizon/path-authority/speed-regulation mechanism`.
+Current phase cursor: `v45 review-ready new best; v14-v43 rejected, v44 rejected as speed-scale no-op, and v46 rejected as speed-channel gain escalation. Continue from v45 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh failure evidence or a new obstacle-horizon/path-authority/speed-regulation mechanism`.
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -134,6 +134,18 @@ Results/metrics/four_track_candidate_review_v45_curvature_speed_regulation_scale
 The historical M6 wrapper baseline is `Results/metrics/four_track_summary_20260709_120547.md`.
 Treat v45 as usable review evidence, not as an optimized final competition
 result or physical UGV proof.
+
+v46 speed-channel 1.2x follow-up:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v46_plan_20260710.md
+Results/simulations/controller_v46_speed_channel_120pct_saidao3_120s_20260710/
+Results/metrics/track3_candidate_review_v46_speed_channel_120pct_20260710.md
+```
+
+v46 kept one unified mechanism but is rejected: Track3 stayed at `P=9.2` and
+regressed from v45 `T=120.0`, `simulate_returned_true` to `T=45.2`,
+`simulate_failed`. Do not continue speed-channel gain escalation.
 
 Latest weak-track tuning and accepted candidate:
 
