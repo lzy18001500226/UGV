@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v45 curvature-speed regulation scaled is the current review-ready best four-track candidate; v14-v44 candidates were rejected or no-op and v46 was rejected on Track3, 2026-07-10 CST.
+Status: v45 curvature-speed regulation scaled is the current review-ready best four-track candidate; v14-v44 candidates were rejected or no-op and v46-v47 were rejected on Track3, 2026-07-10 CST.
 
 ## 0. Startup Chain
 
@@ -51,7 +51,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v45 review-ready new best; v14-v43 rejected, v44 rejected as speed-scale no-op, and v46 rejected as speed-channel gain escalation. Continue from v45 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh failure evidence or a new obstacle-horizon/path-authority/speed-regulation mechanism`.
+Current phase cursor: `v45 review-ready new best; v14-v43 rejected, v44 rejected as speed-scale no-op, v46 rejected as speed-channel gain escalation, and v47 rejected as startup-speed no-improvement. Continue from v45 unless later review rejects it. Next attempt should not be blind scalar tuning and should start from fresh trajectory/steering-authority evidence or a new obstacle-horizon/path-authority mechanism`.
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -146,6 +146,18 @@ Results/metrics/track3_candidate_review_v46_speed_channel_120pct_20260710.md
 v46 kept one unified mechanism but is rejected: Track3 stayed at `P=9.2` and
 regressed from v45 `T=120.0`, `simulate_returned_true` to `T=45.2`,
 `simulate_failed`. Do not continue speed-channel gain escalation.
+
+v47 startup speed-cap follow-up:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v47_plan_20260710.md
+Results/simulations/controller_v47_startup_speed_cap_saidao3_120s_20260710/
+Results/metrics/track3_candidate_review_v47_startup_speed_cap_20260710.md
+```
+
+v47 is rejected: Track3 remained comparable at `T=120.0`, but still had
+`cR=1`, `cO=1`, `P=9.2`, so it did not improve over v45. Do not continue
+simple startup target-speed caps without a new mechanism reason.
 
 Latest weak-track tuning and accepted candidate:
 
