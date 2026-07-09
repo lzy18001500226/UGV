@@ -54,12 +54,35 @@ Design and diagnostic evidence:
 Docs/Design/避障算法设计.md
 Docs/Design/unified_obstacle_avoidance_v48_plan_20260710.md
 Docs/Design/unified_obstacle_avoidance_v68_planning_note_20260710.md
+Docs/Design/final_race_migration_notes.md
 Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md
 Results/metrics/signal_window_summary_v48_path_ctrl_20260710.md
 Results/metrics/post_v67_v68_attribution_decision_20260710.md
 ```
 
 ## 4. 参数设置与调参依据
+
+Current v48 transfer baseline:
+
+| Parameter group | Current value | Transfer / tuning note |
+|---|---|---|
+| Front trigger | `df <= mindis`, `mindis = 1.0` | Retune only after checking final-race or physical sensor scale and stopping distance. |
+| Side trigger | `dl <= 0.45 or dr <= 0.45` | Accepted through v13/v48 evidence; do not scan blindly. |
+| Cruise speed | `1.0` | Nominal low-speed baseline. |
+| Avoid speed | `-1.0` | Bounded reverse/brake command; stronger reverse routes were risky. |
+| Avoid release dwell | `2 s` | Longer dwell regressed v31. |
+| Initial avoid steer | `0.6` | Keep as baseline; magnitude scans were mostly rejected. |
+| Side-distance steer | `min(0.8, 2 * abs(dl - dr))` | Bounded linear rule replacing reciprocal spike risk. |
+| Avoid-lateral initialization | `2 s` | Shorter dwell regressed prior attempts. |
+| Curvature speed cap | `abs(steering_angle) > 0.35 -> target_v <= 0.75` | v45/v48 accepted mechanism; further threshold scans were exhausted. |
+| Wrapper allocation | `factor_pp = 1.0`, `factor_oa = 0.5` | Wrapper instances override class defaults; default-only edits are no-ops. |
+| Opposing-steer guard | `0.5 * path steer` when reverse obstacle steering opposes path steering | v48 current best unified mechanism. |
+
+The complete physical-transfer table and retuning order are maintained in:
+
+```text
+Docs/Design/final_race_migration_notes.md
+```
 
 当前调参路径：
 
@@ -80,6 +103,12 @@ step is not blind controller tuning:
 | v52-v57 | brake-turn coupling, path-authority, low-speed lookahead, filter/front-threshold variants | rejected: Track3 score stayed `P=9.2` or runs shortened |
 | v58-v66 | reactive gap, close-side direction, steering/filter/feedforward/emergency/road-edge variants | rejected: no comparable score improvement or early-stop artifacts |
 | v67 | nearest-obstacle distance diagnostic input | rejected as a score route: clean Track3 runtime but unchanged `P=9.2`, `cR=1`, `cO=1` |
+
+Additional post-v67 screening:
+
+| Screening | Decision |
+|---|---|
+| v69 lateral left/right hysteresis | rejected before source edit; saved v48 signals show zero `chart.steer` sign flips on all four tracks |
 
 ## 5. 四条赛道仿真结果
 
@@ -184,6 +213,9 @@ Evidence/package improvement:
 5. Continue current long task by improving the report, final-race migration
    notes, readiness checks, and reproducibility evidence instead of stopping
    after rejected candidates.
+6. Use `Docs/Design/final_race_migration_notes.md` as the current M10 review
+   surface for physical-transfer assumptions, exhausted mechanism families,
+   and final-race retuning order.
 
 ## 8. 复现说明
 
