@@ -1,0 +1,33 @@
+{
+  "radius_s": 1.0,
+  "signals": [
+    "pathPlanner.x",
+    "pathPlanner.y",
+    "pathPlanner.closest_index",
+    "pathPlanner.path_progress",
+    "pathPlanner.pursuit_point[1]",
+    "pathPlanner.pursuit_point[2]",
+    "pathPlanner.target_v",
+    "pathPlanner.steering_angle",
+    "ctrlAlloc.speed_pp",
+    "ctrlAlloc.speed_oa",
+    "ctrlAlloc.firstOrder1.y",
+    "ctrlAlloc.speed",
+    "ctrlAlloc.steer_pp",
+    "ctrlAlloc.steer_oa",
+    "ctrlAlloc.firstOrder.y",
+    "ctrlAlloc.steer",
+    "obsAvoidController_Sysblock.chart.df",
+    "obsAvoidController_Sysblock.chart.dl",
+    "obsAvoidController_Sysblock.chart.dr",
+    "obsAvoidController_Sysblock.chart.flag"
+  ],
+  "runs": [
+    {
+      "label": "v51_track3",
+      "run_dir": "Results\\simulations\\controller_v51_straight_brake_arbitration_saidao3_120s_20260710",
+      "radius_s": 1.0,
+      "events": []
+    }
+  ]
+}

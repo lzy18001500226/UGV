@@ -1,0 +1,25 @@
+{
+  "runs": [
+    {
+      "label": "v51_track3",
+      "run_dir": "Results\\simulations\\controller_v51_straight_brake_arbitration_saidao3_120s_20260710",
+      "score_path": "Results\\simulations\\controller_v51_straight_brake_arbitration_saidao3_120s_20260710\\score_timeseries.csv",
+      "runtime_status": "simulate_failed",
+      "simulation_exit_state": 2,
+      "final": {
+        "time_s": 2.25,
+        "road_collisions": 0.0,
+        "obstacle_collisions": 0.0,
+        "avoidance_score": 10.0
+      },
+      "score_values_at_end": {
+        "T": 2.25,
+        "cR": 0.0,
+        "cO": 0.0,
+        "P": 10.0
+      },
+      "event_count": 0,
+      "events": []
+    }
+  ]
+}
