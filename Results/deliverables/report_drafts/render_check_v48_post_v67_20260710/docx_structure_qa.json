@@ -1,8 +1,9 @@
 {
   "docx_exists": true,
   "markdown_exists": true,
-  "paragraph_count": 95,
+  "paragraph_count": 115,
   "table_count": 6,
+  "image_count": 2,
   "contains_v48_current_best": true,
   "contains_post_v67_attribution": true,
   "contains_v67_rejection": true,
@@ -11,7 +12,11 @@
   "contains_parameter_table": true,
   "contains_final_approval_boundary": true,
   "contains_runtime_caveat": true,
+  "contains_trajectory_visualization": true,
+  "contains_figure1_caption": true,
+  "contains_figure2_caption": true,
   "contains_v48_metrics_table_tracks": true,
   "markdown_contains_post_v67_decision_path": true,
+  "contains_no_physical_claim_boundary": true,
   "passed": true
 }

@@ -146,7 +146,37 @@ Total score comparison:
 | v45 curvature speed regulation | 36.8 | superseded by v48 |
 | v48 opposing-steer guard | 37.2 | current review-ready best candidate with runtime caveat |
 
-## 6. 结果分析
+## 6. 轨迹扣分事件可视化
+
+Trajectory-event evidence:
+
+```text
+Results/metrics/trajectory_geometry_review_v48_20260710.md
+Results/metrics/signal_geometry_window_summary_v48_20260710.md
+Results/figures/trajectory_event_review_v48_20260710/
+```
+
+The figures below overlay saved v48 trajectories with official read-only
+`roadMap` and `obstaclePoint` geometry. They are visual review evidence only:
+they explain where score-loss events happen, but they do not change the
+current runtime caveat or prove physical UGV readiness.
+
+![Figure 1. v48 Track1 trajectory and road-collision events](Results/figures/trajectory_event_review_v48_20260710/v48_track1_trajectory_events.png)
+
+![Figure 2. v48 Track3 trajectory and obstacle/road events](Results/figures/trajectory_event_review_v48_20260710/v48_track3_trajectory_events.png)
+
+Key interpretation from the trajectory and signal evidence:
+
+1. Track1 score loss is road-edge dominated: two road-collision events appear
+   on the trajectory while obstacle collisions remain zero.
+2. Track3 has one early obstacle event and one early road event; both happen
+   while avoidance is already active.
+3. Therefore the next controller change must not be another trigger-only
+   threshold scan. The remaining gap is effective trajectory authority under
+   risk, with speed/steering allocation and physical retuning as the main
+   review focus.
+
+## 7. 结果分析
 
 What is supported by evidence:
 
@@ -191,7 +221,7 @@ the long task forward through report/readiness and physical-transfer
 consolidation until a genuinely different deployable four-scalar mechanism is
 identified.
 
-## 7. 不足与改进方向
+## 8. 不足与改进方向
 
 Controller improvement:
 
@@ -217,7 +247,7 @@ Evidence/package improvement:
    surface for physical-transfer assumptions, exhausted mechanism families,
    and final-race retuning order.
 
-## 8. 复现说明
+## 9. 复现说明
 
 Known v48 review evidence is listed above. The current repeatable command shape is:
 

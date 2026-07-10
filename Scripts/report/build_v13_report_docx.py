@@ -112,6 +112,23 @@ def add_table(doc: Document, rows: list[list[str]]) -> None:
     style_table(table)
 
 
+def add_image(doc: Document, src: Path, caption: str) -> None:
+    if not src.exists():
+        p = doc.add_paragraph()
+        add_inline_code_runs(p, f"[missing image: {src}]")
+        return
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    run = p.add_run()
+    run.add_picture(str(src), width=Inches(6.0))
+    if caption:
+        cap = doc.add_paragraph()
+        cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        cap_run = cap.add_run(caption)
+        cap_run.italic = True
+        cap_run.font.size = Pt(9)
+
+
 def setup_styles(doc: Document) -> None:
     section = doc.sections[0]
     section.top_margin = Inches(1)
@@ -196,6 +213,16 @@ def render_markdown(doc: Document, text: str) -> None:
                     continue
                 rows.append(cells)
             add_table(doc, rows)
+            continue
+        image_match = re.match(r"^!\[([^\]]*)\]\(([^)]+)\)\s*$", line)
+        if image_match:
+            caption = image_match.group(1).strip()
+            raw_path = image_match.group(2).strip()
+            src = Path(raw_path)
+            if not src.is_absolute():
+                src = REPO / src
+            add_image(doc, src, caption)
+            i += 1
             continue
         m = re.match(r"^(\d+)\.\s+(.*)$", line)
         if m:
