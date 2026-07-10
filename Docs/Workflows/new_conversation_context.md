@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v80 sharp curve speed cap is the current high-score local wrapper candidate with a Track3 runtime caveat. It supersedes v74 by improving total wrapper score from `37.6` to `38.0`; v70, v71, v72, v73, v75, v76, v77, v79, v81, and v82 follow-ups are rejected as accepted baselines, and v78 is diagnostic-only. Current mainline remains the high-score sprint toward the 80-point algorithm-model target, not report polish or packaging. Use `Docs/Design/unified_obstacle_avoidance_v80_plan_20260710.md` and `Results/metrics/four_track_candidate_review_v80_sharp_curve_speed_cap_20260710.md` before another controller edit, 2026-07-10 CST.
+Status: v80 sharp curve speed cap is the current high-score local wrapper candidate with a Track3 runtime caveat. It supersedes v74 by improving total wrapper score from `37.6` to `38.0`; v70, v71, v72, v73, v75, v76, v77, v79, v81, v82, and v83 follow-ups are rejected as accepted baselines, and v78 is diagnostic-only. Current mainline remains the high-score sprint toward the 80-point algorithm-model target, not report polish or packaging. Use `Docs/Design/unified_obstacle_avoidance_v80_plan_20260710.md` and `Results/metrics/four_track_candidate_review_v80_sharp_curve_speed_cap_20260710.md` before another controller edit, 2026-07-10 CST.
 
 ## 0. Startup Chain
 
@@ -52,7 +52,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v80 sharp curve speed cap is accepted as the current high-score local wrapper candidate after v79/v81/v82 rejections. v80 adds an extreme-curvature speed cap at abs(steering_angle)>1.0 and target_v<=0.55, improving Track4 from P=9.2/cR=2 to P=9.6/cR=1 and total wrapper score from v74 37.6 to 38.0. Keep the Track3 runtime caveat visible: v80 Track3 stays P=9.2/cR=1/cO=1 but regresses from v74 simulate_returned_true/T=120.0 to simulate_failed/T=59.4. v81 raised the cap to 0.65 but regressed Track4 runtime to simulate_failed/T=52.6, so it is rejected. v82 small-angle road-edge short-lookahead regressed Track2 from P=9.6/cO=0 to P=9.2/cO=1, so it is rejected and source semantics are restored to v80. Continue to the next evidence-backed unified mechanism instead of report/package work.`
+Current phase cursor: `v80 sharp curve speed cap is accepted as the current high-score local wrapper candidate after v79/v81/v82/v83 rejections. v80 adds an extreme-curvature speed cap at abs(steering_angle)>1.0 and target_v<=0.55, improving Track4 from P=9.2/cR=2 to P=9.6/cR=1 and total wrapper score from v74 37.6 to 38.0. Keep the Track3 runtime caveat visible: v80 Track3 stays P=9.2/cR=1/cO=1 but regresses from v74 simulate_returned_true/T=120.0 to simulate_failed/T=59.4. v81 raised the cap to 0.65 but regressed Track4 runtime to simulate_failed/T=52.6, so it is rejected. v82 small-angle road-edge short-lookahead regressed Track2 from P=9.6/cO=0 to P=9.2/cO=1, so it is rejected. v83 road-edge recovery improved Track3 runtime comparability to simulate_returned_true/T=120 but kept P=9.2/cR=1/cO=1, so it is rejected and source semantics are restored to v80. Continue to the next evidence-backed unified mechanism instead of report/package work.`
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or

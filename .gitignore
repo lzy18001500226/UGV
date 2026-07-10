@@ -7,3 +7,4 @@ Models/UGV_backup/
 ~$*
 Results/simulations/controller_v82_road_edge_short_lookahead_saidao2_120s_20260710/extra_timeseries.csv
 Results/simulations/diagnostic_v80_track2_geometry_120s_20260710/extra_timeseries.csv
+Results/simulations/controller_v83_road_edge_recovery_saidao3_120s_20260710/extra_timeseries.csv
