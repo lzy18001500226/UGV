@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v74 guarded curve short lookahead is the current review-ready best four-track candidate with a Track1 early-terminal caveat. It supersedes v48 by improving total wrapper score from `37.2` to `37.6`; v70, v71, v72, and v73 follow-ups remain rejected as accepted baselines. Current mainline remains the high-score sprint toward the 80-point algorithm-model target, not report polish or packaging. Use `Docs/Design/unified_obstacle_avoidance_v74_plan_20260710.md` and `Results/metrics/four_track_candidate_review_v74_guarded_curve_short_lookahead_20260710.md` before another controller edit, 2026-07-10 CST.
+Status: v74 guarded curve short lookahead is the current review-ready best four-track candidate with a Track1 early-terminal caveat. It supersedes v48 by improving total wrapper score from `37.2` to `37.6`; v70, v71, v72, v73, and v75 follow-ups are rejected as accepted baselines. Current mainline remains the high-score sprint toward the 80-point algorithm-model target, not report polish or packaging. Use `Docs/Design/unified_obstacle_avoidance_v74_plan_20260710.md` and `Results/metrics/four_track_candidate_review_v74_guarded_curve_short_lookahead_20260710.md` before another controller edit, 2026-07-10 CST.
 
 ## 0. Startup Chain
 
@@ -52,7 +52,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v74 guarded curve short lookahead is accepted as the current review-ready best after v70-v73 rejections. v70 active-avoid speed clamp is rejected on Track3. v71 severe-side steering authority improved Track1 to P=9.6/cR=1 but regressed Track4 to P=8.8/cO=1, so it is not accepted. v72 narrow allocation-only path authority did not improve Track1 and early-stopped at T=53.55, so it is rejected. v73 curve-short lookahead kept total P=37.2 but regressed Track3 from P=9.2 to P=8.8, so it is rejected; do not continue unconditional short-lookahead scans. v74 adds moderate-range and output-limit guards, improves total wrapper score to 37.6, keeps Track2/3/4 non-regressive with clean runtime states, and carries a Track1 early-terminal caveat. Continue to the next evidence-backed unified mechanism instead of report/package work.`
+Current phase cursor: `v74 guarded curve short lookahead is accepted as the current review-ready best after v70-v73 rejections. v75 moderate opposing-path neutralization is rejected because Track2 stayed P=9.6/cR=1 but regressed from v74 clean runtime to simulate_failed at T=8.7. v70 active-avoid speed clamp is rejected on Track3. v71 severe-side steering authority improved Track1 to P=9.6/cR=1 but regressed Track4 to P=8.8/cO=1, so it is not accepted. v72 narrow allocation-only path authority did not improve Track1 and early-stopped at T=53.55, so it is rejected. v73 curve-short lookahead kept total P=37.2 but regressed Track3 from P=9.2 to P=8.8, so it is rejected; do not continue unconditional short-lookahead scans. v74 adds moderate-range and output-limit guards, improves total wrapper score to 37.6, keeps Track2/3/4 non-regressive with clean runtime states, and carries a Track1 early-terminal caveat. Continue to the next evidence-backed unified mechanism instead of report/package work.`
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
