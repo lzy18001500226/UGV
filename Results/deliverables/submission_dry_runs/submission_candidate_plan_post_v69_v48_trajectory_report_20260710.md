@@ -1,6 +1,6 @@
 # UGV Submission Candidate Dry-Run Manifest
 
-generated_at: 2026-07-10T08:37:09+08:00
+generated_at: 2026-07-10T08:48:12+08:00
 ready_to_create_final_zip: false
 readiness_report: `Results/deliverables/submission_dry_runs/submission_readiness_post_v69_v48_trajectory_report_20260710.json`
 
@@ -16,6 +16,9 @@ readiness_report: `Results/deliverables/submission_dry_runs/submission_readiness
 - `Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/QA_NOTE.md` -> exists=true, kind=file
 - `Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/word_com_export_qa/page_render_qa.md` -> exists=true, kind=file
 - `Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/word_com_export_qa/contact_sheet.png` -> exists=true, kind=file
+- `Results/figures/trajectory_event_review_v48_20260710/v48_track1_trajectory_events.png` -> exists=true, kind=file
+- `Results/figures/trajectory_event_review_v48_20260710/v48_track3_trajectory_events.png` -> exists=true, kind=file
+- `Results/figures/trajectory_event_review_v48_20260710/v48_track3_road_obstacle_overlay.png` -> exists=true, kind=file
 - `Results/metrics/one_track_tuning_20260708_231430.md` -> exists=true, kind=file
 - `Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md` -> exists=true, kind=file
 - `Results/metrics/post_v67_v68_attribution_decision_20260710.md` -> exists=true, kind=file

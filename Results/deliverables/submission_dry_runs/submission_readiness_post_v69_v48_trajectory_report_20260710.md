@@ -1,14 +1,14 @@
 # UGV Submission Readiness Dry Run
 
-generated_at: 2026-07-10T08:36:20+08:00
+generated_at: 2026-07-10T08:47:33+08:00
 ready: false
 final_approval: false
 
 ## Summary
 
 - tracked_model_files: 72
-- tracked_metric_or_evidence_files: 363
-- tracked_report_or_workflow_files: 91
+- tracked_metric_or_evidence_files: 364
+- tracked_report_or_workflow_files: 106
 
 ## Blockers
 
@@ -27,6 +27,9 @@ final_approval: false
 - report_page_render_qa_json: Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/word_com_export_qa/page_render_qa.json -> exists=true
 - report_page_render_contact_sheet: Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/word_com_export_qa/contact_sheet.png -> exists=true
 - report_page_render_pdf: Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/word_com_export_qa/initial_race_report_draft_v48_metrics_20260710_word_export.pdf -> exists=true
+- report_trajectory_figure_track1: Results/figures/trajectory_event_review_v48_20260710/v48_track1_trajectory_events.png -> exists=true
+- report_trajectory_figure_track3: Results/figures/trajectory_event_review_v48_20260710/v48_track3_trajectory_events.png -> exists=true
+- report_trajectory_overlay_track3: Results/figures/trajectory_event_review_v48_20260710/v48_track3_road_obstacle_overlay.png -> exists=true
 - controller_deployability_static_check: Results/evidence/controller_deployability_static_check_v48_reconfirmed_after_v67_20260710.md -> exists=true
 - one_track_metrics: Results/metrics/one_track_tuning_20260708_231430.md -> exists=true
 - four_track_summary: Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md -> exists=true
@@ -51,6 +54,7 @@ ready: true
 - `Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/QA_NOTE.md`
 - `Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/word_com_export_qa/page_render_qa.md`
 - `Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/word_com_export_qa/contact_sheet.png`
+- `Results/figures/trajectory_event_review_v48_20260710/`
 - `Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md`
 - `Results/metrics/post_v67_v68_attribution_decision_20260710.md`
 - `Results/metrics/one_track_tuning_20260708_231430.md`
