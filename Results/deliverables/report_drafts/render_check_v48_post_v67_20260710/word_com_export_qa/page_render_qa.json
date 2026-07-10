@@ -1,0 +1,168 @@
+{
+  "timestamp": "2026-07-10T08:40:22+0800",
+  "docx": "C:\\Users\\HP\\Desktop\\UGV\\Results\\deliverables\\report_drafts\\initial_race_report_draft_v48_metrics_20260710.docx",
+  "output_dir": "C:\\Users\\HP\\Desktop\\UGV\\Results\\deliverables\\report_drafts\\render_check_v48_post_v67_20260710\\word_com_export_qa",
+  "pdf": "C:\\Users\\HP\\Desktop\\UGV\\Results\\deliverables\\report_drafts\\render_check_v48_post_v67_20260710\\word_com_export_qa\\initial_race_report_draft_v48_metrics_20260710_word_export.pdf",
+  "export": {
+    "method": "word_com",
+    "docx": "C:\\Users\\HP\\Desktop\\UGV\\Results\\deliverables\\report_drafts\\initial_race_report_draft_v48_metrics_20260710.docx",
+    "pdf": "C:\\Users\\HP\\Desktop\\UGV\\Results\\deliverables\\report_drafts\\render_check_v48_post_v67_20260710\\word_com_export_qa\\initial_race_report_draft_v48_metrics_20260710_word_export.pdf",
+    "status": "ok",
+    "page_count_word": 10,
+    "pdf_exists": true,
+    "pdf_size_bytes": 374370
+  },
+  "render": {
+    "method": "pdftoppm",
+    "pdftoppm": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftoppm.exe",
+    "status": "ok",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "page_files": [
+      "page-01.png",
+      "page-02.png",
+      "page-03.png",
+      "page-04.png",
+      "page-05.png",
+      "page-06.png",
+      "page-07.png",
+      "page-08.png",
+      "page-09.png",
+      "page-10.png"
+    ]
+  },
+  "page_count": 10,
+  "min_pages": 1,
+  "contact_sheet": "C:\\Users\\HP\\Desktop\\UGV\\Results\\deliverables\\report_drafts\\render_check_v48_post_v67_20260710\\word_com_export_qa\\contact_sheet.png",
+  "blank_page_threshold_nonwhite_ratio": 0.01,
+  "pages": [
+    {
+      "file": "page-01.png",
+      "width": 1105,
+      "height": 1430,
+      "size_bytes": 286940,
+      "nonwhite_ratio": 0.18409,
+      "channel_mean": [
+        245.53,
+        246.21,
+        246.89
+      ]
+    },
+    {
+      "file": "page-02.png",
+      "width": 1105,
+      "height": 1430,
+      "size_bytes": 199625,
+      "nonwhite_ratio": 0.22826,
+      "channel_mean": [
+        245.9,
+        246.09,
+        246.29
+      ]
+    },
+    {
+      "file": "page-03.png",
+      "width": 1105,
+      "height": 1430,
+      "size_bytes": 196472,
+      "nonwhite_ratio": 0.2651,
+      "channel_mean": [
+        245.18,
+        245.43,
+        245.73
+      ]
+    },
+    {
+      "file": "page-04.png",
+      "width": 1105,
+      "height": 1430,
+      "size_bytes": 184485,
+      "nonwhite_ratio": 0.24703,
+      "channel_mean": [
+        245.93,
+        246.08,
+        246.27
+      ]
+    },
+    {
+      "file": "page-05.png",
+      "width": 1105,
+      "height": 1430,
+      "size_bytes": 91287,
+      "nonwhite_ratio": 0.0802,
+      "channel_mean": [
+        251.2,
+        251.35,
+        251.49
+      ]
+    },
+    {
+      "file": "page-06.png",
+      "width": 1105,
+      "height": 1430,
+      "size_bytes": 83585,
+      "nonwhite_ratio": 0.04564,
+      "channel_mean": [
+        253.44,
+        253.49,
+        253.59
+      ]
+    },
+    {
+      "file": "page-07.png",
+      "width": 1105,
+      "height": 1430,
+      "size_bytes": 136867,
+      "nonwhite_ratio": 0.09555,
+      "channel_mean": [
+        250.72,
+        250.81,
+        250.93
+      ]
+    },
+    {
+      "file": "page-08.png",
+      "width": 1105,
+      "height": 1430,
+      "size_bytes": 236089,
+      "nonwhite_ratio": 0.19862,
+      "channel_mean": [
+        244.98,
+        245.05,
+        245.12
+      ]
+    },
+    {
+      "file": "page-09.png",
+      "width": 1105,
+      "height": 1430,
+      "size_bytes": 246575,
+      "nonwhite_ratio": 0.20432,
+      "channel_mean": [
+        244.7,
+        245.0,
+        245.28
+      ]
+    },
+    {
+      "file": "page-10.png",
+      "width": 1105,
+      "height": 1430,
+      "size_bytes": 59851,
+      "nonwhite_ratio": 0.03806,
+      "channel_mean": [
+        253.24,
+        253.27,
+        253.3
+      ]
+    }
+  ],
+  "suspected_blank_pages": [],
+  "status": "passed",
+  "non_claims": [
+    "Does not approve final competition submission.",
+    "Does not run MWORKS.",
+    "Does not create a final zip."
+  ]
+}

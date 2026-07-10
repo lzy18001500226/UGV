@@ -56,3 +56,24 @@ score
 ```
 
 Every figure should have a caption and point back to the run folder.
+
+## 5. DOCX Page Render QA
+
+Before treating a report draft as final-review material, run a page-level render
+check in addition to DOCX structure checks:
+
+```powershell
+python Scripts\report\render_docx_pages_qa.py `
+  --docx Results\deliverables\report_drafts\initial_race_report_draft_v48_metrics_20260710.docx `
+  --out-dir Results\deliverables\report_drafts\render_check_v48_post_v67_20260710\word_com_export_qa `
+  --min-pages 1 `
+  --json-out Results\deliverables\report_drafts\render_check_v48_post_v67_20260710\word_com_export_qa\page_render_qa.json `
+  --md-out Results\deliverables\report_drafts\render_check_v48_post_v67_20260710\word_com_export_qa\page_render_qa.md `
+  --fail-on-not-passed
+```
+
+The helper exports DOCX to PDF through Word COM when available, falls back to
+LibreOffice when available, renders PDF pages to PNG through Poppler, builds a
+contact sheet, and flags blank-looking pages. This still does not approve final
+competition submission; it only upgrades report QA from structure-only to
+page-render evidence.

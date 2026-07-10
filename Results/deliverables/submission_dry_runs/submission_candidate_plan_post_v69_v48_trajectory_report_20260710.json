@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T08:13:23+08:00",
+  "generated_at": "2026-07-10T08:37:09+08:00",
   "readiness_report": "Results/deliverables/submission_dry_runs/submission_readiness_post_v69_v48_trajectory_report_20260710.json",
   "ready_to_create_final_zip": false,
   "blockers": [
@@ -19,6 +19,16 @@
     },
     {
       "path": "Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/QA_NOTE.md",
+      "exists": true,
+      "kind": "file"
+    },
+    {
+      "path": "Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/word_com_export_qa/page_render_qa.md",
+      "exists": true,
+      "kind": "file"
+    },
+    {
+      "path": "Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/word_com_export_qa/contact_sheet.png",
       "exists": true,
       "kind": "file"
     },
