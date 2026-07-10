@@ -24,4 +24,3 @@ Related local commit:
 ```text
 e928bce ugv: reject v86 conditional lateral release
 ```
-
