@@ -1,0 +1,437 @@
+{
+  "v74_track1": {
+    "samples": 1745,
+    "hit_samples": 152,
+    "hit_fraction": 0.08711,
+    "intervals_first_12": [
+      [
+        4.28,
+        4.86
+      ],
+      [
+        5.17,
+        5.82
+      ],
+      [
+        9.05,
+        9.75
+      ],
+      [
+        10.1,
+        10.7
+      ]
+    ],
+    "event_windows": [
+      {
+        "event_time": 4.45,
+        "changes": {
+          "cR": {
+            "from": 0.0,
+            "to": 1.0,
+            "delta": 1.0
+          },
+          "P": {
+            "from": 10.0,
+            "to": 9.6,
+            "delta": -0.40000000000000036
+          }
+        },
+        "nearest": {
+          "Time": 4.45,
+          "obsAvoidController_Sysblock.chart.flag": 1.0,
+          "obsAvoidController_Sysblock.chart.df": 2.05054,
+          "obsAvoidController_Sysblock.chart.dl": 0.10117,
+          "obsAvoidController_Sysblock.chart.dr": 0.19711,
+          "obsAvoidController_Sysblock.chart.steer": 0.6,
+          "ctrlAlloc.steer": 0.57048,
+          "ctrlAlloc.speed": 0.53582,
+          "pathPlanner.steering_angle": 0.28403
+        },
+        "hits_in_pm025": 43,
+        "samples_in_pm025": 51,
+        "hit_times_in_pm025": [
+          4.28,
+          4.29,
+          4.3,
+          4.31,
+          4.32,
+          4.33,
+          4.34,
+          4.35,
+          4.36,
+          4.37,
+          4.38,
+          4.39
+        ]
+      }
+    ]
+  },
+  "v74_track2": {
+    "samples": 12002,
+    "hit_samples": 651,
+    "hit_fraction": 0.05424,
+    "intervals_first_12": [
+      [
+        1.6,
+        1.74
+      ],
+      [
+        4.27,
+        6.44
+      ],
+      [
+        7.54,
+        8.43
+      ],
+      [
+        9.01,
+        9.33
+      ],
+      [
+        9.7,
+        9.87
+      ],
+      [
+        80.45,
+        80.6
+      ],
+      [
+        90.7,
+        91.5
+      ],
+      [
+        91.6,
+        101.55
+      ],
+      [
+        101.65,
+        104.45
+      ]
+    ],
+    "event_windows": [
+      {
+        "event_time": 4.7,
+        "changes": {
+          "cR": {
+            "from": 0.0,
+            "to": 1.0,
+            "delta": 1.0
+          },
+          "P": {
+            "from": 10.0,
+            "to": 9.6,
+            "delta": -0.40000000000000036
+          }
+        },
+        "nearest": {
+          "Time": 4.7,
+          "obsAvoidController_Sysblock.chart.flag": 1.0,
+          "obsAvoidController_Sysblock.chart.df": 2.05211,
+          "obsAvoidController_Sysblock.chart.dl": 0.10888,
+          "obsAvoidController_Sysblock.chart.dr": 0.271,
+          "obsAvoidController_Sysblock.chart.steer": 0.6,
+          "ctrlAlloc.steer": 0.18163,
+          "ctrlAlloc.speed": 0.52244,
+          "pathPlanner.steering_angle": -0.22054
+        },
+        "hits_in_pm025": 50,
+        "samples_in_pm025": 51,
+        "hit_times_in_pm025": [
+          4.45,
+          4.46,
+          4.47,
+          4.48,
+          4.49,
+          4.5,
+          4.51,
+          4.52,
+          4.53,
+          4.54,
+          4.55,
+          4.56
+        ]
+      }
+    ]
+  },
+  "v74_track3": {
+    "samples": 12002,
+    "hit_samples": 547,
+    "hit_fraction": 0.04558,
+    "intervals_first_12": [
+      [
+        1.09,
+        1.22
+      ],
+      [
+        4.7,
+        5.39
+      ],
+      [
+        5.69,
+        6.28
+      ],
+      [
+        6.86,
+        7.08
+      ],
+      [
+        7.37,
+        7.43
+      ],
+      [
+        7.69,
+        7.87
+      ],
+      [
+        8.42,
+        8.64
+      ],
+      [
+        9.43,
+        9.57
+      ],
+      [
+        62.65,
+        62.7
+      ],
+      [
+        63.15,
+        64.6
+      ],
+      [
+        64.7,
+        74.45
+      ],
+      [
+        112.9,
+        113.1
+      ]
+    ],
+    "event_windows": [
+      {
+        "event_time": 1.05,
+        "changes": {
+          "cO": {
+            "from": 0.0,
+            "to": 1.0,
+            "delta": 1.0
+          },
+          "P": {
+            "from": 10.0,
+            "to": 9.6,
+            "delta": -0.40000000000000036
+          }
+        },
+        "nearest": {
+          "Time": 1.05,
+          "obsAvoidController_Sysblock.chart.flag": 1.0,
+          "obsAvoidController_Sysblock.chart.df": 0.01324,
+          "obsAvoidController_Sysblock.chart.dl": 0.48761,
+          "obsAvoidController_Sysblock.chart.dr": 0.64742,
+          "obsAvoidController_Sysblock.chart.steer": 0.6,
+          "ctrlAlloc.steer": 0.16235,
+          "ctrlAlloc.speed": 0.71959,
+          "pathPlanner.steering_angle": -0.03857
+        },
+        "hits_in_pm025": 14,
+        "samples_in_pm025": 51,
+        "hit_times_in_pm025": [
+          1.09,
+          1.1,
+          1.11,
+          1.12,
+          1.13,
+          1.14,
+          1.15,
+          1.16,
+          1.17,
+          1.18,
+          1.19,
+          1.2
+        ]
+      },
+      {
+        "event_time": 4.85,
+        "changes": {
+          "cR": {
+            "from": 0.0,
+            "to": 1.0,
+            "delta": 1.0
+          },
+          "P": {
+            "from": 9.6,
+            "to": 9.2,
+            "delta": -0.40000000000000036
+          }
+        },
+        "nearest": {
+          "Time": 4.85,
+          "obsAvoidController_Sysblock.chart.flag": 1.0,
+          "obsAvoidController_Sysblock.chart.df": 2.04978,
+          "obsAvoidController_Sysblock.chart.dl": 0.10599,
+          "obsAvoidController_Sysblock.chart.dr": 0.27085,
+          "obsAvoidController_Sysblock.chart.steer": 0.6,
+          "ctrlAlloc.steer": 0.18494,
+          "ctrlAlloc.speed": 0.51046,
+          "pathPlanner.steering_angle": -0.22149
+        },
+        "hits_in_pm025": 41,
+        "samples_in_pm025": 51,
+        "hit_times_in_pm025": [
+          4.7,
+          4.71,
+          4.72,
+          4.73,
+          4.74,
+          4.75,
+          4.76,
+          4.77,
+          4.78,
+          4.79,
+          4.8,
+          4.81
+        ]
+      }
+    ]
+  },
+  "v74_track4": {
+    "samples": 12002,
+    "hit_samples": 644,
+    "hit_fraction": 0.05366,
+    "intervals_first_12": [
+      [
+        0.8,
+        0.88
+      ],
+      [
+        3.87,
+        6.04
+      ],
+      [
+        7.15,
+        7.39
+      ],
+      [
+        7.62,
+        8.03
+      ],
+      [
+        52.1,
+        53.0
+      ],
+      [
+        53.1,
+        55.65
+      ],
+      [
+        76.35,
+        79.0
+      ],
+      [
+        80.4,
+        83.15
+      ],
+      [
+        83.25,
+        84.55
+      ],
+      [
+        97.05,
+        97.45
+      ],
+      [
+        103.15,
+        103.25
+      ],
+      [
+        103.35,
+        106.3
+      ]
+    ],
+    "event_windows": [
+      {
+        "event_time": 4.35,
+        "changes": {
+          "cR": {
+            "from": 0.0,
+            "to": 1.0,
+            "delta": 1.0
+          },
+          "P": {
+            "from": 10.0,
+            "to": 9.6,
+            "delta": -0.40000000000000036
+          }
+        },
+        "nearest": {
+          "Time": 4.35,
+          "obsAvoidController_Sysblock.chart.flag": 1.0,
+          "obsAvoidController_Sysblock.chart.df": 2.05236,
+          "obsAvoidController_Sysblock.chart.dl": 0.10522,
+          "obsAvoidController_Sysblock.chart.dr": 0.26741,
+          "obsAvoidController_Sysblock.chart.steer": 0.6,
+          "ctrlAlloc.steer": 0.17964,
+          "ctrlAlloc.speed": 0.52441,
+          "pathPlanner.steering_angle": -0.2222
+        },
+        "hits_in_pm025": 51,
+        "samples_in_pm025": 51,
+        "hit_times_in_pm025": [
+          4.1,
+          4.11,
+          4.12,
+          4.13,
+          4.14,
+          4.15,
+          4.16,
+          4.17,
+          4.18,
+          4.19,
+          4.2,
+          4.21
+        ]
+      },
+      {
+        "event_time": 104.0,
+        "changes": {
+          "cR": {
+            "from": 1.0,
+            "to": 2.0,
+            "delta": 1.0
+          },
+          "P": {
+            "from": 9.6,
+            "to": 9.2,
+            "delta": -0.40000000000000036
+          }
+        },
+        "nearest": {
+          "Time": 104.0,
+          "obsAvoidController_Sysblock.chart.flag": 1.0,
+          "obsAvoidController_Sysblock.chart.df": 2.02553,
+          "obsAvoidController_Sysblock.chart.dl": 0.10874,
+          "obsAvoidController_Sysblock.chart.dr": 0.27102,
+          "obsAvoidController_Sysblock.chart.steer": 0.6,
+          "ctrlAlloc.steer": 1.93673,
+          "ctrlAlloc.speed": 0.25576,
+          "pathPlanner.steering_angle": 1.63846
+        },
+        "hits_in_pm025": 11,
+        "samples_in_pm025": 51,
+        "hit_times_in_pm025": [
+          103.75,
+          103.8,
+          103.85,
+          103.9,
+          103.95,
+          104.0,
+          104.05,
+          104.1,
+          104.15,
+          104.2,
+          104.25
+        ]
+      }
+    ]
+  }
+}

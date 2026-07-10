@@ -1,0 +1,17 @@
+{"name": "preflight_paths", "status": "ok", "package_mo": "C:\\Users\\HP\\Desktop\\UGV\\Models\\UGV\\package.mo", "result_root": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v79_max_steer_clamp_saidao4_120s_20260710\\native_result"}
+{"name": "import_mworks_sysplorer", "status": "ok", "module": "<module 'mworks.sysplorer' from 'D:\\\\Program Files\\\\MWORKS\\\\Sysplorer 2026a\\\\External\\\\python64\\\\Lib\\\\site-packages\\\\mworks\\\\sysplorer\\\\__init__.py'>"}
+��������...
+���ӳɹ�!
+{"name": "start_sysplorer", "status": "ok", "process_path": "D:\\Program Files\\MWORKS\\Sysplorer 2026a\\Bin64\\mworks.exe"}
+{"name": "open_dependency_model_file", "status": "ok", "path": "D:\\Program Files\\MWORKS\\Sysplorer 2026a\\Library\\TADynamics 1.3.2\\TADynamics\\TADynamics.mol", "result": "True"}
+{"name": "open_model_file", "status": "ok", "result": "True"}
+{"name": "open_model", "status": "ok", "result": "True"}
+{"name": "check_model", "status": "ok", "result": "True"}
+{"name": "simulate_model", "status": "ok", "result": "True", "kwargs": {"modelName": "UGV.Test.Saidao4Eval", "options": {"startTime": 0, "stopTime": 120.0, "path": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v79_max_steer_clamp_saidao4_120s_20260710\\native_result", "algorithm": "Dassl", "interval": 0.05, "translationEvaluateParametersToReduceModels": true, "translationCheckConnection_Strictly": false, "compileSolver64": 1, "compileOptions": 0}}}
+{"name": "simulation_state", "status": "ok", "exit_state": 0, "simulation_state": "Idle"}
+{"name": "result_variables", "status": "ok", "total": 26165, "timevarying": 26162, "available_score_variables": ["T", "cR", "cO", "P"], "missing_score_variables": [], "extra_result_variables": ["ctrlAlloc.speed", "ctrlAlloc.speed_oa", "ctrlAlloc.speed_pp", "ctrlAlloc.steer", "ctrlAlloc.steer_oa", "ctrlAlloc.steer_pp", "obsAvoidController_Sysblock.chart.df", "obsAvoidController_Sysblock.chart.dl", "obsAvoidController_Sysblock.chart.dr", "obsAvoidController_Sysblock.chart.flag", "obsAvoidController_Sysblock.chart.speed", "obsAvoidController_Sysblock.chart.steer", "pathPlanner.steering_angle", "pathPlanner.target_v"]}
+{"name": "score_values_at_end", "status": "ok", "values": {"T": 120.0, "cR": 2.0, "cO": 0.0, "P": 9.2}}
+{"name": "export_score_timeseries", "status": "ok", "path": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v79_max_steer_clamp_saidao4_120s_20260710\\score_timeseries.csv"}
+{"name": "export_extra_timeseries", "status": "ok", "path": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v79_max_steer_clamp_saidao4_120s_20260710\\extra_timeseries.csv", "variables": ["ctrlAlloc.speed", "ctrlAlloc.speed_oa", "ctrlAlloc.speed_pp", "ctrlAlloc.steer", "ctrlAlloc.steer_oa", "ctrlAlloc.steer_pp", "obsAvoidController_Sysblock.chart.df", "obsAvoidController_Sysblock.chart.dl", "obsAvoidController_Sysblock.chart.dr", "obsAvoidController_Sysblock.chart.flag", "obsAvoidController_Sysblock.chart.speed", "obsAvoidController_Sysblock.chart.steer", "pathPlanner.steering_angle", "pathPlanner.target_v"]}
+The process has exited, and the return code is:  0
+{"name": "engine_exit", "status": "ok"}
