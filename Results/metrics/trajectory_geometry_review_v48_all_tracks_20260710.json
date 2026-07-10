@@ -1,0 +1,188 @@
+{
+  "runs": [
+    {
+      "label": "v48_track1",
+      "run_dir": "Results\\simulations\\controller_v48_opposing_steer_guard_saidao1_120s_20260710",
+      "image": "Results\\figures\\trajectory_geometry_review_v48_all_tracks_20260710\\v48_track1_trajectory_events.png",
+      "position_columns": [
+        "pathPlanner.x",
+        "pathPlanner.y"
+      ],
+      "time_column": "Time",
+      "score_end": {
+        "T": 120.0,
+        "cR": 2.0,
+        "cO": 0.0,
+        "P": 9.2
+      },
+      "track_geometry": {
+        "track_path": "Models\\UGV\\saidao\\saidao1.mo",
+        "road_points": 182,
+        "obstacle_points": 24,
+        "road_width": null,
+        "obstacle_size": 0.1
+      },
+      "events": [
+        {
+          "event": 1,
+          "time_s": 6.55,
+          "changes": [
+            "cR: 0->1",
+            "P: 10->9.6"
+          ],
+          "x": 2.966124240707,
+          "y": 1.78513611630892,
+          "distance_to_road_center": 0.4648217237942892,
+          "distance_to_nearest_obstacle": 3.829600443532076
+        },
+        {
+          "event": 2,
+          "time_s": 30.35,
+          "changes": [
+            "cR: 1->2",
+            "P: 9.6->9.2"
+          ],
+          "x": 12.6279752459215,
+          "y": 6.12604305998565,
+          "distance_to_road_center": 0.46050802169383603,
+          "distance_to_nearest_obstacle": 0.8610337676297917
+        }
+      ]
+    },
+    {
+      "label": "v48_track2",
+      "run_dir": "Results\\simulations\\controller_v48_opposing_steer_guard_saidao2_120s_20260710",
+      "image": "Results\\figures\\trajectory_geometry_review_v48_all_tracks_20260710\\v48_track2_trajectory_events.png",
+      "position_columns": [
+        "pathPlanner.x",
+        "pathPlanner.y"
+      ],
+      "time_column": "Time",
+      "score_end": {
+        "T": 60.15,
+        "cR": 1.0,
+        "cO": 0.0,
+        "P": 9.6
+      },
+      "track_geometry": {
+        "track_path": "Models\\UGV\\saidao\\saidao2.mo",
+        "road_points": 231,
+        "obstacle_points": 20,
+        "road_width": null,
+        "obstacle_size": 0.1
+      },
+      "events": [
+        {
+          "event": 1,
+          "time_s": 4.7,
+          "changes": [
+            "cR: 0->1",
+            "P: 10->9.6"
+          ],
+          "x": 3.64378939396675,
+          "y": 0.460055913181022,
+          "distance_to_road_center": 0.460055913181022,
+          "distance_to_nearest_obstacle": 1.767029276344525
+        }
+      ]
+    },
+    {
+      "label": "v48_track3",
+      "run_dir": "Results\\simulations\\controller_v48_opposing_steer_guard_saidao3_120s_20260710",
+      "image": "Results\\figures\\trajectory_geometry_review_v48_all_tracks_20260710\\v48_track3_trajectory_events.png",
+      "position_columns": [
+        "pathPlanner.x",
+        "pathPlanner.y"
+      ],
+      "time_column": "Time",
+      "score_end": {
+        "T": 112.45,
+        "cR": 1.0,
+        "cO": 1.0,
+        "P": 9.2
+      },
+      "track_geometry": {
+        "track_path": "Models\\UGV\\saidao\\saidao3.mo",
+        "road_points": 106,
+        "obstacle_points": 20,
+        "road_width": null,
+        "obstacle_size": 0.1
+      },
+      "events": [
+        {
+          "event": 1,
+          "time_s": 1.05,
+          "changes": [
+            "cO: 0->1",
+            "P: 10->9.6"
+          ],
+          "x": 1.20002805811357,
+          "y": 0.0799006841740005,
+          "distance_to_road_center": 0.0799006841740005,
+          "distance_to_nearest_obstacle": 0.10607659122575884
+        },
+        {
+          "event": 2,
+          "time_s": 4.85,
+          "changes": [
+            "cR: 0->1",
+            "P: 9.6->9.2"
+          ],
+          "x": 3.36390538098197,
+          "y": 0.461582446889224,
+          "distance_to_road_center": 0.461582446889224,
+          "distance_to_nearest_obstacle": 1.3970505089579073
+        }
+      ]
+    },
+    {
+      "label": "v48_track4",
+      "run_dir": "Results\\simulations\\controller_v48_opposing_steer_guard_saidao4_120s_20260710",
+      "image": "Results\\figures\\trajectory_geometry_review_v48_all_tracks_20260710\\v48_track4_trajectory_events.png",
+      "position_columns": [
+        "pathPlanner.x",
+        "pathPlanner.y"
+      ],
+      "time_column": "Time",
+      "score_end": {
+        "T": 112.4,
+        "cR": 2.0,
+        "cO": 0.0,
+        "P": 9.2
+      },
+      "track_geometry": {
+        "track_path": "Models\\UGV\\saidao\\saidao4.mo",
+        "road_points": 212,
+        "obstacle_points": 20,
+        "road_width": null,
+        "obstacle_size": 0.1
+      },
+      "events": [
+        {
+          "event": 1,
+          "time_s": 4.35,
+          "changes": [
+            "cR: 0->1",
+            "P: 10->9.6"
+          ],
+          "x": 3.65627844918394,
+          "y": 0.463681759119565,
+          "distance_to_road_center": 0.463681759119565,
+          "distance_to_nearest_obstacle": 0.7278803472267056
+        },
+        {
+          "event": 2,
+          "time_s": 90.15,
+          "changes": [
+            "cR: 1->2",
+            "P: 9.6->9.2"
+          ],
+          "x": 10.5024551848607,
+          "y": 12.165225748162,
+          "distance_to_road_center": 0.4601823586100871,
+          "distance_to_nearest_obstacle": 1.1015676331494635
+        }
+      ]
+    }
+  ]
+}

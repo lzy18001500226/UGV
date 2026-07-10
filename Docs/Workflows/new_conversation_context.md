@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v48 opposing-steer guard remains the current review-ready best four-track candidate with a runtime caveat. v70, v71, and v72 follow-ups were tested and rejected as accepted baselines; source semantics were restored to v48. Current mainline remains the high-score sprint toward the 80-point algorithm-model target, not report polish or packaging. Use `Docs/Design/high_score_sprint_v70_plan_20260710.md` and the latest rejection review before another controller edit, 2026-07-10 CST.
+Status: v48 opposing-steer guard remains the current review-ready best four-track candidate with a runtime caveat. v70, v71, v72, and v73 follow-ups were tested and rejected as accepted baselines; source semantics were restored to v48. Current mainline remains the high-score sprint toward the 80-point algorithm-model target, not report polish or packaging. Use `Docs/Design/high_score_sprint_v70_plan_20260710.md` and the latest rejection review before another controller edit, 2026-07-10 CST.
 
 ## 0. Startup Chain
 
@@ -52,7 +52,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v70-v72 high-score sprint continues from v48. v70 active-avoid speed clamp is rejected on Track3. v71 severe-side steering authority improved Track1 to P=9.6/cR=1 but regressed Track4 to P=8.8/cO=1, so it is not accepted. v72 narrow allocation-only path authority did not improve Track1 and early-stopped at T=53.55, so it is rejected. Restored source gate is Results/evidence/controller_deployability_static_check_v48_restored_after_v71_v72_20260710.md. Continue to the next evidence-backed unified mechanism instead of report/package work.`
+Current phase cursor: `v70-v73 high-score sprint continues from v48. v70 active-avoid speed clamp is rejected on Track3. v71 severe-side steering authority improved Track1 to P=9.6/cR=1 but regressed Track4 to P=8.8/cO=1, so it is not accepted. v72 narrow allocation-only path authority did not improve Track1 and early-stopped at T=53.55, so it is rejected. v73 curve-short lookahead kept total P=37.2 but regressed Track3 from P=9.2 to P=8.8, so it is rejected; do not continue unconditional short-lookahead scans. Restored source gate is Results/evidence/controller_deployability_static_check_v48_restored_after_v73_20260710.md. Continue to the next evidence-backed unified mechanism instead of report/package work.`
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or

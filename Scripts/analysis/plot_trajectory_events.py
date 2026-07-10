@@ -17,6 +17,7 @@ POSITION_PAIRS = [
     ("body3DOF1_1.P_vehicle[1]", "body3DOF1_1.P_vehicle[2]"),
     ("distanceSensor1.vehicle_position[1]", "distanceSensor1.vehicle_position[2]"),
     ("body3DOF1_1.body.frame_a.r_0[1]", "body3DOF1_1.body.frame_a.r_0[2]"),
+    ("pathPlanner.x", "pathPlanner.y"),
 ]
 
 
