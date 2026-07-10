@@ -24,6 +24,11 @@ textColor={0,0,0})}),experiment(Algorithm=Dassl,InlineIntegrator=false,InlineSte
   parameter Real max_steer = 0.523599  "最大转向角(30度)";
   parameter Real curve_slowdown_steer = 0.35 "触发曲率降速的转向角阈值";
   parameter Real curve_slowdown_speed = 0.75 "大转角路径跟踪目标速度上限";
+  parameter Real curve_short_lookahead_steer = 0.35 "触发短前瞻的中等转向角下限";
+  parameter Real curve_short_lookahead_steer_max = 1.0 "允许短前瞻的中等转向角上限";
+  parameter Real curve_short_lookahead_factor = 0.65 "中等转角短前瞻比例";
+  parameter SIunits.Length curve_short_lookahead_min = 1.2 "中等转角短前瞻下限";
+  parameter Real curve_short_lookahead_output_max = 1.0 "短前瞻输出转向角上限";
 
   // 路径数据（示例路径：x坐标，y坐标，期望速度）
   parameter Real[:,3] path = {{0, 0, 10}, {1, -6.7811, 10}, {2, -13.5622, 10}, {3, -20.3433, 10}, {4, -27.1244, 10}, {5, -33.9055, 10}, {6, -40.6866, 10}, {7, -47.4677, 10}, {8, -54.2488, 10}, {9.5251, -64.6151, 10}, {10.2247, -69.2276, 10}, {10.8244, -73.8541, 10}, {11.1633, -78.506, 10}, {11.2008, -83.1705, 10}, {10.9947, -87.8308, 10}, {10.5634, -92.4759, 10}, {9.9327, -97.0981, 10}, {9.0664, -101.6815, 10}, {7.8502, -106.1843, 10}, {6.2622, -110.5694, 10}, {4.3272, -114.8135, 10}, {2.1533, -118.9409, 10}, {-0.1357, -123.0061, 10}, {-2.47, -127.0456, 10}, {-4.9405, -131.0027, 10}, {-7.5312, -134.8823, 10}, {-10.2788, -138.6523, 10}, {-13.238, -142.2581, 10}, {-16.4765, -145.6131, 10}, {-20.0327, -148.6301, 10}, {-23.8704, -151.2789, 10}, {-27.9751, -153.4907, 10}, {-32.2918, -155.2545, 10}, {-36.7354, -156.6729, 10}, {-41.2587, -157.8126, 10}, {-45.8451, -158.6631, 10}, {-50.4764, -159.2199, 10}, {-55.1316, -159.522, 10}, {-59.7947, -159.659, 10}, {-64.4589, -159.5821, 10}, {-69.1108, -159.2402, 10}, {-73.7291, -158.5896, 10}, {-78.2603, -157.4902, 10}, {-82.6532, -155.9252, 10}, {-86.877, -153.9483, 10}, {-90.9152, -151.6153, 10}, {-94.7488, -148.9592, 10}, {-98.3748, -146.0254, 10}, {-101.8245, -142.8854, 10}, {-105.0519, -139.5181, 10}, {-108.0724, -135.9635, 10}, {-110.8885, -132.2449, 10}, {-113.4454, -128.344, 10}, {-115.757, -124.2923, 10}, {-117.824, -120.111, 10}, {-119.5542, -115.7801, 10}, {-120.9181, -111.3201, 10}, {-121.9105, -106.7634, 10}, {-122.4939, -102.1364, 10}, {-122.7365, -97.478, 10}, {-122.8252, -92.8136, 10}, {-122.7443, -88.1496, 10}, {-122.4903, -83.4912, 10}, {-122.156, -78.8378, 10}, {-121.743, -74.1907, 10}, {-121.2591, -69.5505, 10}, {-120.7285, -64.9153, 10}, {-120.1758, -60.2828, 10}, {-119.579, -55.6557, 10}, {-118.9375, -51.0346, 10}, {-118.3057, -46.4122, 10}, {-117.7277, -41.7828, 10}, {-117.2655, -37.1404, 10}, {-116.9502, -32.4859, 10}, {-116.8319, -27.8224, 10}, {-116.928, -23.1584, 10}, {-117.2359, -18.5035, 10}, {-117.6994
@@ -38,6 +43,9 @@ textColor={0,0,0})}),experiment(Algorithm=Dassl,InlineIntegrator=false,InlineSte
   Real[2] pursuit_point "跟踪点坐标";
   SIunits.Length lookahead_dist "动态前瞻距离";
   Real path_progress(start = 0)  "路径进度参数化";
+  Real base_steering_angle "短前瞻试算前的转向角";
+  SIunits.Length base_lookahead_dist "短前瞻试算前的前瞻距离";
+  Real[2] base_pursuit_point "短前瞻试算前的跟踪点";
 //public
   Modelica.Blocks.Interfaces.RealInput x "当前x位置" 
     annotation(Placement(transformation(origin = {-110, 66.6667},
@@ -77,8 +85,23 @@ algorithm
 
   // 步骤5：Pure Pursuit转向计算
   steering_angle := UGV.Control.PathPlanning.Internal.purePursuitControl(x, y, pursuit_point[1], pursuit_point[2]);
+  base_steering_angle := steering_angle;
+  base_lookahead_dist := lookahead_dist;
+  base_pursuit_point := pursuit_point;
 
-  // 步骤6：曲率/大转角降速，减少高速大转角下的路沿越界风险
+  // 步骤6：只在中等转角试算短前瞻；若输出过激，则回退到原始前瞻
+  if abs(base_steering_angle) > curve_short_lookahead_steer and abs(base_steering_angle) < curve_short_lookahead_steer_max then
+    lookahead_dist := max(curve_short_lookahead_min, curve_short_lookahead_factor * base_lookahead_dist);
+    pursuit_point := UGV.Control.PathPlanning.Internal.calculatePursuitPoint(path, closest_index, path_progress, lookahead_dist);
+    steering_angle := UGV.Control.PathPlanning.Internal.purePursuitControl(x, y, pursuit_point[1], pursuit_point[2]);
+    if abs(steering_angle) > curve_short_lookahead_output_max then
+      lookahead_dist := base_lookahead_dist;
+      pursuit_point := base_pursuit_point;
+      steering_angle := base_steering_angle;
+    end if;
+  end if;
+
+  // 步骤7：曲率/大转角降速，减少高速大转角下的路沿越界风险
   if abs(steering_angle) > curve_slowdown_steer and target_v > curve_slowdown_speed then
     target_v := curve_slowdown_speed;
   end if;
