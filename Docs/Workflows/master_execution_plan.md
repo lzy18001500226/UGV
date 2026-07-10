@@ -443,7 +443,7 @@ safe phase unless the user explicitly pauses or final submission approval is
 required.
 
 Current cursor: v80 sharp curve speed cap is the score-leading local wrapper
-candidate with a Track3 runtime caveat after v79/v81/v82/v83/v84/v85/v86/v87/v88/v89/v90/v91/v92/v93/v94/v95/v96 follow-ups
+candidate with a Track3 runtime caveat after v79/v81/v82/v83/v84/v85/v86/v87/v88/v89/v90/v91/v92/v93/v94/v95/v96/v97 follow-ups
 were rejected as accepted baselines. M1 source grounding, M2 bounded baseline,
 M3 controller design, M4 bounded controller implementation gate, M5 one-track
 Race1 tuning review, M6 wrapper-based four-track metric extraction, historical
@@ -469,7 +469,8 @@ v92 rejected: Results/metrics/track3_candidate_review_v92_front_emergency_straig
 v93 rejected: Results/metrics/track3_candidate_review_v93_emergency_path_speed_suppress_20260710.md
 v94 rejected: Results/metrics/track3_candidate_review_v94_oa_steer_conflict_attenuation_20260710.md
 v95 rejected: Results/metrics/track3_candidate_review_v95_early_front_brake_marker_20260710.md
-v96 latest rejected: Results/metrics/track1_track3_candidate_review_v96_severe_side_initial_steer_override_20260710.md
+v96 rejected: Results/metrics/track1_track3_candidate_review_v96_severe_side_initial_steer_override_20260710.md
+v97 latest rejected: Results/metrics/track3_candidate_review_v97_narrow_left_squeeze_initial_override_20260710.md
 v80 Track3 diagnostic: Results/metrics/trajectory_event_review_diagnostic_v80_track3_pose_20260710.md
 v94 planning input: Results/metrics/signal_window_summary_v80_track3_pose_path_6s_20260710.md
 ```
@@ -495,7 +496,9 @@ Track3 to `T=10.7,cR=1,cO=2,P=8.8`; v94 obstacle-steer conflict
 attenuation early-stopped Track3 at `T=2.4,cO=1,P=9.6`; v95 early front
 brake marker early-stopped Track3 at `T=2.45,cR=0,cO=0,P=10.0`; v96 severe
 side initial steer override improved Track3 to `P=9.6,cR=0,cO=1` but
-regressed Track1 to `T=4.5,P=10.0`, another short-run artifact.
+regressed Track1 to `T=4.5,P=10.0`, another short-run artifact; v97 narrowed
+the same initial-steer override family and regressed Track3 to
+`T=32.45,cR=13,cO=1,P=4.4`.
 The source was restored to v80 semantics before the next candidate. Next safe controller work must start from fresh failure-window,
 source-level, trajectory evidence, four-direction-only research, or a new
 unified mechanism hypothesis. Do not repeat broad speed clamps, accepted
