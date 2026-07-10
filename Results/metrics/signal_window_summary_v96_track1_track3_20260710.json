@@ -1,0 +1,121 @@
+{
+  "radius_s": 0.25,
+  "signals": [
+    "T",
+    "cR",
+    "cO",
+    "P",
+    "ctrlAlloc.speed",
+    "ctrlAlloc.steer",
+    "ctrlAlloc.steer_oa",
+    "obsAvoidController_Sysblock.chart.df",
+    "obsAvoidController_Sysblock.chart.dl",
+    "obsAvoidController_Sysblock.chart.dr"
+  ],
+  "runs": [
+    {
+      "label": "v96_track3",
+      "run_dir": "Results\\simulations\\controller_v96_severe_side_initial_steer_override_saidao3_120s_20260710",
+      "radius_s": 0.25,
+      "events": [
+        {
+          "time": 1.05,
+          "changes": {
+            "cO": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 10.0,
+              "to": 9.6,
+              "delta": -0.40000000000000036
+            }
+          },
+          "window": {
+            "nearest_time": 1.05,
+            "row_count": 51,
+            "signals": {
+              "T": {
+                "nearest_time": null,
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "cR": {
+                "nearest_time": null,
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "cO": {
+                "nearest_time": null,
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "P": {
+                "nearest_time": null,
+                "nearest": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "ctrlAlloc.speed": {
+                "nearest_time": 1.05,
+                "nearest": 0.719587970368271,
+                "min": 0.671015288182996,
+                "max": 0.781956441902694,
+                "mean": 0.7223429966537914
+              },
+              "ctrlAlloc.steer": {
+                "nearest_time": 1.05,
+                "nearest": 0.162348329446124,
+                "min": 0.154532361286065,
+                "max": 0.166232797751415,
+                "mean": 0.161316491644959
+              },
+              "ctrlAlloc.steer_oa": {
+                "nearest_time": 1.05,
+                "nearest": 0.6,
+                "min": 0.6,
+                "max": 0.6,
+                "mean": 0.6
+              },
+              "obsAvoidController_Sysblock.chart.df": {
+                "nearest_time": 1.05,
+                "nearest": 0.0132355005133597,
+                "min": 0.00107643404080258,
+                "max": 2.06984340507389,
+                "mean": 0.9456844776084243
+              },
+              "obsAvoidController_Sysblock.chart.dl": {
+                "nearest_time": 1.05,
+                "nearest": 0.487614319351268,
+                "min": 0.171042542914018,
+                "max": 0.581979053773424,
+                "mean": 0.40821198602173697
+              },
+              "obsAvoidController_Sysblock.chart.dr": {
+                "nearest_time": 1.05,
+                "nearest": 0.647415687566077,
+                "min": 0.00604254291401751,
+                "max": 0.648852792275656,
+                "mean": 0.41869670672807563
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "v96_track1",
+      "run_dir": "Results\\simulations\\controller_v96_severe_side_initial_steer_override_saidao1_120s_20260710",
+      "radius_s": 0.25,
+      "events": []
+    }
+  ]
+}
