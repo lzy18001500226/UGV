@@ -728,21 +728,22 @@ Results/deliverables/report_drafts/initial_race_report_draft_v13_metrics_2026070
 Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.md
 Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.docx
 Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/QA_NOTE.md
-Results/deliverables/submission_dry_runs/submission_readiness_post_v67_v48_review_20260710.md
-Results/deliverables/submission_dry_runs/submission_candidate_plan_post_v67_v48_review_20260710.md
+Results/deliverables/submission_dry_runs/submission_readiness_post_v69_v48_trajectory_report_20260710.md
+Results/deliverables/submission_dry_runs/submission_candidate_plan_post_v69_v48_trajectory_report_20260710.md
 Results/deliverables/submission_dry_runs/submission_readiness_20260709_124115.md
 Results/deliverables/submission_dry_runs/submission_candidate_plan_20260709_124115.md
 ```
 
-The v48/post-v67 report draft is the current review-ready report surface. The
-DOCX has a structure/content QA note, but no page-render QA because LibreOffice
-is not available on this machine. The M6 and v13 report drafts remain
-historical audit artifacts.
+The v48/post-v69 report draft is the current review-ready report surface. The
+DOCX has a structure/content/image-count QA note and embeds v48 Track1/Track3
+trajectory-event figures, but no page-render QA because LibreOffice is not
+available on this machine. The M6 and v13 report drafts remain historical audit
+artifacts.
 
 `check_submission_readiness.py` currently blocks only on `final_submission_approval_missing` when run without final approval. A local review-only candidate archive may be built for user audit, but final competition email/package sending still requires explicit user approval.
-`plan_submission_candidate.py` now uses the same v48/post-v67 readiness report
-and produces only a non-destructive dry-run manifest unless the user explicitly
-asks for packaging.
+`plan_submission_candidate.py` can consume the current v48/post-v69 readiness
+JSON and produces only a non-destructive dry-run manifest unless the user
+explicitly asks for packaging.
 
 Historical local review-only package:
 

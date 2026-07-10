@@ -1,0 +1,193 @@
+{
+  "generated_at": "2026-07-10T08:12:47+08:00",
+  "repo": "C:\\Users\\HP\\Desktop\\UGV",
+  "ready": false,
+  "final_approval": false,
+  "required_paths": {
+    "model_root": {
+      "path": "Models/UGV",
+      "exists": true,
+      "is_file": false,
+      "is_dir": true,
+      "size_bytes": null
+    },
+    "model_package": {
+      "path": "Models/UGV/package.mo",
+      "exists": true,
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 231
+    },
+    "controller": {
+      "path": "Models/UGV/Control/ObstacleAvoidanceController/ObsAvoidController_Sysblock2.mo",
+      "exists": true,
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 59365
+    },
+    "official_report_template": {
+      "path": "References/official_materials/5-仿真报告模板（仅供参考）/仿真报告模板.docx",
+      "exists": true,
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 41306
+    },
+    "report_draft": {
+      "path": "Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.md",
+      "exists": true,
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 14535
+    },
+    "report_docx_draft": {
+      "path": "Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.docx",
+      "exists": true,
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 157167
+    },
+    "report_render_qa_note": {
+      "path": "Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/QA_NOTE.md",
+      "exists": true,
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 1885
+    },
+    "controller_deployability_static_check": {
+      "path": "Results/evidence/controller_deployability_static_check_v48_reconfirmed_after_v67_20260710.md",
+      "exists": true,
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 801
+    },
+    "one_track_metrics": {
+      "path": "Results/metrics/one_track_tuning_20260708_231430.md",
+      "exists": true,
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 2530
+    },
+    "four_track_summary": {
+      "path": "Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md",
+      "exists": true,
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 3097
+    },
+    "post_v67_attribution_decision": {
+      "path": "Results/metrics/post_v67_v68_attribution_decision_20260710.md",
+      "exists": true,
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 3632
+    },
+    "login_license_recovery_evidence": {
+      "path": "Results/evidence/mworks_login_license_recovery_gui_api_confirmed_20260709.md",
+      "exists": true,
+      "is_file": true,
+      "is_dir": false,
+      "size_bytes": 2253
+    }
+  },
+  "counts": {
+    "tracked_model_files": 72,
+    "tracked_metric_or_evidence_files": 362,
+    "tracked_report_or_workflow_files": 87
+  },
+  "hard_no_edit_zones": [
+    {
+      "path": "Models/UGV/Vehicle",
+      "exists": true,
+      "dirty_entries": []
+    },
+    {
+      "path": "Models/UGV/Road",
+      "exists": true,
+      "dirty_entries": []
+    },
+    {
+      "path": "Models/UGV/saidao",
+      "exists": true,
+      "dirty_entries": []
+    },
+    {
+      "path": "Models/UGV/CountPoint",
+      "exists": true,
+      "dirty_entries": []
+    },
+    {
+      "path": "Models/UGV/Example",
+      "exists": true,
+      "dirty_entries": []
+    },
+    {
+      "path": "References/official_materials",
+      "exists": true,
+      "dirty_entries": []
+    }
+  ],
+  "four_track_gate": {
+    "ready": true,
+    "reason": null,
+    "tracks": [
+      {
+        "track": "UGV.Test.Saidao1Eval",
+        "matched_token": "Saidao1Eval",
+        "present": true,
+        "blocked_or_unavailable": false
+      },
+      {
+        "track": "UGV.Test.Saidao2Eval",
+        "matched_token": "Saidao2Eval",
+        "present": true,
+        "blocked_or_unavailable": false
+      },
+      {
+        "track": "UGV.Test.Saidao3Eval",
+        "matched_token": "Saidao3Eval",
+        "present": true,
+        "blocked_or_unavailable": false
+      },
+      {
+        "track": "UGV.Test.Saidao4Eval",
+        "matched_token": "Saidao4Eval",
+        "present": true,
+        "blocked_or_unavailable": false
+      }
+    ]
+  },
+  "blockers": [
+    {
+      "code": "final_submission_approval_missing",
+      "items": []
+    }
+  ],
+  "package_plan": {
+    "include": [
+      "Models/UGV/",
+      "Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.md",
+      "Results/deliverables/report_drafts/initial_race_report_draft_v48_metrics_20260710.docx",
+      "Results/deliverables/report_drafts/render_check_v48_post_v67_20260710/QA_NOTE.md",
+      "Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md",
+      "Results/metrics/post_v67_v68_attribution_decision_20260710.md",
+      "Results/metrics/one_track_tuning_20260708_231430.md",
+      "Results/evidence/static_model_grounding_20260708_210142.md",
+      "Results/evidence/controller_design_review_20260708_215659.md",
+      "Results/evidence/controller_v1_source_notes_20260708_220257.md",
+      "Results/evidence/controller_deployability_static_check_v48_reconfirmed_after_v67_20260710.md"
+    ],
+    "exclude": [
+      "Results/tmp/",
+      "Scripts/mworks/__pycache__/",
+      "untracked scratch simulation folders unless promoted by manifest",
+      "References/research/ large upstream sources unless cited in report appendix",
+      "final competition email/send action until user approval"
+    ]
+  },
+  "non_claims": [
+    "Does not run MWORKS.",
+    "Does not create final zip.",
+    "Does not send final competition submission email.",
+    "Does not treat final submission as approved by the user."
+  ]
+}
