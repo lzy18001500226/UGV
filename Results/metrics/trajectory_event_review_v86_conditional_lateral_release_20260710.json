@@ -1,0 +1,89 @@
+{
+  "runs": [
+    {
+      "label": "controller_v86_conditional_lateral_release_saidao3",
+      "run_dir": "Results\\simulations\\controller_v86_conditional_lateral_release_saidao3_120s_20260710",
+      "image": "Results\\figures\\trajectory_event_review_v86_conditional_lateral_release_20260710\\controller_v86_conditional_lateral_release_saidao3_trajectory_events.png",
+      "position_columns": [
+        "distanceSensor1.vehicle_position[1]",
+        "distanceSensor1.vehicle_position[2]"
+      ],
+      "time_column": "Time",
+      "score_end": {
+        "T": 120.0,
+        "cR": 4.0,
+        "cO": 1.0,
+        "P": 8.0
+      },
+      "track_geometry": {
+        "track_path": "Models\\UGV\\saidao\\saidao3.mo",
+        "road_points": 106,
+        "obstacle_points": 20,
+        "road_width": null,
+        "obstacle_size": 0.1
+      },
+      "events": [
+        {
+          "event": 1,
+          "time_s": 1.05,
+          "changes": [
+            "cO: 0->1",
+            "P: 10->9.6"
+          ],
+          "x": 1.20002805811357,
+          "y": 0.0799006841740005,
+          "distance_to_road_center": 0.0799006841740005,
+          "distance_to_nearest_obstacle": 0.10607659122575884
+        },
+        {
+          "event": 2,
+          "time_s": 5.65,
+          "changes": [
+            "cR: 0->1",
+            "P: 9.6->9.2"
+          ],
+          "x": 3.78567164955939,
+          "y": 0.464178861886567,
+          "distance_to_road_center": 0.464178861886567,
+          "distance_to_nearest_obstacle": 1.0098332070081348
+        },
+        {
+          "event": 3,
+          "time_s": 7.7,
+          "changes": [
+            "cR: 1->2",
+            "P: 9.2->8.8"
+          ],
+          "x": 4.81644983100225,
+          "y": 0.459120322147911,
+          "distance_to_road_center": 0.459120322147911,
+          "distance_to_nearest_obstacle": 0.47826146346400605
+        },
+        {
+          "event": 4,
+          "time_s": 8.95,
+          "changes": [
+            "cR: 2->3",
+            "P: 8.8->8.4"
+          ],
+          "x": 5.45048798826766,
+          "y": 0.465323960689418,
+          "distance_to_road_center": 0.465323960689418,
+          "distance_to_nearest_obstacle": 0.8979598757823724
+        },
+        {
+          "event": 5,
+          "time_s": 12.7,
+          "changes": [
+            "cR: 3->4",
+            "P: 8.4->8"
+          ],
+          "x": 7.52195970215613,
+          "y": 0.46271183321755,
+          "distance_to_road_center": 0.46271183321755,
+          "distance_to_nearest_obstacle": 1.416718353657598
+        }
+      ]
+    }
+  ]
+}
