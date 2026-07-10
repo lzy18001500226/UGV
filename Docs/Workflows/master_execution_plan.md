@@ -442,14 +442,12 @@ review-ready state, commit/push the phase evidence and continue to the next
 safe phase unless the user explicitly pauses or final submission approval is
 required.
 
-Current cursor: v48 opposing-steer guard is the review-ready best four-track
-wrapper candidate with a runtime caveat after v14-v44 follow-up attempts were
-rejected or proved no-op, v45 was superseded, v46-v52/v54-v58/v61-v67 were
-rejected on Track3, v53/v59 were rejected on Track1, and v60 was rejected on
-Track1/Track3. M1 source grounding, M2 bounded
-baseline, M3 controller design, M4 bounded controller implementation gate, M5
-one-track Race1 tuning review, M6 wrapper-based four-track metric extraction,
-M8 v13 report refresh, and M9 local review-only dry run are complete or
+Current cursor: v80 sharp curve speed cap is the score-leading local wrapper
+candidate with a Track3 runtime caveat after v79/v81/v82/v83/v84 follow-ups
+were rejected as accepted baselines. M1 source grounding, M2 bounded baseline,
+M3 controller design, M4 bounded controller implementation gate, M5 one-track
+Race1 tuning review, M6 wrapper-based four-track metric extraction, historical
+M8 report refreshes, and M9 local review-only dry run are complete or
 review-ready:
 
 ```text
@@ -461,9 +459,11 @@ M5: Results/metrics/one_track_tuning_20260708_231430.md
 M6 baseline: Results/metrics/four_track_summary_20260709_120547.md
 v13 historical accepted: Results/metrics/four_track_summary_v13_side_trigger045_20260709_1535.md
 v45 superseded accepted: Results/metrics/four_track_candidate_review_v45_curvature_speed_regulation_scaled_20260710_0045.md
-v48 current accepted: Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md
-v66 rejected: Results/metrics/track3_candidate_review_v66_road_edge_initial_steer_boost_20260710.md
-v67 latest rejected diagnostic: Results/metrics/track3_candidate_review_v67_nearest_distance_input_diagnostic_20260710.md
+v48 superseded accepted: Results/metrics/four_track_candidate_review_v48_opposing_steer_guard_20260710.md
+v74 superseded accepted: Results/metrics/four_track_candidate_review_v74_guarded_curve_short_lookahead_20260710.md
+v80 current accepted: Results/metrics/four_track_candidate_review_v80_sharp_curve_speed_cap_20260710.md
+v84 latest rejected: Results/metrics/track3_candidate_review_v84_initial_lane_y_bias_20260710.md
+v80 Track3 diagnostic: Results/metrics/trajectory_event_review_diagnostic_v80_track3_pose_20260710.md
 ```
 
 M2 and M4 verified `UGV.Example.Race1` load/check/simulate and score-variable
@@ -472,23 +472,15 @@ wrappers because direct `UGV.saidao.saidao*` source entries omit the
 obstacle-controller wiring needed for current API controller evaluation. The
 latest 120 s wrapper runs may return `simulate_failed` with `exit_state=2`, but
 the enhanced probe reads `T/cR/cO/P` and exports score timeseries after the
-model terminal state. v45 corrected the v44 speed-scale no-op and improved the
-total wrapper score to `36.8` versus v13 `36.4`; v48 superseded v45 at `37.2`
-by reducing Track1 road collisions. Later rejected candidates either did not
-improve collision/score evidence or produced earlier non-comparable terminal
-states. v67 showed that changing the diagnostic wrapper to feed
-`distanceSensor1.DisObstacle` into `front_dist` cleans the runtime state but
-does not improve Track3 `cR/cO/P`, so nearest-distance wrapper input changes
-are not an accepted score route. Next safe controller work must start from
-fresh failure-window, source-level, trajectory evidence, or four-direction-only
-research and a new unified mechanism hypothesis,
-not another blind scalar adjustment, final-steer clipping, simple planner
-suppression, side-trigger threshold scan, side-only decoupling, avoid-release
-change, speed-channel gain escalation, simple startup-speed cap, broad
-path-speed attenuation, brake-arbitration, path-steer neutralization,
-path-authority scalar scan, stronger initial side-gap bypass scan,
-close-side initial-direction scan, direct early steer-feedforward,
-front-clear side-reentry steering, emergency-front reverse-hold scan,
-road-edge initial-steering magnitude scan, or nearest-distance wrapper input
-change. Final package approval remains a
-separate user gate.
+model terminal state. v80 currently totals `38.0` and improves Track4 versus
+v74, while Track3 remains `P=9.2,cR=1,cO=1` with `simulate_failed/T=59.4`.
+v84 initial-lane `y` bias was rejected because it early-stopped Track3 at
+`T=1.2,cO=1`; the source was restored to v80 semantics before the next
+candidate. Next safe controller work must start from fresh failure-window,
+source-level, trajectory evidence, four-direction-only research, or a new
+unified mechanism hypothesis. Do not repeat broad speed clamps, accepted
+baseline scalar scans, final-steer clipping, simple planner suppression,
+negative initial bypass, abrupt lane bias, direct early steer feedforward, the
+same `df < 0.15` road-edge recovery branch, or official wrapper/input changes
+as accepted score routes without new evidence. Final package approval remains
+a separate user gate.

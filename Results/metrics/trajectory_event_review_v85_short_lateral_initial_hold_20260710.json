@@ -1,0 +1,41 @@
+{
+  "runs": [
+    {
+      "label": "controller_v85_short_lateral_initial_hold_saidao3",
+      "run_dir": "Results\\simulations\\controller_v85_short_lateral_initial_hold_saidao3_120s_20260710",
+      "image": "Results\\figures\\trajectory_event_review_v85_short_lateral_initial_hold_20260710\\controller_v85_short_lateral_initial_hold_saidao3_trajectory_events.png",
+      "position_columns": [
+        "distanceSensor1.vehicle_position[1]",
+        "distanceSensor1.vehicle_position[2]"
+      ],
+      "time_column": "Time",
+      "score_end": {
+        "T": 2.55,
+        "cR": 0.0,
+        "cO": 1.0,
+        "P": 9.6
+      },
+      "track_geometry": {
+        "track_path": "Models\\UGV\\saidao\\saidao3.mo",
+        "road_points": 106,
+        "obstacle_points": 20,
+        "road_width": null,
+        "obstacle_size": 0.1
+      },
+      "events": [
+        {
+          "event": 1,
+          "time_s": 1.05,
+          "changes": [
+            "cO: 0->1",
+            "P: 10->9.6"
+          ],
+          "x": 1.20002805811357,
+          "y": 0.0799006841740005,
+          "distance_to_road_center": 0.0799006841740005,
+          "distance_to_nearest_obstacle": 0.10607659122575884
+        }
+      ]
+    }
+  ]
+}
