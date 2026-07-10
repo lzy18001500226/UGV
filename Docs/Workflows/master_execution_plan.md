@@ -443,7 +443,7 @@ safe phase unless the user explicitly pauses or final submission approval is
 required.
 
 Current cursor: v80 sharp curve speed cap is the score-leading local wrapper
-candidate with a Track3 runtime caveat after v79/v81/v82/v83/v84/v85/v86/v87 follow-ups
+candidate with a Track3 runtime caveat after v79/v81/v82/v83/v84/v85/v86/v87/v88 follow-ups
 were rejected as accepted baselines. M1 source grounding, M2 bounded baseline,
 M3 controller design, M4 bounded controller implementation gate, M5 one-track
 Race1 tuning review, M6 wrapper-based four-track metric extraction, historical
@@ -463,7 +463,8 @@ v48 superseded accepted: Results/metrics/four_track_candidate_review_v48_opposin
 v74 superseded accepted: Results/metrics/four_track_candidate_review_v74_guarded_curve_short_lookahead_20260710.md
 v80 current accepted: Results/metrics/four_track_candidate_review_v80_sharp_curve_speed_cap_20260710.md
 v86 rejected: Results/metrics/track3_candidate_review_v86_conditional_lateral_release_20260710.md
-v87 latest rejected: Results/metrics/track2_candidate_review_v87_front_clear_sustained_side_steer_20260710.md
+v87 rejected: Results/metrics/track2_candidate_review_v87_front_clear_sustained_side_steer_20260710.md
+v88 latest rejected: Results/metrics/track2_candidate_review_v88_side_squeeze_speed_hold_20260710.md
 v80 Track3 diagnostic: Results/metrics/trajectory_event_review_diagnostic_v80_track3_pose_20260710.md
 ```
 
@@ -480,12 +481,14 @@ v84 initial-lane `y` bias was rejected because it early-stopped Track3 at
 early-stopped Track3 at `T=2.55,cO=1`; v86 conditional lateral release was
 rejected because it reached `T=120` but regressed Track3 to `P=8.0,cR=4,cO=1`;
 v87 front-clear sustained side steer was rejected because Track2 stayed equal
-to v80 at `T=120,cR=1,cO=0,P=9.6`.
+to v80 at `T=120,cR=1,cO=0,P=9.6`; v88 side-squeeze speed hold was rejected
+because Track2 score stayed equal while runtime regressed to
+`simulate_failed/T=85.15`.
 The source was restored to v80 semantics before the next candidate. Next safe controller work must start from fresh failure-window,
 source-level, trajectory evidence, four-direction-only research, or a new
 unified mechanism hypothesis. Do not repeat broad speed clamps, accepted
 baseline scalar scans, final-steer clipping, simple planner suppression,
-negative initial bypass, abrupt lane bias, direct early steer feedforward, simple lateral-initial-dwell shortening, conditional lateral-release threshold scans, the same front-clear sustained side-steer boost, the
+negative initial bypass, abrupt lane bias, direct early steer feedforward, simple lateral-initial-dwell shortening, conditional lateral-release threshold scans, the same front-clear sustained side-steer boost, side-squeeze speed escalation, the
 same `df < 0.15` road-edge recovery branch, or official wrapper/input changes
 as accepted score routes without new evidence. Final package approval remains
 a separate user gate.
