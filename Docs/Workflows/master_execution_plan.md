@@ -443,7 +443,7 @@ safe phase unless the user explicitly pauses or final submission approval is
 required.
 
 Current cursor: v80 sharp curve speed cap is the score-leading local wrapper
-candidate with a Track3 runtime caveat after v79/v81/v82/v83/v84/v85/v86/v87/v88/v89/v90/v91/v92/v93/v94 follow-ups
+candidate with a Track3 runtime caveat after v79/v81/v82/v83/v84/v85/v86/v87/v88/v89/v90/v91/v92/v93/v94/v95 follow-ups
 were rejected as accepted baselines. M1 source grounding, M2 bounded baseline,
 M3 controller design, M4 bounded controller implementation gate, M5 one-track
 Race1 tuning review, M6 wrapper-based four-track metric extraction, historical
@@ -467,7 +467,8 @@ v87 rejected: Results/metrics/track2_candidate_review_v87_front_clear_sustained_
 v88 rejected: Results/metrics/track2_candidate_review_v88_side_squeeze_speed_hold_20260710.md
 v92 rejected: Results/metrics/track3_candidate_review_v92_front_emergency_straight_hold_20260710.md
 v93 rejected: Results/metrics/track3_candidate_review_v93_emergency_path_speed_suppress_20260710.md
-v94 latest rejected: Results/metrics/track3_candidate_review_v94_oa_steer_conflict_attenuation_20260710.md
+v94 rejected: Results/metrics/track3_candidate_review_v94_oa_steer_conflict_attenuation_20260710.md
+v95 latest rejected: Results/metrics/track3_candidate_review_v95_early_front_brake_marker_20260710.md
 v80 Track3 diagnostic: Results/metrics/trajectory_event_review_diagnostic_v80_track3_pose_20260710.md
 v94 planning input: Results/metrics/signal_window_summary_v80_track3_pose_path_6s_20260710.md
 ```
@@ -490,8 +491,9 @@ because Track2 score stayed equal while runtime regressed to
 `simulate_failed/T=85.15`; v92 front emergency straight hold kept Track3 at
 `P=9.2` with worse runtime; v93 emergency path-speed suppression regressed
 Track3 to `T=10.7,cR=1,cO=2,P=8.8`; v94 obstacle-steer conflict
-attenuation early-stopped Track3 at `T=2.4,cO=1,P=9.6` and is not
-comparable.
+attenuation early-stopped Track3 at `T=2.4,cO=1,P=9.6`; v95 early front
+brake marker early-stopped Track3 at `T=2.45,cR=0,cO=0,P=10.0`. Both are
+short-run artifacts, not accepted score gains.
 The source was restored to v80 semantics before the next candidate. Next safe controller work must start from fresh failure-window,
 source-level, trajectory evidence, four-direction-only research, or a new
 unified mechanism hypothesis. Do not repeat broad speed clamps, accepted

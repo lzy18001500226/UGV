@@ -1,0 +1,24 @@
+{
+  "radius_s": 0.25,
+  "signals": [
+    "T",
+    "cR",
+    "cO",
+    "P",
+    "ctrlAlloc.speed",
+    "ctrlAlloc.steer",
+    "ctrlAlloc.speed_oa",
+    "ctrlAlloc.steer_oa",
+    "obsAvoidController_Sysblock.chart.df",
+    "obsAvoidController_Sysblock.chart.dl",
+    "obsAvoidController_Sysblock.chart.dr"
+  ],
+  "runs": [
+    {
+      "label": "controller_v95_early_front_brake_marker_saidao3_120s_20260710",
+      "run_dir": "Results\\simulations\\controller_v95_early_front_brake_marker_saidao3_120s_20260710",
+      "radius_s": 0.25,
+      "events": []
+    }
+  ]
+}
