@@ -1,9 +1,10 @@
 # High-Score Optimization Strategy
 
 > Research-driven strategy for improving the UGV obstacle-avoidance score after
-> v14-v41 scalar/controller/allocation/timing attempts were rejected.
+> repeated scalar/controller/allocation/timing attempts were rejected.
 
-Status: active strategy after v45 review-ready improvement, 2026-07-10 CST.
+Status: active score-optimization strategy. Current mainline is the v80-based
+high-score sprint toward the 80-point algorithm-model target, 2026-07-10 CST.
 
 ## 1. Current Baseline
 
@@ -30,22 +31,22 @@ Wrapper score evidence:
 | Saidao4Eval | 113.1 | 3 | 0 | 8.8 |
 
 v13 recorded `36.4` total wrapper score in the current four-track evaluation
-set. v45 is now the review-ready best candidate with `36.8` total wrapper
-score. Treat both as local wrapper evidence, not final official `80`-point
-competition claims. The official score formula must be confirmed from official
-materials before final reporting.
+set. v45 improved it to `36.8`, v48 superseded v45 with `37.2`, v74 reached
+`37.6`, and v80 is the current local wrapper best at `38.0`. Treat these as
+local wrapper evidence, not final official `80`-point competition claims.
 
 Current review-ready best candidate:
 
 ```text
-v45 curvature-speed regulation scaled
-PathPlanner cap: abs(steering_angle) > 0.35 -> target_v <= 0.75
-Results/metrics/four_track_candidate_review_v45_curvature_speed_regulation_scaled_20260710_0045.md
+v80 sharp curve speed cap
+PathPlanner cap: abs(steering_angle) > 1.0 and target_v <= 0.55
+Results/metrics/four_track_candidate_review_v80_sharp_curve_speed_cap_20260710.md
+Docs/Design/unified_obstacle_avoidance_v80_plan_20260710.md
 ```
 
 ## 2. Rejected Attempt Lessons
 
-Do not continue v14-v41 style blind scalar/timing scanning.
+Do not continue blind scalar/timing scanning.
 
 Rejected route summary:
 
@@ -59,6 +60,8 @@ Rejected route summary:
 | Speed-channel gain changes | Can produce high-looking but non-comparable early-stop scores. |
 | Side-danger speed regulation | Passed the static gate but did not improve Track1/Track4 against v13. |
 | Steering floor / longer avoid dwell | Steering floor did not improve Track1/Track4; longer avoid release regressed Track1 badly. |
+| v49-v67/v69 nearby routes | Broad path-speed attenuation, brake arbitration, path-authority scans, steering-filter time constants, front emergency hold, nearest-distance wrapper input, and lateral hysteresis did not produce comparable score improvement. |
+| v70-v82 nearby routes | Active-avoid speed clamps, severe-left steering authority, narrow opposing-path authority, front-clear side steer boost, max-steer clipping, higher sharp-curve cap, and small-angle short-lookahead did not beat v80. |
 
 Accepted operating rule:
 
@@ -157,7 +160,26 @@ v13 semantics.
 
 ## 7. Next Execution Plan
 
-Before another controller edit:
+Before another controller edit, follow the current v80 evidence chain:
+
+```text
+Docs/Design/unified_obstacle_avoidance_v80_plan_20260710.md
+Results/metrics/four_track_candidate_review_v80_sharp_curve_speed_cap_20260710.md
+Results/metrics/track2_candidate_review_v82_road_edge_short_lookahead_20260710.md
+```
+
+Immediate mainline:
+
+```text
+start from v80
+pick one mechanism from fresh failure-window or trajectory evidence
+run the weakest justified target gate first
+run four-track regression only if the target gate improves or is neutral
+restore v80 and record rejection if the candidate regresses
+send sparse Chinese terminal email at acceptance/rejection/blocker
+```
+
+Before any later controller edit:
 
 1. Re-read the saved collision-window and signal-window evidence.
 2. Pick one mechanism that explains a specific failure window.

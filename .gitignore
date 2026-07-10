@@ -5,3 +5,5 @@ Models/UGV_backup/
 *.bak
 *.tmp
 ~$*
+Results/simulations/controller_v82_road_edge_short_lookahead_saidao2_120s_20260710/extra_timeseries.csv
+Results/simulations/diagnostic_v80_track2_geometry_120s_20260710/extra_timeseries.csv
