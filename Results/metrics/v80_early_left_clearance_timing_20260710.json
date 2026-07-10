@@ -1,0 +1,394 @@
+[
+  {
+    "label": "v80_t1",
+    "first_dl_thresholds": {
+      "0.45": {
+        "time": 1.37076944576983,
+        "dl": 0.449169226337169,
+        "obsAvoidController_Sysblock.chart.df": 1.37076944576983,
+        "obsAvoidController_Sysblock.chart.dl": 0.449169226337169,
+        "obsAvoidController_Sysblock.chart.dr": 0.605933948220226,
+        "ctrlAlloc.speed": 0.512163249442566,
+        "ctrlAlloc.steer": 0.409612303260547,
+        "ctrlAlloc.steer_pp": 0.113856827166236,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": 0.113856827166236,
+        "pathPlanner.target_v": 1.0
+      },
+      "0.3": {
+        "time": 1.33663200294692,
+        "dl": 0.299808451156657,
+        "obsAvoidController_Sysblock.chart.df": 1.33663200294692,
+        "obsAvoidController_Sysblock.chart.dl": 0.299808451156657,
+        "obsAvoidController_Sysblock.chart.dr": 0.426137494792506,
+        "ctrlAlloc.speed": null,
+        "ctrlAlloc.steer": null,
+        "ctrlAlloc.steer_pp": null,
+        "ctrlAlloc.steer_oa": null,
+        "pathPlanner.steering_angle": null,
+        "pathPlanner.target_v": null
+      },
+      "0.2": {
+        "time": 2.05735744834459,
+        "dl": 0.19806614483216,
+        "obsAvoidController_Sysblock.chart.df": 2.05735744834459,
+        "obsAvoidController_Sysblock.chart.dl": 0.19806614483216,
+        "obsAvoidController_Sysblock.chart.dr": 0.302060492299304,
+        "ctrlAlloc.speed": null,
+        "ctrlAlloc.steer": null,
+        "ctrlAlloc.steer_pp": null,
+        "ctrlAlloc.steer_oa": null,
+        "pathPlanner.steering_angle": null,
+        "pathPlanner.target_v": null
+      },
+      "0.16": {
+        "time": 2.05508764661161,
+        "dl": 0.158734900218089,
+        "obsAvoidController_Sysblock.chart.df": 2.05508764661161,
+        "obsAvoidController_Sysblock.chart.dl": 0.158734900218089,
+        "obsAvoidController_Sysblock.chart.dr": 0.260061624632474,
+        "ctrlAlloc.speed": null,
+        "ctrlAlloc.steer": null,
+        "ctrlAlloc.steer_pp": null,
+        "ctrlAlloc.steer_oa": null,
+        "pathPlanner.steering_angle": null,
+        "pathPlanner.target_v": null
+      },
+      "0.12": {
+        "time": 2.05076333422143,
+        "dl": 0.118074926224851,
+        "obsAvoidController_Sysblock.chart.df": 2.05076333422143,
+        "obsAvoidController_Sysblock.chart.dl": 0.118074926224851,
+        "obsAvoidController_Sysblock.chart.dr": 0.215743625402091,
+        "ctrlAlloc.speed": null,
+        "ctrlAlloc.steer": null,
+        "ctrlAlloc.steer_pp": null,
+        "ctrlAlloc.steer_oa": null,
+        "pathPlanner.steering_angle": null,
+        "pathPlanner.target_v": null
+      },
+      "0.1": {
+        "time": 2.05049938726401,
+        "dl": 0.0987558419147209,
+        "obsAvoidController_Sysblock.chart.df": 2.05049938726401,
+        "obsAvoidController_Sysblock.chart.dl": 0.0987558419147209,
+        "obsAvoidController_Sysblock.chart.dr": 0.194471714646244,
+        "ctrlAlloc.speed": null,
+        "ctrlAlloc.steer": null,
+        "ctrlAlloc.steer_pp": null,
+        "ctrlAlloc.steer_oa": null,
+        "pathPlanner.steering_angle": null,
+        "pathPlanner.target_v": null
+      }
+    },
+    "mins": {
+      "min_dl": {
+        "time": 2.04731601924004,
+        "dl": 0.000780339749295145,
+        "obsAvoidController_Sysblock.chart.df": 2.04731601924004,
+        "obsAvoidController_Sysblock.chart.dl": 0.000780339749295145,
+        "obsAvoidController_Sysblock.chart.dr": 0.0968263525897629,
+        "ctrlAlloc.speed": null,
+        "ctrlAlloc.steer": null,
+        "ctrlAlloc.steer_pp": null,
+        "ctrlAlloc.steer_oa": null,
+        "pathPlanner.steering_angle": null,
+        "pathPlanner.target_v": null
+      }
+    }
+  },
+  {
+    "label": "v80_t2",
+    "first_dl_thresholds": {
+      "0.45": {
+        "time": 2.10127555344562,
+        "dl": 0.446113741240664,
+        "obsAvoidController_Sysblock.chart.df": 2.10127555344562,
+        "obsAvoidController_Sysblock.chart.dl": 0.446113741240664,
+        "obsAvoidController_Sysblock.chart.dr": 0.611049778633461,
+        "ctrlAlloc.speed": 0.5224420615966,
+        "ctrlAlloc.steer": 0.181633059768129,
+        "ctrlAlloc.steer_pp": -0.220539787382678,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.220539787382678,
+        "pathPlanner.target_v": 1.0
+      },
+      "0.3": {
+        "time": 2.07559985681378,
+        "dl": 0.296742309559231,
+        "obsAvoidController_Sysblock.chart.df": 2.07559985681378,
+        "obsAvoidController_Sysblock.chart.dl": 0.296742309559231,
+        "obsAvoidController_Sysblock.chart.dr": 0.131742309559231,
+        "ctrlAlloc.speed": 0.502889374508048,
+        "ctrlAlloc.steer": 0.127940598457004,
+        "ctrlAlloc.steer_pp": -0.342298514004233,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.342298514004233,
+        "pathPlanner.target_v": 1.0
+      },
+      "0.2": {
+        "time": 2.05324625901883,
+        "dl": 0.199139039112363,
+        "obsAvoidController_Sysblock.chart.df": 2.05324625901883,
+        "obsAvoidController_Sysblock.chart.dl": 0.199139039112363,
+        "obsAvoidController_Sysblock.chart.dr": 0.360983605765214,
+        "ctrlAlloc.speed": 0.259313762262806,
+        "ctrlAlloc.steer": 0.0053851832300939,
+        "ctrlAlloc.steer_pp": -0.583641374322057,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.583641374322057,
+        "pathPlanner.target_v": 0.75
+      },
+      "0.16": {
+        "time": 2.05217439399858,
+        "dl": 0.159183942908494,
+        "obsAvoidController_Sysblock.chart.df": 2.05217439399858,
+        "obsAvoidController_Sysblock.chart.dl": 0.159183942908494,
+        "obsAvoidController_Sysblock.chart.dr": 0.321186430691985,
+        "ctrlAlloc.speed": 0.259889462537293,
+        "ctrlAlloc.steer": 0.00442599372719282,
+        "ctrlAlloc.steer_pp": -0.585214334758567,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.585214334758567,
+        "pathPlanner.target_v": 0.75
+      },
+      "0.12": {
+        "time": 2.05142134044526,
+        "dl": 0.119131821765824,
+        "obsAvoidController_Sysblock.chart.df": 2.05142134044526,
+        "obsAvoidController_Sysblock.chart.dl": 0.119131821765824,
+        "obsAvoidController_Sysblock.chart.dr": 0.281305105835398,
+        "ctrlAlloc.speed": 0.259501620586982,
+        "ctrlAlloc.steer": 0.00384965655139763,
+        "ctrlAlloc.steer_pp": -0.586599714510942,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.586599714510942,
+        "pathPlanner.target_v": 0.75
+      },
+      "0.1": {
+        "time": 2.05193622073119,
+        "dl": 0.0999832434377692,
+        "obsAvoidController_Sysblock.chart.df": 2.05193622073119,
+        "obsAvoidController_Sysblock.chart.dl": 0.0999832434377692,
+        "obsAvoidController_Sysblock.chart.dr": 0.262136837876687,
+        "ctrlAlloc.speed": 0.253325198738896,
+        "ctrlAlloc.steer": 0.00536593287159559,
+        "ctrlAlloc.steer_pp": -0.587273015001547,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.587273015001547,
+        "pathPlanner.target_v": 0.75
+      }
+    },
+    "mins": {
+      "min_dl": {
+        "time": 2.05058399705634,
+        "dl": 0.000126126768752788,
+        "obsAvoidController_Sysblock.chart.df": 2.05058399705634,
+        "obsAvoidController_Sysblock.chart.dl": 0.000126126768752788,
+        "obsAvoidController_Sysblock.chart.dr": 0.162941309157466,
+        "ctrlAlloc.speed": 0.254625322175803,
+        "ctrlAlloc.steer": 0.00333291655506096,
+        "ctrlAlloc.steer_pp": -0.590558973584356,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.590558973584356,
+        "pathPlanner.target_v": 0.75
+      }
+    }
+  },
+  {
+    "label": "v80_t3",
+    "first_dl_thresholds": {
+      "0.45": {
+        "time": 0.00107643403871403,
+        "dl": 0.171042542985832,
+        "obsAvoidController_Sysblock.chart.df": 0.00107643403871403,
+        "obsAvoidController_Sysblock.chart.dl": 0.171042542985832,
+        "obsAvoidController_Sysblock.chart.dr": 0.00604254298583229,
+        "ctrlAlloc.speed": 0.506344914676137,
+        "ctrlAlloc.steer": 0.155497889615803,
+        "ctrlAlloc.steer_pp": -0.283772489763424,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.283772489763424,
+        "pathPlanner.target_v": 1.0
+      },
+      "0.3": {
+        "time": 0.00107643403871403,
+        "dl": 0.171042542985832,
+        "obsAvoidController_Sysblock.chart.df": 0.00107643403871403,
+        "obsAvoidController_Sysblock.chart.dl": 0.171042542985832,
+        "obsAvoidController_Sysblock.chart.dr": 0.00604254298583229,
+        "ctrlAlloc.speed": 0.506344914676137,
+        "ctrlAlloc.steer": 0.155497889615803,
+        "ctrlAlloc.steer_pp": -0.283772489763424,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.283772489763424,
+        "pathPlanner.target_v": 1.0
+      },
+      "0.2": {
+        "time": 0.00107643403871403,
+        "dl": 0.171042542985832,
+        "obsAvoidController_Sysblock.chart.df": 0.00107643403871403,
+        "obsAvoidController_Sysblock.chart.dl": 0.171042542985832,
+        "obsAvoidController_Sysblock.chart.dr": 0.00604254298583229,
+        "ctrlAlloc.speed": 0.506344914676137,
+        "ctrlAlloc.steer": 0.155497889615803,
+        "ctrlAlloc.steer_pp": -0.283772489763424,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.283772489763424,
+        "pathPlanner.target_v": 1.0
+      },
+      "0.16": {
+        "time": 2.05010565030487,
+        "dl": 0.159615908698782,
+        "obsAvoidController_Sysblock.chart.df": 2.05010565030487,
+        "obsAvoidController_Sysblock.chart.dl": 0.159615908698782,
+        "obsAvoidController_Sysblock.chart.dr": 0.324214378906969,
+        "ctrlAlloc.speed": 0.253941581917885,
+        "ctrlAlloc.steer": 0.0130705922550672,
+        "ctrlAlloc.steer_pp": -0.571493866316284,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.571493866316284,
+        "pathPlanner.target_v": 0.75
+      },
+      "0.12": {
+        "time": 2.04984315676836,
+        "dl": 0.117500685188594,
+        "obsAvoidController_Sysblock.chart.df": 2.04984315676836,
+        "obsAvoidController_Sysblock.chart.dl": 0.117500685188594,
+        "obsAvoidController_Sysblock.chart.dr": 0.282322554950017,
+        "ctrlAlloc.speed": 0.251861992945503,
+        "ctrlAlloc.steer": 0.0130155521703936,
+        "ctrlAlloc.steer_pp": -0.572851699881116,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.572851699881116,
+        "pathPlanner.target_v": 0.75
+      },
+      "0.1": {
+        "time": 2.0497388436258,
+        "dl": 0.0974502911522542,
+        "obsAvoidController_Sysblock.chart.df": 2.0497388436258,
+        "obsAvoidController_Sysblock.chart.dl": 0.0974502911522542,
+        "obsAvoidController_Sysblock.chart.dr": 0.262328526361185,
+        "ctrlAlloc.speed": 0.25979131722076,
+        "ctrlAlloc.steer": 0.0103450440204109,
+        "ctrlAlloc.steer_pp": -0.573435121619116,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.573435121619116,
+        "pathPlanner.target_v": 0.75
+      }
+    },
+    "mins": {
+      "min_dl": {
+        "time": 2.04951224674507,
+        "dl": 0.000813260382739434,
+        "obsAvoidController_Sysblock.chart.df": 2.04951224674507,
+        "obsAvoidController_Sysblock.chart.dl": 0.000813260382739434,
+        "obsAvoidController_Sysblock.chart.dr": 0.164125609081386,
+        "ctrlAlloc.speed": 0.251618809631727,
+        "ctrlAlloc.steer": 0.0114057644546662,
+        "ctrlAlloc.steer_pp": -0.576217185310373,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.576217185310373,
+        "pathPlanner.target_v": 0.75
+      }
+    }
+  },
+  {
+    "label": "v80_t4",
+    "first_dl_thresholds": {
+      "0.45": {
+        "time": 2.1273832659864,
+        "dl": 0.2825,
+        "obsAvoidController_Sysblock.chart.df": 2.1273832659864,
+        "obsAvoidController_Sysblock.chart.dl": 0.2825,
+        "obsAvoidController_Sysblock.chart.dr": 0.1175,
+        "ctrlAlloc.speed": 0.534638764284854,
+        "ctrlAlloc.steer": 0.183265270104942,
+        "ctrlAlloc.steer_pp": -0.207190089907719,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.207190089907719,
+        "pathPlanner.target_v": 1.0
+      },
+      "0.3": {
+        "time": 2.1273832659864,
+        "dl": 0.2825,
+        "obsAvoidController_Sysblock.chart.df": 2.1273832659864,
+        "obsAvoidController_Sysblock.chart.dl": 0.2825,
+        "obsAvoidController_Sysblock.chart.dr": 0.1175,
+        "ctrlAlloc.speed": 0.534638764284854,
+        "ctrlAlloc.steer": 0.183265270104942,
+        "ctrlAlloc.steer_pp": -0.207190089907719,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.207190089907719,
+        "pathPlanner.target_v": 1.0
+      },
+      "0.2": {
+        "time": 2.05614320971097,
+        "dl": 0.199485287530598,
+        "obsAvoidController_Sysblock.chart.df": 2.05614320971097,
+        "obsAvoidController_Sysblock.chart.dl": 0.199485287530598,
+        "obsAvoidController_Sysblock.chart.dr": 0.361282660781644,
+        "ctrlAlloc.speed": 0.259693787596275,
+        "ctrlAlloc.steer": 0.00981945302230652,
+        "ctrlAlloc.steer_pp": -0.574544809562175,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.574544809562175,
+        "pathPlanner.target_v": 0.75
+      },
+      "0.16": {
+        "time": 2.05427525153786,
+        "dl": 0.159601442385425,
+        "obsAvoidController_Sysblock.chart.df": 2.05427525153786,
+        "obsAvoidController_Sysblock.chart.dl": 0.159601442385425,
+        "obsAvoidController_Sysblock.chart.dr": 0.321621073337044,
+        "ctrlAlloc.speed": 0.251602625539823,
+        "ctrlAlloc.steer": 0.0109122074694818,
+        "ctrlAlloc.steer_pp": -0.577214007780448,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.577214007780448,
+        "pathPlanner.target_v": 0.75
+      },
+      "0.12": {
+        "time": 2.05275248142533,
+        "dl": 0.119196647019822,
+        "obsAvoidController_Sysblock.chart.df": 2.05275248142533,
+        "obsAvoidController_Sysblock.chart.dl": 0.119196647019822,
+        "obsAvoidController_Sysblock.chart.dr": 0.281640549544118,
+        "ctrlAlloc.speed": 0.2603964994542,
+        "ctrlAlloc.steer": 0.00714442566097206,
+        "ctrlAlloc.steer_pp": -0.579473248777586,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.579473248777586,
+        "pathPlanner.target_v": 0.75
+      },
+      "0.1": {
+        "time": 2.05220723879632,
+        "dl": 0.0993587938404025,
+        "obsAvoidController_Sysblock.chart.df": 2.05220723879632,
+        "obsAvoidController_Sysblock.chart.dl": 0.0993587938404025,
+        "obsAvoidController_Sysblock.chart.dr": 0.261504523188854,
+        "ctrlAlloc.speed": 0.253638312012634,
+        "ctrlAlloc.steer": 0.00854825980504859,
+        "ctrlAlloc.steer_pp": -0.580720493102549,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.580720493102549,
+        "pathPlanner.target_v": 0.75
+      }
+    },
+    "mins": {
+      "min_dl": {
+        "time": 2.05117704943839,
+        "dl": 0.000315081594140065,
+        "obsAvoidController_Sysblock.chart.df": 2.05117704943839,
+        "obsAvoidController_Sysblock.chart.dl": 0.000315081594140065,
+        "obsAvoidController_Sysblock.chart.dr": 0.1632880090199,
+        "ctrlAlloc.speed": 0.255879490615491,
+        "ctrlAlloc.steer": 0.00551901462291604,
+        "ctrlAlloc.steer_pp": -0.585434276384563,
+        "ctrlAlloc.steer_oa": 0.6,
+        "pathPlanner.steering_angle": -0.585434276384563,
+        "pathPlanner.target_v": 0.75
+      }
+    }
+  }
+]
