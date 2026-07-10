@@ -1,0 +1,176 @@
+{
+  "runs": [
+    {
+      "label": "v74_track1",
+      "run_dir": "Results\\simulations\\controller_v74_guarded_curve_short_lookahead_saidao1_120s_20260710",
+      "image": "Results\\figures\\trajectory_geometry_review_v74_all_tracks_20260710\\v74_track1_trajectory_events.png",
+      "position_columns": [
+        "distanceSensor1.vehicle_position[1]",
+        "distanceSensor1.vehicle_position[2]"
+      ],
+      "time_column": "Time",
+      "score_end": {
+        "T": 17.4,
+        "cR": 1.0,
+        "cO": 0.0,
+        "P": 9.6
+      },
+      "track_geometry": {
+        "track_path": "Models\\UGV\\saidao\\saidao1.mo",
+        "road_points": 182,
+        "obstacle_points": 24,
+        "road_width": null,
+        "obstacle_size": 0.1
+      },
+      "events": [
+        {
+          "event": 1,
+          "time_s": 4.45,
+          "changes": [
+            "cR: 0->1",
+            "P: 10->9.6"
+          ],
+          "x": 3.00740804293504,
+          "y": 1.85058311631977,
+          "distance_to_road_center": 0.5008584940179924,
+          "distance_to_nearest_obstacle": 3.766909655422161
+        }
+      ]
+    },
+    {
+      "label": "v74_track2",
+      "run_dir": "Results\\simulations\\controller_v74_guarded_curve_short_lookahead_saidao2_120s_20260710",
+      "image": "Results\\figures\\trajectory_geometry_review_v74_all_tracks_20260710\\v74_track2_trajectory_events.png",
+      "position_columns": [
+        "distanceSensor1.vehicle_position[1]",
+        "distanceSensor1.vehicle_position[2]"
+      ],
+      "time_column": "Time",
+      "score_end": {
+        "T": 120.0,
+        "cR": 1.0,
+        "cO": 0.0,
+        "P": 9.6
+      },
+      "track_geometry": {
+        "track_path": "Models\\UGV\\saidao\\saidao2.mo",
+        "road_points": 231,
+        "obstacle_points": 20,
+        "road_width": null,
+        "obstacle_size": 0.1
+      },
+      "events": [
+        {
+          "event": 1,
+          "time_s": 4.7,
+          "changes": [
+            "cR: 0->1",
+            "P: 10->9.6"
+          ],
+          "x": 3.64378939396675,
+          "y": 0.460055913181022,
+          "distance_to_road_center": 0.460055913181022,
+          "distance_to_nearest_obstacle": 1.767029276344525
+        }
+      ]
+    },
+    {
+      "label": "v74_track3",
+      "run_dir": "Results\\simulations\\controller_v74_guarded_curve_short_lookahead_saidao3_120s_20260710",
+      "image": "Results\\figures\\trajectory_geometry_review_v74_all_tracks_20260710\\v74_track3_trajectory_events.png",
+      "position_columns": [
+        "distanceSensor1.vehicle_position[1]",
+        "distanceSensor1.vehicle_position[2]"
+      ],
+      "time_column": "Time",
+      "score_end": {
+        "T": 120.0,
+        "cR": 1.0,
+        "cO": 1.0,
+        "P": 9.2
+      },
+      "track_geometry": {
+        "track_path": "Models\\UGV\\saidao\\saidao3.mo",
+        "road_points": 106,
+        "obstacle_points": 20,
+        "road_width": null,
+        "obstacle_size": 0.1
+      },
+      "events": [
+        {
+          "event": 1,
+          "time_s": 1.05,
+          "changes": [
+            "cO: 0->1",
+            "P: 10->9.6"
+          ],
+          "x": 1.20002805811357,
+          "y": 0.0799006841740005,
+          "distance_to_road_center": 0.0799006841740005,
+          "distance_to_nearest_obstacle": 0.10607659122575884
+        },
+        {
+          "event": 2,
+          "time_s": 4.85,
+          "changes": [
+            "cR: 0->1",
+            "P: 9.6->9.2"
+          ],
+          "x": 3.36390538098197,
+          "y": 0.461582446889224,
+          "distance_to_road_center": 0.461582446889224,
+          "distance_to_nearest_obstacle": 1.3970505089579073
+        }
+      ]
+    },
+    {
+      "label": "v74_track4",
+      "run_dir": "Results\\simulations\\controller_v74_guarded_curve_short_lookahead_saidao4_120s_20260710",
+      "image": "Results\\figures\\trajectory_geometry_review_v74_all_tracks_20260710\\v74_track4_trajectory_events.png",
+      "position_columns": [
+        "distanceSensor1.vehicle_position[1]",
+        "distanceSensor1.vehicle_position[2]"
+      ],
+      "time_column": "Time",
+      "score_end": {
+        "T": 120.0,
+        "cR": 2.0,
+        "cO": 0.0,
+        "P": 9.2
+      },
+      "track_geometry": {
+        "track_path": "Models\\UGV\\saidao\\saidao4.mo",
+        "road_points": 212,
+        "obstacle_points": 20,
+        "road_width": null,
+        "obstacle_size": 0.1
+      },
+      "events": [
+        {
+          "event": 1,
+          "time_s": 4.35,
+          "changes": [
+            "cR: 0->1",
+            "P: 10->9.6"
+          ],
+          "x": 3.65627844918394,
+          "y": 0.463681759119565,
+          "distance_to_road_center": 0.463681759119565,
+          "distance_to_nearest_obstacle": 0.7278803472267056
+        },
+        {
+          "event": 2,
+          "time_s": 104.0,
+          "changes": [
+            "cR: 1->2",
+            "P: 9.6->9.2"
+          ],
+          "x": 10.5042250923779,
+          "y": 12.1557896862413,
+          "distance_to_road_center": 0.4601205917424348,
+          "distance_to_nearest_obstacle": 1.1089138331536756
+        }
+      ]
+    }
+  ]
+}
