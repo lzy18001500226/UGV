@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: v48 opposing-steer guard is the current review-ready best four-track candidate with a runtime caveat; v14-v44 candidates were rejected or no-op, v45 is superseded by v48 score evidence, v46-v52, v54-v58, v61-v67 were rejected on Track3, v53/v59 were rejected on Track1, v60 was rejected on Track1/Track3, and v69 lateral hysteresis was rejected before source edit by saved-signal screening. Post-v69 sparse-reactive research says do not patch another blind controller candidate yet; current report DOCX now embeds v48 Track1/Track3 trajectory-event figures; continue through report/readiness and physical-transfer deliverables while keeping targeted mechanism research open, 2026-07-10 CST.
+Status: v48 opposing-steer guard remains the current review-ready best four-track candidate with a runtime caveat. v70, v71, and v72 follow-ups were tested and rejected as accepted baselines; source semantics were restored to v48. Current mainline remains the high-score sprint toward the 80-point algorithm-model target, not report polish or packaging. Use `Docs/Design/high_score_sprint_v70_plan_20260710.md` and the latest rejection review before another controller edit, 2026-07-10 CST.
 
 ## 0. Startup Chain
 
@@ -25,7 +25,8 @@ load official UGV model
   -> implement/tune obstacle avoidance controller
   -> run four official tracks
   -> collect time/collision/score evidence
-  -> write simulation report
+  -> improve algorithm-model score toward 80/80
+  -> keep report/package evidence as support work only
 ```
 
 ## 2. Current Scope
@@ -51,7 +52,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `v48 review-ready new best with runtime caveat; v14-v44 rejected or no-op, v46-v52/v54-v58/v61-v67 rejected on Track3, v53/v59 rejected on Track1, v60 rejected on Track1/Track3, and v69 lateral hysteresis rejected before source edit. Continue from v48 unless later review rejects it. Post-v67/v68 attribution found no justified new low-risk source patch: the direct allocation-speed route was already rejected by v51, nearest-distance wrapper input was rejected by v67, and lateral left/right hysteresis lacks saved-signal support. Post-v69 sparse-reactive research confirms VFH/FTG/DWA-like ideas cannot be copied directly into the four-scalar controller and do not justify an immediate source patch. Continue deliverable readiness, report QA, physical-transfer notes, and targeted research until a genuinely different deployable four-scalar mechanism appears. M10 physical-transfer notes now keep the v48 parameter table, exhausted mechanism families, and final-race retuning order in Docs/Design/final_race_migration_notes.md; current report DOCX embeds v48 Track1/Track3 trajectory-event figures.`
+Current phase cursor: `v70-v72 high-score sprint continues from v48. v70 active-avoid speed clamp is rejected on Track3. v71 severe-side steering authority improved Track1 to P=9.6/cR=1 but regressed Track4 to P=8.8/cO=1, so it is not accepted. v72 narrow allocation-only path authority did not improve Track1 and early-stopped at T=53.55, so it is rejected. Restored source gate is Results/evidence/controller_deployability_static_check_v48_restored_after_v71_v72_20260710.md. Continue to the next evidence-backed unified mechanism instead of report/package work.`
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
