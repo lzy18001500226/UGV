@@ -1,0 +1,108 @@
+{
+  "runs": [
+    {
+      "label": "v80_track3",
+      "run_dir": "Results\\simulations\\controller_v80_sharp_curve_speed_cap_saidao3_120s_20260710",
+      "score_path": "Results\\simulations\\controller_v80_sharp_curve_speed_cap_saidao3_120s_20260710\\score_timeseries.csv",
+      "runtime_status": "simulate_failed",
+      "simulation_exit_state": 2,
+      "final": {
+        "time_s": 59.4,
+        "road_collisions": 1.0,
+        "obstacle_collisions": 1.0,
+        "avoidance_score": 9.2
+      },
+      "score_values_at_end": {
+        "T": 59.4,
+        "cR": 1.0,
+        "cO": 1.0,
+        "P": 9.2
+      },
+      "event_count": 2,
+      "events": [
+        {
+          "time": 1.05,
+          "changes": {
+            "cO": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 10.0,
+              "to": 9.6,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 4.85,
+          "changes": {
+            "cR": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.6,
+              "to": 9.2,
+              "delta": -0.40000000000000036
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "v92_track3",
+      "run_dir": "Results\\simulations\\controller_v92_front_emergency_straight_hold_saidao3_120s_20260710",
+      "score_path": "Results\\simulations\\controller_v92_front_emergency_straight_hold_saidao3_120s_20260710\\score_timeseries.csv",
+      "runtime_status": "simulate_failed",
+      "simulation_exit_state": 2,
+      "final": {
+        "time_s": 43.9,
+        "road_collisions": 1.0,
+        "obstacle_collisions": 1.0,
+        "avoidance_score": 9.2
+      },
+      "score_values_at_end": {
+        "T": 43.9,
+        "cR": 1.0,
+        "cO": 1.0,
+        "P": 9.2
+      },
+      "event_count": 2,
+      "events": [
+        {
+          "time": 1.1,
+          "changes": {
+            "cO": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 10.0,
+              "to": 9.6,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 6.15,
+          "changes": {
+            "cR": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.6,
+              "to": 9.2,
+              "delta": -0.40000000000000036
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
