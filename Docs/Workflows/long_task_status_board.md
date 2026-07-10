@@ -2,7 +2,7 @@
 
 > Short operational board for the UGV initial-race long task. Keep this file concise; detailed evidence belongs in `Results/`.
 
-Status: high_score_sprint_active_from_v80_after_v79_v81_v82_v83_v84_v85_v86_v87_v88_v89_v90_v91_v92_v93_v94_v95_v96_v97_v98_rejections; v80 sharp curve speed cap is the current score-leading local wrapper candidate with a Track3 runtime caveat; v78 gap-side screening is diagnostic-only and not a safe direct source-edit gate; v70 active-avoid speed clamp, v71 severe-left steering authority, v72 narrow opposing path authority, v73 curve-short lookahead, v75 moderate opposing-path neutralization, v76 front-clear side steer boost, v77 v70 speed clamp on v74, v79 final max-steer clamp, v81 sharp-curve speed cap 0.65, v82 road-edge short lookahead, v83 road-edge recovery, v84 initial-lane y bias, v85 short lateral initial hold, v86 conditional lateral release, v87 front-clear sustained side steer, v88 side-squeeze speed hold, v89 side-squeeze marker/path-neutralization, v90 early brake weight, v91 gap-directed initial steer, v92 front emergency straight hold, v93 emergency path-speed suppression, v94 obstacle-steer conflict attenuation, v95 early front brake marker, v96 severe side initial steer override, v97 narrow left-squeeze initial override, and v98 front-memory left-recovery were rejected as accepted baselines; current mainline is a long algorithm-model score sprint toward the 80-point target, not report polish or packaging, 2026-07-10 CST.
+Status: high_score_sprint_active_from_v80_after_v79_v81_v82_v83_v84_v85_v86_v87_v88_v89_v90_v91_v92_v93_v94_v95_v96_v97_v98_v99_v100_rejections; v80 sharp curve speed cap is the current score-leading local wrapper candidate with a Track3 runtime caveat; v78 gap-side screening is diagnostic-only and not a safe direct source-edit gate; v70 active-avoid speed clamp, v71 severe-left steering authority, v72 narrow opposing path authority, v73 curve-short lookahead, v75 moderate opposing-path neutralization, v76 front-clear side steer boost, v77 v70 speed clamp on v74, v79 final max-steer clamp, v81 sharp-curve speed cap 0.65, v82 road-edge short lookahead, v83 road-edge recovery, v84 initial-lane y bias, v85 short lateral initial hold, v86 conditional lateral release, v87 front-clear sustained side steer, v88 side-squeeze speed hold, v89 side-squeeze marker/path-neutralization, v90 early brake weight, v91 gap-directed initial steer, v92 front emergency straight hold, v93 emergency path-speed suppression, v94 obstacle-steer conflict attenuation, v95 early front brake marker, v96 severe side initial steer override, v97 narrow left-squeeze initial override, v98 front-memory left-recovery, v99 path centerline damping, and v100 side-squeeze initial damping were rejected as accepted baselines; current mainline is a long algorithm-model score sprint toward the 80-point target, not report polish or packaging, 2026-07-11 CST.
 
 ## Current Long Task
 
@@ -109,3 +109,9 @@ M10 final-race / physical-transfer readiness notes
 - Do not use this board as a history ledger.
 - Update only when phase state changes or a review/blocker appears.
 - Long details, logs, screenshots, and metrics must stay under `Results/`.
+- v100 side-squeeze initial damping is rejected at
+  `Results/metrics/track3_candidate_review_v100_side_squeeze_initial_damping_20260711.md`.
+  It changed the lateral avoid initial action from fixed `0.6` to a side-squeeze
+  `0.2` damping rule, but Track3 regressed to `T=120.0,cR=3,cO=1,P=8.4`.
+  Source was restored to v80 semantics and passed
+  `Results/evidence/controller_deployability_static_check_v80_restored_after_v100_20260711.md`.

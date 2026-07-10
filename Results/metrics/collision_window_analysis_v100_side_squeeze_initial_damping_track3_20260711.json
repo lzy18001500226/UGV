@@ -1,0 +1,86 @@
+{
+  "runs": [
+    {
+      "label": "v100_track3",
+      "run_dir": "Results\\simulations\\controller_v100_side_squeeze_initial_damping_stmt_saidao3_120s_20260711",
+      "score_path": "Results\\simulations\\controller_v100_side_squeeze_initial_damping_stmt_saidao3_120s_20260711\\score_timeseries.csv",
+      "runtime_status": "simulate_returned_true",
+      "simulation_exit_state": 0,
+      "final": {
+        "time_s": 120.0,
+        "road_collisions": 3.0,
+        "obstacle_collisions": 1.0,
+        "avoidance_score": 8.4
+      },
+      "score_values_at_end": {
+        "T": 120.0,
+        "cR": 3.0,
+        "cO": 1.0,
+        "P": 8.4
+      },
+      "event_count": 4,
+      "events": [
+        {
+          "time": 1.05,
+          "changes": {
+            "cO": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 10.0,
+              "to": 9.6,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 4.85,
+          "changes": {
+            "cR": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.6,
+              "to": 9.2,
+              "delta": -0.40000000000000036
+            }
+          }
+        },
+        {
+          "time": 26.35,
+          "changes": {
+            "cR": {
+              "from": 1.0,
+              "to": 2.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.2,
+              "to": 8.8,
+              "delta": -0.3999999999999986
+            }
+          }
+        },
+        {
+          "time": 32.45,
+          "changes": {
+            "cR": {
+              "from": 2.0,
+              "to": 3.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 8.8,
+              "to": 8.4,
+              "delta": -0.40000000000000036
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
