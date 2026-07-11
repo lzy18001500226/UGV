@@ -1,0 +1,40 @@
+{
+  "request_id": "candidate-v135-motion-consistent-side-recovery-track1-120s-explicit-state",
+  "model_name": "UGV.Test.Saidao1Eval",
+  "stop_time_requested": 120.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "simulate_failed",
+  "completion": "early_stop_finish_not_observed",
+  "time_s": 86.65,
+  "road_collisions": 7.0,
+  "obstacle_collisions": 1.0,
+  "avoidance_score": 6.8,
+  "finish_distance_squared": 434.2004534766413,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "simulation_exit_state": 2,
+  "simulation_state": "Idle",
+  "exported_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\candidate_v135_motion_consistent_side_recovery_track1_120s_explicit_state_20260712\\score_timeseries.csv",
+  "exported_csv_ok": true,
+  "exported_extra_csv": null,
+  "exported_extra_csv_ok": false,
+  "extra_result_variables": [],
+  "pyapi_messages": {
+    "GetLastErrors": [
+      ""
+    ],
+    "MessageText": "[上一条命令没有日志信息]"
+  },
+  "notes": [],
+  "score_values_at_end": {
+    "T": 86.65,
+    "cR": 7.0,
+    "cO": 1.0,
+    "P": 6.8
+  }
+}

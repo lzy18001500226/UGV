@@ -1,0 +1,29 @@
+{
+  "request_id": "candidate-v135-motion-consistent-side-recovery-track1-1s-20260712",
+  "model_name": "UGV.Test.Saidao1Eval",
+  "stop_time_requested": 1.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "check_model_failed",
+  "completion": "unknown",
+  "time_s": null,
+  "road_collisions": null,
+  "obstacle_collisions": null,
+  "avoidance_score": null,
+  "finish_distance_squared": null,
+  "available_score_variables": [],
+  "missing_score_variables": [],
+  "simulation_exit_state": null,
+  "simulation_state": null,
+  "exported_csv": null,
+  "exported_csv_ok": false,
+  "exported_extra_csv": null,
+  "exported_extra_csv_ok": false,
+  "extra_result_variables": [],
+  "pyapi_messages": {
+    "GetLastErrors": [
+      "错误(2): 编译器错误(549): 状态机内暂不支持if表达式if df > safeF and (dl <= 0.45 or dr <= 0.45) then 1 else -1.\n错误(2): 编译器错误(549): 状态机内暂不支持if表达式if speed > 0 then -0.6 else 0.6.\n错误(2): 编译器错误(549): 状态机内暂不支持if表达式if speed > 0 then -min(0.8, 2 * abs(dl - dr)) else min(0.8, 2 * abs(dl - dr)).\n错误(2): 编译器错误(549): 状态机内暂不支持if表达式if speed > 0 then min(0.8, 2 * abs(dl - dr)) else -min(0.8, 2 * abs(dl - dr))."
+    ],
+    "MessageText": "[上一条命令没有日志信息]"
+  },
+  "notes": []
+}

@@ -1,0 +1,35 @@
+{
+  "request_id": "candidate-v135-motion-consistent-side-recovery-track1-25s-explicit-state",
+  "model_name": "UGV.Test.Saidao1Eval",
+  "stop_time_requested": 25.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "simulate_returned_true",
+  "completion": "simulation_horizon_reached_finish_not_observed",
+  "time_s": 25.0,
+  "road_collisions": 1.0,
+  "obstacle_collisions": 0.0,
+  "avoidance_score": 9.6,
+  "finish_distance_squared": 820.0145305747737,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "simulation_exit_state": 0,
+  "simulation_state": "Idle",
+  "exported_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\candidate_v135_motion_consistent_side_recovery_track1_25s_explicit_state_20260712\\score_timeseries.csv",
+  "exported_csv_ok": true,
+  "exported_extra_csv": null,
+  "exported_extra_csv_ok": false,
+  "extra_result_variables": [],
+  "pyapi_messages": {},
+  "notes": [],
+  "score_values_at_end": {
+    "T": 25.0,
+    "cR": 1.0,
+    "cO": 0.0,
+    "P": 9.6
+  }
+}

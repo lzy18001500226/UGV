@@ -1,0 +1,34 @@
+{
+  "request_id": "candidate-v135-motion-consistent-side-recovery-track1-1s-retry1-20260712",
+  "model_name": "UGV.Test.Saidao1Eval",
+  "stop_time_requested": 1.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "simulate_failed",
+  "completion": "unknown",
+  "time_s": null,
+  "road_collisions": null,
+  "obstacle_collisions": null,
+  "avoidance_score": null,
+  "finish_distance_squared": null,
+  "available_score_variables": [],
+  "missing_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "simulation_exit_state": 1,
+  "simulation_state": "Idle",
+  "exported_csv": null,
+  "exported_csv_ok": false,
+  "exported_extra_csv": null,
+  "exported_extra_csv_ok": false,
+  "extra_result_variables": [],
+  "pyapi_messages": {
+    "GetLastErrors": [
+      "错误(2): 编译器错误(7000): 内部错误, 错误码175.\n错误(3005): 编译模型“UGV.Test.Saidao1Eval”失败。"
+    ],
+    "MessageText": "[上一条命令没有日志信息]"
+  },
+  "notes": []
+}
