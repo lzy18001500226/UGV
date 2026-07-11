@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: completion-first diagnosis with a current MWORKS runtime blocker. The old `38/40` value is only the sum of four avoidance variables and is not an approximately `76/80` official result. Tracks 1-3 have zero verified finishes and Track4 remains unverified. Geometry review found a plausible closed-path topology defect and v117 was prepared, but its first 1 s gate stopped at `L5104-B0` before translation; GUI recovery then lost a safe capture surface. v117 is not evaluated and source is restored to v80 path semantics. Resume from `Results/metrics/track3_candidate_review_v117_closed_loop_path_blocked_20260711.md` and re-establish a passing 1 s health gate before re-applying the candidate, 2026-07-11 CST.
+Status: completion-first structural controller redesign. The old `38/40` value is only the sum of avoidance variables and is not an approximately `76/80` official result. Tracks 1-3 have zero verified finishes and Track4 remains unverified. The MWORKS `-gui` API lane is operational. v117 was fully evaluated and unchanged, v118 regressed Track3 collisions, and v119 stopped abnormally at `T=2.4 s`; all were rejected and v80 source semantics are restored, 2026-07-11 CST.
 
 ## 0. Startup Chain
 
@@ -52,7 +52,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `Treat official completion as the first hard gate. Quantify each path length and actual vehicle progress, diagnose Track1/Track3 abnormal stops with exact variables, and run a bounded Track4 progress probe before changing controller semantics. Accept a unified candidate only for official completion or material repeatable path-progress gain without a new abnormal stop; check collision score second and expand to all four tracks only after the target-track gate improves. v116 is rejected and v80 semantics are restored. Do not repeat rejected scalar speed caps, straight-front caps, initial-steer reversals, broad conflict gates, or short-lookahead scans without new mechanism evidence.`
+Current phase cursor: `Treat official completion as the first hard gate. Continue from restored v80 source only as a comparison baseline. v117-v119 are rejected. Do not repeat scalar speed caps, obstacle-steer attenuation/sign reversal, dwell scans, initial-steer reversals, broad conflict gates, or short-lookahead scans. Plan one bounded structural reactive-controller candidate with hysteresis/state continuity and code-generation-safe outputs; run a target-track completion/progress gate first, then collision regression, then four-track expansion only after a material repeatable gain.`
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
@@ -66,6 +66,8 @@ Latest runtime evidence:
 
 ```text
 Results/metrics/four_track_completion_gate_v80_20260711.md
+Results/metrics/track3_candidate_review_v117_closed_loop_path_blocked_20260711.md
+Results/metrics/track3_candidate_review_v119_conflicting_avoid_offset_suppression_20260711.md
 Results/simulations/controller_v80_finish_gate_saidao1_120s_20260711/
 Results/simulations/controller_v80_finish_gate_saidao2_120s_20260711/
 Results/simulations/controller_v80_finish_gate_saidao3_120s_20260711/
