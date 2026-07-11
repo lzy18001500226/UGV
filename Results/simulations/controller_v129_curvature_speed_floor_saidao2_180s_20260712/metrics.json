@@ -1,0 +1,49 @@
+{
+  "request_id": "v129-saidao2-180",
+  "model_name": "UGV.Test.Saidao2Eval",
+  "stop_time_requested": 180.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "simulate_returned_true",
+  "completion": "simulation_horizon_reached_finish_not_observed",
+  "time_s": 180.0,
+  "road_collisions": 1.0,
+  "obstacle_collisions": 0.0,
+  "avoidance_score": 9.6,
+  "finish_distance_squared": 926.8011003210859,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "simulation_exit_state": 0,
+  "simulation_state": "Idle",
+  "exported_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v129_curvature_speed_floor_saidao2_180s_20260712\\score_timeseries.csv",
+  "exported_csv_ok": true,
+  "exported_extra_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v129_curvature_speed_floor_saidao2_180s_20260712\\extra_timeseries.csv",
+  "exported_extra_csv_ok": true,
+  "extra_result_variables": [
+    "body3DOF1_1.angles[3]",
+    "body3DOF1_1.v[1]",
+    "ctrlAlloc.speed",
+    "ctrlAlloc.speed_oa",
+    "ctrlAlloc.speed_pp",
+    "ctrlAlloc.steer",
+    "ctrlAlloc.steer_oa",
+    "pathPlanner.closest_index",
+    "pathPlanner.path_progress",
+    "pathPlanner.steering_angle",
+    "pathPlanner.target_v",
+    "pathPlanner.x",
+    "pathPlanner.y"
+  ],
+  "pyapi_messages": {},
+  "notes": [],
+  "score_values_at_end": {
+    "T": 180.0,
+    "cR": 1.0,
+    "cO": 0.0,
+    "P": 9.6
+  }
+}

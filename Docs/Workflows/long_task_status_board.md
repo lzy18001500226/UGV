@@ -197,3 +197,9 @@ M10 final-race / physical-transfer readiness notes
   `Results/metrics/four_track_completion_gate_v80_20260711.md`: Tracks 1-3 have
   zero verified finishes and Track4 remains unverified. Historical avoidance
   score sums cannot be converted into official 80-point claims.
+- Track2 v128/v129 anti-crawl candidates are rejected at
+  `Results/metrics/track2_candidate_review_v128_v129_speed_floor_20260712.md`.
+  v128 improved path progress but early-stopped at `T=157.9,cR=1`; v129 ran
+  to 180 s but still had `cR=1` and no official finish. Source is restored to
+  committed v80. Next work is state-transition/conflict diagnosis, not another
+  blind speed-floor scan.
