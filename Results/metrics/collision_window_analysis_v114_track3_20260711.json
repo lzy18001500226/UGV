@@ -1,0 +1,25 @@
+{
+  "runs": [
+    {
+      "label": "v114_track3",
+      "run_dir": "Results\\simulations\\controller_v114_straight_front_speed_cap_saidao3_120s_20260711",
+      "score_path": "Results\\simulations\\controller_v114_straight_front_speed_cap_saidao3_120s_20260711\\score_timeseries.csv",
+      "runtime_status": "simulate_failed",
+      "simulation_exit_state": 2,
+      "final": {
+        "time_s": 1.6,
+        "road_collisions": 0.0,
+        "obstacle_collisions": 0.0,
+        "avoidance_score": 10.0
+      },
+      "score_values_at_end": {
+        "T": 1.6,
+        "cR": 0.0,
+        "cO": 0.0,
+        "P": 10.0
+      },
+      "event_count": 0,
+      "events": []
+    }
+  ]
+}
