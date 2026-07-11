@@ -218,3 +218,12 @@ M10 final-race / physical-transfer readiness notes
   backups. Neither restore nor discard was performed. Recommended decision is
   to discard the backup and retain verified committed v80, then rerun the v80
   1 s control probe before reapplying v131.
+- Sysplorer recovery is now operational: the unchanged v80 Track2 1 s probe
+  reached load/check/simulate with `exit_state=0`. v131 also passed its static
+  and 1 s gates, but its bounded Track2 180 s run timed out after eight minutes
+  without metrics or exports. It is rejected for the same runtime-efficiency
+  regression as v130 and source is restored to v80. Evidence:
+  `Results/metrics/track2_candidate_review_v131_noevent_handoff_20260712.md`.
+  The next candidate must not be another same-direction threshold handoff or
+  speed-floor variant; it needs a distinct, evidence-backed Track2
+  state-transition/conflict mechanism.

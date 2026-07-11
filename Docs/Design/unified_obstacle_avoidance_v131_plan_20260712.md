@@ -1,6 +1,6 @@
 # Unified obstacle avoidance v131 plan
 
-Status: runtime candidate superseding v130.
+Status: rejected after bounded Track2 long-run gate.
 
 ## Goal
 
@@ -28,15 +28,20 @@ v80 behavior outside the same-direction sharp-turn state remains unchanged.
    gain without collision regression.
 5. Restore committed v80 source exactly on rejection.
 
-## Current result
+## Result
 
-The static checker passed with `high=0`, `medium=0`, and the targeted test suite
-passed (`7 passed`). Runtime validation is inconclusive: three bounded 1 s
-attempts stopped making progress inside `StartSysplorer` before model open,
-check, or translation. Restarting only the stale Sysplorer client did not
-restore the API channel. This is not evidence that v131 translates or fails to
-translate.
+The recovery state was cleared without restoring the old backup. An unchanged
+v80 Track2 1 s probe then passed load, check, and simulation. v131 subsequently
+passed its static gate (`high=0`, `medium=0`), targeted tests (`7 passed`), and
+the Track2 1 s translation/runtime gate with `simulate_returned_true` and
+`exit_state=0`.
 
-The candidate source was removed and committed v80 was restored exactly while
-the design remains pending runtime validation. Do not accept v131 or expand it
-to other tracks until a fresh 1 s probe crosses the model-check gate.
+The decisive Track2 180 s fixed-solver gate did not finish within the bounded
+eight-minute wall-clock budget and produced no `metrics.json` or score export.
+Its dedicated Sysplorer process tree was stopped after the timeout. Therefore
+`noEvent` did not remove the long-run runtime-efficiency regression observed in
+v130. v131 is rejected, is not expanded to other tracks, and
+`Models/UGV/Control/ControlAllocate/package.mo` is restored exactly to committed
+v80.
+
+See `Results/metrics/track2_candidate_review_v131_noevent_handoff_20260712.md`.
