@@ -36,6 +36,7 @@ Results/evidence/controller_deployability_static_check_v133_reverse_motion_escap
 Results/evidence/controller_deployability_static_check_v80_restored_after_v133_20260712.md
 Results/evidence/pytest_v133_reverse_motion_escape_final_20260712.console.txt
 Results/evidence/pytest_v80_restored_after_v133_20260712.console.txt
+Results/evidence/notification_delivery_note_v133_rejected_20260712.md
 ```
 
 ## Rollback And Next Constraint
