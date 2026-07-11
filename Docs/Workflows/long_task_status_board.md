@@ -203,3 +203,11 @@ M10 final-race / physical-transfer readiness notes
   to 180 s but still had `cR=1` and no official finish. Source is restored to
   committed v80. Next work is state-transition/conflict diagnosis, not another
   blind speed-floor scan.
+- Track2 v130/v131 same-direction steering handoff review is at
+  `Results/metrics/track2_candidate_review_v130_v131_handoff_20260712.md`.
+  v130 passed 1 s but its 180 s run produced no result after a bounded ~10 min
+  and is rejected for runtime-efficiency regression. v131 static gates passed,
+  but three 1 s attempts remained blocked in `StartSysplorer` before model
+  check, including after restarting only the stale client. Source is restored
+  to committed v80. Recovery must prove an unchanged v80 1 s probe before
+  reapplying v131; no finish or score gain is claimed.
