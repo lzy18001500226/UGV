@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: completion-first controller redesign. The old `38/40` value is only the sum of avoidance variables and is not an approximately `76/80` official result. Tracks 1-3 have zero verified finishes and Track4 remains unverified. The MWORKS `-gui` API lane is operational. v123 external predictive signal and v124 native derivative risk were rejected at the 1 s translation gate: the generated Sysblock accepts neither the added derived-signal path nor `der`. v80 source semantics are restored, 2026-07-11 CST.
+Status: completion-first controller redesign. The old `38/40` value is only the sum of avoidance variables and is not an approximately `76/80` official result. Tracks 1-3 have zero verified finishes and Track4 remains unverified. The MWORKS `-gui` API lane is operational. v125-v126 four-distance longitudinal-tier candidates are rejected: v125 terminated off-route and v126 ran 120 s with worse end distance than v80. v80 source semantics are restored, 2026-07-11 CST.
 
 ## 0. Startup Chain
 
@@ -52,7 +52,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `Treat official completion as the first hard gate. Continue from restored v80 source only as a comparison baseline. v117-v124 are rejected. Do not repeat prior scalar/state scans, external derived-signal ports, native der, or prediction-horizon tuning. Choose a genuinely different code-generation-safe mechanism using the existing four instantaneous distances, or prepare a separately reviewed interface-expansion design before changing wiring. Run a target-track translation/completion gate first, then collision regression, then four-track expansion only after a material repeatable gain.`
+Current phase cursor: `Treat official completion as the first hard gate. Continue from restored v80 source only as a comparison baseline. v117-v126 are rejected. v125-v126 show that four-distance longitudinal tiering can remove the persistent-low-speed symptom but cannot preserve route direction or achieve Track2 completion. Do not repeat prior scalar/state scans, external derived-signal ports, native der, prediction-horizon tuning, or this longitudinal-tier family. The next design must establish path/heading consistency through a separately reviewed interface or state mechanism. Run a target-track translation/completion gate first, then collision regression, then four-track expansion only after a material repeatable gain.`
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
