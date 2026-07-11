@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: completion-first structural controller redesign. The old `38/40` value is only the sum of avoidance variables and is not an approximately `76/80` official result. Tracks 1-3 have zero verified finishes and Track4 remains unverified. The MWORKS `-gui` API lane is operational. v117 was fully evaluated and unchanged, v118 regressed Track3 collisions, and v119 stopped abnormally at `T=2.4 s`; all were rejected and v80 source semantics are restored, 2026-07-11 CST.
+Status: completion-first structural controller redesign. The old `38/40` value is only the sum of avoidance variables and is not an approximately `76/80` official result. Tracks 1-3 have zero verified finishes and Track4 remains unverified. The MWORKS `-gui` API lane is operational. v120 persistent lateral continuity, v121 continuity plus direction hysteresis, and v122 coherent gap-directed entry all regressed Track3; all were rejected and v80 source semantics are restored, 2026-07-11 CST.
 
 ## 0. Startup Chain
 
@@ -52,7 +52,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `Treat official completion as the first hard gate. Continue from restored v80 source only as a comparison baseline. v117-v119 are rejected. Do not repeat scalar speed caps, obstacle-steer attenuation/sign reversal, dwell scans, initial-steer reversals, broad conflict gates, or short-lookahead scans. Plan one bounded structural reactive-controller candidate with hysteresis/state continuity and code-generation-safe outputs; run a target-track completion/progress gate first, then collision regression, then four-track expansion only after a material repeatable gain.`
+Current phase cursor: `Treat official completion as the first hard gate. Continue from restored v80 source only as a comparison baseline. v117-v122 are rejected. Do not repeat scalar speed caps, obstacle-steer attenuation/sign reversal, dwell scans, initial-steer reversals, broad conflict gates, short-lookahead scans, persistent lateral-state release, direction-hysteresis widths, or combinations of those rejected gap-state pieces. Reassess the four-distance controller's observable-state limits and choose a different code-generation-safe completion mechanism; run a target-track completion/progress gate first, then collision regression, then four-track expansion only after a material repeatable gain.`
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or

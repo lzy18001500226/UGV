@@ -1,0 +1,41 @@
+{
+  "request_id": "UGV-V122-TRACK3-1S-20260711",
+  "model_name": "UGV.Test.Saidao3Eval",
+  "stop_time_requested": 1.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "simulate_returned_true",
+  "completion": "simulation_horizon_reached_finish_not_observed",
+  "time_s": 1.0,
+  "road_collisions": 0.0,
+  "obstacle_collisions": 0.0,
+  "avoidance_score": 10.0,
+  "finish_distance_squared": 1.374125560844293,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "simulation_exit_state": 0,
+  "simulation_state": "Idle",
+  "exported_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v122_coherent_gap_state_saidao3_1s_20260711\\score_timeseries.csv",
+  "exported_csv_ok": true,
+  "exported_extra_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\controller_v122_coherent_gap_state_saidao3_1s_20260711\\extra_timeseries.csv",
+  "exported_extra_csv_ok": true,
+  "extra_result_variables": [
+    "ctrlAlloc.steer_oa",
+    "ctrlAlloc.steer_pp",
+    "obsAvoidController_Sysblock.chart.flag",
+    "pathPlanner.closest_index",
+    "pathPlanner.path_progress"
+  ],
+  "pyapi_messages": {},
+  "notes": [],
+  "score_values_at_end": {
+    "T": 1.0,
+    "cR": 0.0,
+    "cO": 0.0,
+    "P": 10.0
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "all_variable_count": 19172,
+  "timevarying_variable_count": 19169,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "extra_result_variables": [
+    "ctrlAlloc.steer_oa",
+    "ctrlAlloc.steer_pp",
+    "obsAvoidController_Sysblock.chart.flag",
+    "pathPlanner.closest_index",
+    "pathPlanner.path_progress"
+  ]
+}
