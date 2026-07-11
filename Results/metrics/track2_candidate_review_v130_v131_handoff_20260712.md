@@ -46,6 +46,12 @@ On a healthy Sysplorer API channel, first run an unchanged v80 1 s control
 probe. Only if that passes should v131 be reapplied from its design and tested.
 Do not diagnose v131 syntax from the current connection blocker.
 
+The follow-up unchanged-v80 control probe identified the concrete blocker as a
+Sysplorer `自动恢复` modal rather than login or candidate code. See
+`Results/evidence/sysplorer_auto_recovery_blocker_v80_20260712.md`. Discarding
+or restoring the listed backup requires a user decision before runtime work
+continues.
+
 ## Non-claims
 
 - No official finish.

@@ -211,3 +211,10 @@ M10 final-race / physical-transfer readiness notes
   check, including after restarting only the stale client. Source is restored
   to committed v80. Recovery must prove an unchanged v80 1 s probe before
   reapplying v131; no finish or score gain is claimed.
+- The unchanged-v80 recovery probe found the API root blocker:
+  `Results/evidence/sysplorer_auto_recovery_blocker_v80_20260712.md`.
+  Sysplorer is responsive but blocked by an `自动恢复` modal for a UGV backup
+  from approximately 00:46. Closing it asks permission to discard all listed
+  backups. Neither restore nor discard was performed. Recommended decision is
+  to discard the backup and retain verified committed v80, then rerun the v80
+  1 s control probe before reapplying v131.
