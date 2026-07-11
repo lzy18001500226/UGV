@@ -211,19 +211,21 @@ M10 final-race / physical-transfer readiness notes
   check, including after restarting only the stale client. Source is restored
   to committed v80. Recovery must prove an unchanged v80 1 s probe before
   reapplying v131; no finish or score gain is claimed.
-- The unchanged-v80 recovery probe found the API root blocker:
+- Historical recovery note: the unchanged-v80 recovery probe found the API root blocker:
   `Results/evidence/sysplorer_auto_recovery_blocker_v80_20260712.md`.
   Sysplorer is responsive but blocked by an `自动恢复` modal for a UGV backup
   from approximately 00:46. Closing it asks permission to discard all listed
-  backups. Neither restore nor discard was performed. Recommended decision is
-  to discard the backup and retain verified committed v80, then rerun the v80
-  1 s control probe before reapplying v131.
+  backups. The recovery state no longer blocks the API: the subsequent v80
+  one-second control probe passed load/check/simulate. Do not treat this
+  historical modal note as an active blocker.
 - Sysplorer recovery is now operational: the unchanged v80 Track2 1 s probe
   reached load/check/simulate with `exit_state=0`. v131 also passed its static
   and 1 s gates, but its bounded Track2 180 s run timed out after eight minutes
   without metrics or exports. It is rejected for the same runtime-efficiency
   regression as v130 and source is restored to v80. Evidence:
   `Results/metrics/track2_candidate_review_v131_noevent_handoff_20260712.md`.
-  The next candidate must not be another same-direction threshold handoff or
-  speed-floor variant; it needs a distinct, evidence-backed Track2
-  state-transition/conflict mechanism.
+  The next step is an unchanged-v80 Track2 700 s completion-horizon baseline:
+  the existing 120 s and 180 s samples are too short to decide whether this
+  route can ever return to the official origin. Do not interpret a horizon-only
+  stop as an algorithm rejection. After that baseline, any new candidate must
+  be distinct from same-direction threshold handoff and speed-floor variants.
