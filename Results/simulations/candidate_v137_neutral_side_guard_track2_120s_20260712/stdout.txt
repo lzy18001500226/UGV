@@ -1,0 +1,20 @@
+{"name": "preflight_paths", "status": "ok", "package_mo": "C:\\Users\\HP\\Desktop\\UGV\\Models\\UGV\\package.mo", "result_root": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\candidate_v137_neutral_side_guard_track2_120s_20260712\\native_result"}
+{"name": "import_mworks_sysplorer", "status": "ok", "module": "<module 'mworks.sysplorer' from 'D:\\\\Program Files\\\\MWORKS\\\\Sysplorer 2026a\\\\External\\\\python64\\\\Lib\\\\site-packages\\\\mworks\\\\sysplorer\\\\__init__.py'>"}
+��������...
+���ӳɹ�!
+{"name": "start_sysplorer", "status": "ok", "process_path": "D:\\Program Files\\MWORKS\\Sysplorer 2026a\\Bin64\\mworks.exe", "start_mode": "-gui"}
+{"name": "open_dependency_model_file", "status": "ok", "path": "D:\\Program Files\\MWORKS\\Sysplorer 2026a\\Library\\TADynamics 1.3.2\\TADynamics\\TADynamics.mol", "result": "True"}
+{"name": "open_model_file", "status": "ok", "result": "True"}
+{"name": "open_model", "status": "ok", "result": "True"}
+{"name": "check_model", "status": "ok", "result": "True"}
+{"name": "simulate_model", "status": "ok", "result": "True", "kwargs": {"modelName": "UGV.Test.Saidao2Eval", "options": {"startTime": 0, "stopTime": 120.0, "path": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\candidate_v137_neutral_side_guard_track2_120s_20260712\\native_result", "algorithm": "Dassl", "interval": 0.05, "translationEvaluateParametersToReduceModels": true, "translationCheckConnection_Strictly": false, "compileSolver64": 1, "compileOptions": 0}}}
+{"name": "simulation_state", "status": "ok", "exit_state": 0, "simulation_state": "Idle"}
+{"name": "result_variables", "status": "ok", "total": 27421, "timevarying": 27418, "available_score_variables": ["T", "cR", "cO", "P"], "missing_score_variables": [], "extra_result_variables": ["ctrlAlloc.speed", "ctrlAlloc.speed_oa", "distanceSensor1.d", "distanceSensor1.vehicle_position[1]", "distanceSensor1.vehicle_position[2]", "obsAvoidController_Sysblock.chart.df", "obsAvoidController_Sysblock.chart.dl", "obsAvoidController_Sysblock.chart.dr", "obsAvoidController_Sysblock.chart.speed", "obsAvoidController_Sysblock.chart.steer", "pathPlanner.closest_index", "pathPlanner.path_progress"]}
+{"name": "score_values_at_end", "status": "ok", "values": {"T": 120.0, "cR": 2.0, "cO": 0.0, "P": 9.2}}
+{"name": "official_finish_distance_at_end", "status": "ok", "variable": "distanceSensor1.d", "value": 329.7866977251163}
+{"name": "export_score_timeseries", "status": "ok", "path": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\candidate_v137_neutral_side_guard_track2_120s_20260712\\score_timeseries.csv"}
+{"name": "export_extra_timeseries", "status": "ok", "path": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\candidate_v137_neutral_side_guard_track2_120s_20260712\\extra_timeseries.csv", "variables": ["ctrlAlloc.speed", "ctrlAlloc.speed_oa", "distanceSensor1.d", "distanceSensor1.vehicle_position[1]", "distanceSensor1.vehicle_position[2]", "obsAvoidController_Sysblock.chart.df", "obsAvoidController_Sysblock.chart.dl", "obsAvoidController_Sysblock.chart.dr", "obsAvoidController_Sysblock.chart.speed", "obsAvoidController_Sysblock.chart.steer", "pathPlanner.closest_index", "pathPlanner.path_progress"]}
+{"name": "diagnostic_values_at_end", "status": "ok", "values": {"countPoint.roadHit": 1.0, "countPoint.obsHit": 0.0}}
+{"name": "termination_classification", "status": "ok", "reason": "configured_horizon", "messages": {"GetLastErrors": [""], "MessageText": "[��һ������û����־��Ϣ]"}}
+The process has exited, and the return code is:  0
+{"name": "engine_exit", "status": "ok"}

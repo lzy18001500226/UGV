@@ -61,5 +61,31 @@ class ManifestNotesTests(unittest.TestCase):
         self.assertTrue(any("finish was not observed" in note for note in notes))
 
 
+class TerminationReasonClassificationTests(unittest.TestCase):
+    def test_official_finish_has_priority(self):
+        self.assertEqual(
+            MODULE.classify_termination_reason(
+                "finish_reached_official_origin_assertion", False, {"road.assertlevel": 2}
+            ),
+            "official_finish_assertion",
+        )
+
+    def test_true_return_is_configured_horizon(self):
+        self.assertEqual(
+            MODULE.classify_termination_reason(
+                "simulation_horizon_reached_finish_not_observed", True, {}
+            ),
+            "configured_horizon",
+        )
+
+    def test_road_assertlevel_parameter_does_not_prove_assertion(self):
+        self.assertEqual(
+            MODULE.classify_termination_reason(
+                "early_stop_finish_not_observed", False, {"road.assertlevel": 2}
+            ),
+            "unclassified_early_termination",
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

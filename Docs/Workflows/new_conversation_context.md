@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: completion-first controller redesign. The old `38/40` value is only the sum of avoidance variables and is not an approximately `76/80` official result. Tracks 1-3 have zero verified finishes and Track4 remains unverified. The MWORKS `-gui` API lane is operational. v125-v127 completion candidates are rejected: v125 terminated off-route, v126 ended farther from the finish than v80, and v127's transient steering introduced three Track2 obstacle collisions. v80 source semantics are restored, 2026-07-11 CST.
+Status: completion-first controller redesign. The old `38/40` value is only the sum of avoidance variables and is not an approximately `76/80` official result. Tracks 1-3 have zero verified finishes and Track4 remains unverified. The MWORKS `-gui` API lane is operational. v137 reached Track2 index 112 at 120 s but added a road collision, so it is rejected; v80 source semantics are restored, 2026-07-12 CST. Continue from the status board and do not treat wrapper score as official completion.
 
 ## 0. Startup Chain
 

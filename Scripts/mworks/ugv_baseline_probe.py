@@ -42,6 +42,15 @@ def classify_track_completion(time_s, finish_distance_squared, sim_result: bool)
     return "early_stop_finish_not_observed"
 
 
+def classify_termination_reason(completion: str, sim_result: bool, diagnostic_values: dict) -> str:
+    """Classify a false simulation return using exported official-model state."""
+    if completion == "finish_reached_official_origin_assertion":
+        return "official_finish_assertion"
+    if sim_result:
+        return "configured_horizon"
+    return "unclassified_early_termination"
+
+
 def collect_pyapi_messages(pyapi) -> dict:
     messages: dict = {}
     for name in ("GetLastErrors", "MessageText"):
@@ -262,6 +271,8 @@ def main() -> int:
         "exported_extra_csv_ok": False,
         "extra_result_variables": [],
         "pyapi_messages": {},
+        "termination_reason": "not_classified",
+        "diagnostic_values_at_end": {},
         "notes": [],
     }
     sysplorer_started = False
@@ -418,12 +429,22 @@ def main() -> int:
             record_step(steps, "simulation_state", "exception", error=repr(exc))
 
         score_vars = ["T", "cR", "cO", "P"]
+        diagnostic_vars = [
+            "countPoint.roadHit",
+            "countPoint.obsHit",
+            "pathPlanner.closest_index",
+            "pathPlanner.path_progress",
+            "distanceSensor1.vehicle_position[1]",
+            "distanceSensor1.vehicle_position[2]",
+        ]
+        diagnostic_available = []
         try:
             all_vars = list(pyapi.GetResultVariables(0))
             time_vars = list(pyapi.GetResultVariables(2))
             available = [name for name in score_vars if name in all_vars]
             missing = [name for name in score_vars if name not in all_vars]
             extra_available = [name for name in args.extra_var if name in all_vars]
+            diagnostic_available = [name for name in diagnostic_vars if name in all_vars]
             for needle in args.extra_var_substring:
                 extra_available.extend([name for name in all_vars if needle in name])
             extra_available = sorted(set(extra_available))
@@ -523,6 +544,28 @@ def main() -> int:
                 )
             except Exception as exc:  # noqa: BLE001
                 record_step(steps, "export_extra_timeseries", "exception", error=repr(exc))
+
+        diagnostic_values = {}
+        if diagnostic_available:
+            try:
+                values = pyapi.GetVarsValueAt(diagnostic_available, pyapi.SimulationTime.End)
+                diagnostic_values = dict(zip(diagnostic_available, safe_json_value(values)))
+                metrics["diagnostic_values_at_end"] = diagnostic_values
+                record_step(steps, "diagnostic_values_at_end", "ok", values=diagnostic_values)
+            except Exception as exc:  # noqa: BLE001
+                record_step(steps, "diagnostic_values_at_end", "exception", error=repr(exc))
+
+        metrics["termination_reason"] = classify_termination_reason(
+            metrics["completion"], bool(sim_result), diagnostic_values
+        )
+        metrics["pyapi_messages_after_result_export"] = collect_pyapi_messages(pyapi)
+        record_step(
+            steps,
+            "termination_classification",
+            "ok",
+            reason=metrics["termination_reason"],
+            messages=metrics["pyapi_messages_after_result_export"],
+        )
 
         return_code = 0 if sim_result or metrics["completion"] == "finish_reached_official_origin_assertion" else 5
         return return_code
