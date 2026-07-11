@@ -169,11 +169,17 @@ MWORKS model terminal states return `False` while still leaving readable
 
 ```text
 runtime_status = simulate_failed
-completion = simulate_false_with_result_variables; inspect messages/assertions
+completion = finish_reached_official_origin_assertion only when all are true:
+  SimulateModel returned false, T > 10, and distanceSensor1.d < 0.02 at termination
 ```
 
-This is usable review evidence when `T/cR/cO/P` are present, but it must not be
-reported as an ordinary clean simulation return.
+Readable `T/cR/cO/P` after a false return are usable review evidence, but a
+false return is not automatically a completed track. The probe records
+`early_stop_finish_not_observed` unless the three-part official finish rule is
+met. Conversely, `simulate_returned_true` is always
+`simulation_horizon_reached_finish_not_observed`, even if the terminal sample
+is close to the origin. It must not be reported as an ordinary clean
+simulation return or an official finish.
 
 ## 5. Four-Track Gate G3
 

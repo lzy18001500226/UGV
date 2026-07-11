@@ -48,6 +48,7 @@ runtime:
 status:
 completion:
 time_s:
+finish_distance_squared:
 road_collisions:
 obstacle_collisions:
 avoidance_score:
@@ -68,8 +69,8 @@ produce readable metrics.
 | translate_passed | Model translated/compiled. |
 | simulate_started | Simulation started but no final score yet. |
 | bounded_runtime_gate | Bounded finite-stop simulation completed and key variables are readable; not full-track completion. |
-| run_completed | One track completed with metrics. |
-| four_track_completed | All four official tracks completed with metrics. |
+| run_completed | One track reached the source-defined official finish assertion: `SimulateModel` returned `false`, `time_s > 10`, and `distanceSensor1.d < 0.02` at termination, with metrics saved. A configured stop horizon is not completion. |
+| four_track_completed | All four official tracks meet `run_completed` with metrics. |
 | report_ready | Report draft references reproducible evidence. |
 
 ## 3. Evidence Rules
@@ -79,3 +80,8 @@ produce readable metrics.
 3. A screenshot is review evidence, not enough for scoring by itself.
 4. A report claim must cite a run folder or metric artifact.
 5. If metrics extraction is manual, record exactly where the number was read.
+6. The official finish source is `Models/UGV/Vehicle/Sensors/distanceSensor1.mo`:
+   its assertion terminates only after `time > 10` and
+   `distanceSensor1.d < 0.02`. Record `finish_distance_squared` in every
+   completion candidate manifest. A `true` simulation return is a configured
+   horizon stop, not proof that this assertion fired.

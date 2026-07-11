@@ -2,7 +2,7 @@
 
 > Short operational board for the UGV initial-race long task. Keep this file concise; detailed evidence belongs in `Results/`.
 
-Status: completion-first controller redesign after v133 rejection. The official origin-return gate remains the first acceptance criterion. Tracks 1-3 have `0/3` verified finishes and Track4 remains unverified. v133 reverse-motion lateral mapping is rejected after Track2 stopped at `T=91.0` with `cR=1`, `P=9.6`; v80 source semantics are restored, 2026-07-12 CST.
+Status: completion-first controller redesign after v133 rejection. The official origin-return gate remains the first acceptance criterion: `SimulateModel=false`, `T>10`, and `distanceSensor1.d<0.02` at termination. A fixed stop horizon is not a finish. Tracks 1-3 have `0/3` verified finishes and Track4 remains unverified. v133 reverse-motion lateral mapping is rejected after Track2 stopped at `T=91.0` with `cR=1`, `P=9.6`; v80 source semantics are restored, 2026-07-12 CST.
 
 ## Current Long Task
 

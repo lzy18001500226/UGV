@@ -27,6 +27,21 @@ def safe_json_value(value):
     return repr(value)
 
 
+def classify_track_completion(time_s, finish_distance_squared, sim_result: bool) -> str:
+    """Classify the official finish assertion separately from a time-horizon stop.
+
+    The official model ends a completed lap through an assertion. A normal true
+    return means the configured stop horizon was reached, even when a sampled
+    end-state happens to be near the origin.
+    """
+    if not sim_result and time_s is not None and finish_distance_squared is not None:
+        if float(time_s) > 10.0 and float(finish_distance_squared) < 0.02:
+            return "finish_reached_official_origin_assertion"
+    if sim_result:
+        return "simulation_horizon_reached_finish_not_observed"
+    return "early_stop_finish_not_observed"
+
+
 def collect_pyapi_messages(pyapi) -> dict:
     messages: dict = {}
     for name in ("GetLastErrors", "MessageText"):
@@ -51,6 +66,7 @@ def write_run_manifest(out_dir: Path, manifest: dict) -> None:
         f"status: {manifest['status']}",
         f"completion: {manifest['completion']}",
         f"time_s: {manifest['time_s']}",
+        f"finish_distance_squared: {manifest['finish_distance_squared']}",
         f"road_collisions: {manifest['road_collisions']}",
         f"obstacle_collisions: {manifest['obstacle_collisions']}",
         f"avoidance_score: {manifest['avoidance_score']}",
@@ -76,8 +92,20 @@ def write_run_manifest(out_dir: Path, manifest: dict) -> None:
 def manifest_notes(run_label: str, metrics: dict) -> list[str]:
     notes = [f"This run label is {run_label}."]
     runtime_status = str(metrics.get("runtime_status", "unknown"))
-    if runtime_status == "simulate_returned_true":
+    completion = str(metrics.get("completion", "unknown"))
+    if completion == "finish_reached_official_origin_assertion":
+        notes.append(
+            "Official track finish was observed: simulation time exceeded 10 s and "
+            "distanceSensor1.d was below 0.02 at termination."
+        )
+        notes.append(
+            "The failed simulation return is the expected official origin-finish assertion, "
+            "not an abnormal early stop."
+        )
+        notes.append("Score variables still require separate validation before claiming an official race score.")
+    elif runtime_status == "simulate_returned_true":
         notes.append("Simulation API returned true for the bounded stop time only.")
+        notes.append("Official track finish was not observed before the configured simulation horizon.")
         notes.append("Do not claim final official race score unless completion and score variables are confirmed from metrics/logs.")
     else:
         notes.append("This run did not prove the full load/check/simulation path.")
@@ -223,6 +251,7 @@ def main() -> int:
         "road_collisions": None,
         "obstacle_collisions": None,
         "avoidance_score": None,
+        "finish_distance_squared": None,
         "available_score_variables": [],
         "missing_score_variables": [],
         "simulation_exit_state": None,
@@ -447,14 +476,28 @@ def main() -> int:
                 metrics["road_collisions"] = score_map.get("cR")
                 metrics["obstacle_collisions"] = score_map.get("cO")
                 metrics["avoidance_score"] = score_map.get("P")
-                metrics["completion"] = (
-                    "bounded_stop_or_assertion; inspect exit_state/logs"
-                    if sim_result
-                    else "simulate_false_with_result_variables; inspect messages/assertions"
-                )
                 record_step(steps, "score_values_at_end", "ok", values=score_map)
             except Exception as exc:  # noqa: BLE001
                 record_step(steps, "score_values_at_end", "exception", error=repr(exc))
+
+            finish_var = "distanceSensor1.d"
+            if finish_var in all_vars:
+                try:
+                    finish_value = pyapi.GetVarsValueAt([finish_var], pyapi.SimulationTime.End)
+                    metrics["finish_distance_squared"] = float(safe_json_value(finish_value)[0])
+                    record_step(
+                        steps,
+                        "official_finish_distance_at_end",
+                        "ok",
+                        variable=finish_var,
+                        value=metrics["finish_distance_squared"],
+                    )
+                except Exception as exc:  # noqa: BLE001
+                    record_step(steps, "official_finish_distance_at_end", "exception", error=repr(exc))
+
+            metrics["completion"] = classify_track_completion(
+                metrics["time_s"], metrics["finish_distance_squared"], bool(sim_result)
+            )
 
             try:
                 csv_path = out_dir / "score_timeseries.csv"
@@ -481,7 +524,7 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001
                 record_step(steps, "export_extra_timeseries", "exception", error=repr(exc))
 
-        return_code = 0 if sim_result else 5
+        return_code = 0 if sim_result or metrics["completion"] == "finish_reached_official_origin_assertion" else 5
         return return_code
     except Exception as exc:  # noqa: BLE001
         record_step(steps, "exception", "failed", error=repr(exc), traceback=traceback.format_exc())
@@ -512,8 +555,14 @@ def main() -> int:
             encoding="utf-8",
         )
 
-        status = "bounded_runtime_gate" if metrics["runtime_status"] == "simulate_returned_true" else "blocked"
-        blockers = [] if status == "bounded_runtime_gate" else [metrics["runtime_status"]]
+        completion = metrics["completion"]
+        if completion == "finish_reached_official_origin_assertion":
+            status = "official_track_finish"
+        elif metrics["runtime_status"] == "simulate_returned_true":
+            status = "bounded_runtime_gate"
+        else:
+            status = "blocked"
+        blockers = [] if status != "blocked" else [metrics["runtime_status"]]
         if metrics["missing_score_variables"]:
             blockers.append("score variables missing or unreadable: " + ", ".join(metrics["missing_score_variables"]))
         write_run_manifest(
@@ -530,6 +579,7 @@ def main() -> int:
                 "status": status,
                 "completion": metrics["completion"],
                 "time_s": metrics["time_s"],
+                "finish_distance_squared": metrics["finish_distance_squared"],
                 "road_collisions": metrics["road_collisions"],
                 "obstacle_collisions": metrics["obstacle_collisions"],
                 "avoidance_score": metrics["avoidance_score"],
