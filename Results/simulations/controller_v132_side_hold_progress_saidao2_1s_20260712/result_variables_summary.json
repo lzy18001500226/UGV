@@ -1,0 +1,17 @@
+{
+  "all_variable_count": 27423,
+  "timevarying_variable_count": 27420,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "extra_result_variables": [
+    "ctrlAlloc.speed",
+    "ctrlAlloc.speed_oa",
+    "obsAvoidController_Sysblock.chart.flag",
+    "obsAvoidController_Sysblock.chart.speed"
+  ]
+}
