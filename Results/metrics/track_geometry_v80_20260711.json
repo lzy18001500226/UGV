@@ -1,0 +1,44 @@
+{
+  "tracks": {
+    "track1": {
+      "source": "C:\\Users\\HP\\Desktop\\UGV\\Models\\UGV\\Test\\Saidao1Eval.mo",
+      "point_count": 182,
+      "open_polyline_length_m": 111.60867951096762,
+      "closing_segment_length_m": 0.2355797105015625,
+      "closed_loop_length_m": 111.84425922146919,
+      "nominal_speed_min": 1.0,
+      "nominal_speed_max": 1.0,
+      "ideal_time_at_map_speed_s": 111.84425922146919
+    },
+    "track2": {
+      "source": "C:\\Users\\HP\\Desktop\\UGV\\Models\\UGV\\Test\\Saidao2Eval.mo",
+      "point_count": 231,
+      "open_polyline_length_m": 135.91150568176107,
+      "closing_segment_length_m": 0.0,
+      "closed_loop_length_m": 135.91150568176107,
+      "nominal_speed_min": 1.0,
+      "nominal_speed_max": 1.0,
+      "ideal_time_at_map_speed_s": 135.91150568176107
+    },
+    "track3": {
+      "source": "C:\\Users\\HP\\Desktop\\UGV\\Models\\UGV\\Test\\Saidao3Eval.mo",
+      "point_count": 106,
+      "open_polyline_length_m": 65.25632986762746,
+      "closing_segment_length_m": 1.4286,
+      "closed_loop_length_m": 66.68492986762746,
+      "nominal_speed_min": 1.0,
+      "nominal_speed_max": 1.0,
+      "ideal_time_at_map_speed_s": 66.68492986762746
+    },
+    "track4": {
+      "source": "C:\\Users\\HP\\Desktop\\UGV\\Models\\UGV\\Test\\Saidao4Eval.mo",
+      "point_count": 212,
+      "open_polyline_length_m": 66.24098953525439,
+      "closing_segment_length_m": 0.0,
+      "closed_loop_length_m": 66.24098953525439,
+      "nominal_speed_min": 1.0,
+      "nominal_speed_max": 1.0,
+      "ideal_time_at_map_speed_s": 66.24098953525439
+    }
+  }
+}
