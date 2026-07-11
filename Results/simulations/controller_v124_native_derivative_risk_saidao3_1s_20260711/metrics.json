@@ -1,0 +1,29 @@
+{
+  "request_id": "UGV-V124-TRACK3-1S-20260711",
+  "model_name": "UGV.Test.Saidao3Eval",
+  "stop_time_requested": 1.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "check_model_failed",
+  "completion": "unknown",
+  "time_s": null,
+  "road_collisions": null,
+  "obstacle_collisions": null,
+  "avoidance_score": null,
+  "finish_distance_squared": null,
+  "available_score_variables": [],
+  "missing_score_variables": [],
+  "simulation_exit_state": null,
+  "simulation_state": null,
+  "exported_csv": null,
+  "exported_csv_ok": false,
+  "exported_extra_csv": null,
+  "exported_extra_csv_ok": false,
+  "extra_result_variables": [],
+  "pyapi_messages": {
+    "GetLastErrors": [
+      "错误(2): 编译器错误(23): 不支持在Sysblock中使用内置函数der.\n错误(2): 编译器错误(3): 转移的条件df <= mindis or (der(df) < -0.05 and df + 0.60 * der(df) <= mindis) or dl <= 0.45 or dr <= 0.45不正确.\n组件上下文：\"chart.longitudinal\""
+    ],
+    "MessageText": "[上一条命令没有日志信息]"
+  },
+  "notes": []
+}

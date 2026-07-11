@@ -1,0 +1,29 @@
+{
+  "request_id": "UGV-V123-TRACK3-1S-RETRY2-20260711",
+  "model_name": "UGV.Test.Saidao3Eval",
+  "stop_time_requested": 1.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "check_model_failed",
+  "completion": "unknown",
+  "time_s": null,
+  "road_collisions": null,
+  "obstacle_collisions": null,
+  "avoidance_score": null,
+  "finish_distance_squared": null,
+  "available_score_variables": [],
+  "missing_score_variables": [],
+  "simulation_exit_state": null,
+  "simulation_state": null,
+  "exported_csv": null,
+  "exported_csv_ok": false,
+  "exported_extra_csv": null,
+  "exported_extra_csv_ok": false,
+  "extra_result_variables": [],
+  "pyapi_messages": {
+    "GetLastErrors": [
+      "错误(2): 编译器错误(100): 内部错误. 如果软件运行在 Windows 平台下, 请您打开资源管理器, 在地址栏输入 %Temp%\\MWorks 后按回车, 在打开的文件夹中, 将最新的扩展名为 .dmp 的文件发给我们, 这将帮助我们更准确的定位问题, 感谢您的支持!"
+    ],
+    "MessageText": "[上一条命令没有日志信息]"
+  },
+  "notes": []
+}
