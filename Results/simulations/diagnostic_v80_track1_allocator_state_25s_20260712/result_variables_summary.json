@@ -1,0 +1,38 @@
+{
+  "all_variable_count": 24493,
+  "timevarying_variable_count": 24045,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "extra_result_variables": [
+    "ctrlAlloc.firstOrder.y",
+    "ctrlAlloc.firstOrder1.y",
+    "ctrlAlloc.gain2.u",
+    "ctrlAlloc.speed",
+    "ctrlAlloc.speed_oa",
+    "ctrlAlloc.speed_pp",
+    "ctrlAlloc.steer",
+    "ctrlAlloc.steer_oa",
+    "ctrlAlloc.steer_pp",
+    "ctrlAlloc.unitDelay1.y",
+    "ctrlAlloc.unitDelay3.y",
+    "distanceSensor1.d",
+    "distanceSensor1.distF",
+    "distanceSensor1.distL",
+    "distanceSensor1.distR",
+    "obsAvoidController_Sysblock.chart.df",
+    "obsAvoidController_Sysblock.chart.dl",
+    "obsAvoidController_Sysblock.chart.dr",
+    "obsAvoidController_Sysblock.chart.flag",
+    "obsAvoidController_Sysblock.chart.speed",
+    "obsAvoidController_Sysblock.chart.steer",
+    "pathPlanner.closest_index",
+    "pathPlanner.path_progress",
+    "pathPlanner.steering_angle",
+    "pathPlanner.target_v"
+  ]
+}
