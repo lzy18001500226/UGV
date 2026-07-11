@@ -791,3 +791,18 @@ This package is for user audit only. It does not imply final submission approval
 Do not create more submission zip packages unless the user explicitly asks for
 another packaging dry run. Push/network failures are operational follow-up
 items, not a reason to stop controller tuning.
+## Current Long-Task Controller State (2026-07-12)
+
+The active UGV long task is completion-first: do not treat a fixed simulation
+horizon, a high `P`, or improved short-run path progress as a finish. The
+official completion gate is `SimulateModel=false`, `T>10`, and
+`distanceSensor1.d<0.02` at termination.
+
+The v80 controller semantics are the restored comparison baseline. Candidate
+v136 (path-curvature speed regulation) is rejected: it improved Track2 progress
+at 120 s but its extended run stopped abnormally at `T=159.95` near
+`closest_index=64` with `cR=1`, `cO=0`, `P=9.6`, and no finish. Do not reapply
+v136 or scan its thresholds. Inspect the saved v136 signal window first, then
+test only a distinct unified mechanism on one target track, perform collision
+regression, and evaluate all four tracks before retaining it. Current facts:
+Tracks 1-3 have no verified finishes and Track4 remains unverified.
