@@ -1,0 +1,18 @@
+{
+  "timestamp_cst": "2026-07-11",
+  "source": "MWORKS Sysplorer Python API License('info'), License('feature_list'), License('expired_days'), License('inuse')",
+  "start_sysplorer": "ok",
+  "license_version_observed": "education edition",
+  "required_features_observed": [
+    "MW_Lib_TADynamics",
+    "MW_Sysblk_Env"
+  ],
+  "expired_days": 115,
+  "inuse_observed": [
+    "MW_Sysplr_Standard"
+  ],
+  "last_errors_observed": [
+    ""
+  ],
+  "note": "Chinese API labels were rendered through the console with encoding noise in raw captures; this ASCII summary records only non-secret license-health facts needed for UGV runtime recovery evidence."
+}

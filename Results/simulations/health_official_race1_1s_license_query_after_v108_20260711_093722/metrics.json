@@ -1,0 +1,34 @@
+{
+  "request_id": "health-race1-license-query-20260711_093722",
+  "model_name": "UGV.Example.Race1",
+  "stop_time_requested": 1.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "simulate_returned_true",
+  "completion": "bounded_stop_or_assertion; inspect exit_state/logs",
+  "time_s": 1.0,
+  "road_collisions": 0.0,
+  "obstacle_collisions": 0.0,
+  "avoidance_score": 10.0,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "simulation_exit_state": 0,
+  "simulation_state": "Idle",
+  "exported_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\health_official_race1_1s_license_query_after_v108_20260711_093722\\score_timeseries.csv",
+  "exported_csv_ok": true,
+  "exported_extra_csv": null,
+  "exported_extra_csv_ok": false,
+  "extra_result_variables": [],
+  "pyapi_messages": {},
+  "notes": [],
+  "score_values_at_end": {
+    "T": 1.0,
+    "cR": 0.0,
+    "cO": 0.0,
+    "P": 10.0
+  }
+}

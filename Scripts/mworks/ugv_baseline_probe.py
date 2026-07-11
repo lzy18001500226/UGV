@@ -171,6 +171,11 @@ def main() -> int:
         help="Use SimulateModelEx with explicit options, including parameter evaluation.",
     )
     parser.add_argument(
+        "--sysplorer-start-mode",
+        default="-gui",
+        help="StartSysplorer start_mode, for example -gui or -q.",
+    )
+    parser.add_argument(
         "--relax-translation-checks",
         action="store_true",
         help="With SimulateModelEx, disable strict connection checks for diagnostics.",
@@ -252,9 +257,15 @@ def main() -> int:
         record_step(steps, "import_mworks_sysplorer", "ok", module=str(pyapi))
 
         process_path = r"D:\Program Files\MWORKS\Sysplorer 2026a\Bin64\mworks.exe"
-        pyapi.StartSysplorer(processPath=process_path, start_mode="-gui")
+        pyapi.StartSysplorer(processPath=process_path, start_mode=args.sysplorer_start_mode)
         sysplorer_started = True
-        record_step(steps, "start_sysplorer", "ok", process_path=process_path)
+        record_step(
+            steps,
+            "start_sysplorer",
+            "ok",
+            process_path=process_path,
+            start_mode=args.sysplorer_start_mode,
+        )
 
         dependency_model_files = [] if args.no_default_dependency_model_files else list(args.load_model_file)
         for dependency_path in dependency_model_files:

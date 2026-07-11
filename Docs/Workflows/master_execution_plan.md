@@ -443,8 +443,8 @@ safe phase unless the user explicitly pauses or final submission approval is
 required.
 
 Current cursor: v80 sharp curve speed cap is the score-leading local wrapper
-candidate with a Track3 runtime caveat after v79/v81/v82/v83/v84/v85/v86/v87/v88/v89/v90/v91/v92/v93/v94/v95/v96/v97/v98 follow-ups
-were rejected as accepted baselines. M1 source grounding, M2 bounded baseline,
+candidate with a Track3 runtime caveat after v79/v81/v82/v83/v84/v85/v86/v87/v88/v89/v90/v91/v92/v93/v94/v95/v96/v97/v98/v99/v100/v101/v102/v103/v104/v105/v106/v107/v108 follow-ups
+were rejected as accepted baselines; the post-v108 runtime-channel timeout blocker has been recovered by `Results/metrics/runtime_channel_recovery_v80_after_v108_20260711.md`. M1 source grounding, M2 bounded baseline,
 M3 controller design, M4 bounded controller implementation gate, M5 one-track
 Race1 tuning review, M6 wrapper-based four-track metric extraction, historical
 M8 report refreshes, and M9 local review-only dry run are complete or
@@ -471,7 +471,11 @@ v94 rejected: Results/metrics/track3_candidate_review_v94_oa_steer_conflict_atte
 v95 rejected: Results/metrics/track3_candidate_review_v95_early_front_brake_marker_20260710.md
 v96 rejected: Results/metrics/track1_track3_candidate_review_v96_severe_side_initial_steer_override_20260710.md
 v97 rejected: Results/metrics/track3_candidate_review_v97_narrow_left_squeeze_initial_override_20260710.md
-v98 latest rejected: Results/metrics/track3_candidate_review_v98_front_memory_left_recovery_20260710.md
+v98 rejected: Results/metrics/track3_candidate_review_v98_front_memory_left_recovery_20260710.md
+v103 rejected: Results/metrics/four_track_candidate_review_v103_conflict_path_speed_20260711.md
+v104 rejected: Results/metrics/track3_candidate_review_v104_narrow_conflict_speed_band_20260711.md
+v105 rejected: Results/metrics/track3_candidate_review_v105_front_aligned_speed_cap_20260711.md
+v106 latest rejected: Results/metrics/track3_candidate_review_v106_conflict_creep_speed_20260711.md
 v80 Track3 diagnostic: Results/metrics/trajectory_event_review_diagnostic_v80_track3_pose_20260710.md
 v94 planning input: Results/metrics/signal_window_summary_v80_track3_pose_path_6s_20260710.md
 ```
@@ -502,11 +506,18 @@ the same initial-steer override family and regressed Track3 to
 `T=32.45,cR=13,cO=1,P=4.4`; v98 added front-close memory before the left
 recovery branch but Track3 stayed at `T=43.9,cR=1,cO=1,P=9.2`, so it was
 rejected without four-track regression.
-The source was restored to v80 semantics before the next candidate. Next safe controller work must start from fresh failure-window,
+v103 conflict path-speed improved Track3 to `P=9.6,cR=0,cO=1` but regressed
+Track1 and reduced total wrapper score. v104 and v105 did not produce an
+accepted score gain. v106 again improved Track3 variables but stopped at
+`T=3.4` and hit a Track2 runtime-call timeout; v107/v108 produced no accepted
+score evidence; then the MWORKS/Sysplorer runtime channel was recovered with
+official Race1 1 s, restored v80 Track3 1 s, and restored v80 Track3 120 s
+recheck evidence. The source remains at v80 semantics before the next
+candidate. Next safe controller work must start from fresh failure-window,
 source-level, trajectory evidence, four-direction-only research, or a new
 unified mechanism hypothesis. Do not repeat broad speed clamps, accepted
 baseline scalar scans, final-steer clipping, simple planner suppression,
 negative initial bypass, abrupt lane bias, direct early steer feedforward, simple lateral-initial-dwell shortening, conditional lateral-release threshold scans, the same front-clear sustained side-steer boost, side-squeeze speed escalation, the
-same `df < 0.15` road-edge recovery branch, or official wrapper/input changes
+same `df < 0.15` road-edge recovery branch, speed-gate family retries, or official wrapper/input changes
 as accepted score routes without new evidence. Final package approval remains
 a separate user gate.
