@@ -72,6 +72,12 @@ M10 final-race / physical-transfer readiness notes
 
 ## Review Notes
 
+- v178 preemptive narrow recovery is rejected at
+  `Results/metrics/track3_candidate_review_v178_preemptive_narrow_recovery_20260712.md`.
+  Moving the v162 branch from `df<0.15` to `df<0.20` yielded a long but
+  unfinished `T=228.15,cR=2,cO=1,P=8.8` run and regressed v162. Exact v148 is
+  restored; nearby narrow-front thresholds are closed.
+
 - v177 fixed-entry offset correction is rejected at
   `Results/metrics/track3_candidate_review_v177_offset_correction_20260712.md`.
   Reducing `+0.60` to `+0.55` removed the first obstacle collision but produced
