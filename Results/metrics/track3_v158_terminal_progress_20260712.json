@@ -1,0 +1,150 @@
+{
+  "csv": "Results\\simulations\\candidate_v158_neutral_path_heading_recovery_track3_700s_20260712\\extra_timeseries.csv",
+  "window_s": 5.0,
+  "signals": {
+    "ctrlAlloc.speed": {
+      "samples": 1597,
+      "final_time": 79.8,
+      "final": 0.505665535315353,
+      "window_min": 0.470051543570227,
+      "window_max": 1.04686521889015,
+      "window_mean": 0.7389609683109322
+    },
+    "ctrlAlloc.speed_oa": {
+      "samples": 1597,
+      "final_time": 79.8,
+      "final": -0.928415424167745,
+      "window_min": -0.928415424167745,
+      "window_max": 1.0,
+      "window_mean": 0.17048510398619213
+    },
+    "ctrlAlloc.steer": {
+      "samples": 1597,
+      "final_time": 79.8,
+      "final": -0.807662361622391,
+      "window_min": -2.74345623453849,
+      "window_max": -0.807662361622391,
+      "window_mean": -2.1471474916226527
+    },
+    "ctrlAlloc.steer_oa": {
+      "samples": 1597,
+      "final_time": 79.8,
+      "final": 0.6,
+      "window_min": -0.152210690809226,
+      "window_max": 0.6,
+      "window_mean": 0.44611531469631904
+    },
+    "distanceSensor1.vehicle_position[1]": {
+      "samples": 1597,
+      "final_time": 79.8,
+      "final": 1.34871818129637,
+      "window_min": 0.90270102942141,
+      "window_max": 2.61021920644776,
+      "window_mean": 1.3166587663601421
+    },
+    "distanceSensor1.vehicle_position[2]": {
+      "samples": 1597,
+      "final_time": 79.8,
+      "final": 10.9756087382659,
+      "window_min": 9.21989716515293,
+      "window_max": 10.9756087382659,
+      "window_mean": 10.105331140604472
+    },
+    "pathPlanner.closest_index": {
+      "samples": 1597,
+      "final_time": 79.8,
+      "final": 76.0,
+      "window_min": 76.0,
+      "window_max": 76.0,
+      "window_mean": 76.0
+    },
+    "pathPlanner.path_progress": {
+      "samples": 1597,
+      "final_time": 79.8,
+      "final": 0.0263241959676327,
+      "window_min": 0.0263241959676327,
+      "window_max": 0.951321536546884,
+      "window_mean": 0.5651489973701855
+    },
+    "pathPlanner.steering_angle": {
+      "samples": 1597,
+      "final_time": 79.8,
+      "final": -2.18304157450743,
+      "window_min": -2.87161601731067,
+      "window_max": -2.118632984202,
+      "window_mean": -2.3474158353771473
+    },
+    "obsAvoidController_Sysblock.chart.db": {
+      "samples": 7984,
+      "final_time": 79.83,
+      "final": 0.0298733335530167,
+      "window_min": 0.000769972864903101,
+      "window_max": 1.44854220515277,
+      "window_mean": 0.5164517275656475
+    },
+    "obsAvoidController_Sysblock.chart.df": {
+      "samples": 7984,
+      "final_time": 79.83,
+      "final": 0.0801266664469833,
+      "window_min": 0.0691238134254024,
+      "window_max": 2.10097953191946,
+      "window_mean": 1.8116472778848225
+    },
+    "obsAvoidController_Sysblock.chart.dl": {
+      "samples": 7984,
+      "final_time": 79.83,
+      "final": 0.00534533091938351,
+      "window_min": 0.00184737768176679,
+      "window_max": 1.44185701704221,
+      "window_mean": 0.5372371702569797
+    },
+    "obsAvoidController_Sysblock.chart.dr": {
+      "samples": 7984,
+      "final_time": 79.83,
+      "final": 0.170345330919384,
+      "window_min": 0.00197835511275424,
+      "window_max": 1.35979616824405,
+      "window_mean": 0.47650074419435584
+    },
+    "obsAvoidController_Sysblock.chart.flag": {
+      "samples": 7984,
+      "final_time": 79.83,
+      "final": 1.0,
+      "window_min": 0.0,
+      "window_max": 1.0,
+      "window_mean": 0.7544910179640718
+    },
+    "obsAvoidController_Sysblock.chart.mindis": {
+      "samples": 7984,
+      "final_time": 79.83,
+      "final": 1.0,
+      "window_min": 1.0,
+      "window_max": 1.0,
+      "window_mean": 1.0
+    },
+    "obsAvoidController_Sysblock.chart.safeF": {
+      "samples": 7984,
+      "final_time": 79.83,
+      "final": 1.5,
+      "window_min": 1.5,
+      "window_max": 1.5,
+      "window_mean": 1.5
+    },
+    "obsAvoidController_Sysblock.chart.speed": {
+      "samples": 7984,
+      "final_time": 79.83,
+      "final": -0.919873333553017,
+      "window_min": -0.930876186574598,
+      "window_max": 1.0,
+      "window_mean": 0.14926431140573745
+    },
+    "obsAvoidController_Sysblock.chart.steer": {
+      "samples": 7984,
+      "final_time": 79.83,
+      "final": 0.6,
+      "window_min": -0.154691397924835,
+      "window_max": 0.6,
+      "window_mean": 0.45184468472179695
+    }
+  }
+}

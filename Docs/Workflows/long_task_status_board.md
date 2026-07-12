@@ -258,4 +258,15 @@ M10 final-race / physical-transfer readiness notes
   more OA attenuation factors; the next work must inspect path/pose geometry
   and a bounded local recovery state. Evidence:
   `Results/metrics/track3_candidate_review_v157_neutral_opposite_sign_oa_attenuation_20260712.md`.
+- Official-geometry diagnosis confirms v148 leaves the Track3 straight road:
+  the vehicle reaches `(4.147,0.4614)` at the first road event while the center
+  is `y=0`. v158/v159 neutral path-recovery candidates extend progress from
+  path index 36 to about 76 and reduce terminal finish-distance squared from
+  `301.4313` to `122.2830`/`96.9383`, but regress to `P=8.0`/`7.6` with five or
+  six total collisions. Both are rejected and v148 is restored. This closes
+  stateless OA cancellation and magnitude-trigger scans. Next work requires
+  bounded state continuity between obstacle authority and path recovery.
+  Evidence: `Results/metrics/v158_track3_geometry_review_20260712.md`,
+  `Results/metrics/track3_candidate_review_v158_neutral_path_heading_recovery_20260712.md`,
+  and `Results/metrics/track3_candidate_review_v159_immediate_neutral_path_recovery_20260712.md`.
 

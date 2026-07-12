@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: completion-first controller redesign. The old `38/40` value is only the sum of avoidance variables and is not an approximately `76/80` official result. Tracks 1-3 have zero verified finishes; Track4 v80 now has a verified non-finish at `T=52.15,cR=1,cO=0`, terminal distance squared `329.6641`. The MWORKS `-gui` API lane is operational. Track2's completion chain is structurally valid, but v137's old progress is not currently reproducible; v145 directional re-entry and v146 continuous risk braking are rejected. v80 source semantics are restored, 2026-07-12 CST. Continue from the status board and do not treat wrapper score as official completion.
+Status: completion-first controller redesign. The old `38/40` value is only the sum of avoidance variables and is not an approximately `76/80` official result. v148 is the current baseline: Tracks 1, 2, and 4 have verified official finishes; Track3 remains a non-finish at `T=21.1`, `cR=1`, `cO=1`, `P=9.2`. The MWORKS `-gui` API lane is operational. Continue from the status board and do not treat 3/4 completion or wrapper variables as `80/80`.
 
 ## 0. Startup Chain
 
@@ -52,7 +52,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `Treat official completion as the first hard gate. Continue from restored v80 only as a comparison baseline. v117-v146 are rejected. The Track2 path is closed and structurally finishable, with no observed path-index discontinuity. Current v137 repetitions stop at T=28.55; v145's instantaneous side-sign direction causes four obstacle collisions; v146's continuous longitudinal risk weighting still road-terminates at T=39.3. Do not repeat scalar scans, pure longitudinal release, conflict-duration path-weight decay, or neutral/attenuated/instantaneous side-sign re-entry. The next design must preserve immediate obstacle authority and add stable lateral/path memory. Run target-track gates before cross-track expansion.`
+Current phase cursor: `Treat official completion as the first hard gate. Continue from v148. Tracks 1, 2, and 4 finish; Track3 leaves the straight road after a fixed positive lateral OA offset overrides a negative path recovery heading. v149-v157 are rejected. Do not repeat speed-cap, dwell, side-hysteresis, same-sign suppression, or OA attenuation scans. Preserve immediate front-obstacle authority and test structure-level neutral-state path recovery on Track3 before cross-track expansion.`
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
