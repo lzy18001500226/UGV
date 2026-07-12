@@ -333,4 +333,13 @@ M10 final-race / physical-transfer readiness notes
   squared `295.9073`; the old `0.6` cap was not active. Exact v148 semantics
   are restored, and this cap must not be scanned further. Evidence:
   `Results/metrics/track3_candidate_review_v172_consistent_emergency_steer_20260712.md`.
+- v173/v174 sampled path-progress planners are rejected. v173's two-segment
+  backward/eight-segment forward window and v174's monotonic all-remaining
+  forward search both ended at `T=49.30,cR=1,cO=1,P=9.2`, path index `48`,
+  finish-distance squared `385.5061`. The failure is a mid-route departure,
+  not only a final-to-first index wrap or a narrow reacquisition window. Exact
+  v148 controller semantics and the original global planner are restored.
+  Do not continue sampled nearest-segment window scans. Evidence:
+  `Results/metrics/track3_candidate_review_v173_progress_continuous_planner_20260712.md`
+  and `Results/metrics/track3_candidate_review_v174_monotonic_forward_planner_20260712.md`.
 

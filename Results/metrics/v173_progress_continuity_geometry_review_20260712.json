@@ -1,0 +1,114 @@
+{
+  "runs": [
+    {
+      "label": "v162",
+      "run_dir": "Results\\simulations\\candidate_v162_v148_narrow_recovery_track3_700s_20260712",
+      "image": "Results\\figures\\v173_progress_continuity_review_20260712\\v162_trajectory_events.png",
+      "position_columns": [
+        "distanceSensor1.vehicle_position[1]",
+        "distanceSensor1.vehicle_position[2]"
+      ],
+      "time_column": "Time",
+      "score_end": {
+        "T": 286.55,
+        "cR": 2.0,
+        "cO": 1.0,
+        "P": 8.8
+      },
+      "track_geometry": {
+        "track_path": null,
+        "road_points": 0,
+        "obstacle_points": 0,
+        "road_width": null,
+        "obstacle_size": null
+      },
+      "events": [
+        {
+          "event": 1,
+          "time_s": 1.0,
+          "changes": [
+            "cO: 0->1",
+            "P: 10->9.6"
+          ],
+          "x": 1.21706852254853,
+          "y": 0.0959190003161356,
+          "distance_to_road_center": null,
+          "distance_to_nearest_obstacle": null
+        },
+        {
+          "event": 2,
+          "time_s": 4.3,
+          "changes": [
+            "cR: 0->1",
+            "P: 9.6->9.2"
+          ],
+          "x": 4.34410193217017,
+          "y": 0.460874016393902,
+          "distance_to_road_center": null,
+          "distance_to_nearest_obstacle": null
+        },
+        {
+          "event": 3,
+          "time_s": 181.35,
+          "changes": [
+            "cR: 1->2",
+            "P: 9.2->8.8"
+          ],
+          "x": 2.36810275568599,
+          "y": 0.465562564889026,
+          "distance_to_road_center": null,
+          "distance_to_nearest_obstacle": null
+        }
+      ]
+    },
+    {
+      "label": "v173",
+      "run_dir": "Results\\simulations\\candidate_v173_progress_continuous_planner_track3_700s_20260712",
+      "image": "Results\\figures\\v173_progress_continuity_review_20260712\\v173_trajectory_events.png",
+      "position_columns": [
+        "pathPlanner.x",
+        "pathPlanner.y"
+      ],
+      "time_column": "Time",
+      "score_end": {
+        "T": 49.3,
+        "cR": 1.0,
+        "cO": 1.0,
+        "P": 9.2
+      },
+      "track_geometry": {
+        "track_path": null,
+        "road_points": 0,
+        "obstacle_points": 0,
+        "road_width": null,
+        "obstacle_size": null
+      },
+      "events": [
+        {
+          "event": 1,
+          "time_s": 1.0,
+          "changes": [
+            "cO: 0->1",
+            "P: 10->9.6"
+          ],
+          "x": 1.21709063176806,
+          "y": 0.0959883213661761,
+          "distance_to_road_center": null,
+          "distance_to_nearest_obstacle": null
+        },
+        {
+          "event": 2,
+          "time_s": 4.3,
+          "changes": [
+            "cR: 0->1",
+            "P: 9.6->9.2"
+          ],
+          "x": 4.34945187851392,
+          "y": 0.462418848076836,
+          "distance_to_road_center": null,
+          "distance_to_nearest_obstacle": null
+        }
+      ]
+    }
+  ]
+}
