@@ -297,4 +297,13 @@ M10 final-race / physical-transfer readiness notes
   area, so direct `PathPlanner` endpoint-helper additions are closed for this
   pass. Exact v148 source semantics are restored. Evidence:
   `Results/metrics/track3_candidate_review_v165_final_segment_capture_20260712.md`.
+- v166/v167 directional lateral-entry candidates are rejected. v166 removed
+  road events but drove through obstacles when `dl≈dr`, ending at
+  `T=39.8,cR=0,cO=5,P=8.0`. v167 kept fixed bypass authority until
+  `df>safeF`, but still ended at `T=42.8,cR=2,cO=3,P=8.0`. Global
+  front-clear/directional entry changes are closed and exact v148 semantics
+  are restored. Next work may use v162 plus existing `closest_index` and
+  `path_progress` only near the generic closure segment; do not add planner
+  geometry calculations or departure events. Evidence:
+  `Results/metrics/track3_candidate_review_v166_v167_directional_entry_20260712.md`.
 
