@@ -306,4 +306,11 @@ M10 final-race / physical-transfer readiness notes
   `path_progress` only near the generic closure segment; do not add planner
   geometry calculations or departure events. Evidence:
   `Results/metrics/track3_candidate_review_v166_v167_directional_entry_20260712.md`.
+- v168 reused existing `closest_index/path_progress` for a closure-only pursuit
+  override, but still terminated at `T=18.1,cR=1,cO=1,P=9.2`, exactly matching
+  v165 before the endpoint predicate was needed. All `PathPlanner` endpoint
+  capture edits are closed for this task because even inactive helper branches
+  perturb the translated trajectory. Exact v148 semantics are restored. Next
+  work must avoid planner equation changes. Evidence:
+  `Results/metrics/track3_candidate_review_v168_closure_progress_capture_20260712.md`.
 
