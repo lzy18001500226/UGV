@@ -1,0 +1,53 @@
+{
+  "request_id": "UGV-V183-TRACK1-120S-20260712",
+  "model_name": "UGV.Test.Saidao1Eval",
+  "stop_time_requested": 120.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "simulate_returned_true",
+  "completion": "simulation_horizon_reached_finish_not_observed",
+  "time_s": 120.0,
+  "road_collisions": 4.0,
+  "obstacle_collisions": 1.0,
+  "avoidance_score": 8.0,
+  "finish_distance_squared": 386.8218508875269,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "simulation_exit_state": 0,
+  "simulation_state": "Idle",
+  "exported_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\candidate_v183_open_side_narrow_recovery_track1_120s_20260712\\score_timeseries.csv",
+  "exported_csv_ok": true,
+  "exported_extra_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\candidate_v183_open_side_narrow_recovery_track1_120s_20260712\\extra_timeseries.csv",
+  "exported_extra_csv_ok": true,
+  "extra_result_variables": [
+    "distanceSensor1.vehicle_position[1]",
+    "distanceSensor1.vehicle_position[2]",
+    "pathPlanner.closest_index",
+    "pathPlanner.path_progress",
+    "pathPlanner.steering_angle",
+    "pathPlanner.target_v"
+  ],
+  "pyapi_messages": {},
+  "termination_reason": "configured_horizon",
+  "diagnostic_values_at_end": {
+    "countPoint.roadHit": 1.0,
+    "countPoint.obsHit": 0.0
+  },
+  "notes": [],
+  "score_values_at_end": {
+    "T": 120.0,
+    "cR": 4.0,
+    "cO": 1.0,
+    "P": 8.0
+  },
+  "pyapi_messages_after_result_export": {
+    "GetLastErrors": [
+      ""
+    ],
+    "MessageText": "[上一条命令没有日志信息]"
+  }
+}
