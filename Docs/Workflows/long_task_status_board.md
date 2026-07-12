@@ -401,4 +401,13 @@ M10 final-race / physical-transfer readiness notes
   now; exact committed controller semantics are restored. Do not expand v186
   to Track3. Evidence:
   `Results/metrics/track2_candidate_review_v186_coupled_edge_braking_20260712.md`.
+- v187 path-only isolation reproducibly returned near the Track2 origin at
+  `T=198.5`, but missed the strict finish threshold (`d=0.0305001871`) and
+  accumulated `cR=7,cO=8,P=4.0`. v188 restored only OA steering and removed
+  obstacle collisions, but terminated at `T=29.1,cR=1,cO=0,P=9.6`, far from
+  the origin (`d=793.6885770`). Both are rejected and the committed allocator
+  is restored. The next mechanism must be a bounded collision-imminent steer
+  intervention with explicit release to path authority, not continuous old OA
+  steering or another edge-magnitude scan. Evidence:
+  `Results/metrics/track2_candidate_review_v187_v188_path_overlay_20260712.md`.
 
