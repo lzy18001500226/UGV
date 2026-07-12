@@ -62,7 +62,13 @@ M10 final-race / physical-transfer readiness notes
   final-submission quality scores. Track1/Track3/Track4 still have collision
   or terminal-state weaknesses, so targeted unified-algorithm tuning remains
   active before any final package.
-- Current runtime-channel blocker is recovered: after v107/v108 candidate
+- Current runtime-channel blocker is not currently recovered: a fresh unchanged
+  v199 Track3 1 s plain probe on 2026-07-12 again exceeded the 180 s boundary
+  and left only an empty `native_result`. Evidence:
+  `Results/metrics/runtime_channel_timeout_v199_current_turn_20260712.md`.
+  Do not evaluate a new algorithm until this probe returns readable metrics.
+  The earlier recovery evidence below remains historical evidence of a prior
+  healthy window, not proof of current health. After v107/v108 candidate
   timeouts, restored v80 Track3 and official Race1 probes initially timed out
   with only empty `native_result`, but the recovered route now passes official
   `UGV.Example.Race1` 1 s and restored v80 `UGV.Test.Saidao3Eval` 1 s probes
