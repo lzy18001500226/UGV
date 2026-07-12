@@ -433,4 +433,12 @@ M10 final-race / physical-transfer readiness notes
   restored exactly. Do not repeat larger-front-threshold plus OA-speed-sign
   steering gates. Evidence:
   `Results/metrics/track2_candidate_review_v191_brake_then_steer_handoff_20260712.md`.
+- v192 safety-priority speed arbitration is rejected. Static checks, 14 tests,
+  and the Track2 1 s gate passed, but strict Track2 ended at
+  `T=112.8,cR=2,cO=0,P=9.2`, finish-distance squared `378.4063339`. Both
+  collisions occurred outside the immediate-front braking predicate, with
+  narrow side clearance; the later event had path-dominated final steering
+  `1.65`. Exact pre-candidate controller and allocator objects are restored.
+  Do not continue front-threshold or immediate-reverse scalar scans. Evidence:
+  `Results/metrics/track2_candidate_review_v192_safety_priority_speed_20260712.md`.
 
