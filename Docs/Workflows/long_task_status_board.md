@@ -233,8 +233,15 @@ M10 final-race / physical-transfer readiness notes
   from side-only neutral longitudinal authority and has verified official
   origin-assertion finishes on Tracks 1, 2, and 4. Track3 remains blocked at
   `T=21.1`, path index 36, finish distance squared `301.4313`. Evidence:
-  `Results/metrics/four_track_completion_review_v148_20260712.md`. Next work is
-  a unified Track3 same-sign side-only heading-arbitration candidate, followed
-  by regression of the three completed tracks. Do not call 3/4 completion or
-  wrapper score `80/80`.
+  `Results/metrics/four_track_completion_review_v148_20260712.md`.
+- v149-v154 completion-first follow-ups are rejected. v150 only delayed the
+  same Track3 path-index-36 departure; v151/v152 clearance-gated persistence
+  caused collision accumulation; v153/v154 shorter lateral commitment and
+  side hysteresis increased collisions or terminated earlier. Exact v148
+  source semantics are restored. Do not continue speed-cap, release-dwell,
+  lateral-commitment, or side-hysteresis scalar scans. Next Track3 work must
+  diagnose path/pose geometry and allocator interaction before a new unified
+  candidate. Evidence: `Results/metrics/track3_candidate_review_v150_moderate_side_braking_20260712.md`
+  through `Results/metrics/track3_candidate_review_v154_lateral_direction_hysteresis_20260712.md`.
+  Do not call 3/4 completion or wrapper score `80/80`.
 

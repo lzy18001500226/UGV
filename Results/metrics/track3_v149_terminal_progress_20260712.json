@@ -1,0 +1,78 @@
+{
+  "csv": "Results\\simulations\\candidate_v149_neutral_side_same_sign_track3_120s_20260712\\extra_timeseries.csv",
+  "window_s": 5.0,
+  "signals": {
+    "ctrlAlloc.speed": {
+      "samples": 375,
+      "final_time": 18.7,
+      "final": 0.553928864947088,
+      "window_min": 0.550785590340488,
+      "window_max": 1.00576114163753,
+      "window_mean": 0.8247698401340312
+    },
+    "ctrlAlloc.speed_oa": {
+      "samples": 375,
+      "final_time": 18.7,
+      "final": 0.0,
+      "window_min": 0.0,
+      "window_max": 1.0,
+      "window_mean": 0.009900990099009901
+    },
+    "ctrlAlloc.steer": {
+      "samples": 375,
+      "final_time": 18.7,
+      "final": 1.26551279821844,
+      "window_min": 0.043852716147517,
+      "window_max": 1.26551279821844,
+      "window_mean": 0.5631065848939443
+    },
+    "ctrlAlloc.steer_oa": {
+      "samples": 375,
+      "final_time": 18.7,
+      "final": 0.6,
+      "window_min": 0.0,
+      "window_max": 0.6,
+      "window_mean": 0.594059405940594
+    },
+    "ctrlAlloc.steer_pp": {
+      "samples": 375,
+      "final_time": 18.7,
+      "final": 1.25631301407323,
+      "window_min": -0.25528722893521,
+      "window_max": 1.25631301407323,
+      "window_mean": 0.4144810517426914
+    },
+    "distanceSensor1.vehicle_position[1]": {
+      "samples": 375,
+      "final_time": 18.7,
+      "final": 17.1285792480374,
+      "window_min": 13.8029447388821,
+      "window_max": 17.1318279137775,
+      "window_mean": 15.95592053949992
+    },
+    "distanceSensor1.vehicle_position[2]": {
+      "samples": 375,
+      "final_time": 18.7,
+      "final": 2.47528169832368,
+      "window_min": 0.683042682150355,
+      "window_max": 2.47528169832368,
+      "window_mean": 1.3002931958003305
+    },
+    "pathPlanner.closest_index": {
+      "samples": 375,
+      "final_time": 18.7,
+      "final": 25.0,
+      "window_min": 10.0,
+      "window_max": 25.0,
+      "window_mean": 16.277227722772277
+    },
+    "pathPlanner.path_progress": {
+      "samples": 375,
+      "final_time": 18.7,
+      "final": 0.655636600758326,
+      "window_min": 0.0410535939296028,
+      "window_max": 0.976066326377482,
+      "window_mean": 0.5252039658476311
+    }
+  }
+}
