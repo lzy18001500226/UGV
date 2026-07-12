@@ -73,6 +73,12 @@ M10 final-race / physical-transfer readiness notes
 
 ## Review Notes
 
+- v202 terminal approach distance-speed envelope was rejected on 2026-07-12.
+  It passed static checks, tests, and the 1 s gate, but the Track3 decisive
+  run exceeded six minutes without metrics or a return packet. All source
+  changes were rolled back to v199. Evidence:
+  `Results/metrics/track3_candidate_review_v202_terminal_approach_envelope_20260712.md`.
+
 - v201 continuous path-segment selection was rejected on 2026-07-12. The
   temporary continuity-window planner produced exactly the same Track3
   decisive values as v199 (`T=92.85,d=1.0824256149658185,cR=1,cO=1,P=9.2`)

@@ -1,0 +1,25 @@
+<ExternalResources>
+    <BasePaths>
+        <BasePath name="&gt;root&lt;">C:/Users/HP/Documents/MWORKS</BasePath>
+        <BasePath name="Modelica">D:/Program Files/MWORKS/Sysplorer 2026a/Library/Modelica 4.0.0.TY.1/Modelica</BasePath>
+        <BasePath name="TADynamics">C:/Users/HP/Documents/MWORKS/mw_mol/TADynamics/TADynamics</BasePath>
+        <BasePath name="UGV">C:/Users/HP/Desktop/UGV/Models/UGV</BasePath>
+    </BasePaths>
+    <IncludeDirectory>
+        <Path>C:/Users/HP/Documents/MWORKS</Path>
+    </IncludeDirectory>
+    <LibraryDirectory>
+        <Path BasePath="Modelica">Resources/Source</Path>
+        <Path>C:/Users/HP/Desktop/UGV/Models/UGV/Test</Path>
+        <Path>C:/Users/HP/Documents/MWORKS</Path>
+    </LibraryDirectory>
+    <Resources>
+        <Path BasePath="UGV">Resources/VisualModel/4WD Robot Car.stl</Path>
+        <Path BasePath="TADynamics">Resource/VisualModel/tyre.stl</Path>
+        <Path BasePath="TADynamics">Resource/Files/205_60_R15__left.tir</Path>
+        <Path BasePath="UGV">Resources/VisualModel/wheel.stl</Path>
+    </Resources>
+    <SearchPaths>
+        <Path>C:/Users/HP/Documents/MWORKS</Path>
+    </SearchPaths>
+</ExternalResources>

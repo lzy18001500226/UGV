@@ -1,0 +1,54 @@
+[2026-07-12 21:04:40.721][47408][INFO][InstBasedSimulate]: Log Service Initialized
+[2026-07-12 21:04:40.722][47408][INFO][InstBasedSimulate]: Path verification success: C:/Users/HP/Documents/MWORKS/Simulation/MwSolver_260712_210420_621 and C:/Users/HP/Desktop/UGV/Results/simulations/controller_v202_terminal_approach_envelope_saidao3_700s_20260712/native_result/Saidao3Eval and C:\Users\HP\Documents\MWORKS\Simulation\MwSolver_260712_210420_621\MWSolver.dll
+[2026-07-12 21:04:40.727][47408][INFO][InstBasedSimulate]: Loading libraries succeed
+[2026-07-12 21:04:40.727][47408][INFO][InstBasedSimulate]: Create post_processor
+[2026-07-12 21:04:40.748][47408][INFO][InstBasedSimulate]: Loading variables succeed: C:/Users/HP/Documents/MWORKS/Simulation/MwSolver_260712_210420_621\Variables
+[2026-07-12 21:04:40.748][47408][INFO][InstBasedSimulate]: Get sim instance done
+[2026-07-12 21:04:40.749][47408][INFO][InstBasedSimulate]: Starting simulation
+[2026-07-12 21:04:40.749][47408][INFO][CollectVariables]: CollectVariables start.
+[2026-07-12 21:04:40.768][47408][INFO][CollectVariables]: CollectVariables finsh.
+[2026-07-12 21:04:40.769][47408][INFO][CollectVariables]: CollectVariables: fixed Real variables size - 13997
+[2026-07-12 21:04:40.769][47408][INFO][CollectVariables]: CollectVariables: timevaring Real variables size - 3978
+[2026-07-12 21:04:40.769][47408][INFO][CollectVariables]: CollectVariables: parameter Real variables size - 0
+[2026-07-12 21:04:40.769][47408][INFO][CollectVariables]: CollectVariables: fixed Int variables size - 377
+[2026-07-12 21:04:40.769][47408][INFO][CollectVariables]: CollectVariables: timevaring Int variables size - 5
+[2026-07-12 21:04:40.769][47408][INFO][CollectVariables]: CollectVariables: parameter Int variables size - 0
+[2026-07-12 21:04:40.769][47408][INFO][CollectVariables]: CollectVariables: fixed Bool variables size - 213
+[2026-07-12 21:04:40.770][47408][INFO][CollectVariables]: CollectVariables: timevaring Bool variables size - 15
+[2026-07-12 21:04:40.770][47408][INFO][CollectVariables]: CollectVariables: parameter Bool variables size - 0
+[2026-07-12 21:04:40.770][47408][INFO][CollectVariables]: CollectVariables: fixed type of 7 variables size - 0
+[2026-07-12 21:04:40.770][47408][INFO][CollectVariables]: CollectVariables: timevaring type of 7 variables size - 0
+[2026-07-12 21:04:40.770][47408][INFO][CollectVariables]: CollectVariables: parameter type of 7 variables size - 0
+[2026-07-12 21:04:40.770][47408][INFO][CollectVariables]: CollectVariables: fixed type of 8 variables size - 0
+[2026-07-12 21:04:40.770][47408][INFO][CollectVariables]: CollectVariables: timevaring type of 8 variables size - 0
+[2026-07-12 21:04:40.770][47408][INFO][CollectVariables]: CollectVariables: parameter type of 8 variables size - 0
+[2026-07-12 21:04:40.770][47408][INFO][CollectVariables]: CollectVariables: fixed type of 9 variables size - 0
+[2026-07-12 21:04:40.770][47408][INFO][CollectVariables]: CollectVariables: timevaring type of 9 variables size - 0
+[2026-07-12 21:04:40.771][47408][INFO][CollectVariables]: CollectVariables: parameter type of 9 variables size - 0
+[2026-07-12 21:04:40.771][47408][INFO][CollectVariables]: CollectVariables: fixed type of 10 variables size - 0
+[2026-07-12 21:04:40.771][47408][INFO][CollectVariables]: CollectVariables: timevaring type of 10 variables size - 0
+[2026-07-12 21:04:40.771][47408][INFO][CollectVariables]: CollectVariables: parameter type of 10 variables size - 0
+[2026-07-12 21:04:40.771][47408][INFO][CollectVariables]: CollectVariables: fixed type of 11 variables size - 0
+[2026-07-12 21:04:40.771][47408][INFO][CollectVariables]: CollectVariables: timevaring type of 11 variables size - 0
+[2026-07-12 21:04:40.771][47408][INFO][CollectVariables]: CollectVariables: parameter type of 11 variables size - 0
+[2026-07-12 21:04:40.771][47408][INFO][CollectVariables]: CollectVariables: fixed type of 12 variables size - 0
+[2026-07-12 21:04:40.771][47408][INFO][CollectVariables]: CollectVariables: timevaring type of 12 variables size - 0
+[2026-07-12 21:04:40.772][47408][INFO][CollectVariables]: CollectVariables: parameter type of 12 variables size - 0
+[2026-07-12 21:04:40.772][47408][INFO][CollectVariables]: CollectVariables: fixed type of 13 variables size - 0
+[2026-07-12 21:04:40.772][47408][INFO][CollectVariables]: CollectVariables: timevaring type of 13 variables size - 0
+[2026-07-12 21:04:40.772][47408][INFO][CollectVariables]: CollectVariables: parameter type of 13 variables size - 0
+[2026-07-12 21:04:40.772][47408][INFO][CollectVariables]: CollectVariables: fixed type of 14 variables size - 0
+[2026-07-12 21:04:40.772][47408][INFO][CollectVariables]: CollectVariables: timevaring type of 14 variables size - 0
+[2026-07-12 21:04:40.772][47408][INFO][CollectVariables]: CollectVariables: parameter type of 14 variables size - 0
+[2026-07-12 21:04:40.772][47408][INFO][CollectVariables]: CollectVariables: clock partition id:index map - {2:2}
+[2026-07-12 21:04:40.772][47408][INFO][CollectVariables]: CollectVariables: clock Real variables size of partition id 2 - 23
+[2026-07-12 21:04:40.773][47408][INFO][CollectVariables]: CollectVariables: clock Int variables size of partition id 2 - 0
+[2026-07-12 21:04:40.773][47408][INFO][CollectVariables]: CollectVariables: clock Bool variables size of partition id 2 - 1
+[2026-07-12 21:04:40.793][47408][INFO][DoSimulate]: SimMode is 3
+[2026-07-12 21:04:40.793][47408][INFO][DoSimulate]: Load externalResources.xml
+[2026-07-12 21:04:40.794][47408][INFO][DoSimulate]: TryInstantaite
+[2026-07-12 21:04:41.225][47408][INFO][DoSimulate]: Setup experiment
+[2026-07-12 21:04:41.226][47408][INFO][DoSimulate]: TryDoSimulate
+[2026-07-12 21:04:41.226][47408][INFO][InstBasedProgressController]: Notify ready
+[2026-07-12 21:04:41.271][55088][INFO][Simulation]: 1
+[2026-07-12 21:04:41.290][47408][INFO][InstBasedProgressController]: ToStart
