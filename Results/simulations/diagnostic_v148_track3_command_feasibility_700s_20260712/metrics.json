@@ -1,0 +1,69 @@
+{
+  "request_id": "UGV-V148-TRACK3-COMMAND-FEASIBILITY-20260712",
+  "model_name": "UGV.Test.Saidao3Eval",
+  "stop_time_requested": 700.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "simulate_failed",
+  "completion": "early_stop_finish_not_observed",
+  "time_s": 21.1,
+  "road_collisions": 1.0,
+  "obstacle_collisions": 1.0,
+  "avoidance_score": 9.2,
+  "finish_distance_squared": 301.43126761991095,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "simulation_exit_state": 2,
+  "simulation_state": "Idle",
+  "exported_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\diagnostic_v148_track3_command_feasibility_700s_20260712\\score_timeseries.csv",
+  "exported_csv_ok": true,
+  "exported_extra_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\diagnostic_v148_track3_command_feasibility_700s_20260712\\extra_timeseries.csv",
+  "exported_extra_csv_ok": true,
+  "extra_result_variables": [
+    "body3DOF1_1.angles[3]",
+    "ctrlAlloc.speed",
+    "ctrlAlloc.steer",
+    "distanceSensor1.d",
+    "distanceSensor1.front_dist",
+    "distanceSensor1.left_dist",
+    "distanceSensor1.right_dist",
+    "distanceSensor1.vehicle_position[1]",
+    "distanceSensor1.vehicle_position[2]",
+    "obsAvoidController_Sysblock.chart.flag",
+    "obsAvoidController_Sysblock.speed",
+    "obsAvoidController_Sysblock.steer",
+    "pID_Ackermann.current_psi",
+    "pID_Ackermann.psi_desired",
+    "pID_Ackermann.psi_pid_control1.omega_d",
+    "pathPlanner.steering_angle",
+    "pathPlanner.target_v"
+  ],
+  "pyapi_messages": {
+    "GetLastErrors": [
+      ""
+    ],
+    "MessageText": "[上一条命令没有日志信息]"
+  },
+  "termination_reason": "unclassified_early_termination",
+  "diagnostic_values_at_end": {
+    "countPoint.roadHit": 1.0,
+    "countPoint.obsHit": 0.0
+  },
+  "notes": [],
+  "score_values_at_end": {
+    "T": 21.1,
+    "cR": 1.0,
+    "cO": 1.0,
+    "P": 9.2
+  },
+  "pyapi_messages_after_result_export": {
+    "GetLastErrors": [
+      ""
+    ],
+    "MessageText": "[上一条命令没有日志信息]"
+  }
+}

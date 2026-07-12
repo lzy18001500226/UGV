@@ -1,0 +1,251 @@
+{
+  "radius_s": 0.5,
+  "signals": [
+    "ctrlAlloc.steer",
+    "ctrlAlloc.speed",
+    "pID_Ackermann.psi_desired",
+    "pID_Ackermann.current_psi",
+    "pID_Ackermann.psi_pid_control1.omega_d",
+    "pathPlanner.steering_angle",
+    "pathPlanner.target_v",
+    "obsAvoidController_Sysblock.steer",
+    "obsAvoidController_Sysblock.speed",
+    "obsAvoidController_Sysblock.chart.flag",
+    "distanceSensor1.front_dist",
+    "distanceSensor1.left_dist",
+    "distanceSensor1.right_dist"
+  ],
+  "runs": [
+    {
+      "label": "v148",
+      "run_dir": "Results\\simulations\\diagnostic_v148_track3_command_feasibility_700s_20260712",
+      "radius_s": 0.5,
+      "events": [
+        {
+          "time": 1.0,
+          "changes": {
+            "cO": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 10.0,
+              "to": 9.6,
+              "delta": -0.40000000000000036
+            }
+          },
+          "window": {
+            "nearest_time": 1.0,
+            "row_count": 101,
+            "signals": {
+              "ctrlAlloc.steer": {
+                "nearest_time": 1.0,
+                "nearest": 0.129616219178547,
+                "min": 0.0878964884309839,
+                "max": 0.151479609447881,
+                "mean": 0.12190513516355618
+              },
+              "ctrlAlloc.speed": {
+                "nearest_time": 1.0,
+                "nearest": 0.836079790470006,
+                "min": 0.836079790470006,
+                "max": 0.988378567348818,
+                "mean": 0.8955655541697614
+              },
+              "pID_Ackermann.psi_desired": {
+                "nearest_time": 1.0,
+                "nearest": 0.129616219178547,
+                "min": 0.0878964884309839,
+                "max": 0.151479609447881,
+                "mean": 0.12190513516355618
+              },
+              "pID_Ackermann.current_psi": {
+                "nearest_time": 1.0,
+                "nearest": 0.0161759620647687,
+                "min": -0.00208487955899037,
+                "max": 0.0958446764590293,
+                "mean": 0.02811569456711343
+              },
+              "pID_Ackermann.psi_pid_control1.omega_d": {
+                "nearest_time": 1.0,
+                "nearest": 11.1117817165116,
+                "min": -0.801818697133574,
+                "max": 14.7661647314173,
+                "mean": 9.366533556611836
+              },
+              "pathPlanner.steering_angle": {
+                "nearest_time": 1.0,
+                "nearest": -0.0459468938868411,
+                "min": -0.136628723723922,
+                "max": 0.0146234471832645,
+                "mean": -0.04971750534371245
+              },
+              "pathPlanner.target_v": {
+                "nearest_time": 1.0,
+                "nearest": 1.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0
+              },
+              "obsAvoidController_Sysblock.steer": {
+                "nearest_time": 1.0,
+                "nearest": 0.6,
+                "min": 0.6,
+                "max": 0.6,
+                "mean": 0.6
+              },
+              "obsAvoidController_Sysblock.speed": {
+                "nearest_time": 1.0,
+                "nearest": 0.0,
+                "min": -0.994862950256221,
+                "max": 0.0,
+                "mean": -0.385461859230163
+              },
+              "obsAvoidController_Sysblock.chart.flag": {
+                "nearest_time": 1.0,
+                "nearest": 1.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0
+              },
+              "distanceSensor1.front_dist": {
+                "nearest_time": 1.0,
+                "nearest": 2.08236791538236,
+                "min": 0.0388439334595048,
+                "max": 2.08988317971755,
+                "mean": 1.207071005075805
+              },
+              "distanceSensor1.left_dist": {
+                "nearest_time": 1.0,
+                "nearest": -0.179095764075863,
+                "min": -0.219796820398442,
+                "max": 0.598115184626594,
+                "mean": 0.37056237243367407
+              },
+              "distanceSensor1.right_dist": {
+                "nearest_time": 1.0,
+                "nearest": -0.0140957640758632,
+                "min": -0.0547968203984423,
+                "max": 0.641323522880524,
+                "mean": 0.45932711350493577
+              }
+            }
+          }
+        },
+        {
+          "time": 4.1,
+          "changes": {
+            "cR": {
+              "from": 0.0,
+              "to": 1.0,
+              "delta": 1.0
+            },
+            "P": {
+              "from": 9.6,
+              "to": 9.2,
+              "delta": -0.40000000000000036
+            }
+          },
+          "window": {
+            "nearest_time": 4.1,
+            "row_count": 101,
+            "signals": {
+              "ctrlAlloc.steer": {
+                "nearest_time": 4.1,
+                "nearest": 0.0776237901375124,
+                "min": 0.0621561058780185,
+                "max": 0.092316457471466,
+                "mean": 0.07673328357980005
+              },
+              "ctrlAlloc.speed": {
+                "nearest_time": 4.1,
+                "nearest": 0.993309097198864,
+                "min": 0.988968674474496,
+                "max": 0.999082450847495,
+                "mean": 0.9948905204587236
+              },
+              "pID_Ackermann.psi_desired": {
+                "nearest_time": 4.1,
+                "nearest": 0.0776237901375124,
+                "min": 0.0621561058780185,
+                "max": 0.092316457471466,
+                "mean": 0.07673328357980005
+              },
+              "pID_Ackermann.current_psi": {
+                "nearest_time": 4.1,
+                "nearest": 0.0781809614501721,
+                "min": 0.0628855707731084,
+                "max": 0.0924943481199482,
+                "mean": 0.07712501182858299
+              },
+              "pID_Ackermann.psi_pid_control1.omega_d": {
+                "nearest_time": 4.1,
+                "nearest": -0.0394343260737103,
+                "min": -0.239022881971366,
+                "max": 0.103415117600842,
+                "mean": -0.02441178567192132
+              },
+              "pathPlanner.steering_angle": {
+                "nearest_time": 4.1,
+                "nearest": -0.216353928712086,
+                "min": -0.232306782497239,
+                "max": -0.197754576923935,
+                "mean": -0.21582923696284934
+              },
+              "pathPlanner.target_v": {
+                "nearest_time": 4.1,
+                "nearest": 1.0,
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0
+              },
+              "obsAvoidController_Sysblock.steer": {
+                "nearest_time": 4.1,
+                "nearest": 0.6,
+                "min": 0.0,
+                "max": 0.6,
+                "mean": 0.594059405940594
+              },
+              "obsAvoidController_Sysblock.speed": {
+                "nearest_time": 4.1,
+                "nearest": 0.0,
+                "min": 0.0,
+                "max": 1.0,
+                "mean": 0.009900990099009901
+              },
+              "obsAvoidController_Sysblock.chart.flag": {
+                "nearest_time": 4.1,
+                "nearest": 1.0,
+                "min": 0.0,
+                "max": 1.0,
+                "mean": 0.9900990099009901
+              },
+              "distanceSensor1.front_dist": {
+                "nearest_time": 4.1,
+                "nearest": 2.09920771025379,
+                "min": 2.09877399280407,
+                "max": 2.09978454058054,
+                "mean": 2.099364809367311
+              },
+              "distanceSensor1.left_dist": {
+                "nearest_time": 4.1,
+                "nearest": 0.106358474239183,
+                "min": -0.580687404185843,
+                "max": 0.147314160266633,
+                "mean": 0.0763904023163487
+              },
+              "distanceSensor1.right_dist": {
+                "nearest_time": 4.1,
+                "nearest": 0.270854469359684,
+                "min": -0.415687404185843,
+                "max": 0.311608858949062,
+                "mean": 0.24090793654941522
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

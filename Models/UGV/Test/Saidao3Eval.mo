@@ -284,6 +284,7 @@ thickness=1));
 points={{12.7,-28.4793},{38,-28.4793},{38,-5},{-188,-5},{-188,-69.2493},{-165.375,-69.2493}},
 color={0,0,127},
 thickness=1));
+  connect(body3DOF1_1.angles[3], ctrlAlloc.current_psi);
   connect(pID_Ackermann.delta_left, body3DOF1_1.fl_steer)
     annotation(Line(origin={86,6},
 points={{-107.3,-56.75},{-70,-56.75},{-70,-40.82},{-48.7,-40.82}},

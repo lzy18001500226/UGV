@@ -19,6 +19,9 @@ package ControlAllocate "控制分配"
   // 参数
   parameter Real factor_pp = 1 "路径规划影响因子";
   parameter Real factor_oa = 0.3 "避障控制影响因子";
+  parameter Real tracking_error_gain = 0.8 "航向跟踪误差速度降额增益";
+  parameter Real tracking_speed_floor = 0.35 "航向误差降额后的最低速度比例";
+    Real tracking_error "混合期望航向与实测航向的包角误差";
     Modelica.Blocks.Discrete.UnitDelay unitDelay1(samplePeriod = 0.01, y_start = 0) 
       annotation(Placement(transformation(origin={-38.8865,-16.9546},
   extent={{-4.8865,-4.8865},{4.8865,4.8865}})));
@@ -52,7 +55,10 @@ package ControlAllocate "控制分配"
     Modelica.Blocks.Interfaces.RealInput steer_oa
       "转向（避障）" annotation (Placement(transformation(origin={-110,-75},
   extent={{-10,-10},{10,10}}),
-  iconTransformation(origin={0,0})));
+      iconTransformation(origin={0,0})));
+    Modelica.Blocks.Interfaces.RealInput current_psi
+      "车辆实测航向" annotation (Placement(transformation(origin={-110,-115},
+      extent={{-10,-10},{10,10}}), iconTransformation(origin={0,0})));
     Modelica.Blocks.Interfaces.RealOutput speed
       "速度" annotation (Placement(transformation(origin={110,50},
   extent={{-10,-10},{10,10}}),
@@ -90,10 +96,8 @@ package ControlAllocate "控制分配"
     annotation(Line(origin={-77,-62},
     points={{-33,-13},{5,-13},{5,12.3638},{32.2497,12.3638}},
     color={0,0,127}));
-    connect(add.y, speed) 
-    annotation(Line(origin={81,34},
-    points={{-29.6249,-15.3411},{-9,-15.3411},{-9,16},{29,16}},
-    color={0,0,127}));
+    tracking_error = UGV.Utilities.Functions.angle_diff(add1.y, current_psi);
+    speed = add.y * max(tracking_speed_floor, 1 - tracking_error_gain * abs(tracking_error));
     connect(add1.y, steer) 
     annotation(Line(origin={81,-35},
     points={{-29.6249,15.1135},{-9,15.1135},{-9,-15},{29,-15}},

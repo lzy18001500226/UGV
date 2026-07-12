@@ -1,0 +1,19 @@
+{
+  "all_variable_count": 19181,
+  "timevarying_variable_count": 18743,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "extra_result_variables": [
+    "ctrlAlloc.speed",
+    "ctrlAlloc.steer",
+    "ctrlAlloc.tracking_error",
+    "distanceSensor1.d",
+    "pID_Ackermann.current_psi",
+    "pID_Ackermann.psi_pid_control1.omega_d"
+  ]
+}
