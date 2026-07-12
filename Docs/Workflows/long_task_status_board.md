@@ -469,4 +469,10 @@ M10 final-race / physical-transfer readiness notes
   finish and added obstacle collisions. `PathPlanner.mo` was restored exactly.
   Do not expand this Stanley drop-in or scan its gain/limit family. Evidence:
   `Results/metrics/track2_candidate_review_v195_stanley_path_heading_20260712.md`.
+- v196 combined v162 narrow front recovery with deterministic pursuit-endpoint
+  initialization. Static checks, 14 tests, and the Track3 1 s gate passed, but
+  the completion request terminated at `T=18.1,cR=1,cO=1,P=9.2`, finish
+  distance squared `295.2941`. It is rejected and exact v148 semantics are
+  restored. Do not continue endpoint fallback expression variants. Evidence:
+  `Results/metrics/track3_candidate_review_v196_deterministic_endpoint_recovery_20260712.md`.
 
