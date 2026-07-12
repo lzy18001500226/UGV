@@ -72,6 +72,12 @@ M10 final-race / physical-transfer readiness notes
 
 ## Review Notes
 
+- v162 rear-observability diagnostic is closed at
+  `Results/metrics/v162_rear_observability_diagnostic_20260712.md`. `db`
+  separates initial departure from later motion but does not uniquely identify
+  the return-to-finish window; rear-close predicates recur on the main loop.
+  No `db` candidate was promoted and exact v148 is restored.
+
 - v178 preemptive narrow recovery is rejected at
   `Results/metrics/track3_candidate_review_v178_preemptive_narrow_recovery_20260712.md`.
   Moving the v162 branch from `df<0.15` to `df<0.20` yielded a long but
