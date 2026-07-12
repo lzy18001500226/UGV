@@ -2,7 +2,7 @@
 
 > Short operational board for the UGV initial-race long task. Keep this file concise; detailed evidence belongs in `Results/`.
 
-Status: completion-first optimization from accepted v148. Tracks 1, 2, and 4 have verified official finishes; Track3 remains the only completion blocker at `T=21.1,cR=1,cO=1,P=9.2`, path index 36. The official origin-return gate remains the first acceptance criterion: `SimulateModel=false`, `T>10`, and `distanceSensor1.d<0.02` at termination. A fixed stop horizon is not a finish. v180/v182 produced the first saved Track3 official finishes, but each regressed an existing finished track; v183 preserved 120 s progress on Tracks 1/3 but Track2 stopped at `T=28.55`. Exact v148 source semantics are restored, 2026-07-12 CST.
+Status: completion-first optimization from exact v148 semantics. The official comparison lane is plain `SimulateModel`; explicit `SimulateModelEx` runs are diagnostic-only because the same bytes can take a different trajectory. The latest plain Track3 baseline remains a non-finish at `T=21.1,cR=1,cO=1,P=9.2`; evidence is `Results/metrics/baseline_plain_api_track3_700s_20260712.md`. Track3 is still blocked, and the current cold Track2 baseline also requires completion revalidation. The official origin-return gate remains the first acceptance criterion: `SimulateModel=false`, `T>10`, and `distanceSensor1.d<0.02` at termination. A fixed stop horizon is not a finish. v192/v193 results were diagnostic-lane or rejected candidates and are not score comparisons. Exact v148 source semantics are restored, 2026-07-12 CST.
 
 ## Current Long Task
 
