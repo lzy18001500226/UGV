@@ -276,4 +276,16 @@ M10 final-race / physical-transfer readiness notes
   Next state continuity must use side-clearance geometry in the avoidance
   state machine, or be preceded by an explicit bounded interface design.
   Evidence: `Results/metrics/track3_candidate_review_v160_stateful_path_recovery_20260712.md`.
+- v162 narrow front-obstacle recovery is the strongest structural diagnostic:
+  it traversed the main Track3 loop but missed the official origin and began a
+  second lap. v163 side-only path recentering regressed collision counts. v164
+  endpoint capture passed static, test, and 1 s native gates but terminated at
+  `T=20.15,cR=1,cO=1,P=9.2`, finish-distance squared `302.2936`; it is rejected
+  because the new departure event perturbed the early trajectory before
+  endpoint capture was needed. Exact v148 source semantics are restored. Next
+  work must inspect the official finish assertion and shared start/end segment
+  semantics without adding a start-of-run discrete event. Evidence:
+  `Results/metrics/track3_candidate_review_v162_v148_narrow_recovery_20260712.md`,
+  `Results/metrics/track3_candidate_review_v163_side_only_path_recentering_20260712.md`,
+  and `Results/metrics/track3_candidate_review_v164_endpoint_capture_20260712.md`.
 
