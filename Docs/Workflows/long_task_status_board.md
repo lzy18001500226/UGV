@@ -425,4 +425,12 @@ M10 final-race / physical-transfer readiness notes
   The controller was restored exactly to `HEAD`; no candidate is accepted and
   the four-track completion gate remains open. Evidence:
   `Results/metrics/track2_candidate_review_v190_signed_front_release_20260712.md`.
+- The exact `HEAD` Track2 cold baseline was reproduced again at
+  `T=28.55,cR=1,cO=0,P=9.6`, finish-distance squared `791.4782768`; it remains
+  a non-finish. v191 brake-then-steer handoff extended runtime to `T=87.4` and
+  reduced finish distance to `332.5612519`, but accumulated `cR=3,cO=4,P=7.2`
+  and still did not finish. v191 is rejected and both controller/allocator are
+  restored exactly. Do not repeat larger-front-threshold plus OA-speed-sign
+  steering gates. Evidence:
+  `Results/metrics/track2_candidate_review_v191_brake_then_steer_handoff_20260712.md`.
 
