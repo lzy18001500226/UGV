@@ -30,3 +30,6 @@ Evidence:
 
 No Track3 finish, 80/80, physical-vehicle, package, or submission claim is
 made.
+
+Terminal notice evidence:
+`C:\Users\HP\Desktop\MoSim\Results\coagent_gateway\email\email_alert_20260712_142830.json`.
