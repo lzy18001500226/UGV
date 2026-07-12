@@ -288,4 +288,13 @@ M10 final-race / physical-transfer readiness notes
   `Results/metrics/track3_candidate_review_v162_v148_narrow_recovery_20260712.md`,
   `Results/metrics/track3_candidate_review_v163_side_only_path_recentering_20260712.md`,
   and `Results/metrics/track3_candidate_review_v164_endpoint_capture_20260712.md`.
+- v165 stateless closure-segment capture corrected the official path-array
+  representation and passed static, test, and corrected 1 s native gates. Its
+  strict Track3 run still terminated early at
+  `T=18.1,cR=1,cO=1,P=9.2`, finish-distance squared `295.2941`; no exported
+  sample satisfied the capture predicate before termination. Adding planner
+  equations perturbed this numerically sensitive trajectory before the finish
+  area, so direct `PathPlanner` endpoint-helper additions are closed for this
+  pass. Exact v148 source semantics are restored. Evidence:
+  `Results/metrics/track3_candidate_review_v165_final_segment_capture_20260712.md`.
 
