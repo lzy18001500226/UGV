@@ -1,0 +1,19 @@
+{
+  "all_variable_count": 19171,
+  "timevarying_variable_count": 19168,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "extra_result_variables": [
+    "ctrlAlloc.speed",
+    "ctrlAlloc.speed_oa",
+    "ctrlAlloc.steer",
+    "ctrlAlloc.steer_oa",
+    "pathPlanner.path_progress",
+    "pathPlanner.steering_angle"
+  ]
+}

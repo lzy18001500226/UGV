@@ -1,0 +1,718 @@
+{
+  "csv": "Results\\simulations\\candidate_v155_extreme_same_sign_oa_suppression_track3_700s_20260712\\extra_timeseries.csv",
+  "window_s": 5.0,
+  "signals": {
+    "ctrlAlloc.add.dataType": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 1.0,
+      "window_min": 1.0,
+      "window_max": 1.0,
+      "window_mean": 1.0
+    },
+    "ctrlAlloc.add.k1": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 1.0,
+      "window_min": 1.0,
+      "window_max": 1.0,
+      "window_mean": 1.0
+    },
+    "ctrlAlloc.add.k2": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 1.0,
+      "window_min": 1.0,
+      "window_max": 1.0,
+      "window_mean": 1.0
+    },
+    "ctrlAlloc.add.u1": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.55,
+      "window_min": 0.55,
+      "window_max": 1.0,
+      "window_mean": 0.7985148514851486
+    },
+    "ctrlAlloc.add.u2": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.00171309259317717,
+      "window_min": 0.000793187585319908,
+      "window_max": 0.00568766652155544,
+      "window_mean": 0.0025857769914464693
+    },
+    "ctrlAlloc.add.y": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.551713092593177,
+      "window_min": 0.550801159205295,
+      "window_max": 1.00563107333763,
+      "window_mean": 0.801100628476595
+    },
+    "ctrlAlloc.add1.dataType": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 1.0,
+      "window_min": 1.0,
+      "window_max": 1.0,
+      "window_mean": 1.0
+    },
+    "ctrlAlloc.add1.k1": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 1.0,
+      "window_min": 1.0,
+      "window_max": 1.0,
+      "window_mean": 1.0
+    },
+    "ctrlAlloc.add1.k2": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 1.0,
+      "window_min": 1.0,
+      "window_max": 1.0,
+      "window_mean": 1.0
+    },
+    "ctrlAlloc.add1.u1": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 1.52086022540886,
+      "window_min": -0.181732134829892,
+      "window_max": 1.52086022540886,
+      "window_mean": 0.5647076449961514
+    },
+    "ctrlAlloc.add1.u2": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.0456393404840571,
+      "window_min": 0.0456393404840571,
+      "window_max": 0.299524087448811,
+      "window_mean": 0.23626880369250694
+    },
+    "ctrlAlloc.add1.y": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 1.56649956589292,
+      "window_min": 0.115529185680198,
+      "window_max": 1.56649956589292,
+      "window_mean": 0.8009764486886584
+    },
+    "ctrlAlloc.factor_oa": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 0.5,
+      "window_min": 0.5,
+      "window_max": 0.5,
+      "window_mean": 0.5
+    },
+    "ctrlAlloc.factor_pp": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 1.0,
+      "window_min": 1.0,
+      "window_max": 1.0,
+      "window_mean": 1.0
+    },
+    "ctrlAlloc.firstOrder.T": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 1.0,
+      "window_min": 1.0,
+      "window_max": 1.0,
+      "window_mean": 1.0
+    },
+    "ctrlAlloc.firstOrder.initType": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 1.0,
+      "window_min": 1.0,
+      "window_max": 1.0,
+      "window_mean": 1.0
+    },
+    "ctrlAlloc.firstOrder.k": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 1.0,
+      "window_min": 1.0,
+      "window_max": 1.0,
+      "window_mean": 1.0
+    },
+    "ctrlAlloc.firstOrder.u": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.0,
+      "window_min": 0.0,
+      "window_max": 0.3,
+      "window_mean": 0.18712871287128713
+    },
+    "ctrlAlloc.firstOrder.y": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.0456393404840571,
+      "window_min": 0.0456393404840571,
+      "window_max": 0.299524087448811,
+      "window_mean": 0.23626880369250694
+    },
+    "ctrlAlloc.firstOrder.y_start": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 0.0,
+      "window_min": 0.0,
+      "window_max": 0.0,
+      "window_mean": 0.0
+    },
+    "ctrlAlloc.firstOrder1.T": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 1.0,
+      "window_min": 1.0,
+      "window_max": 1.0,
+      "window_mean": 1.0
+    },
+    "ctrlAlloc.firstOrder1.initType": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 1.0,
+      "window_min": 1.0,
+      "window_max": 1.0,
+      "window_mean": 1.0
+    },
+    "ctrlAlloc.firstOrder1.k": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 1.0,
+      "window_min": 1.0,
+      "window_max": 1.0,
+      "window_mean": 1.0
+    },
+    "ctrlAlloc.firstOrder1.u": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.0,
+      "window_min": 0.0,
+      "window_max": 0.0,
+      "window_mean": 0.0
+    },
+    "ctrlAlloc.firstOrder1.y": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.00171309259317717,
+      "window_min": 0.000793187585319908,
+      "window_max": 0.00568766652155544,
+      "window_mean": 0.0025857769914464693
+    },
+    "ctrlAlloc.firstOrder1.y_start": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 0.0,
+      "window_min": 0.0,
+      "window_max": 0.0,
+      "window_mean": 0.0
+    },
+    "ctrlAlloc.gain.k": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 0.5,
+      "window_min": 0.5,
+      "window_max": 0.5,
+      "window_mean": 0.5
+    },
+    "ctrlAlloc.gain.u": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.6,
+      "window_min": 0.6,
+      "window_max": 0.6,
+      "window_mean": 0.6
+    },
+    "ctrlAlloc.gain.y": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.3,
+      "window_min": 0.3,
+      "window_max": 0.3,
+      "window_mean": 0.3
+    },
+    "ctrlAlloc.gain1.k": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 0.5,
+      "window_min": 0.5,
+      "window_max": 0.5,
+      "window_mean": 0.5
+    },
+    "ctrlAlloc.gain1.u": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.0,
+      "window_min": 0.0,
+      "window_max": 0.0,
+      "window_mean": 0.0
+    },
+    "ctrlAlloc.gain1.y": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.0,
+      "window_min": 0.0,
+      "window_max": 0.0,
+      "window_mean": 0.0
+    },
+    "ctrlAlloc.gain2.k": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 1.0,
+      "window_min": 1.0,
+      "window_max": 1.0,
+      "window_mean": 1.0
+    },
+    "ctrlAlloc.gain2.u": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.55,
+      "window_min": 0.55,
+      "window_max": 1.0,
+      "window_mean": 0.7985148514851486
+    },
+    "ctrlAlloc.gain2.y": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.55,
+      "window_min": 0.55,
+      "window_max": 1.0,
+      "window_mean": 0.7985148514851486
+    },
+    "ctrlAlloc.gain3.k": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 1.0,
+      "window_min": 1.0,
+      "window_max": 1.0,
+      "window_mean": 1.0
+    },
+    "ctrlAlloc.gain3.u": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 1.52086022540886,
+      "window_min": -0.181732134829892,
+      "window_max": 1.52086022540886,
+      "window_mean": 0.5647076449961514
+    },
+    "ctrlAlloc.gain3.y": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 1.53180596538522,
+      "window_min": -0.28543236067682,
+      "window_max": 1.53180596538522,
+      "window_mean": 0.25067369046732974
+    },
+    "ctrlAlloc.speed": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.551713092593177,
+      "window_min": 0.550801159205295,
+      "window_max": 1.00563107333763,
+      "window_mean": 0.801100628476595
+    },
+    "ctrlAlloc.speed_oa": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.0,
+      "window_min": 0.0,
+      "window_max": 0.0,
+      "window_mean": 0.0
+    },
+    "ctrlAlloc.speed_pp": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.55,
+      "window_min": 0.55,
+      "window_max": 1.0,
+      "window_mean": 0.7985148514851486
+    },
+    "ctrlAlloc.steer": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 1.56649956589292,
+      "window_min": 0.115529185680198,
+      "window_max": 1.56649956589292,
+      "window_mean": 0.8009764486886584
+    },
+    "ctrlAlloc.steer_oa": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.6,
+      "window_min": 0.6,
+      "window_max": 0.6,
+      "window_mean": 0.6
+    },
+    "ctrlAlloc.steer_pp": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 1.52086022540886,
+      "window_min": -0.181732134829892,
+      "window_max": 1.52086022540886,
+      "window_mean": 0.5647076449961514
+    },
+    "ctrlAlloc.unitDelay1.samplePeriod": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 0.01,
+      "window_min": 0.01,
+      "window_max": 0.01,
+      "window_mean": 0.01
+    },
+    "ctrlAlloc.unitDelay1.startTime": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 0.0,
+      "window_min": 0.0,
+      "window_max": 0.0,
+      "window_mean": 0.0
+    },
+    "ctrlAlloc.unitDelay1.u": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 1.52086022540886,
+      "window_min": -0.181732134829892,
+      "window_max": 1.52086022540886,
+      "window_mean": 0.5647076449961514
+    },
+    "ctrlAlloc.unitDelay1.y": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 1.53180596538522,
+      "window_min": -0.28543236067682,
+      "window_max": 1.53180596538522,
+      "window_mean": 0.25067369046732974
+    },
+    "ctrlAlloc.unitDelay1.y_start": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 0.0,
+      "window_min": 0.0,
+      "window_max": 0.0,
+      "window_mean": 0.0
+    },
+    "ctrlAlloc.unitDelay3.samplePeriod": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 0.01,
+      "window_min": 0.01,
+      "window_max": 0.01,
+      "window_mean": 0.01
+    },
+    "ctrlAlloc.unitDelay3.startTime": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 0.0,
+      "window_min": 0.0,
+      "window_max": 0.0,
+      "window_mean": 0.0
+    },
+    "ctrlAlloc.unitDelay3.u": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.55,
+      "window_min": 0.55,
+      "window_max": 1.0,
+      "window_mean": 0.7985148514851486
+    },
+    "ctrlAlloc.unitDelay3.y": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 0.55,
+      "window_min": 0.55,
+      "window_max": 1.0,
+      "window_mean": 0.8966930761281433
+    },
+    "ctrlAlloc.unitDelay3.y_start": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 0.0,
+      "window_min": 0.0,
+      "window_max": 0.0,
+      "window_mean": 0.0
+    },
+    "distanceSensor1.vehicle_position[1]": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 17.1726079040005,
+      "window_min": 14.2874670613849,
+      "window_max": 17.1726079040005,
+      "window_mean": 16.178618277967164
+    },
+    "distanceSensor1.vehicle_position[2]": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 3.12295171663243,
+      "window_min": 0.721664276297814,
+      "window_max": 3.12295171663243,
+      "window_mean": 1.7908316348080158
+    },
+    "obsAvoidController_Sysblock.constant1.k": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 3.14159265358979,
+      "window_min": 3.14159265358979,
+      "window_max": 3.14159265358979,
+      "window_mean": 3.14159265358979
+    },
+    "obsAvoidController_Sysblock.constant1.y": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 3.14159265358979,
+      "window_min": 3.14159265358979,
+      "window_max": 3.14159265358979,
+      "window_mean": 3.14159265358979
+    },
+    "obsAvoidController_Sysblock.constant2.k": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 6.28318530717959,
+      "window_min": 6.28318530717959,
+      "window_max": 6.28318530717959,
+      "window_mean": 6.28318530717959
+    },
+    "obsAvoidController_Sysblock.constant2.y": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 6.28318530717959,
+      "window_min": 6.28318530717959,
+      "window_max": 6.28318530717959,
+      "window_mean": 6.28318530717959
+    },
+    "obsAvoidController_Sysblock.gain.k": {
+      "samples": 72378,
+      "final_time": 209.399343761789,
+      "final": 6.28318530717959,
+      "window_min": 6.28318530717959,
+      "window_max": 6.28318530717959,
+      "window_mean": 6.28318530717959
+    },
+    "pathPlanner.closest_index": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 29.0,
+      "window_min": 11.0,
+      "window_max": 29.0,
+      "window_mean": 19.0
+    },
+    "pathPlanner.path_progress": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.471204987788028,
+      "window_min": 0.031409874141901,
+      "window_max": 0.89502460041587,
+      "window_mean": 0.48801287913599123
+    },
+    "pathPlanner.steering_angle": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 1.52086022540886,
+      "window_min": -0.181732134829892,
+      "window_max": 1.52086022540886,
+      "window_mean": 0.5647076449961514
+    },
+    "pathPlanner.target_v": {
+      "samples": 4188,
+      "final_time": 209.35,
+      "final": 0.55,
+      "window_min": 0.55,
+      "window_max": 1.0,
+      "window_mean": 0.7985148514851486
+    },
+    "obsAvoidController_Sysblock.abs1.y": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 2.0548647528605,
+      "window_min": 1.34835820491198,
+      "window_max": 2.10032688158778,
+      "window_mean": 1.9116871109582867
+    },
+    "obsAvoidController_Sysblock.abs2.y": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 0.160562791702488,
+      "window_min": 0.0726641668096785,
+      "window_max": 0.602105485313166,
+      "window_mean": 0.3079828422661358
+    },
+    "obsAvoidController_Sysblock.abs3.y": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 0.24212800794626,
+      "window_min": 0.157618621036092,
+      "window_max": 1.40320567126601,
+      "window_mean": 0.4297294648916483
+    },
+    "obsAvoidController_Sysblock.abs4.y": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 0.0771512521500589,
+      "window_min": 0.000915037923079787,
+      "window_max": 1.23820567126601,
+      "window_mean": 0.2660772478592991
+    },
+    "obsAvoidController_Sysblock.chart.db": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 0.160562791702488,
+      "window_min": 0.0726641668096785,
+      "window_max": 0.602105485313166,
+      "window_mean": 0.3079828422661358
+    },
+    "obsAvoidController_Sysblock.chart.df": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 2.0548647528605,
+      "window_min": 1.34835820491198,
+      "window_max": 2.10032688158778,
+      "window_mean": 1.9116871109582867
+    },
+    "obsAvoidController_Sysblock.chart.dl": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 0.24212800794626,
+      "window_min": 0.157618621036092,
+      "window_max": 1.40320567126601,
+      "window_mean": 0.4297294648916483
+    },
+    "obsAvoidController_Sysblock.chart.dr": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 0.0771512521500589,
+      "window_min": 0.000915037923079787,
+      "window_max": 1.23820567126601,
+      "window_mean": 0.2660772478592991
+    },
+    "obsAvoidController_Sysblock.chart.flag": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 1.0,
+      "window_min": 0.0,
+      "window_max": 1.0,
+      "window_mean": 0.9960079840319361
+    },
+    "obsAvoidController_Sysblock.chart.mindis": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 1.0,
+      "window_min": 1.0,
+      "window_max": 1.0,
+      "window_mean": 1.0
+    },
+    "obsAvoidController_Sysblock.chart.safeF": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 1.5,
+      "window_min": 1.5,
+      "window_max": 1.5,
+      "window_mean": 1.5
+    },
+    "obsAvoidController_Sysblock.chart.speed": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 0.0,
+      "window_min": 0.0,
+      "window_max": 1.0,
+      "window_mean": 0.003992015968063872
+    },
+    "obsAvoidController_Sysblock.chart.steer": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 0.6,
+      "window_min": 0.0,
+      "window_max": 0.6,
+      "window_mean": 0.5976047904191617
+    },
+    "obsAvoidController_Sysblock.front_dist": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 2.0548647528605,
+      "window_min": 1.34835820491198,
+      "window_max": 2.10032688158778,
+      "window_mean": 1.9116871109582867
+    },
+    "obsAvoidController_Sysblock.gain.y": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 0.0,
+      "window_min": 0.0,
+      "window_max": 0.0,
+      "window_mean": 0.0
+    },
+    "obsAvoidController_Sysblock.left_dist": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": -0.24212800794626,
+      "window_min": -1.40320567126601,
+      "window_max": -0.157618621036092,
+      "window_mean": -0.4297294648916483
+    },
+    "obsAvoidController_Sysblock.product1.y": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 0.595492965855137,
+      "window_min": 0.5,
+      "window_max": 0.595492965855137,
+      "window_mean": 0.5951117564106055
+    },
+    "obsAvoidController_Sysblock.rear_dist": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": -0.160562791702488,
+      "window_min": -0.602105485313166,
+      "window_max": -0.0726641668096785,
+      "window_mean": -0.3079828422661358
+    },
+    "obsAvoidController_Sysblock.right_dist": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": -0.0771512521500589,
+      "window_min": -1.23820567126601,
+      "window_max": 0.00720496288768058,
+      "window_mean": -0.2660106153826265
+    },
+    "obsAvoidController_Sysblock.roundingFunction.y": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 0.0,
+      "window_min": 0.0,
+      "window_max": 0.0,
+      "window_mean": 0.0
+    },
+    "obsAvoidController_Sysblock.speed": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 0.0,
+      "window_min": 0.0,
+      "window_max": 1.0,
+      "window_mean": 0.003992015968063872
+    },
+    "obsAvoidController_Sysblock.steer": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 0.6,
+      "window_min": 0.0,
+      "window_max": 0.6,
+      "window_mean": 0.5976047904191617
+    },
+    "obsAvoidController_Sysblock.sum1.y": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 0.6,
+      "window_min": 0.0,
+      "window_max": 0.6,
+      "window_mean": 0.5976047904191617
+    },
+    "obsAvoidController_Sysblock.sum2.y": {
+      "samples": 20940,
+      "final_time": 209.39,
+      "final": 3.74159265358979,
+      "window_min": 3.14159265358979,
+      "window_max": 3.74159265358979,
+      "window_mean": 3.7391974440089517
+    }
+  }
+}

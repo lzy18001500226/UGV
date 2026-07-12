@@ -244,4 +244,18 @@ M10 final-race / physical-transfer readiness notes
   candidate. Evidence: `Results/metrics/track3_candidate_review_v150_moderate_side_braking_20260712.md`
   through `Results/metrics/track3_candidate_review_v154_lateral_direction_hysteresis_20260712.md`.
   Do not call 3/4 completion or wrapper score `80/80`.
+- v155/v156 same-sign OA suppression candidates are rejected. v155 looped over
+  path indices 11-29 and accumulated `cR=7,cO=6`; v156 stayed a Track3
+  non-finish at `T=21.65,cR=1,cO=1,P=9.2`. Direct v148 allocator semantics are
+  restored and this family is closed. The next candidate must be structurally
+  distinct and target the neutral side-only opposite-sign path/OA conflict.
+  Evidence: `Results/metrics/track3_candidate_review_v155_extreme_same_sign_oa_suppression_20260712.md`
+  and `Results/metrics/track3_candidate_review_v156_terminal_only_oa_suppression_20260712.md`.
+- v157 neutral side-only opposite-sign OA attenuation is rejected. Its Track3
+  1 s gate passed, but the strict run stopped at
+  `T=20.40,cR=1,cO=1,P=9.2` with finish-distance squared `305.6024`, slightly
+  worse than v148. Exact v148 allocator semantics are restored. Do not scan
+  more OA attenuation factors; the next work must inspect path/pose geometry
+  and a bounded local recovery state. Evidence:
+  `Results/metrics/track3_candidate_review_v157_neutral_opposite_sign_oa_attenuation_20260712.md`.
 
