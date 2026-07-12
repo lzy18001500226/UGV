@@ -458,3 +458,15 @@ M10 final-race / physical-transfer readiness notes
   immediate zero-speed command. Evidence:
   `Results/metrics/track2_candidate_review_v193_side_clearance_safety_stop_20260712.md`.
 
+- v194 lateral-release continuity is rejected. It passed static checks, tests,
+  and the Track3 1 s gate, but its Track3 120 s screen ended at
+  `T=16.6,cR=1,cO=2,P=8.8`, earlier than the current baseline. The source was
+  restored exactly. Do not continue lateral-release threshold scans. Evidence:
+  `Results/metrics/track3_candidate_review_v194_lateral_release_continuity_20260712.md`.
+- v195 segment-tangent plus bounded cross-track heading is rejected. It passed
+  static checks, 14 tests, and the Track2 1 s gate, but Track2 120 s reached
+  only the horizon with `T=120.0,cR=1,cO=3,P=8.4`; it did not officially
+  finish and added obstacle collisions. `PathPlanner.mo` was restored exactly.
+  Do not expand this Stanley drop-in or scan its gain/limit family. Evidence:
+  `Results/metrics/track2_candidate_review_v195_stanley_path_heading_20260712.md`.
+
