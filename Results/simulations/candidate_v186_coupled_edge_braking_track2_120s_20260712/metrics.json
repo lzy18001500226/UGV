@@ -1,0 +1,51 @@
+{
+  "request_id": "M2-baseline-runtime-gate",
+  "model_name": "UGV.Test.Saidao2Eval",
+  "stop_time_requested": 120.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "simulate_failed",
+  "completion": "early_stop_finish_not_observed",
+  "time_s": 25.150000000000002,
+  "road_collisions": 17.0,
+  "obstacle_collisions": 0.0,
+  "avoidance_score": 3.1999999999999993,
+  "finish_distance_squared": 530.7769222937605,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "simulation_exit_state": 2,
+  "simulation_state": "Idle",
+  "exported_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\candidate_v186_coupled_edge_braking_track2_120s_20260712\\score_timeseries.csv",
+  "exported_csv_ok": true,
+  "exported_extra_csv": null,
+  "exported_extra_csv_ok": false,
+  "extra_result_variables": [],
+  "pyapi_messages": {
+    "GetLastErrors": [
+      ""
+    ],
+    "MessageText": "[上一条命令没有日志信息]"
+  },
+  "termination_reason": "unclassified_early_termination",
+  "diagnostic_values_at_end": {
+    "countPoint.roadHit": 0.0,
+    "countPoint.obsHit": 0.0
+  },
+  "notes": [],
+  "score_values_at_end": {
+    "T": 25.150000000000002,
+    "cR": 17.0,
+    "cO": 0.0,
+    "P": 3.1999999999999993
+  },
+  "pyapi_messages_after_result_export": {
+    "GetLastErrors": [
+      ""
+    ],
+    "MessageText": "[上一条命令没有日志信息]"
+  }
+}

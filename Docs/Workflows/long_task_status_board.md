@@ -394,4 +394,11 @@ M10 final-race / physical-transfer readiness notes
   different narrow-window speed/path-authority arbitration, with Track2 120 s
   as the first runtime gate. Evidence:
   `Results/metrics/track2_candidate_review_v184_v185_edge_recovery_20260712.md`.
+- v186 coupled edge braking is rejected. Static and 1 s gates passed, but the
+  Track2 120 s run returned `SimulateModel=false` at `T=25.15` with
+  `cR=17,cO=0,P=3.2` and finish-distance squared `530.7769`. The narrow
+  `df>safeF and min(dl,dr)<0.10` speed/steer coupling is therefore closed for
+  now; exact committed controller semantics are restored. Do not expand v186
+  to Track3. Evidence:
+  `Results/metrics/track2_candidate_review_v186_coupled_edge_braking_20260712.md`.
 
