@@ -269,4 +269,11 @@ M10 final-race / physical-transfer readiness notes
   Evidence: `Results/metrics/v158_track3_geometry_review_20260712.md`,
   `Results/metrics/track3_candidate_review_v158_neutral_path_heading_recovery_20260712.md`,
   and `Results/metrics/track3_candidate_review_v159_immediate_neutral_path_recovery_20260712.md`.
+- v160 first-order stateful path recovery is rejected. The new state exported
+  successfully, but Track3 stopped at `T=18.75,cR=1,cO=1,P=9.2`, earlier than
+  v148, with no completion gain. Exact v148 allocator semantics are restored.
+  Do not scan recovery-filter time constants or add more allocator filters.
+  Next state continuity must use side-clearance geometry in the avoidance
+  state machine, or be preceded by an explicit bounded interface design.
+  Evidence: `Results/metrics/track3_candidate_review_v160_stateful_path_recovery_20260712.md`.
 
