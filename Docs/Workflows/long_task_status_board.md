@@ -380,4 +380,18 @@ M10 final-race / physical-transfer readiness notes
   this candidate is a runtime no-op. Exact v148 semantics are restored; do not
   scan these lateral magnitude caps further. Evidence:
   `Results/metrics/track3_candidate_review_v175_narrow_recovery_adaptive_side_20260712.md`.
+- The historical v148 Track2 finish is not reproducible in the current cold
+  lane: exact committed bytes now terminate at
+  `T=28.55,cR=1,cO=0,P=9.6`, finish-distance squared `791.4783`. Therefore the
+  hard gate is no longer only Track3; Track2 completion robustness must be
+  restored before four-track acceptance.
+- v184/v185 front-clear severe-side recovery candidates are rejected. v184
+  reached the 120 s horizon but exploded to `cR=61,cO=1,P=-14.8`; v185's
+  proportional `0.3` cap terminated at `T=28.75,cR=17,cO=0,P=3.2`, finish
+  distance squared `787.6683`. Exact committed controller semantics are
+  restored and pass `high=0, medium=0` plus 14 tests. Do not scan smaller
+  steering magnitudes in this family. Next work must evaluate a structurally
+  different narrow-window speed/path-authority arbitration, with Track2 120 s
+  as the first runtime gate. Evidence:
+  `Results/metrics/track2_candidate_review_v184_v185_edge_recovery_20260712.md`.
 

@@ -1,0 +1,46 @@
+{
+  "request_id": "UGV-V185-T2-1S-20260712",
+  "model_name": "UGV.Test.Saidao2Eval",
+  "stop_time_requested": 1.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "simulate_returned_true",
+  "completion": "simulation_horizon_reached_finish_not_observed",
+  "time_s": 1.0,
+  "road_collisions": 0.0,
+  "obstacle_collisions": 0.0,
+  "avoidance_score": 10.0,
+  "finish_distance_squared": 1.8743692509284726,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "simulation_exit_state": 0,
+  "simulation_state": "Idle",
+  "exported_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\candidate_v185_edge_recovery_track2_1s_20260712\\score_timeseries.csv",
+  "exported_csv_ok": true,
+  "exported_extra_csv": null,
+  "exported_extra_csv_ok": false,
+  "extra_result_variables": [],
+  "pyapi_messages": {},
+  "termination_reason": "configured_horizon",
+  "diagnostic_values_at_end": {
+    "countPoint.roadHit": 0.0,
+    "countPoint.obsHit": 0.0
+  },
+  "notes": [],
+  "score_values_at_end": {
+    "T": 1.0,
+    "cR": 0.0,
+    "cO": 0.0,
+    "P": 10.0
+  },
+  "pyapi_messages_after_result_export": {
+    "GetLastErrors": [
+      ""
+    ],
+    "MessageText": "[上一条命令没有日志信息]"
+  }
+}
