@@ -342,4 +342,10 @@ M10 final-race / physical-transfer readiness notes
   Do not continue sampled nearest-segment window scans. Evidence:
   `Results/metrics/track3_candidate_review_v173_progress_continuous_planner_20260712.md`
   and `Results/metrics/track3_candidate_review_v174_monotonic_forward_planner_20260712.md`.
+- v175 combined v162 narrow recovery with v138 adaptive side-state caps, but
+  reproduced v162 exactly at `T=286.55,cR=2,cO=1,P=8.8`, finish-distance
+  squared `295.90730013110414`. The side-state `0.8` cap never activated, so
+  this candidate is a runtime no-op. Exact v148 semantics are restored; do not
+  scan these lateral magnitude caps further. Evidence:
+  `Results/metrics/track3_candidate_review_v175_narrow_recovery_adaptive_side_20260712.md`.
 
