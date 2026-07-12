@@ -73,6 +73,14 @@ M10 final-race / physical-transfer readiness notes
 
 ## Review Notes
 
+- v201 continuous path-segment selection was rejected on 2026-07-12. The
+  temporary continuity-window planner produced exactly the same Track3
+  decisive values as v199 (`T=92.85,d=1.0824256149658185,cR=1,cO=1,P=9.2`)
+  and was rolled back. Evidence:
+  `Results/metrics/track3_candidate_review_v201_continuous_path_segment_20260712.md`.
+  Do not repeat this path-index continuity hypothesis without new evidence;
+  the remaining failure is still a closure heading/vehicle-feasibility issue.
+
 - v194 lateral release continuity is rejected at
   `Results/metrics/track3_candidate_review_v194_lateral_release_continuity_20260712.md`.
   The clearance-gated release changed the Track3 trajectory and terminated at
