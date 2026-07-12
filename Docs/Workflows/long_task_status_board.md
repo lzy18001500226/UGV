@@ -2,7 +2,7 @@
 
 > Short operational board for the UGV initial-race long task. Keep this file concise; detailed evidence belongs in `Results/`.
 
-Status: completion-first optimization from accepted v148. Tracks 1, 2, and 4 have verified official finishes; Track3 remains the only completion blocker at `T=21.1,cR=1,cO=1,P=9.2`, path index 36. The official origin-return gate remains the first acceptance criterion: `SimulateModel=false`, `T>10`, and `distanceSensor1.d<0.02` at termination. A fixed stop horizon is not a finish. v162 produced the strongest Track3 progress (`T=286.55,cR=2,cO=1`) and traversed the main loop but missed the origin; v163 stateless recentering regressed collisions. Exact v148 source semantics are restored, 2026-07-12 CST.
+Status: completion-first optimization from accepted v148. Tracks 1, 2, and 4 have verified official finishes; Track3 remains the only completion blocker at `T=21.1,cR=1,cO=1,P=9.2`, path index 36. The official origin-return gate remains the first acceptance criterion: `SimulateModel=false`, `T>10`, and `distanceSensor1.d<0.02` at termination. A fixed stop horizon is not a finish. v162 produced the strongest Track3 progress (`T=286.55,cR=2,cO=1`) and traversed the main loop but missed the origin; v171 encounter-latched recovery regressed to `T=17.75,cR=1,cO=2`. Exact v148 source semantics are restored, 2026-07-12 CST.
 
 ## Current Long Task
 
@@ -322,4 +322,10 @@ M10 final-race / physical-transfer readiness notes
   restored. Next work requires a structurally different reference-backed
   controller architecture. Evidence:
   `Results/metrics/track3_candidate_review_v169_v170_v162_allocator_recovery_20260712.md`.
+- v171 encounter-latched recovery is rejected. Its source and 1 s native gates
+  passed, but strict Track3 ended at `T=17.75,cR=1,cO=2,P=8.8`, official
+  finish distance `292.9712`. A front-obstacle encounter latch still cannot
+  identify a safe recentering window with the four scalar distances. Exact
+  v148 semantics are restored. Evidence:
+  `Results/metrics/track3_candidate_review_v171_encounter_latched_recovery_20260712.md`.
 
