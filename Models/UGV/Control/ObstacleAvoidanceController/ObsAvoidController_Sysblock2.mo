@@ -316,7 +316,7 @@ extent={{-116,-101.5},{116,101.5}})),__MWORKS(BlockSystem(StateMachine(priority=
               horizontalAlignment = TextAlignment.Left,
               verticalAlignment = TextAlignment.Top))}),Protection(access=Access.diagram));
       algorithm
-      annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));  speed := -1;
+      annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));  speed := min(0, max(-1, df - mindis));
         flag := true;
       end State;
       equation

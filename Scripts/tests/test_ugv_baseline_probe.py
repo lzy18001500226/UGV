@@ -17,6 +17,24 @@ class TrackCompletionClassificationTests(unittest.TestCase):
             "finish_reached_official_origin_assertion",
         )
 
+    def test_last_pre_assertion_sample_within_tolerance_is_finish(self):
+        self.assertEqual(
+            MODULE.classify_track_completion(183.1, 0.0207526465, False),
+            "finish_reached_official_origin_assertion",
+        )
+
+    def test_last_pre_assertion_sample_one_output_step_away_is_finish(self):
+        self.assertEqual(
+            MODULE.classify_track_completion(164.25, 0.0296359251, False),
+            "finish_reached_official_origin_assertion",
+        )
+
+    def test_false_return_outside_finish_sample_tolerance_is_not_finish(self):
+        self.assertEqual(
+            MODULE.classify_track_completion(183.1, 0.030001, False),
+            "early_stop_finish_not_observed",
+        )
+
     def test_horizon_without_origin_return_is_not_finish(self):
         self.assertEqual(
             MODULE.classify_track_completion(120.0, 12.0, True),

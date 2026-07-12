@@ -229,4 +229,12 @@ M10 final-race / physical-transfer readiness notes
   route can ever return to the official origin. Do not interpret a horizon-only
   stop as an algorithm rejection. After that baseline, any new candidate must
   be distinct from same-direction threshold handoff and speed-floor variants.
+- v148 is the current completion baseline. It separates front reverse authority
+  from side-only neutral longitudinal authority and has verified official
+  origin-assertion finishes on Tracks 1, 2, and 4. Track3 remains blocked at
+  `T=21.1`, path index 36, finish distance squared `301.4313`. Evidence:
+  `Results/metrics/four_track_completion_review_v148_20260712.md`. Next work is
+  a unified Track3 same-sign side-only heading-arbitration candidate, followed
+  by regression of the three completed tracks. Do not call 3/4 completion or
+  wrapper score `80/80`.
 

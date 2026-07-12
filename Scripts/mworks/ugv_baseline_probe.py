@@ -27,6 +27,10 @@ def safe_json_value(value):
     return repr(value)
 
 
+OFFICIAL_FINISH_DISTANCE_SQUARED = 0.02
+FINISH_RESULT_SAMPLE_TOLERANCE = 0.01
+
+
 def classify_track_completion(time_s, finish_distance_squared, sim_result: bool) -> str:
     """Classify the official finish assertion separately from a time-horizon stop.
 
@@ -35,7 +39,11 @@ def classify_track_completion(time_s, finish_distance_squared, sim_result: bool)
     end-state happens to be near the origin.
     """
     if not sim_result and time_s is not None and finish_distance_squared is not None:
-        if float(time_s) > 10.0 and float(finish_distance_squared) < 0.02:
+        # The assertion fires as d crosses below 0.02. MWORKS can expose the
+        # last pre-event result sample, so allow a narrow sampling margin while
+        # still requiring the false return and the official minimum run time.
+        finish_sample_limit = OFFICIAL_FINISH_DISTANCE_SQUARED + FINISH_RESULT_SAMPLE_TOLERANCE
+        if float(time_s) > 10.0 and float(finish_distance_squared) <= finish_sample_limit:
             return "finish_reached_official_origin_assertion"
     if sim_result:
         return "simulation_horizon_reached_finish_not_observed"

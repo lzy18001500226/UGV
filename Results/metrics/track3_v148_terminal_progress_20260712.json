@@ -1,0 +1,38 @@
+{
+  "csv": "Results\\simulations\\candidate_v148_completion_first_track3_700s_20260712\\extra_timeseries.csv",
+  "window_s": 5.0,
+  "signals": {
+    "distanceSensor1.vehicle_position[1]": {
+      "samples": 423,
+      "final_time": 21.1,
+      "final": 16.8205335162219,
+      "window_min": 15.9969585369408,
+      "window_max": 17.1052292873619,
+      "window_mean": 16.890002821441733
+    },
+    "distanceSensor1.vehicle_position[2]": {
+      "samples": 423,
+      "final_time": 21.1,
+      "final": 4.30126956253211,
+      "window_min": 1.50530435321298,
+      "window_max": 4.30126956253211,
+      "window_mean": 2.88213711436663
+    },
+    "pathPlanner.closest_index": {
+      "samples": 423,
+      "final_time": 21.1,
+      "final": 36.0,
+      "window_min": 16.0,
+      "window_max": 36.0,
+      "window_mean": 27.138613861386137
+    },
+    "pathPlanner.path_progress": {
+      "samples": 423,
+      "final_time": 21.1,
+      "final": 0.0405508118410897,
+      "window_min": 0.0201710510691606,
+      "window_max": 0.985667663507371,
+      "window_mean": 0.5155080324046685
+    }
+  }
+}

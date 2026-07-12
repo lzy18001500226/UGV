@@ -1,0 +1,70 @@
+{
+  "csv": "Results\\simulations\\candidate_v148_completion_first_track2_700s_20260712\\extra_timeseries.csv",
+  "window_s": 5.0,
+  "signals": {
+    "ctrlAlloc.speed": {
+      "samples": 3663,
+      "final_time": 183.1,
+      "final": 0.75557472475177,
+      "window_min": 0.752754571787859,
+      "window_max": 1.05840904771828,
+      "window_mean": 0.8268763445533981
+    },
+    "ctrlAlloc.speed_oa": {
+      "samples": 3663,
+      "final_time": 183.1,
+      "final": 0.0,
+      "window_min": 0.0,
+      "window_max": 1.0,
+      "window_mean": 0.06930693069306931
+    },
+    "ctrlAlloc.steer": {
+      "samples": 3663,
+      "final_time": 183.1,
+      "final": -0.333003944201794,
+      "window_min": -0.721435403875465,
+      "window_max": -0.0434095141032845,
+      "window_mean": -0.22965516747971987
+    },
+    "ctrlAlloc.steer_oa": {
+      "samples": 3663,
+      "final_time": 183.1,
+      "final": 0.6,
+      "window_min": 0.0,
+      "window_max": 0.6,
+      "window_mean": 0.5584158415841584
+    },
+    "distanceSensor1.vehicle_position[1]": {
+      "samples": 3663,
+      "final_time": 183.1,
+      "final": -0.116431581191539,
+      "window_min": -3.98542763471721,
+      "window_max": -0.116431581191539,
+      "window_mean": -2.068483850219211
+    },
+    "distanceSensor1.vehicle_position[2]": {
+      "samples": 3663,
+      "final_time": 183.1,
+      "final": 0.0848312055116588,
+      "window_min": 0.0848312055116588,
+      "window_max": 1.5486277503559,
+      "window_mean": 0.705861846418982
+    },
+    "pathPlanner.closest_index": {
+      "samples": 3663,
+      "final_time": 183.1,
+      "final": 230.0,
+      "window_min": 222.0,
+      "window_max": 230.0,
+      "window_mean": 228.67326732673268
+    },
+    "pathPlanner.path_progress": {
+      "samples": 3663,
+      "final_time": 183.1,
+      "final": 0.96014118613141,
+      "window_min": 0.0149214274676946,
+      "window_max": 0.96014118613141,
+      "window_mean": 0.5146920990939996
+    }
+  }
+}

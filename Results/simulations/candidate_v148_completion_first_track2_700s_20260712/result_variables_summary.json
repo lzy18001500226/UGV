@@ -1,0 +1,21 @@
+{
+  "all_variable_count": 27427,
+  "timevarying_variable_count": 26991,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "extra_result_variables": [
+    "ctrlAlloc.speed",
+    "ctrlAlloc.speed_oa",
+    "ctrlAlloc.steer",
+    "ctrlAlloc.steer_oa",
+    "distanceSensor1.vehicle_position[1]",
+    "distanceSensor1.vehicle_position[2]",
+    "pathPlanner.closest_index",
+    "pathPlanner.path_progress"
+  ]
+}
