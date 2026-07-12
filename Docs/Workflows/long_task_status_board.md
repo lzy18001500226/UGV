@@ -3,6 +3,7 @@
 > Short operational board for the UGV initial-race long task. Keep this file concise; detailed evidence belongs in `Results/`.
 
 Status: completion-first optimization from exact v148 semantics. The official comparison lane is plain `SimulateModel`; explicit `SimulateModelEx` runs are diagnostic-only because the same bytes can take a different trajectory. v199 is the current research candidate source: its measured-heading speed governor reproducibly extended Track3 to `T=92.85,d=1.0824` with unchanged `cR=1,cO=1,P=9.2`, but it did not officially finish. v200 lowered the governor floor and exceeded the bounded runtime limit, so it was rejected and rolled back to v199. Track3 and four-track completion remain open; the current cold Track2 baseline also requires completion revalidation. The official origin-return gate remains the first acceptance criterion: `SimulateModel=false`, `T>10`, and `distanceSensor1.d<0.02` at termination. A fixed stop horizon is not a finish. v197 heading-slew limiting and v198 equivalent-angle unwrapping remain rejected. 2026-07-12 CST.
+Notification evidence for this terminal review is `Results/evidence/notification_delivery_note_v199_v200_20260712.md`. Local commit `e557f84` is complete; push remains a transport blocker after remote Schannel close failure.
 
 ## Current Long Task
 
