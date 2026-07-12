@@ -441,4 +441,12 @@ M10 final-race / physical-transfer readiness notes
   `1.65`. Exact pre-candidate controller and allocator objects are restored.
   Do not continue front-threshold or immediate-reverse scalar scans. Evidence:
   `Results/metrics/track2_candidate_review_v192_safety_priority_speed_20260712.md`.
+- v193 side-clearance safety stop is rejected. Its corrected bounded expression
+  passed static checks, 14 tests, and the Track2 1 s gate, but the 120 s screen
+  stopped non-comparably at `T=4.75,cR=0,cO=0,P=10`, finish-distance squared
+  `12.9019072`. The score is invalid because the run neither finished nor
+  passed the 28.55 s cold-baseline termination point. Exact pre-candidate
+  source objects are restored. Do not repeat side-risk encoding followed by an
+  immediate zero-speed command. Evidence:
+  `Results/metrics/track2_candidate_review_v193_side_clearance_safety_stop_20260712.md`.
 
