@@ -1,0 +1,25 @@
+{
+  "all_variable_count": 26167,
+  "timevarying_variable_count": 26164,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "extra_result_variables": [
+    "countPoint.DisRoad",
+    "countPoint.roadHit",
+    "ctrlAlloc.speed",
+    "ctrlAlloc.speed_oa",
+    "ctrlAlloc.steer",
+    "ctrlAlloc.steer_oa",
+    "distanceSensor1.d",
+    "obsAvoidController_Sysblock.chart.df",
+    "obsAvoidController_Sysblock.chart.dl",
+    "obsAvoidController_Sysblock.chart.dr",
+    "pathPlanner.closest_index",
+    "pathPlanner.path_progress"
+  ]
+}
