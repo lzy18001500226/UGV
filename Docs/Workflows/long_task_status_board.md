@@ -2,7 +2,7 @@
 
 > Short operational board for the UGV initial-race long task. Keep this file concise; detailed evidence belongs in `Results/`.
 
-Status: completion-first controller redesign after v146 rejection. The official origin-return gate remains the first acceptance criterion: `SimulateModel=false`, `T>10`, and `distanceSensor1.d<0.02` at termination. A fixed stop horizon is not a finish. Tracks 1-3 have `0/3` verified finishes; Track4 v80 is now verified not finished (`T=52.15,cR=1,cO=0`, terminal distance squared `329.6641`). Two current v137 repetitions terminate at `T=28.55`; v145 trades the road event for four obstacle collisions; v146 continuous risk braking reaches `T=39.3,cR=1,cO=0` but still terminates early. v80 source semantics are restored, 2026-07-12 CST.
+Status: completion-first controller redesign after v147 rejection. The official origin-return gate remains the first acceptance criterion: `SimulateModel=false`, `T>10`, and `distanceSensor1.d<0.02` at termination. A fixed stop horizon is not a finish. Tracks 1-3 have `0/3` verified finishes; Track4 v80 is verified not finished (`T=52.15,cR=1,cO=0`, terminal distance squared `329.6641`). v145 directional re-entry, v146 continuous risk braking, and v147 side-risk confirmation are rejected. v147 Track2 ended early at `T=71.35,cR=1,cO=0,P=9.6`, so it did not earn a 700 s or cross-track promotion. v80 source semantics are restored, 2026-07-12 CST.
 
 ## Current Long Task
 

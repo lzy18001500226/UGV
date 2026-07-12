@@ -1,0 +1,112 @@
+{
+  "generated_at": "2026-07-12T10:25:53+08:00",
+  "controller": "Models/UGV/Control/ObstacleAvoidanceController/ObsAvoidController_Sysblock2.mo",
+  "ready_for_physical_claim": true,
+  "summary": {
+    "high": 0,
+    "medium": 0,
+    "low": 3
+  },
+  "findings": {
+    "high": [],
+    "medium": [],
+    "low": [
+      {
+        "code": "avoid_release_dwell_present",
+        "values_s": [
+          2.0
+        ],
+        "hits": [
+          {
+            "line": 353,
+            "text": "transition(avoid, cruise, after(2,sec), reset = false)",
+            "value_s": 2.0
+          }
+        ]
+      },
+      {
+        "code": "initialization_dwell_observed",
+        "values_s": [
+          1.0,
+          2.0
+        ],
+        "hits": [
+          {
+            "line": 749,
+            "text": "transition(ini_state, state, after(1,sec), reset = false)",
+            "value_s": 1.0
+          },
+          {
+            "line": 1079,
+            "text": "transition(ini_state, state, after(2,sec), reset = false)",
+            "value_s": 2.0
+          }
+        ]
+      },
+      {
+        "code": "other_dwell_observed",
+        "values_s": [
+          0.2
+        ],
+        "hits": [
+          {
+            "line": 352,
+            "text": "transition(side_pending, avoid, after(0.2,sec) and (dl <= 0.45 or dr <= 0.45), reset = false, priority = 3);",
+            "value_s": 0.2
+          }
+        ]
+      }
+    ]
+  },
+  "observed": {
+    "steer_assignments": [
+      {
+        "line": 504,
+        "text": "annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));  steer := 0;"
+      },
+      {
+        "line": 565,
+        "text": "annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));steer := -min(0.8, 2 * abs(dl - dr));"
+      },
+      {
+        "line": 614,
+        "text": "annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));steer:=min(0.8, 2 * abs(dl - dr));"
+      },
+      {
+        "line": 663,
+        "text": "annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));  steer := 0;"
+      },
+      {
+        "line": 858,
+        "text": "annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));    steer := 0.6;"
+      },
+      {
+        "line": 919,
+        "text": "annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));  steer := min(0.8, 2 * abs(dl - dr));"
+      },
+      {
+        "line": 968,
+        "text": "annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));  steer := -min(0.8, 2 * abs(dl - dr));"
+      },
+      {
+        "line": 1017,
+        "text": "annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));steer := 0;"
+      }
+    ],
+    "speed_assignments": [
+      {
+        "line": 264,
+        "text": "annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));  speed := 1;"
+      },
+      {
+        "line": 322,
+        "text": "annotation(__MWORKS(BlockSystem(StateMachine(actionKind = ActionKind.entry or ActionKind.during))));  speed := -1;"
+      }
+    ]
+  },
+  "non_claims": [
+    "Does not run MWORKS.",
+    "Does not validate race score.",
+    "Does not prove physical UGV readiness."
+  ]
+}
