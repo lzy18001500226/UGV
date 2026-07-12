@@ -410,4 +410,13 @@ M10 final-race / physical-transfer readiness notes
   intervention with explicit release to path authority, not continuous old OA
   steering or another edge-magnitude scan. Evidence:
   `Results/metrics/track2_candidate_review_v187_v188_path_overlay_20260712.md`.
+- v189 front-risk steer gating is rejected. It passed static, tests, and the
+  Track2 1 s gate, but the strict run ended at
+  `T=164.95,cR=15,cO=2,P=3.2`, finish-distance squared `377.9933562`.
+  Exported signals show neither obstacle event satisfied the proposed
+  `speed_oa<0` predicate, so allocator gating inferred from old OA output state
+  is closed. The committed allocator is restored. Next work requires a
+  controller-level risk signal from actual distance inputs or a
+  reference-backed local-planner interface. Evidence:
+  `Results/metrics/track2_candidate_review_v189_front_risk_steer_gate_20260712.md`.
 
