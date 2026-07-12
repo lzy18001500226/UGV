@@ -73,6 +73,15 @@ M10 final-race / physical-transfer readiness notes
 
 ## Review Notes
 
+- An unchanged-v199 Track3 road-boundary diagnostic on 2026-07-12 exceeded
+  the 300 s wall-clock bound without producing metrics or CSV. This is a
+  runtime-channel blocker, not an algorithm result; only processes started by
+  that attempt were terminated. Evidence:
+  `Results/metrics/diagnostic_v199_track3_road_boundary_timeout_20260712.md`.
+  Re-establish the 1 s v199 probe before any new long native candidate run.
+  The follow-up clean 1 s v199 health probe also exceeded 180 s, so native
+  candidate evaluation is currently paused pending runtime-channel recovery.
+
 - v202 terminal approach distance-speed envelope was rejected on 2026-07-12.
   It passed static checks, tests, and the 1 s gate, but the Track3 decisive
   run exceeded six minutes without metrics or a return packet. All source
