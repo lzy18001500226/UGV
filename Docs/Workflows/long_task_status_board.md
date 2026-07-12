@@ -72,6 +72,12 @@ M10 final-race / physical-transfer readiness notes
 
 ## Review Notes
 
+- v177 fixed-entry offset correction is rejected at
+  `Results/metrics/track3_candidate_review_v177_offset_correction_20260712.md`.
+  Reducing `+0.60` to `+0.55` removed the first obstacle collision but produced
+  an early non-finish at `T=18.50,cR=1,cO=0,P=9.6`; the readable score is not
+  completion. Exact v148 is restored and fixed-entry magnitude scans are closed.
+
 - v176 phase-aligned feedback is rejected at
   `Results/metrics/track3_candidate_review_v176_phase_aligned_feedback_20260712.md`.
   It made the existing lateral gap states reachable for 0.1 s and extended
