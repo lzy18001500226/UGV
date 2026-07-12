@@ -328,4 +328,9 @@ M10 final-race / physical-transfer readiness notes
   identify a safe recentering window with the four scalar distances. Exact
   v148 semantics are restored. Evidence:
   `Results/metrics/track3_candidate_review_v171_encounter_latched_recovery_20260712.md`.
+- v172 consistent emergency-steer cap is rejected as a runtime no-op. It
+  reproduced v162 exactly at `T=286.55,cR=2,cO=1,P=8.8`, finish-distance
+  squared `295.9073`; the old `0.6` cap was not active. Exact v148 semantics
+  are restored, and this cap must not be scanned further. Evidence:
+  `Results/metrics/track3_candidate_review_v172_consistent_emergency_steer_20260712.md`.
 
