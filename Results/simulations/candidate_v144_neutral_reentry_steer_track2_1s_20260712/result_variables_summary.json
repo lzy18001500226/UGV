@@ -1,0 +1,15 @@
+{
+  "all_variable_count": 27421,
+  "timevarying_variable_count": 27418,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "extra_result_variables": [
+    "distanceSensor1.d",
+    "pathPlanner.closest_index"
+  ]
+}

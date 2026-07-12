@@ -2,7 +2,7 @@
 
 > Compact startup context for `C:\Users\HP\Desktop\UGV`.
 
-Status: completion-first controller redesign. The old `38/40` value is only the sum of avoidance variables and is not an approximately `76/80` official result. Tracks 1-3 have zero verified finishes and Track4 remains unverified. The MWORKS `-gui` API lane is operational. v143 persistent-conflict path authority terminated Track2 at `T=33.85,cR=1,cO=0,P=9.6` with path index 4; v140-v143 are rejected and v80 source semantics are restored, 2026-07-12 CST. Continue from the status board and do not treat wrapper score as official completion.
+Status: completion-first controller redesign. The old `38/40` value is only the sum of avoidance variables and is not an approximately `76/80` official result. Tracks 1-3 have zero verified finishes and Track4 remains unverified. The MWORKS `-gui` API lane is operational. The Track2 completion chain is structurally valid; v144 neutral re-entry steering reached 120 s but regressed to `cR=3,cO=7,P=6.0`, so v144 is rejected and v80 source semantics are restored, 2026-07-12 CST. Continue from the status board and do not treat wrapper score as official completion.
 
 ## 0. Startup Chain
 
@@ -52,7 +52,7 @@ References/official_materials/
 
 Follow `Docs/Workflows/master_execution_plan.md` and status in `Docs/Workflows/long_task_status_board.md`.
 
-Current phase cursor: `Treat official completion as the first hard gate. Continue from restored v80 source only as a comparison baseline. v117-v143 are rejected. v125-v126 reject four-distance longitudinal tiering, v127 rejects stateless avoidance-heading washout, v128-v142 reject speed floors, same-direction handoff, scalar clearance governors, proportional steering, and side-choice hysteresis, and v143 rejects progressive path-authority suppression during persistent conflict. Do not repeat prior scalar scans, external derived-signal ports, native der, prediction-horizon tuning, longitudinal-tier variants, stateless heading washout, simple side-selection variants, or conflict-duration path-weight decay. The next design must target a distinct observable completion failure rather than another allocator weight variation. Run a target-track translation/completion gate first, then collision regression, then four-track expansion only after a material repeatable gain.`
+Current phase cursor: `Treat official completion as the first hard gate. Continue from restored v80 source only as a comparison baseline. v117-v144 are rejected. The Track2 official/wrapper path is identical, closed, and structurally finishable; existing v80/v137 evidence shows no path-index discontinuity, so do not edit PathPlanner without new runtime proof. v137's neutral side-only longitudinal authority remains the strongest progress clue but adds a road collision. v144 proves that neutralizing the fixed lateral re-entry steer destroys obstacle safety. Do not repeat scalar scans, conflict-duration path-weight decay, or neutral/attenuated lateral re-entry. The next design must preserve immediate obstacle steering authority and target the later road-boundary event with an independent observable. Run a target-track translation/completion gate first, then collision regression, then four-track expansion only after a material repeatable gain.`
 
 The cursor is not a stopping rule. This project should keep advancing through
 the competition task tree after each phase commit/push unless a hard blocker or
