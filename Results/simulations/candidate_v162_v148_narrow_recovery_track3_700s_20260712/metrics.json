@@ -1,0 +1,70 @@
+{
+  "request_id": "v162-track3-700s",
+  "model_name": "UGV.Test.Saidao3Eval",
+  "stop_time_requested": 700.0,
+  "source": "MWORKS_SYSPLORER_PYAPI",
+  "runtime_status": "simulate_failed",
+  "completion": "early_stop_finish_not_observed",
+  "time_s": 286.55,
+  "road_collisions": 2.0,
+  "obstacle_collisions": 1.0,
+  "avoidance_score": 8.8,
+  "finish_distance_squared": 295.90730013110414,
+  "available_score_variables": [
+    "T",
+    "cR",
+    "cO",
+    "P"
+  ],
+  "missing_score_variables": [],
+  "simulation_exit_state": 2,
+  "simulation_state": "Idle",
+  "exported_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\candidate_v162_v148_narrow_recovery_track3_700s_20260712\\score_timeseries.csv",
+  "exported_csv_ok": true,
+  "exported_extra_csv": "C:\\Users\\HP\\Desktop\\UGV\\Results\\simulations\\candidate_v162_v148_narrow_recovery_track3_700s_20260712\\extra_timeseries.csv",
+  "exported_extra_csv_ok": true,
+  "extra_result_variables": [
+    "ctrlAlloc.speed",
+    "ctrlAlloc.speed_oa",
+    "ctrlAlloc.speed_pp",
+    "ctrlAlloc.steer",
+    "ctrlAlloc.steer_oa",
+    "ctrlAlloc.steer_pp",
+    "distanceSensor1.vehicle_position[1]",
+    "distanceSensor1.vehicle_position[2]",
+    "obsAvoidController_Sysblock.chart.df",
+    "obsAvoidController_Sysblock.chart.dl",
+    "obsAvoidController_Sysblock.chart.dr",
+    "obsAvoidController_Sysblock.chart.flag",
+    "obsAvoidController_Sysblock.chart.speed",
+    "obsAvoidController_Sysblock.chart.steer",
+    "pathPlanner.closest_index",
+    "pathPlanner.path_progress",
+    "pathPlanner.steering_angle",
+    "pathPlanner.target_v"
+  ],
+  "pyapi_messages": {
+    "GetLastErrors": [
+      ""
+    ],
+    "MessageText": "[上一条命令没有日志信息]"
+  },
+  "termination_reason": "unclassified_early_termination",
+  "diagnostic_values_at_end": {
+    "countPoint.roadHit": 1.0,
+    "countPoint.obsHit": 0.0
+  },
+  "notes": [],
+  "score_values_at_end": {
+    "T": 286.55,
+    "cR": 2.0,
+    "cO": 1.0,
+    "P": 8.8
+  },
+  "pyapi_messages_after_result_export": {
+    "GetLastErrors": [
+      ""
+    ],
+    "MessageText": "[上一条命令没有日志信息]"
+  }
+}
