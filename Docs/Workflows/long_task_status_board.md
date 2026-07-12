@@ -72,6 +72,14 @@ M10 final-race / physical-transfer readiness notes
 
 ## Review Notes
 
+- v194 lateral release continuity is rejected at
+  `Results/metrics/track3_candidate_review_v194_lateral_release_continuity_20260712.md`.
+  The clearance-gated release changed the Track3 trajectory and terminated at
+  `T=16.6,cR=1,cO=2,P=8.8`, earlier than the current baseline. The candidate
+  was reverted without expanding to other tracks. Do not repeat scalar
+  clearance release thresholds; the next attempt needs a different state
+  continuity mechanism.
+
 - v179 pursuit wrapping is rejected at
   `Results/metrics/track3_candidate_review_v179_pursuit_wrap_20260712.md`.
   Combining v162 with final-to-first pursuit traversal stopped at
