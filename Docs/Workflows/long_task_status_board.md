@@ -313,4 +313,13 @@ M10 final-race / physical-transfer readiness notes
   perturb the translated trajectory. Exact v148 semantics are restored. Next
   work must avoid planner equation changes. Evidence:
   `Results/metrics/track3_candidate_review_v168_closure_progress_capture_20260712.md`.
+- v169/v170 combined v162 with guarded allocator recovery and are rejected.
+  v169 immediate cancellation reached `T=116.75` but accumulated
+  `cR=7,cO=2,P=6.4`. v170 bounded decay reached
+  `T=84.6,cR=2,cO=2,P=8.4`; its small origin distance was at path index `81`,
+  not the closure segment. This closes v162 plus stateless allocator recovery
+  and attenuation scans. Exact v148 controller/allocator semantics are
+  restored. Next work requires a structurally different reference-backed
+  controller architecture. Evidence:
+  `Results/metrics/track3_candidate_review_v169_v170_v162_allocator_recovery_20260712.md`.
 
