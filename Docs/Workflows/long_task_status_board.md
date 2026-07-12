@@ -419,4 +419,10 @@ M10 final-race / physical-transfer readiness notes
   controller-level risk signal from actual distance inputs or a
   reference-backed local-planner interface. Evidence:
   `Results/metrics/track2_candidate_review_v189_front_risk_steer_gate_20260712.md`.
+- v190 signed-front release is rejected. It passed static (`high=0,medium=0`),
+  14 tests, and the Track2 1 s native gate, but strict Track2 terminated at
+  `T=28.95,cR=4,cO=1,P=8.0` with finish-distance squared `794.0116508`.
+  The controller was restored exactly to `HEAD`; no candidate is accepted and
+  the four-track completion gate remains open. Evidence:
+  `Results/metrics/track2_candidate_review_v190_signed_front_release_20260712.md`.
 
