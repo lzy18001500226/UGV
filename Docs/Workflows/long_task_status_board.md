@@ -72,6 +72,13 @@ M10 final-race / physical-transfer readiness notes
 
 ## Review Notes
 
+- v176 phase-aligned feedback is rejected at
+  `Results/metrics/track3_candidate_review_v176_phase_aligned_feedback_20260712.md`.
+  It made the existing lateral gap states reachable for 0.1 s and extended
+  Track3 beyond v148, but stopped without a finish at
+  `T=108.10,cR=2,cO=1,P=8.8`, materially behind v162's near-loop diagnostic.
+  Exact v148 source semantics are restored; do not scan dwell alignment.
+
 - M1 is source/static only. It does not claim MWORKS load, translate, simulate, lap completion, score, or GUI health.
 - M2 confirms bounded runtime load/check/simulate for `UGV.Example.Race1`; it does not claim full-track completion or final competition score.
 - M4 confirms a first runnable Sysblock controller structure with bounded `stopTime=12` metrics `T=12`, `cR=0`, `cO=0`, `P=10`; it does not claim full-track completion.
