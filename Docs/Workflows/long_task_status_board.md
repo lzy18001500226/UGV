@@ -72,6 +72,13 @@ M10 final-race / physical-transfer readiness notes
 
 ## Review Notes
 
+- v179 pursuit wrapping is rejected at
+  `Results/metrics/track3_candidate_review_v179_pursuit_wrap_20260712.md`.
+  Combining v162 with final-to-first pursuit traversal stopped at
+  `T=110.4,cR=1,cO=1,P=9.2`, materially behind v162's `T=286.55`. The path
+  change was active but did not produce an official finish. Exact v148 source
+  semantics are restored; do not stack more pursuit-wrap parameters.
+
 - v162 rear-observability diagnostic is closed at
   `Results/metrics/v162_rear_observability_diagnostic_20260712.md`. `db`
   separates initial departure from later motion but does not uniquely identify
